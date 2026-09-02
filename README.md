@@ -19,10 +19,6 @@ from Valve's protobufs.
 When you outgrow the helpers, the typed low-level client is right underneath, unchanged and
 fully exported. Nothing here is a wall.
 
-> **On the npm name.** This package is `dotakit`. The npm package called `dota2-gc` belongs
-> to someone else and is unrelated to this project — installing it will not give you this
-> library.
-
 ### Features
 
 - 🔑 **Steam login included** — password, refresh token or a session file that survives restarts; Steam Guard answered from a callback, an event, or a code you already have.
@@ -397,9 +393,6 @@ GC-сессию — и читаешь гильдию, смотришь меда�
 
 Когда обёрток станет мало — типизированный низкоуровневый клиент лежит прямо под ними,
 неизменный и полностью экспортированный. Стен здесь нет.
-
-> **Про имя в npm.** Этот пакет — `dotakit`. Пакет `dota2-gc` в npm принадлежит другим
-> людям и к этому проекту отношения не имеет: поставив его, вы получите не эту библиотеку.
 
 ### Возможности
 
