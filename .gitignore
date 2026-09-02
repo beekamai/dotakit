@@ -3,8 +3,7 @@ node_modules/
 bun.lock
 bun.lockb
 
-# Build output
-dist/
+# Build output is committed on purpose: installs straight from GitHub need it.
 *.tsbuildinfo
 
 # Protobuf generation scratch
