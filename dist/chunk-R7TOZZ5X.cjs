@@ -1,0 +1,35 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});// src/shared.ts
+var GC_TIMEOUT_MS = 15e3;
+function oneShot(gc, options) {
+  const { request, response, accept, timeoutMs = GC_TIMEOUT_MS } = options;
+  return new Promise((resolve) => {
+    let done = false;
+    const finish = (value) => {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      gc.router.off(response, onMessage);
+      resolve(value);
+    };
+    const onMessage = (payload) => {
+      if (accept && !accept(payload)) return;
+      finish(payload);
+    };
+    const timer = setTimeout(() => finish(null), timeoutMs);
+    gc.router.on(response, onMessage);
+    gc.send(request[0], request[1]);
+  });
+}
+function fromUnixSeconds(seconds) {
+  if (!seconds || seconds <= 0) return null;
+  return new Date(seconds * 1e3);
+}
+var sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+
+
+
+
+
+exports.GC_TIMEOUT_MS = GC_TIMEOUT_MS; exports.oneShot = oneShot; exports.fromUnixSeconds = fromUnixSeconds; exports.sleep = sleep;
+//# sourceMappingURL=chunk-R7TOZZ5X.cjs.map

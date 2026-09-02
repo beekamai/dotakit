@@ -1446,7 +1446,6 @@ import {
   ECustomGameInstallStatus,
   ECustomGameWhitelistState,
   EDOTADraftTriviaAnswerResult,
-  EDOTAGCMsg,
   EDOTAGCSessionNeed,
   EDOTAMMRBoostType,
   EDOTAMatchPlayerTimeCustomStat,
@@ -1939,8 +1938,6 @@ import {
   eCustomGameWhitelistStateToJSON,
   eDOTADraftTriviaAnswerResultFromJSON,
   eDOTADraftTriviaAnswerResultToJSON,
-  eDOTAGCMsgFromJSON,
-  eDOTAGCMsgToJSON,
   eDOTAGCSessionNeedFromJSON,
   eDOTAGCSessionNeedToJSON,
   eDOTAMMRBoostTypeFromJSON,
@@ -2126,7 +2123,13 @@ import {
   matchTypeToJSON,
   partnerAccountTypeFromJSON,
   partnerAccountTypeToJSON
-} from "../chunk-HJGW3TNP.js";
+} from "../chunk-R5MSRNH2.js";
+import {
+  EDOTAGCMsg,
+  eDOTAGCMsgFromJSON,
+  eDOTAGCMsgToJSON
+} from "../chunk-3ICL5PG7.js";
+import "../chunk-PZ5AY32C.js";
 export {
   CAttributeItemDynamicRecipeComponent,
   CAttributeString,
