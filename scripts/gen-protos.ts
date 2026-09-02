@@ -6,7 +6,10 @@
  * neither is a dependency of this package.
  *
  *   bun add -d ts-proto
- *   bun run scripts/gen-protos.ts
+ *   bun run scripts/gen-protos.ts [extra.proto ...]
+ *
+ * Extra .proto roots given as arguments are generated alongside the built-in ones for
+ * that run only — add them to ENTRY_PROTOS to keep them.
  *
  * Then re-run scripts/gen-messages.ts and commit both.
  */
@@ -67,7 +70,13 @@ async function main() {
     await rm(OUT, { recursive: true, force: true });
     await mkdir(OUT, { recursive: true });
 
-    await $`protoc --plugin=protoc-gen-ts_proto=${plugin} --ts_proto_out=${OUT} --ts_proto_opt=${TS_PROTO_OPTS} -I ${PROTO_SRC} -I ${REPO} ${ENTRY_PROTOS}`.cwd(PROTO_SRC);
+    const extra = process.argv.slice(2).filter((arg) => arg.endsWith(".proto"));
+    const entries = [...new Set([...ENTRY_PROTOS, ...extra])];
+    for (const proto of extra) {
+        if (!existsSync(join(PROTO_SRC, proto))) throw new Error(`${proto} is not in SteamDatabase/Protobufs/dota2`);
+    }
+
+    await $`protoc --plugin=protoc-gen-ts_proto=${plugin} --ts_proto_out=${OUT} --ts_proto_opt=${TS_PROTO_OPTS} -I ${PROTO_SRC} -I ${REPO} ${entries}`.cwd(PROTO_SRC);
 
     const written = (await readdir(OUT)).filter((f) => f.endsWith(".ts"));
     console.log(`generated ${written.length} files into src/protobufs`);
