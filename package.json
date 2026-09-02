@@ -1,16 +1,44 @@
 {
-  "name": "dota2-gc",
-  "version": "0.1.0",
-  "description": "Typed Dota 2 Game Coordinator client for Bun and Node — hello handshake, message router, promise jobs, generated protobufs.",
+  "name": "dotakit",
+  "version": "0.2.0",
+  "description": "Steam login + Dota 2 Game Coordinator multitool for Bun/Node: guild, profile, live matches, typed GC client, protobuf codegen",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "dotakit": "./bin/dotakit.ts"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./steam": {
+      "types": "./dist/steam/index.d.ts",
+      "import": "./dist/steam/index.js",
+      "require": "./dist/steam/index.cjs"
+    },
+    "./gc": {
+      "types": "./dist/gc/index.d.ts",
+      "import": "./dist/gc/index.js",
+      "require": "./dist/gc/index.cjs"
+    },
+    "./guild": {
+      "types": "./dist/guild/index.d.ts",
+      "import": "./dist/guild/index.js",
+      "require": "./dist/guild/index.cjs"
+    },
+    "./profile": {
+      "types": "./dist/profile/index.d.ts",
+      "import": "./dist/profile/index.js",
+      "require": "./dist/profile/index.cjs"
+    },
+    "./live": {
+      "types": "./dist/live/index.d.ts",
+      "import": "./dist/live/index.js",
+      "require": "./dist/live/index.cjs"
     },
     "./protobufs": {
       "types": "./dist/protobufs/index.d.ts",
@@ -21,6 +49,8 @@
   },
   "files": [
     "dist",
+    "bin",
+    "scripts",
     "README.md",
     "LICENSE",
     "NOTICE"
@@ -32,6 +62,7 @@
     "game-coordinator",
     "steam",
     "steam-user",
+    "guild",
     "protobuf",
     "typescript",
     "bun"
@@ -40,16 +71,17 @@
   "author": "beekamai",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beekamai/dota2-gc.git"
+    "url": "git+https://github.com/beekamai/dotakit.git"
   },
-  "homepage": "https://github.com/beekamai/dota2-gc#readme",
+  "homepage": "https://github.com/beekamai/dotakit#readme",
   "bugs": {
-    "url": "https://github.com/beekamai/dota2-gc/issues"
+    "url": "https://github.com/beekamai/dotakit/issues"
   },
   "scripts": {
     "test": "bun test",
     "typecheck": "tsc --noEmit",
     "build": "tsup",
+    "doctor": "bun run bin/dotakit.ts doctor",
     "gen:messages": "bun run scripts/gen-messages.ts",
     "gen:protos": "bun run scripts/gen-protos.ts",
     "prepublishOnly": "bun run build"
@@ -57,8 +89,17 @@
   "dependencies": {
     "@bufbuild/protobuf": "^2.5.2"
   },
+  "peerDependencies": {
+    "steam-user": "^5.3.0"
+  },
+  "peerDependenciesMeta": {
+    "steam-user": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@types/bun": "^1.1.0",
+    "steam-user": "^5.3.0",
     "tsup": "^8.0.0",
     "typescript": "^5.6.0"
   },
