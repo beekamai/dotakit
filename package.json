@@ -1,0 +1,69 @@
+{
+  "name": "dota2-gc",
+  "version": "0.1.0",
+  "description": "Typed Dota 2 Game Coordinator client for Bun and Node — hello handshake, message router, promise jobs, generated protobufs.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./protobufs": {
+      "types": "./dist/protobufs/index.d.ts",
+      "import": "./dist/protobufs/index.js",
+      "require": "./dist/protobufs/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "dota2",
+    "dota",
+    "game-coordinator",
+    "steam",
+    "steam-user",
+    "protobuf",
+    "typescript",
+    "bun"
+  ],
+  "license": "MIT",
+  "author": "beekamai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beekamai/dota2-gc.git"
+  },
+  "homepage": "https://github.com/beekamai/dota2-gc#readme",
+  "bugs": {
+    "url": "https://github.com/beekamai/dota2-gc/issues"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "build": "tsup",
+    "gen:messages": "bun run scripts/gen-messages.ts",
+    "gen:protos": "bun run scripts/gen-protos.ts",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.5.2"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.1.0"
+  }
+}

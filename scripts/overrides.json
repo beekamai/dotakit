@@ -1,0 +1,35 @@
+{
+  "_comment": "Hand-written fixes for GC message ids whose protobuf name cannot be derived from the enum member name. Everything else is matched automatically by scripts/gen-messages.ts.",
+  "codecs": {
+    "k_EMsgGCClientHello": "CMsgClientHello",
+    "k_EMsgGCServerHello": "CMsgClientHello",
+    "k_EMsgGCClientWelcome": "CMsgClientWelcome",
+    "k_EMsgGCServerWelcome": "CMsgClientWelcome",
+    "k_EMsgGCClientConnectionStatus": "CMsgConnectionStatus",
+    "k_EMsgGCServerConnectionStatus": "CMsgConnectionStatus",
+    "k_ESOMsg_Create": "CMsgSOSingleObject",
+    "k_ESOMsg_Update": "CMsgSOSingleObject",
+    "k_ESOMsg_Destroy": "CMsgSOSingleObject",
+    "k_ESOMsg_CacheSubscribed": "CMsgSOCacheSubscribed",
+    "k_ESOMsg_CacheUnsubscribed": "CMsgSOCacheUnsubscribed",
+    "k_ESOMsg_UpdateMultiple": "CMsgSOMultipleObjects",
+    "k_ESOMsg_CacheSubscriptionRefresh": "CMsgSOCacheSubscriptionRefresh",
+    "k_ESOMsg_CacheSubscribedUpToDate": "CMsgSOCacheSubscribedUpToDate",
+    "k_EMsgClientToGCGetProfileCardResponse": "CMsgDOTAProfileCard"
+  },
+  "responses": {},
+  "inbound": [
+    "k_EMsgGCClientWelcome",
+    "k_EMsgGCServerWelcome",
+    "k_EMsgGCClientConnectionStatus",
+    "k_EMsgGCServerConnectionStatus",
+    "k_ESOMsg_Create",
+    "k_ESOMsg_Update",
+    "k_ESOMsg_Destroy",
+    "k_ESOMsg_CacheSubscribed",
+    "k_ESOMsg_CacheUnsubscribed",
+    "k_ESOMsg_UpdateMultiple",
+    "k_ESOMsg_CacheSubscriptionRefresh",
+    "k_ESOMsg_CacheSubscribedUpToDate"
+  ]
+}

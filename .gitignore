@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+bun.lock
+bun.lockb
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Protobuf generation scratch
+.protos/
+
+# Logs / temp
+*.log
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Serena (local assistant cache)
+.serena/
