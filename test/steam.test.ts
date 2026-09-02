@@ -234,7 +234,12 @@ describe("steam guard", () => {
 
     test("fails the login when there is no way to produce a code", async () => {
         const user = new FakeSteamUser();
-        const promise = login({ accountName: "marci", password: "secret", steamUser: user });
+        const promise = login({
+            accountName: "marci",
+            password: "secret",
+            steamUser: user,
+            interactiveGuard: false,
+        });
         user.emit("steamGuard", null, () => {}, false);
 
         await expect(promise).rejects.toThrow(GuardRequiredError);

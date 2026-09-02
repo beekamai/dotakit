@@ -14,7 +14,7 @@
 
 
 
-var _chunkQKCYOI3Qcjs = require('./chunk-QKCYOI3Q.cjs');
+var _chunkCEY2YADCcjs = require('./chunk-CEY2YADC.cjs');
 
 
 
@@ -24,10 +24,7 @@ var _chunkQKCYOI3Qcjs = require('./chunk-QKCYOI3Q.cjs');
 
 
 
-
-
-
-var _chunk7WYODH5Acjs = require('./chunk-7WYODH5A.cjs');
+var _chunkUVI6DHODcjs = require('./chunk-UVI6DHOD.cjs');
 
 
 
@@ -61,6 +58,11 @@ var _chunkCU4ZEV3Ucjs = require('./chunk-CU4ZEV3U.cjs');
 
 
 var _chunk3V5KHPWIcjs = require('./chunk-3V5KHPWI.cjs');
+
+
+
+
+var _chunkZIVCJ3VAcjs = require('./chunk-ZIVCJ3VA.cjs');
 require('./chunk-LKAAZKBP.cjs');
 
 // src/index.ts
@@ -110,8 +112,8 @@ var DotaBot = class extends _events.EventEmitter {
   }
 };
 async function login2(options) {
-  const steam = await _chunk7WYODH5Acjs.login.call(void 0, options);
-  const gc = new (0, _chunkQKCYOI3Qcjs.Dota2GC)(steam.user, { autoGamesPlayed: true, logger: options.logger, ...options.gc });
+  const steam = await _chunkUVI6DHODcjs.login.call(void 0, options);
+  const gc = new (0, _chunkCEY2YADCcjs.Dota2GC)(steam.user, { autoGamesPlayed: true, logger: options.logger, ...options.gc });
   const bot = new DotaBot(steam, gc, options);
   if (_nullishCoalesce(options.waitForGC, () => ( true))) {
     await gc.connect({ timeoutMs: _nullishCoalesce(options.gcTimeoutMs, () => ( 6e4)) });
@@ -120,7 +122,7 @@ async function login2(options) {
   }
   return bot;
 }
-var Dota = { login: login2, APPID: _chunkQKCYOI3Qcjs.DOTA2_APPID };
+var Dota = { login: login2, APPID: _chunkCEY2YADCcjs.DOTA2_APPID };
 
 
 
@@ -172,5 +174,5 @@ var Dota = { login: login2, APPID: _chunkQKCYOI3Qcjs.DOTA2_APPID };
 
 
 
-exports.BunTransportError = _chunk7WYODH5Acjs.BunTransportError; exports.DEFAULT_RANK_GAP_MS = _chunkBG5WCOMMcjs.DEFAULT_RANK_GAP_MS; exports.DOTA2_APPID = _chunkQKCYOI3Qcjs.DOTA2_APPID; exports.Dota = Dota; exports.Dota2GC = _chunkQKCYOI3Qcjs.Dota2GC; exports.Dota2GCError = _chunkQKCYOI3Qcjs.Dota2GCError; exports.DotaBot = DotaBot; exports.EDOTAGCMsg = _chunk3V5KHPWIcjs.EDOTAGCMsg; exports.EGCBaseClientMsg = _chunkCU4ZEV3Ucjs.EGCBaseClientMsg; exports.EGCBaseMsg = _chunkCU4ZEV3Ucjs.EGCBaseMsg; exports.ESOMsg = _chunkCU4ZEV3Ucjs.ESOMsg; exports.GCConnectionStatus = _chunkCU4ZEV3Ucjs.GCConnectionStatus; exports.GCOperationError = _chunkUKGD34RUcjs.GCOperationError; exports.GCRouter = _chunkQKCYOI3Qcjs.GCRouter; exports.GC_RESULT_STALE = _chunkUKGD34RUcjs.GC_RESULT_STALE; exports.GC_RESULT_TIMEOUT = _chunkUKGD34RUcjs.GC_RESULT_TIMEOUT; exports.GC_TIMEOUT_MS = _chunkR7TOZZ5Xcjs.GC_TIMEOUT_MS; exports.GUILD_ROLE_FLAG = _chunkUKGD34RUcjs.GUILD_ROLE_FLAG; exports.GUILD_ROLE_FLAG_MASK = _chunkUKGD34RUcjs.GUILD_ROLE_FLAG_MASK; exports.GuardRequiredError = _chunk7WYODH5Acjs.GuardRequiredError; exports.Guild = _chunkUKGD34RUcjs.Guild; exports.JobAbortedError = _chunkQKCYOI3Qcjs.JobAbortedError; exports.JobTimeoutError = _chunkQKCYOI3Qcjs.JobTimeoutError; exports.Live = _chunk4AJOKWQUcjs.Live; exports.MAX_BACKOFF_MS = _chunk4AJOKWQUcjs.MAX_BACKOFF_MS; exports.MAX_MISSES = _chunk4AJOKWQUcjs.MAX_MISSES; exports.NoDecoderError = _chunkQKCYOI3Qcjs.NoDecoderError; exports.NoEncoderError = _chunkQKCYOI3Qcjs.NoEncoderError; exports.NoGuildError = _chunkUKGD34RUcjs.NoGuildError; exports.NotConnectedError = _chunkQKCYOI3Qcjs.NotConnectedError; exports.POLL_INTERVAL_MS = _chunk4AJOKWQUcjs.POLL_INTERVAL_MS; exports.Profile = _chunkBG5WCOMMcjs.Profile; exports.RANK_TIERS = _chunkBG5WCOMMcjs.RANK_TIERS; exports.SteamError = _chunk7WYODH5Acjs.SteamError; exports.SteamLoginError = _chunk7WYODH5Acjs.SteamLoginError; exports.SteamSession = _chunk7WYODH5Acjs.SteamSession; exports.UnexpectedResponseError = _chunkQKCYOI3Qcjs.UnexpectedResponseError; exports.WEBSOCKET13_OVERRIDE = _chunk7WYODH5Acjs.WEBSOCKET13_OVERRIDE; exports.allMessages = _chunkQKCYOI3Qcjs.allMessages; exports.classifyEResult = _chunk7WYODH5Acjs.classifyEResult; exports.clientMessages = _chunkQKCYOI3Qcjs.clientMessages; exports.decodeRankTier = _chunkBG5WCOMMcjs.decodeRankTier; exports.doctor = _chunk7WYODH5Acjs.doctor; exports.eresultName = _chunk7WYODH5Acjs.eresultName; exports.gcMessages = _chunkQKCYOI3Qcjs.gcMessages; exports.isCriticalEResult = _chunk7WYODH5Acjs.isCriticalEResult; exports.jobResponses = _chunkQKCYOI3Qcjs.jobResponses; exports.login = login2; exports.messageNames = _chunkQKCYOI3Qcjs.messageNames; exports.steamLogin = _chunk7WYODH5Acjs.login;
+exports.BunTransportError = _chunkZIVCJ3VAcjs.BunTransportError; exports.DEFAULT_RANK_GAP_MS = _chunkBG5WCOMMcjs.DEFAULT_RANK_GAP_MS; exports.DOTA2_APPID = _chunkCEY2YADCcjs.DOTA2_APPID; exports.Dota = Dota; exports.Dota2GC = _chunkCEY2YADCcjs.Dota2GC; exports.Dota2GCError = _chunkCEY2YADCcjs.Dota2GCError; exports.DotaBot = DotaBot; exports.EDOTAGCMsg = _chunk3V5KHPWIcjs.EDOTAGCMsg; exports.EGCBaseClientMsg = _chunkCU4ZEV3Ucjs.EGCBaseClientMsg; exports.EGCBaseMsg = _chunkCU4ZEV3Ucjs.EGCBaseMsg; exports.ESOMsg = _chunkCU4ZEV3Ucjs.ESOMsg; exports.GCConnectionStatus = _chunkCU4ZEV3Ucjs.GCConnectionStatus; exports.GCOperationError = _chunkUKGD34RUcjs.GCOperationError; exports.GCRouter = _chunkCEY2YADCcjs.GCRouter; exports.GC_RESULT_STALE = _chunkUKGD34RUcjs.GC_RESULT_STALE; exports.GC_RESULT_TIMEOUT = _chunkUKGD34RUcjs.GC_RESULT_TIMEOUT; exports.GC_TIMEOUT_MS = _chunkR7TOZZ5Xcjs.GC_TIMEOUT_MS; exports.GUILD_ROLE_FLAG = _chunkUKGD34RUcjs.GUILD_ROLE_FLAG; exports.GUILD_ROLE_FLAG_MASK = _chunkUKGD34RUcjs.GUILD_ROLE_FLAG_MASK; exports.GuardRequiredError = _chunkUVI6DHODcjs.GuardRequiredError; exports.Guild = _chunkUKGD34RUcjs.Guild; exports.JobAbortedError = _chunkCEY2YADCcjs.JobAbortedError; exports.JobTimeoutError = _chunkCEY2YADCcjs.JobTimeoutError; exports.Live = _chunk4AJOKWQUcjs.Live; exports.MAX_BACKOFF_MS = _chunk4AJOKWQUcjs.MAX_BACKOFF_MS; exports.MAX_MISSES = _chunk4AJOKWQUcjs.MAX_MISSES; exports.NoDecoderError = _chunkCEY2YADCcjs.NoDecoderError; exports.NoEncoderError = _chunkCEY2YADCcjs.NoEncoderError; exports.NoGuildError = _chunkUKGD34RUcjs.NoGuildError; exports.NotConnectedError = _chunkCEY2YADCcjs.NotConnectedError; exports.POLL_INTERVAL_MS = _chunk4AJOKWQUcjs.POLL_INTERVAL_MS; exports.Profile = _chunkBG5WCOMMcjs.Profile; exports.RANK_TIERS = _chunkBG5WCOMMcjs.RANK_TIERS; exports.SteamError = _chunkUVI6DHODcjs.SteamError; exports.SteamLoginError = _chunkUVI6DHODcjs.SteamLoginError; exports.SteamSession = _chunkUVI6DHODcjs.SteamSession; exports.UnexpectedResponseError = _chunkCEY2YADCcjs.UnexpectedResponseError; exports.WEBSOCKET13_OVERRIDE = _chunkZIVCJ3VAcjs.WEBSOCKET13_OVERRIDE; exports.allMessages = _chunkCEY2YADCcjs.allMessages; exports.classifyEResult = _chunkUVI6DHODcjs.classifyEResult; exports.clientMessages = _chunkCEY2YADCcjs.clientMessages; exports.decodeRankTier = _chunkBG5WCOMMcjs.decodeRankTier; exports.doctor = _chunkZIVCJ3VAcjs.doctor; exports.eresultName = _chunkUVI6DHODcjs.eresultName; exports.gcMessages = _chunkCEY2YADCcjs.gcMessages; exports.isCriticalEResult = _chunkUVI6DHODcjs.isCriticalEResult; exports.jobResponses = _chunkCEY2YADCcjs.jobResponses; exports.login = login2; exports.messageNames = _chunkCEY2YADCcjs.messageNames; exports.steamLogin = _chunkUVI6DHODcjs.login;
 //# sourceMappingURL=index.cjs.map

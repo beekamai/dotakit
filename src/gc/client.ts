@@ -238,7 +238,7 @@ export class Dota2GC extends EventEmitter {
 
         const remove = this.steam.off ?? this.steam.removeListener;
         if (remove) for (const [event, listener] of this.hooks) remove.call(this.steam, event, listener);
-        else this.logger?.warn?.("dota2-gc: transport has neither off() nor removeListener(); %s hooks stay attached", this.hooks.length);
+        else this.logger?.warn?.("dotakit: transport has neither off() nor removeListener(); %s hooks stay attached", this.hooks.length);
         this.hooks.length = 0;
 
         const error = new NotConnectedError("Dota2GC was destroyed");
@@ -291,7 +291,7 @@ export class Dota2GC extends EventEmitter {
     sendRaw(msgId: number, payload: Buffer, callback?: GCCallback): void {
         if (this.destroyed) throw new NotConnectedError("Dota2GC was destroyed");
         if (!this.steam.steamID) throw new NotConnectedError();
-        this.logger?.debug?.("dota2-gc: sending %s (%s), %s bytes", messageNames[msgId] ?? "unknown", msgId, payload.length);
+        this.logger?.debug?.("dotakit: sending %s (%s), %s bytes", messageNames[msgId] ?? "unknown", msgId, payload.length);
         this.steam.sendToGC(this.appid, msgId, {}, payload, callback);
     }
 
@@ -390,7 +390,7 @@ export class Dota2GC extends EventEmitter {
 
     private hookRouter(): void {
         this.router.on(EGCBaseClientMsg.k_EMsgGCClientWelcome, (welcome) => {
-            this.logger?.debug?.("dota2-gc: GC session established");
+            this.logger?.debug?.("dotakit: GC session established");
             this._haveGCSession = true;
             this._welcome = welcome as CMsgClientWelcome;
             this.clearHelloTimer();
@@ -402,7 +402,7 @@ export class Dota2GC extends EventEmitter {
             if (status === GCConnectionStatus.GCConnectionStatus_HAVE_SESSION) return;
             if (!this._haveGCSession) return;
 
-            this.logger?.debug?.("dota2-gc: GC session lost, status %s", status);
+            this.logger?.debug?.("dotakit: GC session lost, status %s", status);
             this._haveGCSession = false;
             this._welcome = undefined;
             /* No reply can arrive on a dead session — do not make callers wait out
@@ -467,7 +467,7 @@ export class Dota2GC extends EventEmitter {
             this.send(EGCBaseClientMsg.k_EMsgGCClientHello, {});
         } catch (error) {
             /* Steam may have dropped between the timer being set and firing; keep retrying. */
-            this.logger?.warn?.("dota2-gc: hello could not be sent", error);
+            this.logger?.warn?.("dotakit: hello could not be sent", error);
         }
 
         /* send() can re-enter synchronously on some transports (a Steam reconnect burst
@@ -476,7 +476,7 @@ export class Dota2GC extends EventEmitter {
         if (this.helloTimer !== undefined || !this._inApp || this._haveGCSession) return;
 
         this.helloDelayMs = Math.min(this.helloBackoffMaxMs, this.helloDelayMs ? this.helloDelayMs * 2 : this.helloBaseMs);
-        this.logger?.debug?.("dota2-gc: hello sent, next attempt in %s ms", this.helloDelayMs);
+        this.logger?.debug?.("dotakit: hello sent, next attempt in %s ms", this.helloDelayMs);
         this.helloTimer = this.timers.setTimeout(() => this.sendHello(), this.helloDelayMs);
     }
 

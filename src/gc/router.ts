@@ -96,7 +96,7 @@ export class GCRouter {
     route(msgId: number, payload: Buffer): void {
         const codec = (allMessages as Record<number, { decode(input: Uint8Array): unknown }>)[msgId];
         if (!codec) {
-            this.logger?.debug?.("dota2-gc: no decoder for inbound GC message %s", msgId);
+            this.logger?.debug?.("dotakit: no decoder for inbound GC message %s", msgId);
             this.emitAny(msgId, payload);
             this.dispatch(UNKNOWN, msgId, payload);
             return;
@@ -106,7 +106,7 @@ export class GCRouter {
         try {
             decoded = codec.decode(payload);
         } catch (error) {
-            this.logger?.warn?.("dota2-gc: failed to decode GC message %s", msgId, error);
+            this.logger?.warn?.("dotakit: failed to decode GC message %s", msgId, error);
             this.dispatch(DECODE_ERROR, msgId, payload, error);
             return;
         }
@@ -121,7 +121,7 @@ export class GCRouter {
         try {
             this.emitter.emit(event, ...args);
         } catch (error) {
-            this.logger?.error?.("dota2-gc: listener threw while routing %s", event, error);
+            this.logger?.error?.("dotakit: listener threw while routing %s", event, error);
         }
     }
 
@@ -131,7 +131,7 @@ export class GCRouter {
                 listener(msgId, payload);
             } catch (error) {
                 /* One bad onAny listener must not stop the rest of the routing. */
-                this.logger?.error?.("dota2-gc: onAny listener threw for message %s", msgId, error);
+                this.logger?.error?.("dotakit: onAny listener threw for message %s", msgId, error);
             }
         }
     }

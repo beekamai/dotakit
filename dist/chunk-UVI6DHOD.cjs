@@ -1,6 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } } function _nullishCoalesce(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return rhsFn(); } } async function _asyncNullishCoalesce(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return await rhsFn(); } } function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
 
-var _chunkLKAAZKBPcjs = require('./chunk-LKAAZKBP.cjs');
+
+var _chunkZIVCJ3VAcjs = require('./chunk-ZIVCJ3VA.cjs');
 
 // src/steam/index.ts
 var _events = require('events');
@@ -85,80 +86,6 @@ function eresultName(eresult, SteamUser) {
   return _nullishCoalesce(_nullishCoalesce(_optionalChain([SteamUser, 'optionalAccess', _ => _.EResult, 'optionalAccess', _2 => _2[eresult]]), () => ( ERESULT_NAMES[eresult])), () => ( `EResult-${eresult}`));
 }
 
-// src/steam/transport.ts
-var _module = require('module');
-var WEBSOCKET13_OVERRIDE = '"websocket13": "github:beekamai/node-websocket13"';
-var BunTransportError = class extends Error {
-  constructor(websocket13Version) {
-    super(
-      `dotakit: on Bun, steam-user needs the patched websocket13 fork (installed: ${_nullishCoalesce(websocket13Version, () => ( "not found"))}).
-Add this to package.json and reinstall:
-
-  "overrides": {
-    ${WEBSOCKET13_OVERRIDE}
-  }
-
-(Bun reads "overrides"; on npm use the same block, on yarn use "resolutions".)
-Or skip WebSockets entirely: Dota.login({ \u2026, transport: "tcp" }).`
-    );
-    this.websocket13Version = websocket13Version;
-    this.name = "BunTransportError";
-  }
-  
-};
-function installedWebsocket13Version() {
-  try {
-    const require2 = _module.createRequire.call(void 0, _chunkLKAAZKBPcjs.importMetaUrl);
-    return String(_nullishCoalesce(require2("websocket13/package.json").version, () => ( ""))) || null;
-  } catch (e) {
-    return null;
-  }
-}
-var isBunFork = (version) => version !== null && /-bun(\.|$)/.test(version);
-function inspect(options = {}) {
-  const versions = _nullishCoalesce(_nullishCoalesce(options.versions, () => ( _optionalChain([globalThis, 'access', _3 => _3.process, 'optionalAccess', _4 => _4.versions]))), () => ( {}));
-  const bunVersion = _nullishCoalesce(versions.bun, () => ( null));
-  const transport = _nullishCoalesce(options.transport, () => ( "auto"));
-  const websocket13Version = options.websocket13Version !== void 0 ? options.websocket13Version : installedWebsocket13Version();
-  const fork = isBunFork(websocket13Version);
-  const notes = [];
-  let ok = true;
-  if (bunVersion) {
-    if (transport === "tcp") {
-      notes.push('Bun with transport: "tcp" \u2014 the WebSocket transport is bypassed, websocket13 is not used.');
-    } else if (fork) {
-      notes.push(`Bun with the patched websocket13 (${websocket13Version}) \u2014 WebSocket transport is fine.`);
-    } else {
-      ok = false;
-      notes.push(
-        `Bun with stock websocket13 (${_nullishCoalesce(websocket13Version, () => ( "not installed"))}) \u2014 the Steam WebSocket handshake never completes. Add the overrides block, or use transport: "tcp".`
-      );
-    }
-  } else {
-    notes.push("Node \u2014 the stock websocket13 works; no override needed.");
-  }
-  return {
-    runtime: bunVersion ? "bun" : "node",
-    bunVersion,
-    websocket13Version,
-    websocket13IsBunFork: fork,
-    transport,
-    ok,
-    notes
-  };
-}
-function doctor(options = {}) {
-  const report = inspect(options);
-  if (!report.ok) throw new BunTransportError(report.websocket13Version);
-  return report;
-}
-function connectionProtocol(transport, SteamUser) {
-  if (transport !== "tcp") return void 0;
-  const value = _optionalChain([SteamUser, 'optionalAccess', _5 => _5.EConnectionProtocol, 'optionalAccess', _6 => _6.TCP]);
-  if (typeof value !== "number") return void 0;
-  return value;
-}
-
 // src/steam/index.ts
 var SteamSession = class extends _events.EventEmitter {
   /** The underlying `steam-user` instance. Hand it to `new Dota2GC(...)`, or use it directly. */
@@ -189,9 +116,9 @@ var SteamSession = class extends _events.EventEmitter {
   }
   logoff() {
     try {
-      _optionalChain([this, 'access', _7 => _7.user, 'access', _8 => _8.logOff, 'optionalCall', _9 => _9()]);
+      _optionalChain([this, 'access', _3 => _3.user, 'access', _4 => _4.logOff, 'optionalCall', _5 => _5()]);
     } catch (error) {
-      _optionalChain([this, 'access', _10 => _10.logger, 'optionalAccess', _11 => _11.warn, 'optionalCall', _12 => _12("dotakit: logOff() threw", error)]);
+      _optionalChain([this, 'access', _6 => _6.logger, 'optionalAccess', _7 => _7.warn, 'optionalCall', _8 => _8("dotakit: logOff() threw", error)]);
     }
   }
   on(event, listener) {
@@ -200,7 +127,7 @@ var SteamSession = class extends _events.EventEmitter {
   /** Never lets a missing `error` listener take the process down with it. */
   emitError(error) {
     if (this.listenerCount("error") > 0) this.emit("error", error);
-    else _optionalChain([this, 'access', _13 => _13.logger, 'optionalAccess', _14 => _14.warn, 'optionalCall', _15 => _15("dotakit: unhandled Steam error", error)]);
+    else _optionalChain([this, 'access', _9 => _9.logger, 'optionalAccess', _10 => _10.warn, 'optionalCall', _11 => _11("dotakit: unhandled Steam error", error)]);
   }
 };
 function tokenExpiry(token) {
@@ -208,8 +135,8 @@ function tokenExpiry(token) {
     const payload = token.split(".")[1];
     if (!payload) return null;
     const json = JSON.parse(Buffer.from(payload, "base64").toString("utf8"));
-    return typeof _optionalChain([json, 'optionalAccess', _16 => _16.exp]) === "number" ? json.exp : null;
-  } catch (e2) {
+    return typeof _optionalChain([json, 'optionalAccess', _12 => _12.exp]) === "number" ? json.exp : null;
+  } catch (e) {
     return null;
   }
 }
@@ -217,16 +144,16 @@ function readSessionToken(file, logger) {
   if (!_fs.existsSync.call(void 0, file)) return null;
   try {
     const data = JSON.parse(_fs.readFileSync.call(void 0, file, "utf8"));
-    const token = _optionalChain([data, 'optionalAccess', _17 => _17.refreshToken]);
+    const token = _optionalChain([data, 'optionalAccess', _13 => _13.refreshToken]);
     if (typeof token !== "string" || !token) return null;
     const exp = tokenExpiry(token);
     if (exp !== null && exp * 1e3 <= Date.now()) {
-      _optionalChain([logger, 'optionalAccess', _18 => _18.warn, 'optionalCall', _19 => _19("dotakit: saved refresh token has expired, falling back to the password")]);
+      _optionalChain([logger, 'optionalAccess', _14 => _14.warn, 'optionalCall', _15 => _15("dotakit: saved refresh token has expired, falling back to the password")]);
       return null;
     }
     return token;
   } catch (error) {
-    _optionalChain([logger, 'optionalAccess', _20 => _20.warn, 'optionalCall', _21 => _21("dotakit: could not read %s", file, error)]);
+    _optionalChain([logger, 'optionalAccess', _16 => _16.warn, 'optionalCall', _17 => _17("dotakit: could not read %s", file, error)]);
     return null;
   }
 }
@@ -235,7 +162,25 @@ function writeSessionToken(file, refreshToken, logger) {
     _fs.mkdirSync.call(void 0, _path.dirname.call(void 0, file), { recursive: true });
     _fs.writeFileSync.call(void 0, file, JSON.stringify({ refreshToken }), "utf8");
   } catch (error) {
-    _optionalChain([logger, 'optionalAccess', _22 => _22.warn, 'optionalCall', _23 => _23("dotakit: could not write %s", file, error)]);
+    _optionalChain([logger, 'optionalAccess', _18 => _18.warn, 'optionalCall', _19 => _19("dotakit: could not write %s", file, error)]);
+  }
+}
+function isInteractive(options) {
+  if (options.interactiveGuard !== void 0) return options.interactiveGuard;
+  const proc = globalThis.process;
+  return Boolean(_optionalChain([proc, 'optionalAccess', _20 => _20.stdin, 'optionalAccess', _21 => _21.isTTY]) && _optionalChain([proc, 'optionalAccess', _22 => _22.stdout, 'optionalAccess', _23 => _23.isTTY]));
+}
+async function askTerminal(prompt) {
+  const { createInterface } = await Promise.resolve().then(() => _interopRequireWildcard(require("readline/promises")));
+  const proc = globalThis.process;
+  const rl = createInterface({ input: proc.stdin, output: proc.stdout });
+  try {
+    const where = prompt.domain ? `emailed to @${prompt.domain}` : "from your Steam mobile authenticator";
+    if (prompt.lastCodeWrong) console.log("That code was rejected.");
+    const code = await rl.question(`Steam Guard code (${where}): `);
+    return code.trim();
+  } finally {
+    rl.close();
   }
 }
 async function loadSteamUser() {
@@ -252,7 +197,7 @@ async function loadSteamUser() {
 async function login(options) {
   const { accountName, sessionFile, logger } = options;
   if (!accountName) throw new SteamError("login() needs an accountName");
-  if (!options.steamUser) doctor({ transport: options.transport });
+  if (!options.steamUser) _chunkZIVCJ3VAcjs.doctor.call(void 0, { transport: options.transport });
   const SteamUser = await _asyncNullishCoalesce(options.SteamUser, async () => ( (options.steamUser ? void 0 : await loadSteamUser())));
   const user = _nullishCoalesce(options.steamUser, () => ( new SteamUser()));
   const session = new SteamSession(user, { accountName, sessionFile, logger });
@@ -262,7 +207,7 @@ async function login(options) {
   if (!refreshToken && !options.password) {
     throw new SteamError("login() needs a password, a refreshToken, or a sessionFile holding one");
   }
-  const protocol = connectionProtocol(options.transport, _nullishCoalesce(options.SteamUser, () => ( SteamUser)));
+  const protocol = _chunkZIVCJ3VAcjs.connectionProtocol.call(void 0, options.transport, _nullishCoalesce(options.SteamUser, () => ( SteamUser)));
   const logOnOptions = refreshToken ? { refreshToken } : { accountName, password: options.password };
   if (protocol !== void 0) logOnOptions.protocol = protocol;
   for (const event of ["loggedOn", "steamGuard", "refreshToken", "error", "disconnected"]) {
@@ -311,9 +256,15 @@ async function login(options) {
         }).catch((error) => finish(error instanceof Error ? error : new SteamError(String(error))));
         return;
       }
-      if (session.listenerCount("guard") === 0) {
-        finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
+      if (session.listenerCount("guard") > 0) return;
+      if (isInteractive(options)) {
+        askTerminal(prompt).then((code) => {
+          if (code) prompt.submit(code);
+          else finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
+        }).catch((error) => finish(error instanceof Error ? error : new SteamError(String(error))));
+        return;
       }
+      finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
     });
     user.on("disconnected", (eresult, msg) => {
       const name = eresultName(eresult, _nullishCoalesce(options.SteamUser, () => ( SteamUser)));
@@ -347,11 +298,5 @@ async function login(options) {
 
 
 
-
-
-
-
-
-
-exports.SteamError = SteamError; exports.SteamLoginError = SteamLoginError; exports.GuardRequiredError = GuardRequiredError; exports.isCriticalEResult = isCriticalEResult; exports.classifyEResult = classifyEResult; exports.eresultName = eresultName; exports.WEBSOCKET13_OVERRIDE = WEBSOCKET13_OVERRIDE; exports.BunTransportError = BunTransportError; exports.installedWebsocket13Version = installedWebsocket13Version; exports.inspect = inspect; exports.doctor = doctor; exports.connectionProtocol = connectionProtocol; exports.SteamSession = SteamSession; exports.login = login;
-//# sourceMappingURL=chunk-7WYODH5A.cjs.map
+exports.SteamError = SteamError; exports.SteamLoginError = SteamLoginError; exports.GuardRequiredError = GuardRequiredError; exports.isCriticalEResult = isCriticalEResult; exports.classifyEResult = classifyEResult; exports.eresultName = eresultName; exports.SteamSession = SteamSession; exports.login = login;
+//# sourceMappingURL=chunk-UVI6DHOD.cjs.map

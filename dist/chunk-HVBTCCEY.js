@@ -2217,7 +2217,7 @@ var GCRouter = class {
   route(msgId, payload) {
     const codec = allMessages[msgId];
     if (!codec) {
-      this.logger?.debug?.("dota2-gc: no decoder for inbound GC message %s", msgId);
+      this.logger?.debug?.("dotakit: no decoder for inbound GC message %s", msgId);
       this.emitAny(msgId, payload);
       this.dispatch(UNKNOWN, msgId, payload);
       return;
@@ -2226,7 +2226,7 @@ var GCRouter = class {
     try {
       decoded = codec.decode(payload);
     } catch (error) {
-      this.logger?.warn?.("dota2-gc: failed to decode GC message %s", msgId, error);
+      this.logger?.warn?.("dotakit: failed to decode GC message %s", msgId, error);
       this.dispatch(DECODE_ERROR, msgId, payload, error);
       return;
     }
@@ -2239,7 +2239,7 @@ var GCRouter = class {
     try {
       this.emitter.emit(event, ...args);
     } catch (error) {
-      this.logger?.error?.("dota2-gc: listener threw while routing %s", event, error);
+      this.logger?.error?.("dotakit: listener threw while routing %s", event, error);
     }
   }
   emitAny(msgId, payload) {
@@ -2247,7 +2247,7 @@ var GCRouter = class {
       try {
         listener(msgId, payload);
       } catch (error) {
-        this.logger?.error?.("dota2-gc: onAny listener threw for message %s", msgId, error);
+        this.logger?.error?.("dotakit: onAny listener threw for message %s", msgId, error);
       }
     }
   }
@@ -2385,7 +2385,7 @@ var Dota2GC = class extends EventEmitter2 {
     this.destroyed = true;
     const remove = this.steam.off ?? this.steam.removeListener;
     if (remove) for (const [event, listener] of this.hooks) remove.call(this.steam, event, listener);
-    else this.logger?.warn?.("dota2-gc: transport has neither off() nor removeListener(); %s hooks stay attached", this.hooks.length);
+    else this.logger?.warn?.("dotakit: transport has neither off() nor removeListener(); %s hooks stay attached", this.hooks.length);
     this.hooks.length = 0;
     const error = new NotConnectedError("Dota2GC was destroyed");
     this.rejectPending(error);
@@ -2424,7 +2424,7 @@ var Dota2GC = class extends EventEmitter2 {
   sendRaw(msgId, payload, callback) {
     if (this.destroyed) throw new NotConnectedError("Dota2GC was destroyed");
     if (!this.steam.steamID) throw new NotConnectedError();
-    this.logger?.debug?.("dota2-gc: sending %s (%s), %s bytes", messageNames[msgId] ?? "unknown", msgId, payload.length);
+    this.logger?.debug?.("dotakit: sending %s (%s), %s bytes", messageNames[msgId] ?? "unknown", msgId, payload.length);
     this.steam.sendToGC(this.appid, msgId, {}, payload, callback);
   }
   /** Like {@link sendJob} but with raw bytes in and raw bytes out. */
@@ -2495,7 +2495,7 @@ var Dota2GC = class extends EventEmitter2 {
   }
   hookRouter() {
     this.router.on(4004 /* k_EMsgGCClientWelcome */, (welcome) => {
-      this.logger?.debug?.("dota2-gc: GC session established");
+      this.logger?.debug?.("dotakit: GC session established");
       this._haveGCSession = true;
       this._welcome = welcome;
       this.clearHelloTimer();
@@ -2505,7 +2505,7 @@ var Dota2GC = class extends EventEmitter2 {
       const { status } = message;
       if (status === 0 /* GCConnectionStatus_HAVE_SESSION */) return;
       if (!this._haveGCSession) return;
-      this.logger?.debug?.("dota2-gc: GC session lost, status %s", status);
+      this.logger?.debug?.("dotakit: GC session lost, status %s", status);
       this._haveGCSession = false;
       this._welcome = void 0;
       this.rejectPending(new NotConnectedError("GC session lost"));
@@ -2557,11 +2557,11 @@ var Dota2GC = class extends EventEmitter2 {
     try {
       this.send(4006 /* k_EMsgGCClientHello */, {});
     } catch (error) {
-      this.logger?.warn?.("dota2-gc: hello could not be sent", error);
+      this.logger?.warn?.("dotakit: hello could not be sent", error);
     }
     if (this.helloTimer !== void 0 || !this._inApp || this._haveGCSession) return;
     this.helloDelayMs = Math.min(this.helloBackoffMaxMs, this.helloDelayMs ? this.helloDelayMs * 2 : this.helloBaseMs);
-    this.logger?.debug?.("dota2-gc: hello sent, next attempt in %s ms", this.helloDelayMs);
+    this.logger?.debug?.("dotakit: hello sent, next attempt in %s ms", this.helloDelayMs);
     this.helloTimer = this.timers.setTimeout(() => this.sendHello(), this.helloDelayMs);
   }
   clearHelloTimer() {
@@ -2588,4 +2588,4 @@ export {
   DOTA2_APPID,
   Dota2GC
 };
-//# sourceMappingURL=chunk-PRQYLYZ2.js.map
+//# sourceMappingURL=chunk-HVBTCCEY.js.map

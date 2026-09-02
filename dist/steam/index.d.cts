@@ -3,7 +3,7 @@ import { S as SteamTransport, L as Logger } from '../types-DJJWbS4o.cjs';
 import '@bufbuild/protobuf/wire';
 
 /** The dependency override that makes the WebSocket transport work under Bun. */
-declare const WEBSOCKET13_OVERRIDE = "\"websocket13\": \"github:beekamai/node-websocket13\"";
+declare const WEBSOCKET13_OVERRIDE = "\"websocket13\": \"npm:@beekamai/websocket13@4.1.0-bun.1\"";
 /** How steam-user should connect. `auto` lets steam-user pick (WebSocket today). */
 type TransportMode = "auto" | "websocket" | "tcp";
 /**
@@ -32,8 +32,13 @@ interface DoctorReport {
     ok: boolean;
     notes: string[];
 }
-/** Reads the installed `websocket13` version, or `null` when it is not resolvable. */
-declare function installedWebsocket13Version(): string | null;
+/**
+ * Reads the installed `websocket13` version, or `null` when it is not resolvable.
+ *
+ * @param fromDir - look only inside this project's `node_modules` (walking up). The CLI
+ * passes the user's project so `dotakit doctor` reports *their* install, never dotakit's.
+ */
+declare function installedWebsocket13Version(fromDir?: string): string | null;
 /** Describes the current transport situation without throwing. */
 declare function inspect(options?: DoctorOptions): DoctorReport;
 /**
@@ -107,8 +112,17 @@ interface LoginOptions {
     sessionFile?: string;
     /** `tcp` bypasses WebSockets — the escape hatch when the Bun fork is not installed. */
     transport?: TransportMode;
-    /** Asked for a Guard code on demand. Return the code, or reject to fail the login. */
+    /**
+     * Asked for a Guard code on demand. Return the code, or reject to fail the login.
+     * Always pass this on a server: without it the login can only fall back to the
+     * terminal, and a headless process has no terminal to fall back to.
+     */
     onGuard?: (prompt: GuardPrompt) => string | Promise<string>;
+    /**
+     * Last-resort Guard prompt on the terminal, used when nothing else can answer.
+     * Defaults to `true` only while stdin *and* stdout are TTYs.
+     */
+    interactiveGuard?: boolean;
     /** Called with the session the moment it exists — before login finishes, so events can be wired. */
     onSession?: (session: SteamSession) => void;
     logger?: Logger;

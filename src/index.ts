@@ -105,10 +105,10 @@ export class DotaBot extends EventEmitter {
  * @example
  * ```ts
  * const bot = await Dota.login({
- *     accountName: process.env.STEAM_USER!,
- *     password: process.env.STEAM_PASS,
+ *     accountName: process.env.STEAM_ACCOUNT!,
+ *     password: process.env.STEAM_PASSWORD,
  *     sessionFile: "./data/session.json",
- *     onGuard: async () => prompt("Steam Guard code: "),
+ *     // interactive runs get a terminal Guard prompt; servers pass onGuard instead
  * });
  *
  * console.log(await bot.guild.find());

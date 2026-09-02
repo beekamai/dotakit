@@ -2217,7 +2217,7 @@ var GCRouter = (_class = class {
   route(msgId, payload) {
     const codec = allMessages[msgId];
     if (!codec) {
-      _optionalChain([this, 'access', _ => _.logger, 'optionalAccess', _2 => _2.debug, 'optionalCall', _3 => _3("dota2-gc: no decoder for inbound GC message %s", msgId)]);
+      _optionalChain([this, 'access', _ => _.logger, 'optionalAccess', _2 => _2.debug, 'optionalCall', _3 => _3("dotakit: no decoder for inbound GC message %s", msgId)]);
       this.emitAny(msgId, payload);
       this.dispatch(UNKNOWN, msgId, payload);
       return;
@@ -2226,7 +2226,7 @@ var GCRouter = (_class = class {
     try {
       decoded = codec.decode(payload);
     } catch (error) {
-      _optionalChain([this, 'access', _4 => _4.logger, 'optionalAccess', _5 => _5.warn, 'optionalCall', _6 => _6("dota2-gc: failed to decode GC message %s", msgId, error)]);
+      _optionalChain([this, 'access', _4 => _4.logger, 'optionalAccess', _5 => _5.warn, 'optionalCall', _6 => _6("dotakit: failed to decode GC message %s", msgId, error)]);
       this.dispatch(DECODE_ERROR, msgId, payload, error);
       return;
     }
@@ -2239,7 +2239,7 @@ var GCRouter = (_class = class {
     try {
       this.emitter.emit(event, ...args);
     } catch (error) {
-      _optionalChain([this, 'access', _7 => _7.logger, 'optionalAccess', _8 => _8.error, 'optionalCall', _9 => _9("dota2-gc: listener threw while routing %s", event, error)]);
+      _optionalChain([this, 'access', _7 => _7.logger, 'optionalAccess', _8 => _8.error, 'optionalCall', _9 => _9("dotakit: listener threw while routing %s", event, error)]);
     }
   }
   emitAny(msgId, payload) {
@@ -2247,7 +2247,7 @@ var GCRouter = (_class = class {
       try {
         listener(msgId, payload);
       } catch (error) {
-        _optionalChain([this, 'access', _10 => _10.logger, 'optionalAccess', _11 => _11.error, 'optionalCall', _12 => _12("dota2-gc: onAny listener threw for message %s", msgId, error)]);
+        _optionalChain([this, 'access', _10 => _10.logger, 'optionalAccess', _11 => _11.error, 'optionalCall', _12 => _12("dotakit: onAny listener threw for message %s", msgId, error)]);
       }
     }
   }
@@ -2385,7 +2385,7 @@ var Dota2GC = (_class2 = class extends _events.EventEmitter {
     this.destroyed = true;
     const remove = _nullishCoalesce(this.steam.off, () => ( this.steam.removeListener));
     if (remove) for (const [event, listener] of this.hooks) remove.call(this.steam, event, listener);
-    else _optionalChain([this, 'access', _13 => _13.logger, 'optionalAccess', _14 => _14.warn, 'optionalCall', _15 => _15("dota2-gc: transport has neither off() nor removeListener(); %s hooks stay attached", this.hooks.length)]);
+    else _optionalChain([this, 'access', _13 => _13.logger, 'optionalAccess', _14 => _14.warn, 'optionalCall', _15 => _15("dotakit: transport has neither off() nor removeListener(); %s hooks stay attached", this.hooks.length)]);
     this.hooks.length = 0;
     const error = new NotConnectedError("Dota2GC was destroyed");
     this.rejectPending(error);
@@ -2424,7 +2424,7 @@ var Dota2GC = (_class2 = class extends _events.EventEmitter {
   sendRaw(msgId, payload, callback) {
     if (this.destroyed) throw new NotConnectedError("Dota2GC was destroyed");
     if (!this.steam.steamID) throw new NotConnectedError();
-    _optionalChain([this, 'access', _16 => _16.logger, 'optionalAccess', _17 => _17.debug, 'optionalCall', _18 => _18("dota2-gc: sending %s (%s), %s bytes", _nullishCoalesce(messageNames[msgId], () => ( "unknown")), msgId, payload.length)]);
+    _optionalChain([this, 'access', _16 => _16.logger, 'optionalAccess', _17 => _17.debug, 'optionalCall', _18 => _18("dotakit: sending %s (%s), %s bytes", _nullishCoalesce(messageNames[msgId], () => ( "unknown")), msgId, payload.length)]);
     this.steam.sendToGC(this.appid, msgId, {}, payload, callback);
   }
   /** Like {@link sendJob} but with raw bytes in and raw bytes out. */
@@ -2495,7 +2495,7 @@ var Dota2GC = (_class2 = class extends _events.EventEmitter {
   }
   hookRouter() {
     this.router.on(4004 /* k_EMsgGCClientWelcome */, (welcome) => {
-      _optionalChain([this, 'access', _24 => _24.logger, 'optionalAccess', _25 => _25.debug, 'optionalCall', _26 => _26("dota2-gc: GC session established")]);
+      _optionalChain([this, 'access', _24 => _24.logger, 'optionalAccess', _25 => _25.debug, 'optionalCall', _26 => _26("dotakit: GC session established")]);
       this._haveGCSession = true;
       this._welcome = welcome;
       this.clearHelloTimer();
@@ -2505,7 +2505,7 @@ var Dota2GC = (_class2 = class extends _events.EventEmitter {
       const { status } = message;
       if (status === 0 /* GCConnectionStatus_HAVE_SESSION */) return;
       if (!this._haveGCSession) return;
-      _optionalChain([this, 'access', _27 => _27.logger, 'optionalAccess', _28 => _28.debug, 'optionalCall', _29 => _29("dota2-gc: GC session lost, status %s", status)]);
+      _optionalChain([this, 'access', _27 => _27.logger, 'optionalAccess', _28 => _28.debug, 'optionalCall', _29 => _29("dotakit: GC session lost, status %s", status)]);
       this._haveGCSession = false;
       this._welcome = void 0;
       this.rejectPending(new NotConnectedError("GC session lost"));
@@ -2557,11 +2557,11 @@ var Dota2GC = (_class2 = class extends _events.EventEmitter {
     try {
       this.send(4006 /* k_EMsgGCClientHello */, {});
     } catch (error) {
-      _optionalChain([this, 'access', _30 => _30.logger, 'optionalAccess', _31 => _31.warn, 'optionalCall', _32 => _32("dota2-gc: hello could not be sent", error)]);
+      _optionalChain([this, 'access', _30 => _30.logger, 'optionalAccess', _31 => _31.warn, 'optionalCall', _32 => _32("dotakit: hello could not be sent", error)]);
     }
     if (this.helloTimer !== void 0 || !this._inApp || this._haveGCSession) return;
     this.helloDelayMs = Math.min(this.helloBackoffMaxMs, this.helloDelayMs ? this.helloDelayMs * 2 : this.helloBaseMs);
-    _optionalChain([this, 'access', _33 => _33.logger, 'optionalAccess', _34 => _34.debug, 'optionalCall', _35 => _35("dota2-gc: hello sent, next attempt in %s ms", this.helloDelayMs)]);
+    _optionalChain([this, 'access', _33 => _33.logger, 'optionalAccess', _34 => _34.debug, 'optionalCall', _35 => _35("dotakit: hello sent, next attempt in %s ms", this.helloDelayMs)]);
     this.helloTimer = this.timers.setTimeout(() => this.sendHello(), this.helloDelayMs);
   }
   clearHelloTimer() {
@@ -2588,4 +2588,4 @@ var Dota2GC = (_class2 = class extends _events.EventEmitter {
 
 
 exports.Dota2GCError = Dota2GCError; exports.NoEncoderError = NoEncoderError; exports.NoDecoderError = NoDecoderError; exports.UnexpectedResponseError = UnexpectedResponseError; exports.JobTimeoutError = JobTimeoutError; exports.JobAbortedError = JobAbortedError; exports.NotConnectedError = NotConnectedError; exports.clientMessages = clientMessages; exports.gcMessages = gcMessages; exports.allMessages = allMessages; exports.jobResponses = jobResponses; exports.messageNames = messageNames; exports.GCRouter = GCRouter; exports.DOTA2_APPID = DOTA2_APPID; exports.Dota2GC = Dota2GC;
-//# sourceMappingURL=chunk-QKCYOI3Q.cjs.map
+//# sourceMappingURL=chunk-CEY2YADC.cjs.map

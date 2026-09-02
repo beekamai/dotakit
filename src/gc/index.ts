@@ -1,4 +1,4 @@
-/* The low-level Game Coordinator client, unchanged from dota2-gc 0.1. The generated
+/* The low-level Game Coordinator client. The generated
    protobuf message types live behind the `dotakit/protobufs` subpath. */
 
 export { Dota2GC, DOTA2_APPID } from "./client";

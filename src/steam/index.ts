@@ -65,8 +65,17 @@ export interface LoginOptions {
     sessionFile?: string;
     /** `tcp` bypasses WebSockets — the escape hatch when the Bun fork is not installed. */
     transport?: TransportMode;
-    /** Asked for a Guard code on demand. Return the code, or reject to fail the login. */
+    /**
+     * Asked for a Guard code on demand. Return the code, or reject to fail the login.
+     * Always pass this on a server: without it the login can only fall back to the
+     * terminal, and a headless process has no terminal to fall back to.
+     */
     onGuard?: (prompt: GuardPrompt) => string | Promise<string>;
+    /**
+     * Last-resort Guard prompt on the terminal, used when nothing else can answer.
+     * Defaults to `true` only while stdin *and* stdout are TTYs.
+     */
+    interactiveGuard?: boolean;
     /** Called with the session the moment it exists — before login finishes, so events can be wired. */
     onSession?: (session: SteamSession) => void;
     logger?: Logger;
@@ -181,6 +190,28 @@ function writeSessionToken(file: string, refreshToken: string, logger?: Logger):
     }
 }
 
+/** Whether the terminal fallback for a Guard prompt is allowed to run. */
+function isInteractive(options: LoginOptions): boolean {
+    if (options.interactiveGuard !== undefined) return options.interactiveGuard;
+    const proc = (globalThis as any).process;
+    return Boolean(proc?.stdin?.isTTY && proc?.stdout?.isTTY);
+}
+
+/** Reads one Guard code from the terminal. Only called when stdin is a TTY. */
+async function askTerminal(prompt: GuardPrompt): Promise<string> {
+    const { createInterface } = await import("node:readline/promises");
+    const proc = (globalThis as any).process;
+    const rl = createInterface({ input: proc.stdin, output: proc.stdout });
+    try {
+        const where = prompt.domain ? `emailed to @${prompt.domain}` : "from your Steam mobile authenticator";
+        if (prompt.lastCodeWrong) console.log("That code was rejected.");
+        const code = await rl.question(`Steam Guard code (${where}): `);
+        return code.trim();
+    } finally {
+        rl.close();
+    }
+}
+
 async function loadSteamUser(): Promise<any> {
     try {
         const mod: any = await import("steam-user");
@@ -292,9 +323,21 @@ export async function login(options: LoginOptions): Promise<SteamSession> {
 
             /* Someone listening on `guard` may still answer; only a login with no way at
                all to produce a code fails here. */
-            if (session.listenerCount("guard") === 0) {
-                finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
+            if (session.listenerCount("guard") > 0) return;
+
+            /* An interactive terminal is a way to produce a code: ask there, so a first
+               run needs no wiring. Headless (no TTY) still fails loudly. */
+            if (isInteractive(options)) {
+                askTerminal(prompt)
+                    .then((code) => {
+                        if (code) prompt.submit(code);
+                        else finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
+                    })
+                    .catch((error) => finish(error instanceof Error ? error : new SteamError(String(error))));
+                return;
             }
+
+            finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
         });
 
         user.on("disconnected", (eresult: number, msg?: string) => {

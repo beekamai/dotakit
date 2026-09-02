@@ -9,6 +9,7 @@ export default defineConfig({
         "profile/index": "src/profile/index.ts",
         "live/index": "src/live/index.ts",
         "protobufs/index": "src/protobufs/index.ts",
+        "cli/index": "src/cli/index.ts",
     },
     format: ["esm", "cjs"],
     dts: true,

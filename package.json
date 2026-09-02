@@ -1,19 +1,24 @@
 {
   "name": "dotakit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Steam login + Dota 2 Game Coordinator multitool for Bun/Node: guild, profile, live matches, typed GC client, protobuf codegen",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "dotakit": "./bin/dotakit.ts"
+    "dotakit": "./bin/dotakit.js"
   },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./cli": {
+      "types": "./dist/cli/index.d.ts",
+      "import": "./dist/cli/index.js",
+      "require": "./dist/cli/index.cjs"
     },
     "./steam": {
       "types": "./dist/steam/index.d.ts",

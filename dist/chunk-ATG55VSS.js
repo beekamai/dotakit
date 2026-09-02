@@ -1,3 +1,8 @@
+import {
+  connectionProtocol,
+  doctor
+} from "./chunk-ABFH7GUG.js";
+
 // src/steam/index.ts
 import { EventEmitter } from "events";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
@@ -81,80 +86,6 @@ function eresultName(eresult, SteamUser) {
   return SteamUser?.EResult?.[eresult] ?? ERESULT_NAMES[eresult] ?? `EResult-${eresult}`;
 }
 
-// src/steam/transport.ts
-import { createRequire } from "module";
-var WEBSOCKET13_OVERRIDE = '"websocket13": "github:beekamai/node-websocket13"';
-var BunTransportError = class extends Error {
-  constructor(websocket13Version) {
-    super(
-      `dotakit: on Bun, steam-user needs the patched websocket13 fork (installed: ${websocket13Version ?? "not found"}).
-Add this to package.json and reinstall:
-
-  "overrides": {
-    ${WEBSOCKET13_OVERRIDE}
-  }
-
-(Bun reads "overrides"; on npm use the same block, on yarn use "resolutions".)
-Or skip WebSockets entirely: Dota.login({ \u2026, transport: "tcp" }).`
-    );
-    this.websocket13Version = websocket13Version;
-    this.name = "BunTransportError";
-  }
-  websocket13Version;
-};
-function installedWebsocket13Version() {
-  try {
-    const require2 = createRequire(import.meta.url);
-    return String(require2("websocket13/package.json").version ?? "") || null;
-  } catch {
-    return null;
-  }
-}
-var isBunFork = (version) => version !== null && /-bun(\.|$)/.test(version);
-function inspect(options = {}) {
-  const versions = options.versions ?? globalThis.process?.versions ?? {};
-  const bunVersion = versions.bun ?? null;
-  const transport = options.transport ?? "auto";
-  const websocket13Version = options.websocket13Version !== void 0 ? options.websocket13Version : installedWebsocket13Version();
-  const fork = isBunFork(websocket13Version);
-  const notes = [];
-  let ok = true;
-  if (bunVersion) {
-    if (transport === "tcp") {
-      notes.push('Bun with transport: "tcp" \u2014 the WebSocket transport is bypassed, websocket13 is not used.');
-    } else if (fork) {
-      notes.push(`Bun with the patched websocket13 (${websocket13Version}) \u2014 WebSocket transport is fine.`);
-    } else {
-      ok = false;
-      notes.push(
-        `Bun with stock websocket13 (${websocket13Version ?? "not installed"}) \u2014 the Steam WebSocket handshake never completes. Add the overrides block, or use transport: "tcp".`
-      );
-    }
-  } else {
-    notes.push("Node \u2014 the stock websocket13 works; no override needed.");
-  }
-  return {
-    runtime: bunVersion ? "bun" : "node",
-    bunVersion,
-    websocket13Version,
-    websocket13IsBunFork: fork,
-    transport,
-    ok,
-    notes
-  };
-}
-function doctor(options = {}) {
-  const report = inspect(options);
-  if (!report.ok) throw new BunTransportError(report.websocket13Version);
-  return report;
-}
-function connectionProtocol(transport, SteamUser) {
-  if (transport !== "tcp") return void 0;
-  const value = SteamUser?.EConnectionProtocol?.TCP;
-  if (typeof value !== "number") return void 0;
-  return value;
-}
-
 // src/steam/index.ts
 var SteamSession = class extends EventEmitter {
   /** The underlying `steam-user` instance. Hand it to `new Dota2GC(...)`, or use it directly. */
@@ -234,6 +165,24 @@ function writeSessionToken(file, refreshToken, logger) {
     logger?.warn?.("dotakit: could not write %s", file, error);
   }
 }
+function isInteractive(options) {
+  if (options.interactiveGuard !== void 0) return options.interactiveGuard;
+  const proc = globalThis.process;
+  return Boolean(proc?.stdin?.isTTY && proc?.stdout?.isTTY);
+}
+async function askTerminal(prompt) {
+  const { createInterface } = await import("readline/promises");
+  const proc = globalThis.process;
+  const rl = createInterface({ input: proc.stdin, output: proc.stdout });
+  try {
+    const where = prompt.domain ? `emailed to @${prompt.domain}` : "from your Steam mobile authenticator";
+    if (prompt.lastCodeWrong) console.log("That code was rejected.");
+    const code = await rl.question(`Steam Guard code (${where}): `);
+    return code.trim();
+  } finally {
+    rl.close();
+  }
+}
 async function loadSteamUser() {
   try {
     const mod = await import("steam-user");
@@ -307,9 +256,15 @@ async function login(options) {
         }).catch((error) => finish(error instanceof Error ? error : new SteamError(String(error))));
         return;
       }
-      if (session.listenerCount("guard") === 0) {
-        finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
+      if (session.listenerCount("guard") > 0) return;
+      if (isInteractive(options)) {
+        askTerminal(prompt).then((code) => {
+          if (code) prompt.submit(code);
+          else finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
+        }).catch((error) => finish(error instanceof Error ? error : new SteamError(String(error))));
+        return;
       }
+      finish(new GuardRequiredError(prompt.domain, prompt.lastCodeWrong));
     });
     user.on("disconnected", (eresult, msg) => {
       const name = eresultName(eresult, options.SteamUser ?? SteamUser);
@@ -341,13 +296,7 @@ export {
   isCriticalEResult,
   classifyEResult,
   eresultName,
-  WEBSOCKET13_OVERRIDE,
-  BunTransportError,
-  installedWebsocket13Version,
-  inspect,
-  doctor,
-  connectionProtocol,
   SteamSession,
   login
 };
-//# sourceMappingURL=chunk-YPLS5RPU.js.map
+//# sourceMappingURL=chunk-ATG55VSS.js.map

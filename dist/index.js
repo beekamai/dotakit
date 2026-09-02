@@ -14,20 +14,17 @@ import {
   gcMessages,
   jobResponses,
   messageNames
-} from "./chunk-PRQYLYZ2.js";
+} from "./chunk-HVBTCCEY.js";
 import {
-  BunTransportError,
   GuardRequiredError,
   SteamError,
   SteamLoginError,
   SteamSession,
-  WEBSOCKET13_OVERRIDE,
   classifyEResult,
-  doctor,
   eresultName,
   isCriticalEResult,
   login
-} from "./chunk-YPLS5RPU.js";
+} from "./chunk-ATG55VSS.js";
 import {
   GCOperationError,
   GC_RESULT_STALE,
@@ -61,6 +58,11 @@ import {
 import {
   EDOTAGCMsg
 } from "./chunk-3ICL5PG7.js";
+import {
+  BunTransportError,
+  WEBSOCKET13_OVERRIDE,
+  doctor
+} from "./chunk-ABFH7GUG.js";
 import "./chunk-PZ5AY32C.js";
 
 // src/index.ts
