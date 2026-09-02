@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 
-import { EDOTAGCMsg, GCRouter } from "../src/index";
-import { CMsgClientToGCRequestGuildDataResponse } from "../src/protobufs/index";
+import { EDOTAGCMsg, GCRouter } from "../../src/gc/index";
+import { CMsgClientToGCRequestGuildDataResponse } from "../../src/protobufs/index";
 
 const encoded = (result: number) =>
     Buffer.from(

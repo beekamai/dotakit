@@ -1,5 +1,5 @@
-/* Public entry point. The generated protobuf message types live behind the
-   `dota2-gc/protobufs` subpath so this barrel stays small. */
+/* The low-level Game Coordinator client, unchanged from dota2-gc 0.1. The generated
+   protobuf message types live behind the `dotakit/protobufs` subpath. */
 
 export { Dota2GC, DOTA2_APPID } from "./client";
 export type { Dota2GCOptions, JobOptions } from "./client";
@@ -39,7 +39,7 @@ export type {
 
 /* The message-id enums, re-exported so callers do not need the protobufs subpath
    for the common case of naming a message. */
-export { EDOTAGCMsg } from "./protobufs/dota_gcmessages_msgid";
-export { EGCBaseClientMsg, ESOMsg } from "./protobufs/gcsystemmsgs";
-export { EGCBaseMsg } from "./protobufs/base_gcmessages";
-export { GCConnectionStatus } from "./protobufs/gcsdk_gcmessages";
+export { EDOTAGCMsg } from "../protobufs/dota_gcmessages_msgid";
+export { EGCBaseClientMsg, ESOMsg } from "../protobufs/gcsystemmsgs";
+export { EGCBaseMsg } from "../protobufs/base_gcmessages";
+export { GCConnectionStatus } from "../protobufs/gcsdk_gcmessages";

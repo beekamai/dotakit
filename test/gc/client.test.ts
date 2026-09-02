@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 
-import { Dota2GC, EDOTAGCMsg, EGCBaseClientMsg, EGCBaseMsg, GCConnectionStatus } from "../src/index";
-import type { Dota2GCOptions } from "../src/client";
+import { Dota2GC, EDOTAGCMsg, EGCBaseClientMsg, EGCBaseMsg, GCConnectionStatus } from "../../src/gc/index";
+import type { Dota2GCOptions } from "../../src/gc/client";
 import {
     Dota2GCError,
     JobAbortedError,
@@ -9,14 +9,14 @@ import {
     NoDecoderError,
     NotConnectedError,
     UnexpectedResponseError,
-} from "../src/errors";
+} from "../../src/gc/errors";
 import {
     CMsgClientToGCRequestGuildData,
     CMsgClientToGCRequestGuildDataResponse,
     CMsgClientWelcome,
     CMsgConnectionStatus,
-} from "../src/protobufs/index";
-import { FakeSteam, FakeTimers, flush } from "./helpers";
+} from "../../src/protobufs/index";
+import { FakeSteam, FakeTimers, flush } from "../helpers";
 
 const encode = <T>(codec: { encode(m: T): { finish(): Uint8Array }; fromPartial(o: any): T }, body: any): Buffer =>
     Buffer.from(codec.encode(codec.fromPartial(body)).finish());

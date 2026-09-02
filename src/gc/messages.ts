@@ -2,7 +2,7 @@
    Maps Dota 2 Game Coordinator message ids to their ts-proto codecs. */
 
 import type { MessageFns } from "./types";
-import * as p from "./protobufs/index";
+import * as p from "../protobufs/index";
 
 /** Messages a client sends to the GC. */
 export const clientMessages = {

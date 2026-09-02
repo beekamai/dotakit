@@ -27,7 +27,7 @@ import {
     GCConnectionStatus,
     type CMsgClientWelcome,
     type CMsgConnectionStatus,
-} from "./protobufs/index";
+} from "../protobufs/index";
 
 export const DOTA2_APPID = 570;
 

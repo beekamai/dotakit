@@ -1,5 +1,5 @@
 /**
- * Regenerates src/messages.ts from the ts-proto output in src/protobufs.
+ * Regenerates src/gc/messages.ts from the ts-proto output in src/protobufs.
  *
  * It reads the four GC message-id enums, pairs every `k_EMsg<Name>` member with an
  * exported `CMsg…` codec by name, derives request → response pairs, and writes the
@@ -13,7 +13,7 @@ import { join, relative } from "node:path";
 
 const ROOT = join(import.meta.dir, "..");
 const PROTO_DIR = join(ROOT, "src", "protobufs");
-const OUT_FILE = join(ROOT, "src", "messages.ts");
+const OUT_FILE = join(ROOT, "src", "gc", "messages.ts");
 
 const MSG_ENUMS = ["EDOTAGCMsg", "EGCBaseClientMsg", "ESOMsg", "EGCBaseMsg"] as const;
 
@@ -144,7 +144,7 @@ function main() {
    Maps Dota 2 Game Coordinator message ids to their ts-proto codecs. */
 
 import type { MessageFns } from "./types";
-import * as p from "./protobufs/index";
+import * as p from "../protobufs/index";
 
 /** Messages a client sends to the GC. */
 export const clientMessages = {

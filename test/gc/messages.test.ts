@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 
-import { allMessages, clientMessages, gcMessages, jobResponses, messageNames } from "../src/messages";
-import { EDOTAGCMsg, EGCBaseClientMsg, ESOMsg } from "../src/index";
+import { allMessages, clientMessages, gcMessages, jobResponses, messageNames } from "../../src/gc/messages";
+import { EDOTAGCMsg, EGCBaseClientMsg, ESOMsg } from "../../src/gc/index";
 
 /** Everything the first consumer of this library sends, plus the handshake. */
 const REQUIRED_JOBS: Array<[number, number]> = [
