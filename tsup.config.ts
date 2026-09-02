@@ -19,6 +19,9 @@ export default defineConfig({
     /* steam-user is a peer dependency: it must never be pulled into the bundle, and
        the modules that need it import it lazily so a GC-only install still works. */
     external: ["steam-user"],
+    /* createRequire(import.meta.url) is used to read the installed websocket13 version;
+       without the shim the CJS build ships a bare import.meta and fails to load. */
+    shims: true,
     /* The generated protobuf set is large and shared by every entry — split it into
        chunks instead of duplicating it in each bundle. */
     splitting: true,
