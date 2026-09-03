@@ -1,8 +1,8 @@
 import { EventEmitter } from 'node:events';
 import { Dota2GCOptions, Dota2GC } from './gc/index.js';
 export { AnyListener, ClientMessageId, DOTA2_APPID, DecodeErrorListener, Dota2GCError, GCMessageId, GCRouter, JobAbortedError, JobMessageId, JobOptions, JobResponse, JobTimeoutError, MessageId, MessagePayload, NoDecoderError, NoEncoderError, NotConnectedError, UnexpectedResponseError, UnknownListener, allMessages, clientMessages, gcMessages, jobResponses, messageNames } from './gc/index.js';
-import { C as CMsgClientWelcome, G as GCConnectionStatus } from './dota_gcmessages_client_guild_events-COQQ9kj1.js';
-export { E as EDOTAGCMsg, a as EGCBaseClientMsg, b as EGCBaseMsg, c as ESOMsg } from './dota_gcmessages_client_guild_events-COQQ9kj1.js';
+import { C as CMsgClientWelcome, G as GCConnectionStatus } from './dota_gcmessages_client_guild_events-CoCOUbph.js';
+export { E as EDOTAGCMsg, a as EGCBaseClientMsg, b as EGCBaseMsg, c as ESOMsg } from './dota_gcmessages_client_guild_events-CoCOUbph.js';
 import { L as Logger } from './types-DJJWbS4o.js';
 export { B as Builtin, D as DeepPartial, G as GCCallback, M as MessageFns, S as SteamTransport, T as TimerSource } from './types-DJJWbS4o.js';
 import { GuildOptions, Guild } from './guild/index.js';

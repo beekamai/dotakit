@@ -480,7 +480,48 @@
 
 
 
-var _chunkCU4ZEV3Ucjs = require('./chunk-CU4ZEV3U.cjs');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _chunkKNCAQGVIcjs = require('./chunk-KNCAQGVI.cjs');
 
 // src/gc/client.ts
 var _events = require('events');
@@ -554,982 +595,1066 @@ var NotConnectedError = class extends Dota2GCError {
 // src/gc/messages.ts
 var clientMessages = {
   /** k_EMsgGCClientHello */
-  4006: _chunkCU4ZEV3Ucjs.CMsgClientHello,
+  4006: _chunkKNCAQGVIcjs.CMsgClientHello,
   /** k_EMsgGCServerHello */
-  4007: _chunkCU4ZEV3Ucjs.CMsgClientHello,
+  4007: _chunkKNCAQGVIcjs.CMsgClientHello,
   /** k_EMsgGCInviteToParty */
-  4501: _chunkCU4ZEV3Ucjs.CMsgInviteToParty,
+  4501: _chunkKNCAQGVIcjs.CMsgInviteToParty,
   /** k_EMsgGCInvitationCreated */
-  4502: _chunkCU4ZEV3Ucjs.CMsgInvitationCreated,
+  4502: _chunkKNCAQGVIcjs.CMsgInvitationCreated,
   /** k_EMsgGCKickFromParty */
-  4504: _chunkCU4ZEV3Ucjs.CMsgKickFromParty,
+  4504: _chunkKNCAQGVIcjs.CMsgKickFromParty,
   /** k_EMsgGCLeaveParty */
-  4505: _chunkCU4ZEV3Ucjs.CMsgLeaveParty,
+  4505: _chunkKNCAQGVIcjs.CMsgLeaveParty,
   /** k_EMsgGCServerAvailable */
-  4506: _chunkCU4ZEV3Ucjs.CMsgServerAvailable,
+  4506: _chunkKNCAQGVIcjs.CMsgServerAvailable,
   /** k_EMsgGCLANServerAvailable */
-  4511: _chunkCU4ZEV3Ucjs.CMsgLANServerAvailable,
+  4511: _chunkKNCAQGVIcjs.CMsgLANServerAvailable,
   /** k_EMsgGCInviteToLobby */
-  4512: _chunkCU4ZEV3Ucjs.CMsgInviteToLobby,
+  4512: _chunkKNCAQGVIcjs.CMsgInviteToLobby,
   /** k_EMsgGCToGCPerformManualOp */
-  4516: _chunkCU4ZEV3Ucjs.CMsgGCToGCPerformManualOp,
+  4516: _chunkKNCAQGVIcjs.CMsgGCToGCPerformManualOp,
   /** k_EMsgGCToGCPerformManualOpCompleted */
-  4517: _chunkCU4ZEV3Ucjs.CMsgGCToGCPerformManualOpCompleted,
+  4517: _chunkKNCAQGVIcjs.CMsgGCToGCPerformManualOpCompleted,
   /** k_EMsgGCToGCReloadServerRegionSettings */
-  4518: _chunkCU4ZEV3Ucjs.CMsgGCToGCReloadServerRegionSettings,
+  4518: _chunkKNCAQGVIcjs.CMsgGCToGCReloadServerRegionSettings,
   /** k_EMsgGCAdditionalWelcomeMsgList */
-  4519: _chunkCU4ZEV3Ucjs.CMsgGCAdditionalWelcomeMsgList,
+  4519: _chunkKNCAQGVIcjs.CMsgGCAdditionalWelcomeMsgList,
   /** k_EMsgGCToServerApplyRemoteConVars */
-  4521: _chunkCU4ZEV3Ucjs.CMsgGCToServerApplyRemoteConVars,
+  4521: _chunkKNCAQGVIcjs.CMsgGCToServerApplyRemoteConVars,
   /** k_EMsgClientToGCIntegrityStatus */
-  4522: _chunkCU4ZEV3Ucjs.CMsgClientToGCIntegrityStatus,
+  4522: _chunkKNCAQGVIcjs.CMsgClientToGCIntegrityStatus,
   /** k_EMsgClientToGCAggregateMetrics */
-  4523: _chunkCU4ZEV3Ucjs.CMsgClientToGCAggregateMetrics,
+  4523: _chunkKNCAQGVIcjs.CMsgClientToGCAggregateMetrics,
   /** k_EMsgGCToServerSteamLearnAccessTokensChanged */
-  4525: _chunkCU4ZEV3Ucjs.CMsgGCToServerSteamLearnAccessTokensChanged,
+  4525: _chunkKNCAQGVIcjs.CMsgGCToServerSteamLearnAccessTokensChanged,
   /** k_EMsgGCToServerSteamLearnUseHTTP */
-  4526: _chunkCU4ZEV3Ucjs.CMsgGCToServerSteamLearnUseHTTP,
+  4526: _chunkKNCAQGVIcjs.CMsgGCToServerSteamLearnUseHTTP,
+  /** k_EMsgGCStartFindingMatch */
+  7033: _chunkKNCAQGVIcjs.CMsgStartFindingMatch,
+  /** k_EMsgGCAbandonCurrentGame */
+  7035: _chunkKNCAQGVIcjs.CMsgAbandonCurrentGame,
+  /** k_EMsgGCStopFindingMatch */
+  7036: _chunkKNCAQGVIcjs.CMsgStopFindingMatch,
+  /** k_EMsgGCPracticeLobbyCreate */
+  7038: _chunkKNCAQGVIcjs.CMsgPracticeLobbyCreate,
+  /** k_EMsgGCPracticeLobbyLeave */
+  7040: _chunkKNCAQGVIcjs.CMsgPracticeLobbyLeave,
+  /** k_EMsgGCPracticeLobbyLaunch */
+  7041: _chunkKNCAQGVIcjs.CMsgPracticeLobbyLaunch,
+  /** k_EMsgGCPracticeLobbyList */
+  7042: _chunkKNCAQGVIcjs.CMsgPracticeLobbyList,
+  /** k_EMsgGCPracticeLobbyJoin */
+  7044: _chunkKNCAQGVIcjs.CMsgPracticeLobbyJoin,
+  /** k_EMsgGCPracticeLobbySetDetails */
+  7046: _chunkKNCAQGVIcjs.CMsgPracticeLobbySetDetails,
+  /** k_EMsgGCPracticeLobbySetTeamSlot */
+  7047: _chunkKNCAQGVIcjs.CMsgPracticeLobbySetTeamSlot,
   /** k_EMsgGCBroadcastNotification */
-  7056: _chunkCU4ZEV3Ucjs.CMsgDOTABroadcastNotification,
+  7056: _chunkKNCAQGVIcjs.CMsgDOTABroadcastNotification,
+  /** k_EMsgGCReadyUp */
+  7070: _chunkKNCAQGVIcjs.CMsgReadyUp,
   /** k_EMsgGCKickedFromMatchmakingQueue */
-  7071: _chunkCU4ZEV3Ucjs.CMsgDOTAKickedFromMatchmakingQueue,
+  7071: _chunkKNCAQGVIcjs.CMsgDOTAKickedFromMatchmakingQueue,
   /** k_EMsgGCSpectateFriendGame */
-  7073: _chunkCU4ZEV3Ucjs.CMsgSpectateFriendGame,
+  7073: _chunkKNCAQGVIcjs.CMsgSpectateFriendGame,
   /** k_EMsgGCReportsRemainingRequest */
-  7076: _chunkCU4ZEV3Ucjs.CMsgDOTAReportsRemainingRequest,
+  7076: _chunkKNCAQGVIcjs.CMsgDOTAReportsRemainingRequest,
   /** k_EMsgGCSubmitPlayerReport */
-  7078: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitPlayerReport,
+  7078: _chunkKNCAQGVIcjs.CMsgDOTASubmitPlayerReport,
+  /** k_EMsgGCPracticeLobbyKick */
+  7081: _chunkKNCAQGVIcjs.CMsgPracticeLobbyKick,
   /** k_EMsgGCSubmitPlayerReportV2 */
-  7082: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitPlayerReportV2,
+  7082: _chunkKNCAQGVIcjs.CMsgDOTASubmitPlayerReportV2,
   /** k_EMsgGCSubmitPlayerReportResponseV2 */
-  7083: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitPlayerReportResponseV2,
+  7083: _chunkKNCAQGVIcjs.CMsgDOTASubmitPlayerReportResponseV2,
   /** k_EMsgGCWatchGame */
-  7091: _chunkCU4ZEV3Ucjs.CMsgWatchGame,
+  7091: _chunkKNCAQGVIcjs.CMsgWatchGame,
   /** k_EMsgGCMatchDetailsRequest */
-  7095: _chunkCU4ZEV3Ucjs.CMsgGCMatchDetailsRequest,
+  7095: _chunkKNCAQGVIcjs.CMsgGCMatchDetailsRequest,
   /** k_EMsgGCCancelWatchGame */
-  7097: _chunkCU4ZEV3Ucjs.CMsgCancelWatchGame,
+  7097: _chunkKNCAQGVIcjs.CMsgCancelWatchGame,
   /** k_EMsgGCPopup */
-  7102: _chunkCU4ZEV3Ucjs.CMsgDOTAPopup,
+  7102: _chunkKNCAQGVIcjs.CMsgDOTAPopup,
+  /** k_EMsgGCFriendPracticeLobbyListRequest */
+  7111: _chunkKNCAQGVIcjs.CMsgFriendPracticeLobbyListRequest,
+  /** k_EMsgGCApplyTeamToPracticeLobby */
+  7142: _chunkKNCAQGVIcjs.CMsgApplyTeamToPracticeLobby,
+  /** k_EMsgGCPracticeLobbyJoinBroadcastChannel */
+  7149: _chunkKNCAQGVIcjs.CMsgPracticeLobbyJoinBroadcastChannel,
+  /** k_EMsgGCReadyUpStatus */
+  7170: _chunkKNCAQGVIcjs.CMsgReadyUpStatus,
   /** k_EMsgGCBalancedShuffleLobby */
-  7188: _chunkCU4ZEV3Ucjs.CMsgBalancedShuffleLobby,
+  7188: _chunkKNCAQGVIcjs.CMsgBalancedShuffleLobby,
   /** k_EMsgGCMatchmakingStatsRequest */
-  7197: _chunkCU4ZEV3Ucjs.CMsgDOTAMatchmakingStatsRequest,
+  7197: _chunkKNCAQGVIcjs.CMsgDOTAMatchmakingStatsRequest,
+  /** k_EMsgGCBotGameCreate */
+  7199: _chunkKNCAQGVIcjs.CMsgBotGameCreate,
   /** k_EMsgGCSetMatchHistoryAccess */
-  7200: _chunkCU4ZEV3Ucjs.CMsgDOTASetMatchHistoryAccess,
+  7200: _chunkKNCAQGVIcjs.CMsgDOTASetMatchHistoryAccess,
   /** k_EMsgUpgradeLeagueItem */
-  7203: _chunkCU4ZEV3Ucjs.CMsgUpgradeLeagueItem,
+  7203: _chunkKNCAQGVIcjs.CMsgUpgradeLeagueItem,
   /** k_EMsgGCWatchDownloadedReplay */
-  7206: _chunkCU4ZEV3Ucjs.CMsgGCWatchDownloadedReplay,
+  7206: _chunkKNCAQGVIcjs.CMsgGCWatchDownloadedReplay,
   /** k_EMsgClientsRejoinChatChannels */
-  7217: _chunkCU4ZEV3Ucjs.CMsgClientsRejoinChatChannels,
+  7217: _chunkKNCAQGVIcjs.CMsgClientsRejoinChatChannels,
   /** k_EMsgGCGetHeroStandings */
-  7274: _chunkCU4ZEV3Ucjs.CMsgGCGetHeroStandings,
+  7274: _chunkKNCAQGVIcjs.CMsgGCGetHeroStandings,
   /** k_EMsgGCItemEditorReservationsRequest */
-  7283: _chunkCU4ZEV3Ucjs.CMsgGCItemEditorReservationsRequest,
+  7283: _chunkKNCAQGVIcjs.CMsgGCItemEditorReservationsRequest,
   /** k_EMsgGCItemEditorReserveItemDef */
-  7285: _chunkCU4ZEV3Ucjs.CMsgGCItemEditorReserveItemDef,
+  7285: _chunkKNCAQGVIcjs.CMsgGCItemEditorReserveItemDef,
   /** k_EMsgGCItemEditorReleaseReservation */
-  7287: _chunkCU4ZEV3Ucjs.CMsgGCItemEditorReleaseReservation,
+  7287: _chunkKNCAQGVIcjs.CMsgGCItemEditorReleaseReservation,
   /** k_EMsgGCFlipLobbyTeams */
-  7320: _chunkCU4ZEV3Ucjs.CMsgFlipLobbyTeams,
+  7320: _chunkKNCAQGVIcjs.CMsgFlipLobbyTeams,
   /** k_EMsgGCNotifyAccountFlagsChange */
-  7326: _chunkCU4ZEV3Ucjs.CMsgDOTANotifyAccountFlagsChange,
+  7326: _chunkKNCAQGVIcjs.CMsgDOTANotifyAccountFlagsChange,
   /** k_EMsgGCSetProfilePrivacy */
-  7327: _chunkCU4ZEV3Ucjs.CMsgDOTASetProfilePrivacy,
+  7327: _chunkKNCAQGVIcjs.CMsgDOTASetProfilePrivacy,
   /** k_EMsgGCClientSuspended */
-  7342: _chunkCU4ZEV3Ucjs.CMsgClientSuspended,
+  7342: _chunkKNCAQGVIcjs.CMsgClientSuspended,
+  /** k_EMsgGCPartyMemberSetCoach */
+  7343: _chunkKNCAQGVIcjs.CMsgDOTAPartyMemberSetCoach,
+  /** k_EMsgGCPracticeLobbySetCoach */
+  7346: _chunkKNCAQGVIcjs.CMsgPracticeLobbySetCoach,
   /** k_EMsgGCLobbyUpdateBroadcastChannelInfo */
-  7367: _chunkCU4ZEV3Ucjs.CMsgGCLobbyUpdateBroadcastChannelInfo,
+  7367: _chunkKNCAQGVIcjs.CMsgGCLobbyUpdateBroadcastChannelInfo,
   /** k_EMsgDOTAGetEventPoints */
-  7387: _chunkCU4ZEV3Ucjs.CMsgDOTAGetEventPoints,
+  7387: _chunkKNCAQGVIcjs.CMsgDOTAGetEventPoints,
   /** k_EMsgGCPartyLeaderWatchGamePrompt */
-  7397: _chunkCU4ZEV3Ucjs.CMsgPartyLeaderWatchGamePrompt,
+  7397: _chunkKNCAQGVIcjs.CMsgPartyLeaderWatchGamePrompt,
   /** k_EMsgGCCompendiumDataRequest */
-  7406: _chunkCU4ZEV3Ucjs.CMsgDOTACompendiumDataRequest,
+  7406: _chunkKNCAQGVIcjs.CMsgDOTACompendiumDataRequest,
   /** k_EMsgDOTAGetPlayerMatchHistory */
-  7408: _chunkCU4ZEV3Ucjs.CMsgDOTAGetPlayerMatchHistory,
+  7408: _chunkKNCAQGVIcjs.CMsgDOTAGetPlayerMatchHistory,
   /** k_EMsgGCNotificationsRequest */
-  7427: _chunkCU4ZEV3Ucjs.CMsgGCNotificationsRequest,
+  7427: _chunkKNCAQGVIcjs.CMsgGCNotificationsRequest,
   /** k_EMsgGCLeagueAdminList */
-  7434: _chunkCU4ZEV3Ucjs.CMsgLeagueAdminList,
+  7434: _chunkKNCAQGVIcjs.CMsgLeagueAdminList,
   /** k_EMsgGCNotificationsMarkReadRequest */
-  7435: _chunkCU4ZEV3Ucjs.CMsgGCNotificationsMarkReadRequest,
+  7435: _chunkKNCAQGVIcjs.CMsgGCNotificationsMarkReadRequest,
   /** k_EMsgGCRankedPlayerInfoSubmit */
-  7454: _chunkCU4ZEV3Ucjs.CMsgGCRankedPlayerInfoSubmit,
+  7454: _chunkKNCAQGVIcjs.CMsgGCRankedPlayerInfoSubmit,
   /** k_EMsgGCPlayerInfoSubmit */
-  7456: _chunkCU4ZEV3Ucjs.CMsgGCPlayerInfoSubmit,
+  7456: _chunkKNCAQGVIcjs.CMsgGCPlayerInfoSubmit,
+  /** k_EMsgGCJoinableCustomGameModesRequest */
+  7466: _chunkKNCAQGVIcjs.CMsgJoinableCustomGameModesRequest,
+  /** k_EMsgGCJoinableCustomLobbiesRequest */
+  7468: _chunkKNCAQGVIcjs.CMsgJoinableCustomLobbiesRequest,
+  /** k_EMsgGCQuickJoinCustomLobby */
+  7470: _chunkKNCAQGVIcjs.CMsgQuickJoinCustomLobby,
   /** k_EMsgGCHasItemQuery */
-  7484: _chunkCU4ZEV3Ucjs.CMsgDOTAHasItemQuery,
+  7484: _chunkKNCAQGVIcjs.CMsgDOTAHasItemQuery,
   /** k_EMsgClientToGCEmoticonDataRequest */
-  7503: _chunkCU4ZEV3Ucjs.CMsgClientToGCEmoticonDataRequest,
+  7503: _chunkKNCAQGVIcjs.CMsgClientToGCEmoticonDataRequest,
+  /** k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus */
+  7505: _chunkKNCAQGVIcjs.CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus,
   /** k_EMsgDOTARedeemItem */
-  7518: _chunkCU4ZEV3Ucjs.CMsgDOTARedeemItem,
+  7518: _chunkKNCAQGVIcjs.CMsgDOTARedeemItem,
   /** k_EMsgClientToGCGetAllHeroProgress */
-  7521: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetAllHeroProgress,
+  7521: _chunkKNCAQGVIcjs.CMsgClientToGCGetAllHeroProgress,
   /** k_EMsgClientToGCGetTrophyList */
-  7527: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetTrophyList,
+  7527: _chunkKNCAQGVIcjs.CMsgClientToGCGetTrophyList,
   /** k_EMsgClientToGCGetProfileCard */
-  7534: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetProfileCard,
+  7534: _chunkKNCAQGVIcjs.CMsgClientToGCGetProfileCard,
   /** k_EMsgClientToGCSetProfileCardSlots */
-  7538: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetProfileCardSlots,
+  7538: _chunkKNCAQGVIcjs.CMsgClientToGCSetProfileCardSlots,
   /** k_EMsgClientToGCCreateHeroStatue */
-  7547: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreateHeroStatue,
+  7547: _chunkKNCAQGVIcjs.CMsgClientToGCCreateHeroStatue,
   /** k_EMsgLobbyEventPoints */
-  7572: _chunkCU4ZEV3Ucjs.CMsgLobbyEventPoints,
+  7572: _chunkKNCAQGVIcjs.CMsgLobbyEventPoints,
   /** k_EMsgClientToGCRerollPlayerChallenge */
-  7584: _chunkCU4ZEV3Ucjs.CMsgClientToGCRerollPlayerChallenge,
+  7584: _chunkKNCAQGVIcjs.CMsgClientToGCRerollPlayerChallenge,
   /** k_EMsgClientToGCApplyGemCombiner */
-  7603: _chunkCU4ZEV3Ucjs.CMsgClientToGCApplyGemCombiner,
+  7603: _chunkKNCAQGVIcjs.CMsgClientToGCApplyGemCombiner,
   /** k_EMsgClientToGCGetAllHeroOrder */
-  7606: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetAllHeroOrder,
+  7606: _chunkKNCAQGVIcjs.CMsgClientToGCGetAllHeroOrder,
   /** k_EMsgClientToGCPlayerCardSpecificPurchaseRequest */
-  7627: _chunkCU4ZEV3Ucjs.CMsgClientToGCPlayerCardSpecificPurchaseRequest,
+  7627: _chunkKNCAQGVIcjs.CMsgClientToGCPlayerCardSpecificPurchaseRequest,
   /** k_EMsgClientToGCGetFilteredPlayers */
-  7662: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetFilteredPlayers,
+  7662: _chunkKNCAQGVIcjs.CMsgClientToGCGetFilteredPlayers,
   /** k_EMsgClientToGCRemoveFilteredPlayer */
-  7664: _chunkCU4ZEV3Ucjs.CMsgClientToGCRemoveFilteredPlayer,
+  7664: _chunkKNCAQGVIcjs.CMsgClientToGCRemoveFilteredPlayer,
   /** k_EMsgClientToGCUpdatePartyBeacon */
-  7669: _chunkCU4ZEV3Ucjs.CMsgClientToGCUpdatePartyBeacon,
+  7669: _chunkKNCAQGVIcjs.CMsgClientToGCUpdatePartyBeacon,
   /** k_EMsgClientToGCRequestActiveBeaconParties */
-  7670: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestActiveBeaconParties,
+  7670: _chunkKNCAQGVIcjs.CMsgClientToGCRequestActiveBeaconParties,
   /** k_EMsgClientToGCManageFavorites */
-  7672: _chunkCU4ZEV3Ucjs.CMsgClientToGCManageFavorites,
+  7672: _chunkKNCAQGVIcjs.CMsgClientToGCManageFavorites,
   /** k_EMsgClientToGCJoinPartyFromBeacon */
-  7674: _chunkCU4ZEV3Ucjs.CMsgClientToGCJoinPartyFromBeacon,
+  7674: _chunkKNCAQGVIcjs.CMsgClientToGCJoinPartyFromBeacon,
   /** k_EMsgClientToGCGetFavoritePlayers */
-  7676: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetFavoritePlayers,
+  7676: _chunkKNCAQGVIcjs.CMsgClientToGCGetFavoritePlayers,
   /** k_EMsgClientToGCVerifyFavoritePlayers */
-  7678: _chunkCU4ZEV3Ucjs.CMsgClientToGCVerifyFavoritePlayers,
+  7678: _chunkKNCAQGVIcjs.CMsgClientToGCVerifyFavoritePlayers,
+  /** k_EMsgClientToGCMMInfo */
+  7682: _chunkKNCAQGVIcjs.CMsgClientToGCMMInfo,
   /** k_EMsgClientToGCPurchaseLabyrinthBlessings */
-  7684: _chunkCU4ZEV3Ucjs.CMsgClientToGCPurchaseLabyrinthBlessings,
+  7684: _chunkKNCAQGVIcjs.CMsgClientToGCPurchaseLabyrinthBlessings,
   /** k_EMsgClientToGCPurchaseFilteredPlayerSlot */
-  7686: _chunkCU4ZEV3Ucjs.CMsgClientToGCPurchaseFilteredPlayerSlot,
+  7686: _chunkKNCAQGVIcjs.CMsgClientToGCPurchaseFilteredPlayerSlot,
   /** k_EMsgClientToGCUpdateFilteredPlayerNote */
-  7688: _chunkCU4ZEV3Ucjs.CMsgClientToGCUpdateFilteredPlayerNote,
+  7688: _chunkKNCAQGVIcjs.CMsgClientToGCUpdateFilteredPlayerNote,
   /** k_EMsgClientToGCClaimSwag */
-  7690: _chunkCU4ZEV3Ucjs.CMsgClientToGCClaimSwag,
+  7690: _chunkKNCAQGVIcjs.CMsgClientToGCClaimSwag,
   /** k_EMsgClientToGCPlayerStatsRequest */
-  8006: _chunkCU4ZEV3Ucjs.CMsgClientToGCPlayerStatsRequest,
+  8006: _chunkKNCAQGVIcjs.CMsgClientToGCPlayerStatsRequest,
   /** k_EMsgClientToGCFindTopSourceTVGames */
-  8009: _chunkCU4ZEV3Ucjs.CMsgClientToGCFindTopSourceTVGames,
+  8009: _chunkKNCAQGVIcjs.CMsgClientToGCFindTopSourceTVGames,
+  /** k_EMsgGCLobbyList */
+  8011: _chunkKNCAQGVIcjs.CMsgLobbyList,
   /** k_EMsgClientToGCSocialFeedPostCommentRequest */
-  8016: _chunkCU4ZEV3Ucjs.CMsgClientToGCSocialFeedPostCommentRequest,
+  8016: _chunkKNCAQGVIcjs.CMsgClientToGCSocialFeedPostCommentRequest,
   /** k_EMsgClientToGCCustomGamesFriendsPlayedRequest */
-  8018: _chunkCU4ZEV3Ucjs.CMsgClientToGCCustomGamesFriendsPlayedRequest,
+  8018: _chunkKNCAQGVIcjs.CMsgClientToGCCustomGamesFriendsPlayedRequest,
   /** k_EMsgClientToGCFriendsPlayedCustomGameRequest */
-  8020: _chunkCU4ZEV3Ucjs.CMsgClientToGCFriendsPlayedCustomGameRequest,
+  8020: _chunkKNCAQGVIcjs.CMsgClientToGCFriendsPlayedCustomGameRequest,
   /** k_EMsgGCTopCustomGamesList */
-  8024: _chunkCU4ZEV3Ucjs.CMsgGCTopCustomGamesList,
+  8024: _chunkKNCAQGVIcjs.CMsgGCTopCustomGamesList,
   /** k_EMsgClientToGCGetProfileCardStats */
-  8034: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetProfileCardStats,
+  8034: _chunkKNCAQGVIcjs.CMsgClientToGCGetProfileCardStats,
   /** k_EMsgClientToGCTopLeagueMatchesRequest */
-  8036: _chunkCU4ZEV3Ucjs.CMsgClientToGCTopLeagueMatchesRequest,
+  8036: _chunkKNCAQGVIcjs.CMsgClientToGCTopLeagueMatchesRequest,
   /** k_EMsgClientToGCTopFriendMatchesRequest */
-  8037: _chunkCU4ZEV3Ucjs.CMsgClientToGCTopFriendMatchesRequest,
+  8037: _chunkKNCAQGVIcjs.CMsgClientToGCTopFriendMatchesRequest,
+  /** k_EMsgGCPracticeLobbyKickFromTeam */
+  8047: _chunkKNCAQGVIcjs.CMsgPracticeLobbyKickFromTeam,
   /** k_EMsgClientToGCSocialFeedPostMessageRequest */
-  8050: _chunkCU4ZEV3Ucjs.CMsgClientToGCSocialFeedPostMessageRequest,
+  8050: _chunkKNCAQGVIcjs.CMsgClientToGCSocialFeedPostMessageRequest,
   /** k_EMsgCustomGameListenServerStartedLoading */
-  8052: _chunkCU4ZEV3Ucjs.CMsgDOTACustomGameListenServerStartedLoading,
+  8052: _chunkKNCAQGVIcjs.CMsgDOTACustomGameListenServerStartedLoading,
   /** k_EMsgCustomGameClientFinishedLoading */
-  8053: _chunkCU4ZEV3Ucjs.CMsgDOTACustomGameClientFinishedLoading,
+  8053: _chunkKNCAQGVIcjs.CMsgDOTACustomGameClientFinishedLoading,
+  /** k_EMsgGCPracticeLobbyCloseBroadcastChannel */
+  8054: _chunkKNCAQGVIcjs.CMsgPracticeLobbyCloseBroadcastChannel,
   /** k_EMsgClientToGCMatchesMinimalRequest */
-  8063: _chunkCU4ZEV3Ucjs.CMsgClientToGCMatchesMinimalRequest,
+  8063: _chunkKNCAQGVIcjs.CMsgClientToGCMatchesMinimalRequest,
   /** k_EMsgClientToGCGetProfileTickets */
-  8073: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetProfileTickets,
+  8073: _chunkKNCAQGVIcjs.CMsgClientToGCGetProfileTickets,
   /** k_EMsgClientToGCH264Unsupported */
-  8076: _chunkCU4ZEV3Ucjs.CMsgClientToGCH264Unsupported,
+  8076: _chunkKNCAQGVIcjs.CMsgClientToGCH264Unsupported,
   /** k_EMsgClientToGCGetQuestProgress */
-  8078: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetQuestProgress,
+  8078: _chunkKNCAQGVIcjs.CMsgClientToGCGetQuestProgress,
   /** k_EMsgGCGetHeroStatsHistory */
-  8082: _chunkCU4ZEV3Ucjs.CMsgGCGetHeroStatsHistory,
+  8082: _chunkKNCAQGVIcjs.CMsgGCGetHeroStatsHistory,
   /** k_EMsgClientToGCWageringRequest */
-  8099: _chunkCU4ZEV3Ucjs.CMsgClientToGCWageringRequest,
+  8099: _chunkKNCAQGVIcjs.CMsgClientToGCWageringRequest,
   /** k_EMsgClientToGCHasPlayerVotedForMVP */
-  8111: _chunkCU4ZEV3Ucjs.CMsgClientToGCHasPlayerVotedForMVP,
+  8111: _chunkKNCAQGVIcjs.CMsgClientToGCHasPlayerVotedForMVP,
   /** k_EMsgClientToGCVoteForMVP */
-  8113: _chunkCU4ZEV3Ucjs.CMsgClientToGCVoteForMVP,
+  8113: _chunkKNCAQGVIcjs.CMsgClientToGCVoteForMVP,
   /** k_EMsgClientToGCTeammateStatsRequest */
-  8124: _chunkCU4ZEV3Ucjs.CMsgClientToGCTeammateStatsRequest,
+  8124: _chunkKNCAQGVIcjs.CMsgClientToGCTeammateStatsRequest,
   /** k_EMsgClientToGCGetGiftPermissions */
-  8126: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetGiftPermissions,
+  8126: _chunkKNCAQGVIcjs.CMsgClientToGCGetGiftPermissions,
   /** k_EMsgClientToGCVoteForArcana */
-  8128: _chunkCU4ZEV3Ucjs.CMsgClientToGCVoteForArcana,
+  8128: _chunkKNCAQGVIcjs.CMsgClientToGCVoteForArcana,
   /** k_EMsgClientToGCRequestArcanaVotesRemaining */
-  8130: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestArcanaVotesRemaining,
+  8130: _chunkKNCAQGVIcjs.CMsgClientToGCRequestArcanaVotesRemaining,
   /** k_EMsgClientToGCPublishUserStat */
-  8140: _chunkCU4ZEV3Ucjs.CMsgClientToGCPublishUserStat,
+  8140: _chunkKNCAQGVIcjs.CMsgClientToGCPublishUserStat,
   /** k_EMsgGCSubmitLobbyMVPVote */
-  8144: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitLobbyMVPVote,
+  8144: _chunkKNCAQGVIcjs.CMsgDOTASubmitLobbyMVPVote,
+  /** k_EMsgSpectatorLobbyGameDetails */
+  8163: _chunkKNCAQGVIcjs.CMsgSpectatorLobbyGameDetails,
   /** k_EMsgClientToGCOpenPlayerCardPack */
-  8168: _chunkCU4ZEV3Ucjs.CMsgClientToGCOpenPlayerCardPack,
+  8168: _chunkKNCAQGVIcjs.CMsgClientToGCOpenPlayerCardPack,
   /** k_EMsgClientToGCSelectCompendiumInGamePrediction */
-  8170: _chunkCU4ZEV3Ucjs.CMsgClientToGCSelectCompendiumInGamePrediction,
+  8170: _chunkKNCAQGVIcjs.CMsgClientToGCSelectCompendiumInGamePrediction,
   /** k_EMsgClientToGCRecyclePlayerCard */
-  8174: _chunkCU4ZEV3Ucjs.CMsgClientToGCRecyclePlayerCard,
+  8174: _chunkKNCAQGVIcjs.CMsgClientToGCRecyclePlayerCard,
   /** k_EMsgClientToGCCreatePlayerCardPack */
-  8176: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreatePlayerCardPack,
+  8176: _chunkKNCAQGVIcjs.CMsgClientToGCCreatePlayerCardPack,
   /** k_EMsgGCGetPlayerCardItemInfo */
-  8187: _chunkCU4ZEV3Ucjs.CMsgGCGetPlayerCardItemInfo,
+  8187: _chunkKNCAQGVIcjs.CMsgGCGetPlayerCardItemInfo,
+  /** k_EMsgClientToGCRequestSteamDatagramTicket */
+  8189: _chunkKNCAQGVIcjs.CMsgClientToGCRequestSteamDatagramTicket,
   /** k_EMsgClientToGCTransferSeasonalMMRRequest */
-  8193: _chunkCU4ZEV3Ucjs.CMsgClientToGCTransferSeasonalMMRRequest,
+  8193: _chunkKNCAQGVIcjs.CMsgClientToGCTransferSeasonalMMRRequest,
   /** k_EMsgClientToGCJoinPlaytest */
-  8201: _chunkCU4ZEV3Ucjs.CMsgClientToGCJoinPlaytest,
+  8201: _chunkKNCAQGVIcjs.CMsgClientToGCJoinPlaytest,
   /** k_EMsgLobbyPlaytestDetails */
-  8203: _chunkCU4ZEV3Ucjs.CMsgLobbyPlaytestDetails,
+  8203: _chunkKNCAQGVIcjs.CMsgLobbyPlaytestDetails,
   /** k_EMsgDOTASetFavoriteTeam */
-  8204: _chunkCU4ZEV3Ucjs.CMsgDOTASetFavoriteTeam,
+  8204: _chunkKNCAQGVIcjs.CMsgDOTASetFavoriteTeam,
   /** k_EMsgDOTAClaimEventAction */
-  8209: _chunkCU4ZEV3Ucjs.CMsgDOTAClaimEventAction,
+  8209: _chunkKNCAQGVIcjs.CMsgDOTAClaimEventAction,
   /** k_EMsgDOTAGetPeriodicResource */
-  8211: _chunkCU4ZEV3Ucjs.CMsgDOTAGetPeriodicResource,
+  8211: _chunkKNCAQGVIcjs.CMsgDOTAGetPeriodicResource,
   /** k_EMsgDOTAPeriodicResourceUpdated */
-  8213: _chunkCU4ZEV3Ucjs.CMsgDOTAPeriodicResourceUpdated,
+  8213: _chunkKNCAQGVIcjs.CMsgDOTAPeriodicResourceUpdated,
   /** k_EMsgSubmitTriviaQuestionAnswer */
-  8216: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitTriviaQuestionAnswer,
+  8216: _chunkKNCAQGVIcjs.CMsgDOTASubmitTriviaQuestionAnswer,
   /** k_EMsgStartTriviaSession */
-  8220: _chunkCU4ZEV3Ucjs.CMsgDOTAStartTriviaSession,
+  8220: _chunkKNCAQGVIcjs.CMsgDOTAStartTriviaSession,
   /** k_EMsgAnchorPhoneNumberRequest */
-  8222: _chunkCU4ZEV3Ucjs.CMsgDOTAAnchorPhoneNumberRequest,
+  8222: _chunkKNCAQGVIcjs.CMsgDOTAAnchorPhoneNumberRequest,
   /** k_EMsgUnanchorPhoneNumberRequest */
-  8224: _chunkCU4ZEV3Ucjs.CMsgDOTAUnanchorPhoneNumberRequest,
+  8224: _chunkKNCAQGVIcjs.CMsgDOTAUnanchorPhoneNumberRequest,
   /** k_EMsgClientToGCQuickStatsRequest */
-  8238: _chunkCU4ZEV3Ucjs.CMsgDOTAClientToGCQuickStatsRequest,
+  8238: _chunkKNCAQGVIcjs.CMsgDOTAClientToGCQuickStatsRequest,
   /** k_EMsgSelectionPriorityChoiceRequest */
-  8241: _chunkCU4ZEV3Ucjs.CMsgDOTASelectionPriorityChoiceRequest,
+  8241: _chunkKNCAQGVIcjs.CMsgDOTASelectionPriorityChoiceRequest,
   /** k_EMsgGameAutographReward */
-  8244: _chunkCU4ZEV3Ucjs.CMsgDOTAGameAutographReward,
+  8244: _chunkKNCAQGVIcjs.CMsgDOTAGameAutographReward,
   /** k_EMsgDestroyLobbyRequest */
-  8246: _chunkCU4ZEV3Ucjs.CMsgDOTADestroyLobbyRequest,
+  8246: _chunkKNCAQGVIcjs.CMsgDOTADestroyLobbyRequest,
   /** k_EMsgPurchaseItemWithEventPoints */
-  8248: _chunkCU4ZEV3Ucjs.CMsgPurchaseItemWithEventPoints,
+  8248: _chunkKNCAQGVIcjs.CMsgPurchaseItemWithEventPoints,
   /** k_EMsgPurchaseHeroRandomRelic */
-  8258: _chunkCU4ZEV3Ucjs.CMsgPurchaseHeroRandomRelic,
+  8258: _chunkKNCAQGVIcjs.CMsgPurchaseHeroRandomRelic,
   /** k_EMsgClientToGCClaimEventActionUsingItem */
-  8260: _chunkCU4ZEV3Ucjs.CMsgClientToGCClaimEventActionUsingItem,
+  8260: _chunkKNCAQGVIcjs.CMsgClientToGCClaimEventActionUsingItem,
   /** k_EMsgPartyReadyCheckRequest */
-  8262: _chunkCU4ZEV3Ucjs.CMsgPartyReadyCheckRequest,
+  8262: _chunkKNCAQGVIcjs.CMsgPartyReadyCheckRequest,
   /** k_EMsgPartyReadyCheckAcknowledge */
-  8264: _chunkCU4ZEV3Ucjs.CMsgPartyReadyCheckAcknowledge,
+  8264: _chunkKNCAQGVIcjs.CMsgPartyReadyCheckAcknowledge,
   /** k_EMsgGetRecentPlayTimeFriendsRequest */
-  8265: _chunkCU4ZEV3Ucjs.CMsgDOTAGetRecentPlayTimeFriendsRequest,
+  8265: _chunkKNCAQGVIcjs.CMsgDOTAGetRecentPlayTimeFriendsRequest,
   /** k_EMsgProfileRequest */
-  8268: _chunkCU4ZEV3Ucjs.CMsgProfileRequest,
+  8268: _chunkKNCAQGVIcjs.CMsgProfileRequest,
   /** k_EMsgProfileUpdate */
-  8270: _chunkCU4ZEV3Ucjs.CMsgProfileUpdate,
+  8270: _chunkKNCAQGVIcjs.CMsgProfileUpdate,
   /** k_EMsgHeroGlobalDataRequest */
-  8274: _chunkCU4ZEV3Ucjs.CMsgHeroGlobalDataRequest,
+  8274: _chunkKNCAQGVIcjs.CMsgHeroGlobalDataRequest,
   /** k_EMsgClientToGCRequestPlusWeeklyChallengeResult */
-  8276: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestPlusWeeklyChallengeResult,
+  8276: _chunkKNCAQGVIcjs.CMsgClientToGCRequestPlusWeeklyChallengeResult,
   /** k_EMsgPrivateMetadataKeyRequest */
-  8279: _chunkCU4ZEV3Ucjs.CMsgPrivateMetadataKeyRequest,
+  8279: _chunkKNCAQGVIcjs.CMsgPrivateMetadataKeyRequest,
   /** k_EMsgClientToGCCavernCrawlClaimRoom */
-  8289: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlClaimRoom,
+  8289: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlClaimRoom,
   /** k_EMsgClientToGCCavernCrawlUseItemOnRoom */
-  8291: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlUseItemOnRoom,
+  8291: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlUseItemOnRoom,
   /** k_EMsgClientToGCCavernCrawlUseItemOnPath */
-  8293: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlUseItemOnPath,
+  8293: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlUseItemOnPath,
   /** k_EMsgClientToGCCavernCrawlRequestMapState */
-  8295: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlRequestMapState,
+  8295: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlRequestMapState,
   /** k_EMsgClientToGCRequestEventPointLogV2 */
-  8298: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestEventPointLogV2,
+  8298: _chunkKNCAQGVIcjs.CMsgClientToGCRequestEventPointLogV2,
   /** k_EMsgClientToGCRequestEventPointLogResponseV2 */
-  8299: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestEventPointLogResponseV2,
+  8299: _chunkKNCAQGVIcjs.CMsgClientToGCRequestEventPointLogResponseV2,
   /** k_EMsgClientToGCCavernCrawlGetClaimedRoomCount */
-  8308: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlGetClaimedRoomCount,
+  8308: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlGetClaimedRoomCount,
   /** k_EMsgClientToGCRecordContestVote */
-  8313: _chunkCU4ZEV3Ucjs.CMsgClientToGCRecordContestVote,
+  8313: _chunkKNCAQGVIcjs.CMsgClientToGCRecordContestVote,
   /** k_EMsgLobbyEventGameDetails */
-  8318: _chunkCU4ZEV3Ucjs.CMsgLobbyEventGameDetails,
+  8318: _chunkKNCAQGVIcjs.CMsgLobbyEventGameDetails,
   /** k_EMsgDevGrantEventPoints */
-  8319: _chunkCU4ZEV3Ucjs.CMsgDevGrantEventPoints,
+  8319: _chunkKNCAQGVIcjs.CMsgDevGrantEventPoints,
   /** k_EMsgDevGrantEventAction */
-  8321: _chunkCU4ZEV3Ucjs.CMsgDevGrantEventAction,
+  8321: _chunkKNCAQGVIcjs.CMsgDevGrantEventAction,
   /** k_EMsgDevResetEventState */
-  8323: _chunkCU4ZEV3Ucjs.CMsgDevResetEventState,
+  8323: _chunkKNCAQGVIcjs.CMsgDevResetEventState,
   /** k_EMsgConsumeEventSupportGrantItem */
-  8326: _chunkCU4ZEV3Ucjs.CMsgConsumeEventSupportGrantItem,
+  8326: _chunkKNCAQGVIcjs.CMsgConsumeEventSupportGrantItem,
   /** k_EMsgServerToGCRequestPlayerRecentAccomplishments */
-  8330: _chunkCU4ZEV3Ucjs.CMsgServerToGCRequestPlayerRecentAccomplishments,
+  8330: _chunkKNCAQGVIcjs.CMsgServerToGCRequestPlayerRecentAccomplishments,
   /** k_EMsgClientToGCRequestPlayerRecentAccomplishments */
-  8332: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestPlayerRecentAccomplishments,
+  8332: _chunkKNCAQGVIcjs.CMsgClientToGCRequestPlayerRecentAccomplishments,
   /** k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments */
-  8334: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestPlayerHeroRecentAccomplishments,
+  8334: _chunkKNCAQGVIcjs.CMsgClientToGCRequestPlayerHeroRecentAccomplishments,
   /** k_EMsgClientToGCRequestContestVotes */
-  8347: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestContestVotes,
+  8347: _chunkKNCAQGVIcjs.CMsgClientToGCRequestContestVotes,
   /** k_EMsgClientToGCMVPVoteTimeout */
-  8349: _chunkCU4ZEV3Ucjs.CMsgClientToGCMVPVoteTimeout,
+  8349: _chunkKNCAQGVIcjs.CMsgClientToGCMVPVoteTimeout,
   /** k_EMsgMatchMatchmakingStats */
-  8360: _chunkCU4ZEV3Ucjs.CMsgMatchMatchmakingStats,
+  8360: _chunkKNCAQGVIcjs.CMsgMatchMatchmakingStats,
   /** k_EMsgClientToGCSubmitPlayerMatchSurvey */
-  8361: _chunkCU4ZEV3Ucjs.CMsgClientToGCSubmitPlayerMatchSurvey,
+  8361: _chunkKNCAQGVIcjs.CMsgClientToGCSubmitPlayerMatchSurvey,
   /** k_EMsgDevDeleteEventActions */
-  8365: _chunkCU4ZEV3Ucjs.CMsgDevDeleteEventActions,
+  8365: _chunkKNCAQGVIcjs.CMsgDevDeleteEventActions,
   /** k_EMsgGCSubmitPlayerAvoidRequest */
-  8637: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitPlayerAvoidRequest,
+  8637: _chunkKNCAQGVIcjs.CMsgDOTASubmitPlayerAvoidRequest,
   /** k_EMsgGCtoGCAssociatedExploiterAccountInfo */
-  8640: _chunkCU4ZEV3Ucjs.CMsgGCtoGCAssociatedExploiterAccountInfo,
+  8640: _chunkKNCAQGVIcjs.CMsgGCtoGCAssociatedExploiterAccountInfo,
   /** k_EMsgClientToGCUnderDraftBuy */
-  8644: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftBuy,
+  8644: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftBuy,
   /** k_EMsgClientToGCUnderDraftReroll */
-  8646: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftReroll,
+  8646: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftReroll,
   /** k_EMsgClientToGCCreateGuild */
-  8649: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreateGuild,
+  8649: _chunkKNCAQGVIcjs.CMsgClientToGCCreateGuild,
   /** k_EMsgClientToGCSetGuildInfo */
-  8651: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetGuildInfo,
+  8651: _chunkKNCAQGVIcjs.CMsgClientToGCSetGuildInfo,
   /** k_EMsgClientToGCAddGuildRole */
-  8653: _chunkCU4ZEV3Ucjs.CMsgClientToGCAddGuildRole,
+  8653: _chunkKNCAQGVIcjs.CMsgClientToGCAddGuildRole,
   /** k_EMsgClientToGCModifyGuildRole */
-  8655: _chunkCU4ZEV3Ucjs.CMsgClientToGCModifyGuildRole,
+  8655: _chunkKNCAQGVIcjs.CMsgClientToGCModifyGuildRole,
   /** k_EMsgClientToGCRemoveGuildRole */
-  8657: _chunkCU4ZEV3Ucjs.CMsgClientToGCRemoveGuildRole,
+  8657: _chunkKNCAQGVIcjs.CMsgClientToGCRemoveGuildRole,
   /** k_EMsgClientToGCJoinGuild */
-  8659: _chunkCU4ZEV3Ucjs.CMsgClientToGCJoinGuild,
+  8659: _chunkKNCAQGVIcjs.CMsgClientToGCJoinGuild,
   /** k_EMsgClientToGCLeaveGuild */
-  8661: _chunkCU4ZEV3Ucjs.CMsgClientToGCLeaveGuild,
+  8661: _chunkKNCAQGVIcjs.CMsgClientToGCLeaveGuild,
   /** k_EMsgClientToGCInviteToGuild */
-  8663: _chunkCU4ZEV3Ucjs.CMsgClientToGCInviteToGuild,
+  8663: _chunkKNCAQGVIcjs.CMsgClientToGCInviteToGuild,
   /** k_EMsgClientToGCDeclineInviteToGuild */
-  8665: _chunkCU4ZEV3Ucjs.CMsgClientToGCDeclineInviteToGuild,
+  8665: _chunkKNCAQGVIcjs.CMsgClientToGCDeclineInviteToGuild,
   /** k_EMsgClientToGCCancelInviteToGuild */
-  8667: _chunkCU4ZEV3Ucjs.CMsgClientToGCCancelInviteToGuild,
+  8667: _chunkKNCAQGVIcjs.CMsgClientToGCCancelInviteToGuild,
   /** k_EMsgClientToGCKickGuildMember */
-  8669: _chunkCU4ZEV3Ucjs.CMsgClientToGCKickGuildMember,
+  8669: _chunkKNCAQGVIcjs.CMsgClientToGCKickGuildMember,
   /** k_EMsgClientToGCSetGuildMemberRole */
-  8671: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetGuildMemberRole,
+  8671: _chunkKNCAQGVIcjs.CMsgClientToGCSetGuildMemberRole,
   /** k_EMsgClientToGCRequestGuildData */
-  8673: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestGuildData,
+  8673: _chunkKNCAQGVIcjs.CMsgClientToGCRequestGuildData,
   /** k_EMsgClientToGCRequestGuildMembership */
-  8676: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestGuildMembership,
+  8676: _chunkKNCAQGVIcjs.CMsgClientToGCRequestGuildMembership,
   /** k_EMsgClientToGCAcceptInviteToGuild */
-  8681: _chunkCU4ZEV3Ucjs.CMsgClientToGCAcceptInviteToGuild,
+  8681: _chunkKNCAQGVIcjs.CMsgClientToGCAcceptInviteToGuild,
   /** k_EMsgClientToGCSetGuildRoleOrder */
-  8683: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetGuildRoleOrder,
+  8683: _chunkKNCAQGVIcjs.CMsgClientToGCSetGuildRoleOrder,
   /** k_EMsgClientToGCRequestAccountGuildEventData */
-  8687: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestAccountGuildEventData,
+  8687: _chunkKNCAQGVIcjs.CMsgClientToGCRequestAccountGuildEventData,
   /** k_EMsgClientToGCRequestActiveGuildContracts */
-  8690: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestActiveGuildContracts,
+  8690: _chunkKNCAQGVIcjs.CMsgClientToGCRequestActiveGuildContracts,
   /** k_EMsgClientToGCSelectGuildContract */
-  8694: _chunkCU4ZEV3Ucjs.CMsgClientToGCSelectGuildContract,
+  8694: _chunkKNCAQGVIcjs.CMsgClientToGCSelectGuildContract,
   /** k_EMsgClientToGCAddPlayerToGuildChat */
-  8698: _chunkCU4ZEV3Ucjs.CMsgClientToGCAddPlayerToGuildChat,
+  8698: _chunkKNCAQGVIcjs.CMsgClientToGCAddPlayerToGuildChat,
   /** k_EMsgClientToGCUnderDraftSell */
-  8700: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftSell,
+  8700: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftSell,
   /** k_EMsgClientToGCUnderDraftRequest */
-  8702: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftRequest,
+  8702: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftRequest,
   /** k_EMsgClientToGCUnderDraftRedeemReward */
-  8704: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftRedeemReward,
+  8704: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftRedeemReward,
   /** k_EMsgClientToGCRequestActiveGuildChallenge */
-  8713: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestActiveGuildChallenge,
+  8713: _chunkKNCAQGVIcjs.CMsgClientToGCRequestActiveGuildChallenge,
   /** k_EMsgClientToGCRequestReporterUpdates */
-  8716: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestReporterUpdates,
+  8716: _chunkKNCAQGVIcjs.CMsgClientToGCRequestReporterUpdates,
   /** k_EMsgClientToGCAcknowledgeReporterUpdates */
-  8718: _chunkCU4ZEV3Ucjs.CMsgClientToGCAcknowledgeReporterUpdates,
+  8718: _chunkKNCAQGVIcjs.CMsgClientToGCAcknowledgeReporterUpdates,
   /** k_EMsgClientToGCRequestGuildEventMembers */
-  8721: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestGuildEventMembers,
+  8721: _chunkKNCAQGVIcjs.CMsgClientToGCRequestGuildEventMembers,
   /** k_EMsgClientToGCReportGuildContent */
-  8725: _chunkCU4ZEV3Ucjs.CMsgClientToGCReportGuildContent,
+  8725: _chunkKNCAQGVIcjs.CMsgClientToGCReportGuildContent,
   /** k_EMsgClientToGCRequestAccountGuildPersonaInfo */
-  8727: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestAccountGuildPersonaInfo,
+  8727: _chunkKNCAQGVIcjs.CMsgClientToGCRequestAccountGuildPersonaInfo,
   /** k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch */
-  8729: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestAccountGuildPersonaInfoBatch,
+  8729: _chunkKNCAQGVIcjs.CMsgClientToGCRequestAccountGuildPersonaInfoBatch,
   /** k_EMsgLobbyFeaturedGamemodeProgress */
-  8734: _chunkCU4ZEV3Ucjs.CMsgLobbyFeaturedGamemodeProgress,
+  8734: _chunkKNCAQGVIcjs.CMsgLobbyFeaturedGamemodeProgress,
   /** k_EMsgClientToGCSubmitDraftTriviaMatchAnswer */
-  8736: _chunkCU4ZEV3Ucjs.CMsgClientToGCSubmitDraftTriviaMatchAnswer,
+  8736: _chunkKNCAQGVIcjs.CMsgClientToGCSubmitDraftTriviaMatchAnswer,
   /** k_EMsgClientToGCUnderDraftRollBackBench */
-  8740: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftRollBackBench,
+  8740: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftRollBackBench,
   /** k_EMsgLobbyEventGameData */
-  8746: _chunkCU4ZEV3Ucjs.CMsgLobbyEventGameData,
+  8746: _chunkKNCAQGVIcjs.CMsgLobbyEventGameData,
   /** k_EMsgClientToGCGetOWMatchDetails */
-  8751: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetOWMatchDetails,
+  8751: _chunkKNCAQGVIcjs.CMsgClientToGCGetOWMatchDetails,
   /** k_EMsgClientToGCSubmitOWConviction */
-  8753: _chunkCU4ZEV3Ucjs.CMsgClientToGCSubmitOWConviction,
+  8753: _chunkKNCAQGVIcjs.CMsgClientToGCSubmitOWConviction,
   /** k_EMsgClientToGCClaimLeaderboardRewards */
-  8757: _chunkCU4ZEV3Ucjs.CMsgClientToGCClaimLeaderboardRewards,
+  8757: _chunkKNCAQGVIcjs.CMsgClientToGCClaimLeaderboardRewards,
   /** k_EMsgClientToGCRecalibrateMMR */
-  8759: _chunkCU4ZEV3Ucjs.CMsgClientToGCRecalibrateMMR,
+  8759: _chunkKNCAQGVIcjs.CMsgClientToGCRecalibrateMMR,
   /** k_EMsgClientToGCChinaSSAURLRequest */
-  8764: _chunkCU4ZEV3Ucjs.CMsgClientToGCChinaSSAURLRequest,
+  8764: _chunkKNCAQGVIcjs.CMsgClientToGCChinaSSAURLRequest,
   /** k_EMsgClientToGCChinaSSAAcceptedRequest */
-  8766: _chunkCU4ZEV3Ucjs.CMsgClientToGCChinaSSAAcceptedRequest,
+  8766: _chunkKNCAQGVIcjs.CMsgClientToGCChinaSSAAcceptedRequest,
   /** k_EMsgClientToGCStartWatchingOverwatch */
-  8774: _chunkCU4ZEV3Ucjs.CMsgClientToGCStartWatchingOverwatch,
+  8774: _chunkKNCAQGVIcjs.CMsgClientToGCStartWatchingOverwatch,
   /** k_EMsgClientToGCStopWatchingOverwatch */
-  8775: _chunkCU4ZEV3Ucjs.CMsgClientToGCStopWatchingOverwatch,
+  8775: _chunkKNCAQGVIcjs.CMsgClientToGCStopWatchingOverwatch,
   /** k_EMsgClientToGCGetDPCFavorites */
-  8777: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetDPCFavorites,
+  8777: _chunkKNCAQGVIcjs.CMsgClientToGCGetDPCFavorites,
   /** k_EMsgClientToGCSetDPCFavoriteState */
-  8779: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetDPCFavoriteState,
+  8779: _chunkKNCAQGVIcjs.CMsgClientToGCSetDPCFavoriteState,
   /** k_EMsgClientToGCOverwatchReplayError */
-  8781: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverwatchReplayError,
+  8781: _chunkKNCAQGVIcjs.CMsgClientToGCOverwatchReplayError,
   /** k_EMsgClientToGCSetEventActiveSeasonID */
-  8806: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetEventActiveSeasonID,
+  8806: _chunkKNCAQGVIcjs.CMsgClientToGCSetEventActiveSeasonID,
   /** k_EMsgClientToGCCreateTeamPlayerCardPack */
-  8810: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreateTeamPlayerCardPack,
+  8810: _chunkKNCAQGVIcjs.CMsgClientToGCCreateTeamPlayerCardPack,
   /** k_EMsgClientToGCGetStickerbookRequest */
-  8825: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetStickerbookRequest,
+  8825: _chunkKNCAQGVIcjs.CMsgClientToGCGetStickerbookRequest,
   /** k_EMsgClientToGCCreateStickerbookPageRequest */
-  8827: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreateStickerbookPageRequest,
+  8827: _chunkKNCAQGVIcjs.CMsgClientToGCCreateStickerbookPageRequest,
   /** k_EMsgClientToGCDeleteStickerbookPageRequest */
-  8829: _chunkCU4ZEV3Ucjs.CMsgClientToGCDeleteStickerbookPageRequest,
+  8829: _chunkKNCAQGVIcjs.CMsgClientToGCDeleteStickerbookPageRequest,
   /** k_EMsgClientToGCPlaceStickersRequest */
-  8831: _chunkCU4ZEV3Ucjs.CMsgClientToGCPlaceStickersRequest,
+  8831: _chunkKNCAQGVIcjs.CMsgClientToGCPlaceStickersRequest,
   /** k_EMsgClientToGCPlaceCollectionStickersRequest */
-  8833: _chunkCU4ZEV3Ucjs.CMsgClientToGCPlaceCollectionStickersRequest,
+  8833: _chunkKNCAQGVIcjs.CMsgClientToGCPlaceCollectionStickersRequest,
   /** k_EMsgClientToGCOrderStickerbookTeamPageRequest */
-  8835: _chunkCU4ZEV3Ucjs.CMsgClientToGCOrderStickerbookTeamPageRequest,
+  8835: _chunkKNCAQGVIcjs.CMsgClientToGCOrderStickerbookTeamPageRequest,
   /** k_EMsgClientToGCSetHeroSticker */
-  8851: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetHeroSticker,
+  8851: _chunkKNCAQGVIcjs.CMsgClientToGCSetHeroSticker,
   /** k_EMsgClientToGCGetHeroStickers */
-  8853: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetHeroStickers,
+  8853: _chunkKNCAQGVIcjs.CMsgClientToGCGetHeroStickers,
   /** k_EMsgClientToGCSetFavoritePage */
-  8855: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetFavoritePage,
+  8855: _chunkKNCAQGVIcjs.CMsgClientToGCSetFavoritePage,
   /** k_EMsgClientToGCCollectorsCacheAvailableDataRequest */
-  8871: _chunkCU4ZEV3Ucjs.CMsgClientToGCCollectorsCacheAvailableDataRequest,
+  8871: _chunkKNCAQGVIcjs.CMsgClientToGCCollectorsCacheAvailableDataRequest,
   /** k_EMsgClientToGCUploadMatchClip */
-  8873: _chunkCU4ZEV3Ucjs.CMsgClientToGCUploadMatchClip,
+  8873: _chunkKNCAQGVIcjs.CMsgClientToGCUploadMatchClip,
   /** k_EMsgClientToGCRankRequest */
-  8879: _chunkCU4ZEV3Ucjs.CMsgClientToGCRankRequest,
+  8879: _chunkKNCAQGVIcjs.CMsgClientToGCRankRequest,
   /** k_EMsgClientToGCMapStatsRequest */
-  8883: _chunkCU4ZEV3Ucjs.CMsgClientToGCMapStatsRequest,
+  8883: _chunkKNCAQGVIcjs.CMsgClientToGCMapStatsRequest,
   /** k_EMsgClientToGCRoadToTIGetQuests */
-  8897: _chunkCU4ZEV3Ucjs.CMsgClientToGCRoadToTIGetQuests,
+  8897: _chunkKNCAQGVIcjs.CMsgClientToGCRoadToTIGetQuests,
   /** k_EMsgClientToGCRoadToTIGetActiveQuest */
-  8899: _chunkCU4ZEV3Ucjs.CMsgClientToGCRoadToTIGetActiveQuest,
+  8899: _chunkKNCAQGVIcjs.CMsgClientToGCRoadToTIGetActiveQuest,
   /** k_EMsgClientToGCRoadToTIUseItem */
-  8911: _chunkCU4ZEV3Ucjs.CMsgClientToGCRoadToTIUseItem,
+  8911: _chunkKNCAQGVIcjs.CMsgClientToGCRoadToTIUseItem,
   /** k_EMsgClientToGCRoadToTIDevForceQuest */
-  8935: _chunkCU4ZEV3Ucjs.CMsgClientToGCRoadToTIDevForceQuest,
+  8935: _chunkKNCAQGVIcjs.CMsgClientToGCRoadToTIDevForceQuest,
   /** k_EMsgLobbyRoadToTIMatchQuestData */
-  8939: _chunkCU4ZEV3Ucjs.CMsgLobbyRoadToTIMatchQuestData,
+  8939: _chunkKNCAQGVIcjs.CMsgLobbyRoadToTIMatchQuestData,
   /** k_EMsgClientToGCOverworldGetUserData */
-  8944: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldGetUserData,
+  8944: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldGetUserData,
   /** k_EMsgClientToGCOverworldCompletePath */
-  8946: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldCompletePath,
+  8946: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldCompletePath,
   /** k_EMsgClientToGCOverworldClaimEncounterReward */
-  8948: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldClaimEncounterReward,
+  8948: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldClaimEncounterReward,
   /** k_EMsgClientToGCOverworldDevResetAll */
-  8950: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevResetAll,
+  8950: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevResetAll,
   /** k_EMsgClientToGCOverworldDevResetNode */
-  8952: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevResetNode,
+  8952: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevResetNode,
   /** k_EMsgClientToGCOverworldDevGrantTokens */
-  8956: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevGrantTokens,
+  8956: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevGrantTokens,
   /** k_EMsgClientToGCOverworldDevClearInventory */
-  8958: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevClearInventory,
+  8958: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevClearInventory,
   /** k_EMsgClientToGCOverworldMoveToNode */
-  8963: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldMoveToNode,
+  8963: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldMoveToNode,
   /** k_EMsgClientToGCNewBloomGift */
-  8965: _chunkCU4ZEV3Ucjs.CMsgClientToGCNewBloomGift,
+  8965: _chunkKNCAQGVIcjs.CMsgClientToGCNewBloomGift,
   /** k_EMsgClientToGCSetBannedHeroes */
-  8969: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetBannedHeroes,
+  8969: _chunkKNCAQGVIcjs.CMsgClientToGCSetBannedHeroes,
   /** k_EMsgClientToGCOverworldTradeTokens */
-  8970: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldTradeTokens,
+  8970: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldTradeTokens,
   /** k_EMsgOverworldEncounterTokenTreasureData */
-  8972: _chunkCU4ZEV3Ucjs.CMsgOverworldEncounterTokenTreasureData,
+  8972: _chunkKNCAQGVIcjs.CMsgOverworldEncounterTokenTreasureData,
   /** k_EMsgOverworldEncounterTokenQuestData */
-  8973: _chunkCU4ZEV3Ucjs.CMsgOverworldEncounterTokenQuestData,
+  8973: _chunkKNCAQGVIcjs.CMsgOverworldEncounterTokenQuestData,
   /** k_EMsgOverworldEncounterChooseHeroData */
-  8974: _chunkCU4ZEV3Ucjs.CMsgOverworldEncounterChooseHeroData,
+  8974: _chunkKNCAQGVIcjs.CMsgOverworldEncounterChooseHeroData,
   /** k_EMsgClientToGCUpdateComicBookStats */
-  8975: _chunkCU4ZEV3Ucjs.CMsgClientToGCUpdateComicBookStats,
+  8975: _chunkKNCAQGVIcjs.CMsgClientToGCUpdateComicBookStats,
   /** k_EMsgOverworldEncounterProgressData */
-  8978: _chunkCU4ZEV3Ucjs.CMsgOverworldEncounterProgressData,
+  8978: _chunkKNCAQGVIcjs.CMsgOverworldEncounterProgressData,
   /** k_EMsgClientToGCOverworldFeedback */
-  8979: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldFeedback,
+  8979: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldFeedback,
   /** k_EMsgClientToGCOverworldVisitEncounter */
-  8981: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldVisitEncounter,
+  8981: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldVisitEncounter,
   /** k_EMsgClientToGCOverworldGiftTokens */
-  8983: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldGiftTokens,
+  8983: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldGiftTokens,
   /** k_EMsgClientToGCDotaLabsFeedback */
-  8985: _chunkCU4ZEV3Ucjs.CMsgClientToGCDotaLabsFeedback,
+  8985: _chunkKNCAQGVIcjs.CMsgClientToGCDotaLabsFeedback,
   /** k_EMsgOverworldEncounterPitFighterRewardData */
-  8987: _chunkCU4ZEV3Ucjs.CMsgOverworldEncounterPitFighterRewardData,
+  8987: _chunkKNCAQGVIcjs.CMsgOverworldEncounterPitFighterRewardData,
   /** k_EMsgClientToGCOverworldGetDynamicImage */
-  8988: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldGetDynamicImage,
+  8988: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldGetDynamicImage,
   /** k_EMsgGCCompendiumRemoveAllSelections */
-  9007: _chunkCU4ZEV3Ucjs.CMsgDOTACompendiumRemoveAllSelections,
+  9007: _chunkKNCAQGVIcjs.CMsgDOTACompendiumRemoveAllSelections,
   /** k_EMsgClientToGCOverworldMinigameAction */
-  9009: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldMinigameAction,
+  9009: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldMinigameAction,
   /** k_EMsgClientToGCOverworldRequestTokensNeededByFriend */
-  9013: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldRequestTokensNeededByFriend
+  9013: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldRequestTokensNeededByFriend
 };
 var gcMessages = {
   /** k_ESOMsg_Create */
-  21: _chunkCU4ZEV3Ucjs.CMsgSOSingleObject,
+  21: _chunkKNCAQGVIcjs.CMsgSOSingleObject,
   /** k_ESOMsg_Update */
-  22: _chunkCU4ZEV3Ucjs.CMsgSOSingleObject,
+  22: _chunkKNCAQGVIcjs.CMsgSOSingleObject,
   /** k_ESOMsg_Destroy */
-  23: _chunkCU4ZEV3Ucjs.CMsgSOSingleObject,
+  23: _chunkKNCAQGVIcjs.CMsgSOSingleObject,
   /** k_ESOMsg_CacheSubscribed */
-  24: _chunkCU4ZEV3Ucjs.CMsgSOCacheSubscribed,
+  24: _chunkKNCAQGVIcjs.CMsgSOCacheSubscribed,
   /** k_ESOMsg_CacheUnsubscribed */
-  25: _chunkCU4ZEV3Ucjs.CMsgSOCacheUnsubscribed,
+  25: _chunkKNCAQGVIcjs.CMsgSOCacheUnsubscribed,
   /** k_ESOMsg_UpdateMultiple */
-  26: _chunkCU4ZEV3Ucjs.CMsgSOMultipleObjects,
+  26: _chunkKNCAQGVIcjs.CMsgSOMultipleObjects,
   /** k_ESOMsg_CacheSubscriptionRefresh */
-  28: _chunkCU4ZEV3Ucjs.CMsgSOCacheSubscriptionRefresh,
+  28: _chunkKNCAQGVIcjs.CMsgSOCacheSubscriptionRefresh,
   /** k_ESOMsg_CacheSubscribedUpToDate */
-  29: _chunkCU4ZEV3Ucjs.CMsgSOCacheSubscribedUpToDate,
+  29: _chunkKNCAQGVIcjs.CMsgSOCacheSubscribedUpToDate,
   /** k_EMsgGCToClientPollConvarRequest */
-  3003: _chunkCU4ZEV3Ucjs.CMsgGCToClientPollConvarRequest,
+  3003: _chunkKNCAQGVIcjs.CMsgGCToClientPollConvarRequest,
   /** k_EMsgGCToClientPollConvarResponse */
-  3004: _chunkCU4ZEV3Ucjs.CMsgGCToClientPollConvarResponse,
+  3004: _chunkKNCAQGVIcjs.CMsgGCToClientPollConvarResponse,
   /** k_EMsgGCToClientRequestDropped */
-  3006: _chunkCU4ZEV3Ucjs.CMsgGCToClientRequestDropped,
+  3006: _chunkKNCAQGVIcjs.CMsgGCToClientRequestDropped,
   /** k_EMsgGCClientWelcome */
-  4004: _chunkCU4ZEV3Ucjs.CMsgClientWelcome,
+  4004: _chunkKNCAQGVIcjs.CMsgClientWelcome,
   /** k_EMsgGCServerWelcome */
-  4005: _chunkCU4ZEV3Ucjs.CMsgClientWelcome,
+  4005: _chunkKNCAQGVIcjs.CMsgClientWelcome,
   /** k_EMsgGCClientConnectionStatus */
-  4009: _chunkCU4ZEV3Ucjs.CMsgConnectionStatus,
+  4009: _chunkKNCAQGVIcjs.CMsgConnectionStatus,
   /** k_EMsgGCServerConnectionStatus */
-  4010: _chunkCU4ZEV3Ucjs.CMsgConnectionStatus,
+  4010: _chunkKNCAQGVIcjs.CMsgConnectionStatus,
   /** k_EMsgGCPartyInviteResponse */
-  4503: _chunkCU4ZEV3Ucjs.CMsgPartyInviteResponse,
+  4503: _chunkKNCAQGVIcjs.CMsgPartyInviteResponse,
   /** k_EMsgGCLobbyInviteResponse */
-  4513: _chunkCU4ZEV3Ucjs.CMsgLobbyInviteResponse,
+  4513: _chunkKNCAQGVIcjs.CMsgLobbyInviteResponse,
   /** k_EMsgGCToClientPollFileRequest */
-  4514: _chunkCU4ZEV3Ucjs.CMsgGCToClientPollFileRequest,
+  4514: _chunkKNCAQGVIcjs.CMsgGCToClientPollFileRequest,
   /** k_EMsgGCToClientPollFileResponse */
-  4515: _chunkCU4ZEV3Ucjs.CMsgGCToClientPollFileResponse,
+  4515: _chunkKNCAQGVIcjs.CMsgGCToClientPollFileResponse,
   /** k_EMsgGCToClientApplyRemoteConVars */
-  4520: _chunkCU4ZEV3Ucjs.CMsgGCToClientApplyRemoteConVars,
+  4520: _chunkKNCAQGVIcjs.CMsgGCToClientApplyRemoteConVars,
   /** k_EMsgGCToClientAggregateMetricsBackoff */
-  4524: _chunkCU4ZEV3Ucjs.CMsgGCToClientAggregateMetricsBackoff,
+  4524: _chunkKNCAQGVIcjs.CMsgGCToClientAggregateMetricsBackoff,
+  /** k_EMsgGCPracticeLobbyListResponse */
+  7043: _chunkKNCAQGVIcjs.CMsgPracticeLobbyListResponse,
   /** k_EMsgGCInitialQuestionnaireResponse */
-  7049: _chunkCU4ZEV3Ucjs.CMsgInitialQuestionnaireResponse,
+  7049: _chunkKNCAQGVIcjs.CMsgInitialQuestionnaireResponse,
   /** k_EMsgGCSpectateFriendGameResponse */
-  7074: _chunkCU4ZEV3Ucjs.CMsgSpectateFriendGameResponse,
+  7074: _chunkKNCAQGVIcjs.CMsgSpectateFriendGameResponse,
   /** k_EMsgGCReportsRemainingResponse */
-  7077: _chunkCU4ZEV3Ucjs.CMsgDOTAReportsRemainingResponse,
+  7077: _chunkKNCAQGVIcjs.CMsgDOTAReportsRemainingResponse,
   /** k_EMsgGCSubmitPlayerReportResponse */
-  7079: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitPlayerReportResponse,
+  7079: _chunkKNCAQGVIcjs.CMsgDOTASubmitPlayerReportResponse,
   /** k_EMsgGCWatchGameResponse */
-  7092: _chunkCU4ZEV3Ucjs.CMsgWatchGameResponse,
+  7092: _chunkKNCAQGVIcjs.CMsgWatchGameResponse,
   /** k_EMsgGCMatchDetailsResponse */
-  7096: _chunkCU4ZEV3Ucjs.CMsgGCMatchDetailsResponse,
+  7096: _chunkKNCAQGVIcjs.CMsgGCMatchDetailsResponse,
+  /** k_EMsgGCFriendPracticeLobbyListResponse */
+  7112: _chunkKNCAQGVIcjs.CMsgFriendPracticeLobbyListResponse,
+  /** k_EMsgGCPracticeLobbyJoinResponse */
+  7113: _chunkKNCAQGVIcjs.CMsgPracticeLobbyJoinResponse,
   /** k_EMsgGCMatchmakingStatsResponse */
-  7198: _chunkCU4ZEV3Ucjs.CMsgDOTAMatchmakingStatsResponse,
+  7198: _chunkKNCAQGVIcjs.CMsgDOTAMatchmakingStatsResponse,
   /** k_EMsgGCSetMatchHistoryAccessResponse */
-  7201: _chunkCU4ZEV3Ucjs.CMsgDOTASetMatchHistoryAccessResponse,
+  7201: _chunkKNCAQGVIcjs.CMsgDOTASetMatchHistoryAccessResponse,
   /** k_EMsgUpgradeLeagueItemResponse */
-  7204: _chunkCU4ZEV3Ucjs.CMsgUpgradeLeagueItemResponse,
+  7204: _chunkKNCAQGVIcjs.CMsgUpgradeLeagueItemResponse,
   /** k_EMsgGCGetHeroStandingsResponse */
-  7275: _chunkCU4ZEV3Ucjs.CMsgGCGetHeroStandingsResponse,
+  7275: _chunkKNCAQGVIcjs.CMsgGCGetHeroStandingsResponse,
   /** k_EMsgGCItemEditorReservationsResponse */
-  7284: _chunkCU4ZEV3Ucjs.CMsgGCItemEditorReservationsResponse,
+  7284: _chunkKNCAQGVIcjs.CMsgGCItemEditorReservationsResponse,
   /** k_EMsgGCItemEditorReserveItemDefResponse */
-  7286: _chunkCU4ZEV3Ucjs.CMsgGCItemEditorReserveItemDefResponse,
+  7286: _chunkKNCAQGVIcjs.CMsgGCItemEditorReserveItemDefResponse,
   /** k_EMsgGCItemEditorReleaseReservationResponse */
-  7288: _chunkCU4ZEV3Ucjs.CMsgGCItemEditorReleaseReservationResponse,
+  7288: _chunkKNCAQGVIcjs.CMsgGCItemEditorReleaseReservationResponse,
   /** k_EMsgGCSetProfilePrivacyResponse */
-  7328: _chunkCU4ZEV3Ucjs.CMsgDOTASetProfilePrivacyResponse,
+  7328: _chunkKNCAQGVIcjs.CMsgDOTASetProfilePrivacyResponse,
   /** k_EMsgDOTAGetEventPointsResponse */
-  7388: _chunkCU4ZEV3Ucjs.CMsgDOTAGetEventPointsResponse,
+  7388: _chunkKNCAQGVIcjs.CMsgDOTAGetEventPointsResponse,
   /** k_EMsgGCCompendiumDataResponse */
-  7407: _chunkCU4ZEV3Ucjs.CMsgDOTACompendiumDataResponse,
+  7407: _chunkKNCAQGVIcjs.CMsgDOTACompendiumDataResponse,
   /** k_EMsgDOTAGetPlayerMatchHistoryResponse */
-  7409: _chunkCU4ZEV3Ucjs.CMsgDOTAGetPlayerMatchHistoryResponse,
+  7409: _chunkKNCAQGVIcjs.CMsgDOTAGetPlayerMatchHistoryResponse,
   /** k_EMsgGCNotificationsResponse */
-  7428: _chunkCU4ZEV3Ucjs.CMsgGCNotificationsResponse,
+  7428: _chunkKNCAQGVIcjs.CMsgGCNotificationsResponse,
   /** k_EMsgGCRankedPlayerInfoSubmitResponse */
-  7455: _chunkCU4ZEV3Ucjs.CMsgGCRankedPlayerInfoSubmitResponse,
+  7455: _chunkKNCAQGVIcjs.CMsgGCRankedPlayerInfoSubmitResponse,
   /** k_EMsgGCPlayerInfoSubmitResponse */
-  7457: _chunkCU4ZEV3Ucjs.CMsgGCPlayerInfoSubmitResponse,
+  7457: _chunkKNCAQGVIcjs.CMsgGCPlayerInfoSubmitResponse,
+  /** k_EMsgGCJoinableCustomGameModesResponse */
+  7467: _chunkKNCAQGVIcjs.CMsgJoinableCustomGameModesResponse,
+  /** k_EMsgGCJoinableCustomLobbiesResponse */
+  7469: _chunkKNCAQGVIcjs.CMsgJoinableCustomLobbiesResponse,
+  /** k_EMsgGCQuickJoinCustomLobbyResponse */
+  7471: _chunkKNCAQGVIcjs.CMsgQuickJoinCustomLobbyResponse,
   /** k_EMsgGCHasItemResponse */
-  7485: _chunkCU4ZEV3Ucjs.CMsgDOTAHasItemResponse,
+  7485: _chunkKNCAQGVIcjs.CMsgDOTAHasItemResponse,
   /** k_EMsgGCToClientTournamentItemDrop */
-  7495: _chunkCU4ZEV3Ucjs.CMsgGCToClientTournamentItemDrop,
+  7495: _chunkKNCAQGVIcjs.CMsgGCToClientTournamentItemDrop,
   /** k_EMsgGCToClientEmoticonData */
-  7504: _chunkCU4ZEV3Ucjs.CMsgGCToClientEmoticonData,
+  7504: _chunkKNCAQGVIcjs.CMsgGCToClientEmoticonData,
   /** k_EMsgDOTARedeemItemResponse */
-  7519: _chunkCU4ZEV3Ucjs.CMsgDOTARedeemItemResponse,
+  7519: _chunkKNCAQGVIcjs.CMsgDOTARedeemItemResponse,
   /** k_EMsgClientToGCGetAllHeroProgressResponse */
-  7522: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetAllHeroProgressResponse,
+  7522: _chunkKNCAQGVIcjs.CMsgClientToGCGetAllHeroProgressResponse,
   /** k_EMsgClientToGCGetTrophyListResponse */
-  7528: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetTrophyListResponse,
+  7528: _chunkKNCAQGVIcjs.CMsgClientToGCGetTrophyListResponse,
   /** k_EMsgGCToClientTrophyAwarded */
-  7529: _chunkCU4ZEV3Ucjs.CMsgGCToClientTrophyAwarded,
+  7529: _chunkKNCAQGVIcjs.CMsgGCToClientTrophyAwarded,
   /** k_EMsgClientToGCGetProfileCardResponse */
-  7535: _chunkCU4ZEV3Ucjs.CMsgDOTAProfileCard,
+  7535: _chunkKNCAQGVIcjs.CMsgDOTAProfileCard,
   /** k_EMsgGCToClientHeroStatueCreateResult */
-  7548: _chunkCU4ZEV3Ucjs.CMsgGCToClientHeroStatueCreateResult,
+  7548: _chunkKNCAQGVIcjs.CMsgGCToClientHeroStatueCreateResult,
+  /** k_EMsgGCToClientSteamDatagramTicket */
+  7581: _chunkKNCAQGVIcjs.CMsgGCToClientSteamDatagramTicket,
   /** k_EMsgGCRerollPlayerChallengeResponse */
-  7586: _chunkCU4ZEV3Ucjs.CMsgGCRerollPlayerChallengeResponse,
+  7586: _chunkKNCAQGVIcjs.CMsgGCRerollPlayerChallengeResponse,
   /** k_EMsgClientToGCGetAllHeroOrderResponse */
-  7607: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetAllHeroOrderResponse,
+  7607: _chunkKNCAQGVIcjs.CMsgClientToGCGetAllHeroOrderResponse,
+  /** k_EMsgGCToClientRequestLaneSelection */
+  7623: _chunkKNCAQGVIcjs.CMsgGCToClientRequestLaneSelection,
+  /** k_EMsgGCToClientRequestLaneSelectionResponse */
+  7624: _chunkKNCAQGVIcjs.CMsgGCToClientRequestLaneSelectionResponse,
   /** k_EMsgClientToGCPlayerCardSpecificPurchaseResponse */
-  7628: _chunkCU4ZEV3Ucjs.CMsgClientToGCPlayerCardSpecificPurchaseResponse,
+  7628: _chunkKNCAQGVIcjs.CMsgClientToGCPlayerCardSpecificPurchaseResponse,
   /** k_EMsgGCToClientGetFilteredPlayersResponse */
-  7663: _chunkCU4ZEV3Ucjs.CMsgGCToClientGetFilteredPlayersResponse,
+  7663: _chunkKNCAQGVIcjs.CMsgGCToClientGetFilteredPlayersResponse,
   /** k_EMsgGCToClientRemoveFilteredPlayerResponse */
-  7665: _chunkCU4ZEV3Ucjs.CMsgGCToClientRemoveFilteredPlayerResponse,
+  7665: _chunkKNCAQGVIcjs.CMsgGCToClientRemoveFilteredPlayerResponse,
   /** k_EMsgGCToClientPlayerBeaconState */
-  7666: _chunkCU4ZEV3Ucjs.CMsgGCToClientPlayerBeaconState,
+  7666: _chunkKNCAQGVIcjs.CMsgGCToClientPlayerBeaconState,
   /** k_EMsgGCToClientPartyBeaconUpdate */
-  7667: _chunkCU4ZEV3Ucjs.CMsgGCToClientPartyBeaconUpdate,
+  7667: _chunkKNCAQGVIcjs.CMsgGCToClientPartyBeaconUpdate,
   /** k_EMsgGCToClientPartySearchInvite */
-  7668: _chunkCU4ZEV3Ucjs.CMsgGCToClientPartySearchInvite,
+  7668: _chunkKNCAQGVIcjs.CMsgGCToClientPartySearchInvite,
   /** k_EMsgGCToClientRequestActiveBeaconPartiesResponse */
-  7671: _chunkCU4ZEV3Ucjs.CMsgGCToClientRequestActiveBeaconPartiesResponse,
+  7671: _chunkKNCAQGVIcjs.CMsgGCToClientRequestActiveBeaconPartiesResponse,
   /** k_EMsgGCToClientManageFavoritesResponse */
-  7673: _chunkCU4ZEV3Ucjs.CMsgGCToClientManageFavoritesResponse,
+  7673: _chunkKNCAQGVIcjs.CMsgGCToClientManageFavoritesResponse,
   /** k_EMsgGCToClientJoinPartyFromBeaconResponse */
-  7675: _chunkCU4ZEV3Ucjs.CMsgGCToClientJoinPartyFromBeaconResponse,
+  7675: _chunkKNCAQGVIcjs.CMsgGCToClientJoinPartyFromBeaconResponse,
   /** k_EMsgGCToClientGetFavoritePlayersResponse */
-  7677: _chunkCU4ZEV3Ucjs.CMsgGCToClientGetFavoritePlayersResponse,
+  7677: _chunkKNCAQGVIcjs.CMsgGCToClientGetFavoritePlayersResponse,
   /** k_EMsgGCToClientVerifyFavoritePlayersResponse */
-  7679: _chunkCU4ZEV3Ucjs.CMsgGCToClientVerifyFavoritePlayersResponse,
+  7679: _chunkKNCAQGVIcjs.CMsgGCToClientVerifyFavoritePlayersResponse,
   /** k_EMsgGCToClientPartySearchInvites */
-  7680: _chunkCU4ZEV3Ucjs.CMsgGCToClientPartySearchInvites,
+  7680: _chunkKNCAQGVIcjs.CMsgGCToClientPartySearchInvites,
+  /** k_EMsgGCToClientRequestMMInfo */
+  7681: _chunkKNCAQGVIcjs.CMsgGCToClientRequestMMInfo,
   /** k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse */
-  7685: _chunkCU4ZEV3Ucjs.CMsgClientToGCPurchaseLabyrinthBlessingsResponse,
+  7685: _chunkKNCAQGVIcjs.CMsgClientToGCPurchaseLabyrinthBlessingsResponse,
   /** k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse */
-  7687: _chunkCU4ZEV3Ucjs.CMsgGCToClientPurchaseFilteredPlayerSlotResponse,
+  7687: _chunkKNCAQGVIcjs.CMsgGCToClientPurchaseFilteredPlayerSlotResponse,
   /** k_EMsgGCToClientUpdateFilteredPlayerNoteResponse */
-  7689: _chunkCU4ZEV3Ucjs.CMsgGCToClientUpdateFilteredPlayerNoteResponse,
+  7689: _chunkKNCAQGVIcjs.CMsgGCToClientUpdateFilteredPlayerNoteResponse,
   /** k_EMsgGCToClientPlayerStatsResponse */
-  8007: _chunkCU4ZEV3Ucjs.CMsgGCToClientPlayerStatsResponse,
+  8007: _chunkKNCAQGVIcjs.CMsgGCToClientPlayerStatsResponse,
   /** k_EMsgGCToClientFindTopSourceTVGamesResponse */
-  8010: _chunkCU4ZEV3Ucjs.CMsgGCToClientFindTopSourceTVGamesResponse,
+  8010: _chunkKNCAQGVIcjs.CMsgGCToClientFindTopSourceTVGamesResponse,
+  /** k_EMsgGCLobbyListResponse */
+  8012: _chunkKNCAQGVIcjs.CMsgLobbyListResponse,
   /** k_EMsgGCToClientSocialFeedPostCommentResponse */
-  8017: _chunkCU4ZEV3Ucjs.CMsgGCToClientSocialFeedPostCommentResponse,
+  8017: _chunkKNCAQGVIcjs.CMsgGCToClientSocialFeedPostCommentResponse,
   /** k_EMsgGCToClientCustomGamesFriendsPlayedResponse */
-  8019: _chunkCU4ZEV3Ucjs.CMsgGCToClientCustomGamesFriendsPlayedResponse,
+  8019: _chunkKNCAQGVIcjs.CMsgGCToClientCustomGamesFriendsPlayedResponse,
   /** k_EMsgGCToClientFriendsPlayedCustomGameResponse */
-  8021: _chunkCU4ZEV3Ucjs.CMsgGCToClientFriendsPlayedCustomGameResponse,
+  8021: _chunkKNCAQGVIcjs.CMsgGCToClientFriendsPlayedCustomGameResponse,
   /** k_EMsgGCToClientSocialFeedPostMessageResponse */
-  8051: _chunkCU4ZEV3Ucjs.CMsgGCToClientSocialFeedPostMessageResponse,
+  8051: _chunkKNCAQGVIcjs.CMsgGCToClientSocialFeedPostMessageResponse,
   /** k_EMsgGCToClientTopLeagueMatchesResponse */
-  8061: _chunkCU4ZEV3Ucjs.CMsgGCToClientTopLeagueMatchesResponse,
+  8061: _chunkKNCAQGVIcjs.CMsgGCToClientTopLeagueMatchesResponse,
   /** k_EMsgGCToClientTopFriendMatchesResponse */
-  8062: _chunkCU4ZEV3Ucjs.CMsgGCToClientTopFriendMatchesResponse,
+  8062: _chunkKNCAQGVIcjs.CMsgGCToClientTopFriendMatchesResponse,
   /** k_EMsgClientToGCMatchesMinimalResponse */
-  8064: _chunkCU4ZEV3Ucjs.CMsgClientToGCMatchesMinimalResponse,
+  8064: _chunkKNCAQGVIcjs.CMsgClientToGCMatchesMinimalResponse,
   /** k_EMsgGCToClientMatchGroupsVersion */
-  8075: _chunkCU4ZEV3Ucjs.CMsgGCToClientMatchGroupsVersion,
+  8075: _chunkKNCAQGVIcjs.CMsgGCToClientMatchGroupsVersion,
   /** k_EMsgClientToGCGetQuestProgressResponse */
-  8079: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetQuestProgressResponse,
+  8079: _chunkKNCAQGVIcjs.CMsgClientToGCGetQuestProgressResponse,
   /** k_EMsgGCToClientMatchSignedOut */
-  8081: _chunkCU4ZEV3Ucjs.CMsgGCToClientMatchSignedOut,
+  8081: _chunkKNCAQGVIcjs.CMsgGCToClientMatchSignedOut,
   /** k_EMsgGCGetHeroStatsHistoryResponse */
-  8083: _chunkCU4ZEV3Ucjs.CMsgGCGetHeroStatsHistoryResponse,
+  8083: _chunkKNCAQGVIcjs.CMsgGCGetHeroStatsHistoryResponse,
   /** k_EMsgGCToClientWageringResponse */
-  8100: _chunkCU4ZEV3Ucjs.CMsgGCToClientWageringResponse,
+  8100: _chunkKNCAQGVIcjs.CMsgGCToClientWageringResponse,
   /** k_EMsgClientToGCHasPlayerVotedForMVPResponse */
-  8112: _chunkCU4ZEV3Ucjs.CMsgClientToGCHasPlayerVotedForMVPResponse,
+  8112: _chunkKNCAQGVIcjs.CMsgClientToGCHasPlayerVotedForMVPResponse,
   /** k_EMsgClientToGCVoteForMVPResponse */
-  8114: _chunkCU4ZEV3Ucjs.CMsgClientToGCVoteForMVPResponse,
+  8114: _chunkKNCAQGVIcjs.CMsgClientToGCVoteForMVPResponse,
   /** k_EMsgClientToGCTeammateStatsResponse */
-  8125: _chunkCU4ZEV3Ucjs.CMsgClientToGCTeammateStatsResponse,
+  8125: _chunkKNCAQGVIcjs.CMsgClientToGCTeammateStatsResponse,
   /** k_EMsgClientToGCGetGiftPermissionsResponse */
-  8127: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetGiftPermissionsResponse,
+  8127: _chunkKNCAQGVIcjs.CMsgClientToGCGetGiftPermissionsResponse,
   /** k_EMsgClientToGCVoteForArcanaResponse */
-  8129: _chunkCU4ZEV3Ucjs.CMsgClientToGCVoteForArcanaResponse,
+  8129: _chunkKNCAQGVIcjs.CMsgClientToGCVoteForArcanaResponse,
   /** k_EMsgClientToGCRequestArcanaVotesRemainingResponse */
-  8131: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestArcanaVotesRemainingResponse,
+  8131: _chunkKNCAQGVIcjs.CMsgClientToGCRequestArcanaVotesRemainingResponse,
   /** k_EMsgGCSubmitLobbyMVPVoteResponse */
-  8145: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitLobbyMVPVoteResponse,
+  8145: _chunkKNCAQGVIcjs.CMsgDOTASubmitLobbyMVPVoteResponse,
   /** k_EMsgGCToClientQuestProgressUpdated */
-  8153: _chunkCU4ZEV3Ucjs.CMsgGCToClientQuestProgressUpdated,
+  8153: _chunkKNCAQGVIcjs.CMsgGCToClientQuestProgressUpdated,
   /** k_EMsgGCToClientWageringUpdate */
-  8154: _chunkCU4ZEV3Ucjs.CMsgGCToClientWageringUpdate,
+  8154: _chunkKNCAQGVIcjs.CMsgGCToClientWageringUpdate,
   /** k_EMsgGCToClientArcanaVotesUpdate */
-  8155: _chunkCU4ZEV3Ucjs.CMsgGCToClientArcanaVotesUpdate,
+  8155: _chunkKNCAQGVIcjs.CMsgGCToClientArcanaVotesUpdate,
   /** k_EMsgClientToGCOpenPlayerCardPackResponse */
-  8169: _chunkCU4ZEV3Ucjs.CMsgClientToGCOpenPlayerCardPackResponse,
+  8169: _chunkKNCAQGVIcjs.CMsgClientToGCOpenPlayerCardPackResponse,
   /** k_EMsgClientToGCSelectCompendiumInGamePredictionResponse */
-  8171: _chunkCU4ZEV3Ucjs.CMsgClientToGCSelectCompendiumInGamePredictionResponse,
+  8171: _chunkKNCAQGVIcjs.CMsgClientToGCSelectCompendiumInGamePredictionResponse,
   /** k_EMsgClientToGCRecyclePlayerCardResponse */
-  8175: _chunkCU4ZEV3Ucjs.CMsgClientToGCRecyclePlayerCardResponse,
+  8175: _chunkKNCAQGVIcjs.CMsgClientToGCRecyclePlayerCardResponse,
   /** k_EMsgClientToGCCreatePlayerCardPackResponse */
-  8177: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreatePlayerCardPackResponse,
+  8177: _chunkKNCAQGVIcjs.CMsgClientToGCCreatePlayerCardPackResponse,
   /** k_EMsgGCGetPlayerCardItemInfoResponse */
-  8188: _chunkCU4ZEV3Ucjs.CMsgGCGetPlayerCardItemInfoResponse,
+  8188: _chunkKNCAQGVIcjs.CMsgGCGetPlayerCardItemInfoResponse,
+  /** k_EMsgClientToGCRequestSteamDatagramTicketResponse */
+  8190: _chunkKNCAQGVIcjs.CMsgClientToGCRequestSteamDatagramTicketResponse,
   /** k_EMsgGCToClientBattlePassRollupRequest */
-  8191: _chunkCU4ZEV3Ucjs.CMsgGCToClientBattlePassRollupRequest,
+  8191: _chunkKNCAQGVIcjs.CMsgGCToClientBattlePassRollupRequest,
   /** k_EMsgGCToClientBattlePassRollupResponse */
-  8192: _chunkCU4ZEV3Ucjs.CMsgGCToClientBattlePassRollupResponse,
+  8192: _chunkKNCAQGVIcjs.CMsgGCToClientBattlePassRollupResponse,
   /** k_EMsgClientToGCTransferSeasonalMMRResponse */
-  8194: _chunkCU4ZEV3Ucjs.CMsgClientToGCTransferSeasonalMMRResponse,
+  8194: _chunkKNCAQGVIcjs.CMsgClientToGCTransferSeasonalMMRResponse,
   /** k_EMsgGCToClientPlaytestStatus */
-  8200: _chunkCU4ZEV3Ucjs.CMsgGCToClientPlaytestStatus,
+  8200: _chunkKNCAQGVIcjs.CMsgGCToClientPlaytestStatus,
   /** k_EMsgClientToGCJoinPlaytestResponse */
-  8202: _chunkCU4ZEV3Ucjs.CMsgClientToGCJoinPlaytestResponse,
+  8202: _chunkKNCAQGVIcjs.CMsgClientToGCJoinPlaytestResponse,
   /** k_EMsgGCToClientBattlePassRollupListRequest */
-  8205: _chunkCU4ZEV3Ucjs.CMsgGCToClientBattlePassRollupListRequest,
+  8205: _chunkKNCAQGVIcjs.CMsgGCToClientBattlePassRollupListRequest,
   /** k_EMsgGCToClientBattlePassRollupListResponse */
-  8206: _chunkCU4ZEV3Ucjs.CMsgGCToClientBattlePassRollupListResponse,
+  8206: _chunkKNCAQGVIcjs.CMsgGCToClientBattlePassRollupListResponse,
   /** k_EMsgDOTAClaimEventActionResponse */
-  8210: _chunkCU4ZEV3Ucjs.CMsgDOTAClaimEventActionResponse,
+  8210: _chunkKNCAQGVIcjs.CMsgDOTAClaimEventActionResponse,
   /** k_EMsgDOTAGetPeriodicResourceResponse */
-  8212: _chunkCU4ZEV3Ucjs.CMsgDOTAGetPeriodicResourceResponse,
+  8212: _chunkKNCAQGVIcjs.CMsgDOTAGetPeriodicResourceResponse,
   /** k_EMsgSubmitTriviaQuestionAnswerResponse */
-  8217: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitTriviaQuestionAnswerResponse,
+  8217: _chunkKNCAQGVIcjs.CMsgDOTASubmitTriviaQuestionAnswerResponse,
   /** k_EMsgStartTriviaSessionResponse */
-  8221: _chunkCU4ZEV3Ucjs.CMsgDOTAStartTriviaSessionResponse,
+  8221: _chunkKNCAQGVIcjs.CMsgDOTAStartTriviaSessionResponse,
   /** k_EMsgAnchorPhoneNumberResponse */
-  8223: _chunkCU4ZEV3Ucjs.CMsgDOTAAnchorPhoneNumberResponse,
+  8223: _chunkKNCAQGVIcjs.CMsgDOTAAnchorPhoneNumberResponse,
   /** k_EMsgUnanchorPhoneNumberResponse */
-  8225: _chunkCU4ZEV3Ucjs.CMsgDOTAUnanchorPhoneNumberResponse,
+  8225: _chunkKNCAQGVIcjs.CMsgDOTAUnanchorPhoneNumberResponse,
   /** k_EMsgClientToGCQuickStatsResponse */
-  8239: _chunkCU4ZEV3Ucjs.CMsgDOTAClientToGCQuickStatsResponse,
+  8239: _chunkKNCAQGVIcjs.CMsgDOTAClientToGCQuickStatsResponse,
   /** k_EMsgSelectionPriorityChoiceResponse */
-  8242: _chunkCU4ZEV3Ucjs.CMsgDOTASelectionPriorityChoiceResponse,
+  8242: _chunkKNCAQGVIcjs.CMsgDOTASelectionPriorityChoiceResponse,
   /** k_EMsgGameAutographRewardResponse */
-  8245: _chunkCU4ZEV3Ucjs.CMsgDOTAGameAutographRewardResponse,
+  8245: _chunkKNCAQGVIcjs.CMsgDOTAGameAutographRewardResponse,
   /** k_EMsgDestroyLobbyResponse */
-  8247: _chunkCU4ZEV3Ucjs.CMsgDOTADestroyLobbyResponse,
+  8247: _chunkKNCAQGVIcjs.CMsgDOTADestroyLobbyResponse,
   /** k_EMsgPurchaseItemWithEventPointsResponse */
-  8249: _chunkCU4ZEV3Ucjs.CMsgPurchaseItemWithEventPointsResponse,
+  8249: _chunkKNCAQGVIcjs.CMsgPurchaseItemWithEventPointsResponse,
   /** k_EMsgPurchaseHeroRandomRelicResponse */
-  8259: _chunkCU4ZEV3Ucjs.CMsgPurchaseHeroRandomRelicResponse,
+  8259: _chunkKNCAQGVIcjs.CMsgPurchaseHeroRandomRelicResponse,
   /** k_EMsgClientToGCClaimEventActionUsingItemResponse */
-  8261: _chunkCU4ZEV3Ucjs.CMsgClientToGCClaimEventActionUsingItemResponse,
+  8261: _chunkKNCAQGVIcjs.CMsgClientToGCClaimEventActionUsingItemResponse,
   /** k_EMsgPartyReadyCheckResponse */
-  8263: _chunkCU4ZEV3Ucjs.CMsgPartyReadyCheckResponse,
+  8263: _chunkKNCAQGVIcjs.CMsgPartyReadyCheckResponse,
   /** k_EMsgGetRecentPlayTimeFriendsResponse */
-  8266: _chunkCU4ZEV3Ucjs.CMsgDOTAGetRecentPlayTimeFriendsResponse,
+  8266: _chunkKNCAQGVIcjs.CMsgDOTAGetRecentPlayTimeFriendsResponse,
   /** k_EMsgGCToClientCommendNotification */
-  8267: _chunkCU4ZEV3Ucjs.CMsgGCToClientCommendNotification,
+  8267: _chunkKNCAQGVIcjs.CMsgGCToClientCommendNotification,
   /** k_EMsgProfileResponse */
-  8269: _chunkCU4ZEV3Ucjs.CMsgProfileResponse,
+  8269: _chunkKNCAQGVIcjs.CMsgProfileResponse,
   /** k_EMsgProfileUpdateResponse */
-  8271: _chunkCU4ZEV3Ucjs.CMsgProfileUpdateResponse,
+  8271: _chunkKNCAQGVIcjs.CMsgProfileUpdateResponse,
   /** k_EMsgHeroGlobalDataResponse */
-  8275: _chunkCU4ZEV3Ucjs.CMsgHeroGlobalDataResponse,
+  8275: _chunkKNCAQGVIcjs.CMsgHeroGlobalDataResponse,
   /** k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse */
-  8277: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse,
+  8277: _chunkKNCAQGVIcjs.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse,
   /** k_EMsgPrivateMetadataKeyResponse */
-  8280: _chunkCU4ZEV3Ucjs.CMsgPrivateMetadataKeyResponse,
+  8280: _chunkKNCAQGVIcjs.CMsgPrivateMetadataKeyResponse,
   /** k_EMsgGCToClientCavernCrawlMapPathCompleted */
-  8288: _chunkCU4ZEV3Ucjs.CMsgGCToClientCavernCrawlMapPathCompleted,
+  8288: _chunkKNCAQGVIcjs.CMsgGCToClientCavernCrawlMapPathCompleted,
   /** k_EMsgClientToGCCavernCrawlClaimRoomResponse */
-  8290: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlClaimRoomResponse,
+  8290: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlClaimRoomResponse,
   /** k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse */
-  8292: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlUseItemOnRoomResponse,
+  8292: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlUseItemOnRoomResponse,
   /** k_EMsgClientToGCCavernCrawlUseItemOnPathResponse */
-  8294: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlUseItemOnPathResponse,
+  8294: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlUseItemOnPathResponse,
   /** k_EMsgClientToGCCavernCrawlRequestMapStateResponse */
-  8296: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlRequestMapStateResponse,
+  8296: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlRequestMapStateResponse,
   /** k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse */
-  8309: _chunkCU4ZEV3Ucjs.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse,
+  8309: _chunkKNCAQGVIcjs.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse,
   /** k_EMsgGCToClientRecordContestVoteResponse */
-  8314: _chunkCU4ZEV3Ucjs.CMsgGCToClientRecordContestVoteResponse,
+  8314: _chunkKNCAQGVIcjs.CMsgGCToClientRecordContestVoteResponse,
   /** k_EMsgDevGrantEventPointsResponse */
-  8320: _chunkCU4ZEV3Ucjs.CMsgDevGrantEventPointsResponse,
+  8320: _chunkKNCAQGVIcjs.CMsgDevGrantEventPointsResponse,
   /** k_EMsgDevGrantEventActionResponse */
-  8322: _chunkCU4ZEV3Ucjs.CMsgDevGrantEventActionResponse,
+  8322: _chunkKNCAQGVIcjs.CMsgDevGrantEventActionResponse,
   /** k_EMsgDevResetEventStateResponse */
-  8324: _chunkCU4ZEV3Ucjs.CMsgDevResetEventStateResponse,
+  8324: _chunkKNCAQGVIcjs.CMsgDevResetEventStateResponse,
   /** k_EMsgConsumeEventSupportGrantItemResponse */
-  8327: _chunkCU4ZEV3Ucjs.CMsgConsumeEventSupportGrantItemResponse,
+  8327: _chunkKNCAQGVIcjs.CMsgConsumeEventSupportGrantItemResponse,
   /** k_EMsgGCToClientClaimEventActionUsingItemCompleted */
-  8328: _chunkCU4ZEV3Ucjs.CMsgGCToClientClaimEventActionUsingItemCompleted,
+  8328: _chunkKNCAQGVIcjs.CMsgGCToClientClaimEventActionUsingItemCompleted,
   /** k_EMsgGCToClientCavernCrawlMapUpdated */
-  8329: _chunkCU4ZEV3Ucjs.CMsgGCToClientCavernCrawlMapUpdated,
+  8329: _chunkKNCAQGVIcjs.CMsgGCToClientCavernCrawlMapUpdated,
   /** k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse */
-  8331: _chunkCU4ZEV3Ucjs.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse,
+  8331: _chunkKNCAQGVIcjs.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse,
   /** k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse */
-  8333: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse,
+  8333: _chunkKNCAQGVIcjs.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse,
   /** k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse */
-  8335: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse,
+  8335: _chunkKNCAQGVIcjs.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse,
   /** k_EMsgClientToGCRequestContestVotesResponse */
-  8348: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestContestVotesResponse,
+  8348: _chunkKNCAQGVIcjs.CMsgClientToGCRequestContestVotesResponse,
   /** k_EMsgClientToGCMVPVoteTimeoutResponse */
-  8350: _chunkCU4ZEV3Ucjs.CMsgClientToGCMVPVoteTimeoutResponse,
+  8350: _chunkKNCAQGVIcjs.CMsgClientToGCMVPVoteTimeoutResponse,
   /** k_EMsgClientToGCSubmitPlayerMatchSurveyResponse */
-  8362: _chunkCU4ZEV3Ucjs.CMsgClientToGCSubmitPlayerMatchSurveyResponse,
+  8362: _chunkKNCAQGVIcjs.CMsgClientToGCSubmitPlayerMatchSurveyResponse,
   /** k_EMsgDevDeleteEventActionsResponse */
-  8366: _chunkCU4ZEV3Ucjs.CMsgDevDeleteEventActionsResponse,
+  8366: _chunkKNCAQGVIcjs.CMsgDevDeleteEventActionsResponse,
   /** k_EMsgGCSubmitPlayerAvoidRequestResponse */
-  8638: _chunkCU4ZEV3Ucjs.CMsgDOTASubmitPlayerAvoidRequestResponse,
+  8638: _chunkKNCAQGVIcjs.CMsgDOTASubmitPlayerAvoidRequestResponse,
   /** k_EMsgGCtoGCAssociatedExploiterAccountInfoResponse */
-  8641: _chunkCU4ZEV3Ucjs.CMsgGCtoGCAssociatedExploiterAccountInfoResponse,
+  8641: _chunkKNCAQGVIcjs.CMsgGCtoGCAssociatedExploiterAccountInfoResponse,
   /** k_EMsgGCToClientVACReminder */
-  8643: _chunkCU4ZEV3Ucjs.CMsgGCToClientVACReminder,
+  8643: _chunkKNCAQGVIcjs.CMsgGCToClientVACReminder,
   /** k_EMsgClientToGCUnderDraftBuyResponse */
-  8645: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftBuyResponse,
+  8645: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftBuyResponse,
   /** k_EMsgClientToGCUnderDraftRerollResponse */
-  8647: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftRerollResponse,
+  8647: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftRerollResponse,
   /** k_EMsgClientToGCCreateGuildResponse */
-  8650: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreateGuildResponse,
+  8650: _chunkKNCAQGVIcjs.CMsgClientToGCCreateGuildResponse,
   /** k_EMsgClientToGCSetGuildInfoResponse */
-  8652: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetGuildInfoResponse,
+  8652: _chunkKNCAQGVIcjs.CMsgClientToGCSetGuildInfoResponse,
   /** k_EMsgClientToGCAddGuildRoleResponse */
-  8654: _chunkCU4ZEV3Ucjs.CMsgClientToGCAddGuildRoleResponse,
+  8654: _chunkKNCAQGVIcjs.CMsgClientToGCAddGuildRoleResponse,
   /** k_EMsgClientToGCModifyGuildRoleResponse */
-  8656: _chunkCU4ZEV3Ucjs.CMsgClientToGCModifyGuildRoleResponse,
+  8656: _chunkKNCAQGVIcjs.CMsgClientToGCModifyGuildRoleResponse,
   /** k_EMsgClientToGCRemoveGuildRoleResponse */
-  8658: _chunkCU4ZEV3Ucjs.CMsgClientToGCRemoveGuildRoleResponse,
+  8658: _chunkKNCAQGVIcjs.CMsgClientToGCRemoveGuildRoleResponse,
   /** k_EMsgClientToGCJoinGuildResponse */
-  8660: _chunkCU4ZEV3Ucjs.CMsgClientToGCJoinGuildResponse,
+  8660: _chunkKNCAQGVIcjs.CMsgClientToGCJoinGuildResponse,
   /** k_EMsgClientToGCLeaveGuildResponse */
-  8662: _chunkCU4ZEV3Ucjs.CMsgClientToGCLeaveGuildResponse,
+  8662: _chunkKNCAQGVIcjs.CMsgClientToGCLeaveGuildResponse,
   /** k_EMsgClientToGCInviteToGuildResponse */
-  8664: _chunkCU4ZEV3Ucjs.CMsgClientToGCInviteToGuildResponse,
+  8664: _chunkKNCAQGVIcjs.CMsgClientToGCInviteToGuildResponse,
   /** k_EMsgClientToGCDeclineInviteToGuildResponse */
-  8666: _chunkCU4ZEV3Ucjs.CMsgClientToGCDeclineInviteToGuildResponse,
+  8666: _chunkKNCAQGVIcjs.CMsgClientToGCDeclineInviteToGuildResponse,
   /** k_EMsgClientToGCCancelInviteToGuildResponse */
-  8668: _chunkCU4ZEV3Ucjs.CMsgClientToGCCancelInviteToGuildResponse,
+  8668: _chunkKNCAQGVIcjs.CMsgClientToGCCancelInviteToGuildResponse,
   /** k_EMsgClientToGCKickGuildMemberResponse */
-  8670: _chunkCU4ZEV3Ucjs.CMsgClientToGCKickGuildMemberResponse,
+  8670: _chunkKNCAQGVIcjs.CMsgClientToGCKickGuildMemberResponse,
   /** k_EMsgClientToGCSetGuildMemberRoleResponse */
-  8672: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetGuildMemberRoleResponse,
+  8672: _chunkKNCAQGVIcjs.CMsgClientToGCSetGuildMemberRoleResponse,
   /** k_EMsgClientToGCRequestGuildDataResponse */
-  8674: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestGuildDataResponse,
+  8674: _chunkKNCAQGVIcjs.CMsgClientToGCRequestGuildDataResponse,
   /** k_EMsgGCToClientGuildDataUpdated */
-  8675: _chunkCU4ZEV3Ucjs.CMsgGCToClientGuildDataUpdated,
+  8675: _chunkKNCAQGVIcjs.CMsgGCToClientGuildDataUpdated,
   /** k_EMsgClientToGCRequestGuildMembershipResponse */
-  8677: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestGuildMembershipResponse,
+  8677: _chunkKNCAQGVIcjs.CMsgClientToGCRequestGuildMembershipResponse,
   /** k_EMsgGCToClientGuildMembershipUpdated */
-  8678: _chunkCU4ZEV3Ucjs.CMsgGCToClientGuildMembershipUpdated,
+  8678: _chunkKNCAQGVIcjs.CMsgGCToClientGuildMembershipUpdated,
   /** k_EMsgClientToGCAcceptInviteToGuildResponse */
-  8682: _chunkCU4ZEV3Ucjs.CMsgClientToGCAcceptInviteToGuildResponse,
+  8682: _chunkKNCAQGVIcjs.CMsgClientToGCAcceptInviteToGuildResponse,
   /** k_EMsgClientToGCSetGuildRoleOrderResponse */
-  8684: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetGuildRoleOrderResponse,
+  8684: _chunkKNCAQGVIcjs.CMsgClientToGCSetGuildRoleOrderResponse,
   /** k_EMsgClientToGCRequestGuildFeedResponse */
-  8686: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestGuildFeedResponse,
+  8686: _chunkKNCAQGVIcjs.CMsgClientToGCRequestGuildFeedResponse,
   /** k_EMsgClientToGCRequestAccountGuildEventDataResponse */
-  8688: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestAccountGuildEventDataResponse,
+  8688: _chunkKNCAQGVIcjs.CMsgClientToGCRequestAccountGuildEventDataResponse,
   /** k_EMsgGCToClientAccountGuildEventDataUpdated */
-  8689: _chunkCU4ZEV3Ucjs.CMsgGCToClientAccountGuildEventDataUpdated,
+  8689: _chunkKNCAQGVIcjs.CMsgGCToClientAccountGuildEventDataUpdated,
   /** k_EMsgClientToGCRequestActiveGuildContractsResponse */
-  8691: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestActiveGuildContractsResponse,
+  8691: _chunkKNCAQGVIcjs.CMsgClientToGCRequestActiveGuildContractsResponse,
   /** k_EMsgGCToClientActiveGuildContractsUpdated */
-  8692: _chunkCU4ZEV3Ucjs.CMsgGCToClientActiveGuildContractsUpdated,
+  8692: _chunkKNCAQGVIcjs.CMsgGCToClientActiveGuildContractsUpdated,
   /** k_EMsgGCToClientGuildFeedUpdated */
-  8693: _chunkCU4ZEV3Ucjs.CMsgGCToClientGuildFeedUpdated,
+  8693: _chunkKNCAQGVIcjs.CMsgGCToClientGuildFeedUpdated,
   /** k_EMsgClientToGCSelectGuildContractResponse */
-  8695: _chunkCU4ZEV3Ucjs.CMsgClientToGCSelectGuildContractResponse,
+  8695: _chunkKNCAQGVIcjs.CMsgClientToGCSelectGuildContractResponse,
   /** k_EMsgClientToGCAddPlayerToGuildChatResponse */
-  8699: _chunkCU4ZEV3Ucjs.CMsgClientToGCAddPlayerToGuildChatResponse,
+  8699: _chunkKNCAQGVIcjs.CMsgClientToGCAddPlayerToGuildChatResponse,
   /** k_EMsgClientToGCUnderDraftSellResponse */
-  8701: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftSellResponse,
+  8701: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftSellResponse,
   /** k_EMsgClientToGCUnderDraftResponse */
-  8703: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftResponse,
+  8703: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftResponse,
   /** k_EMsgClientToGCUnderDraftRedeemRewardResponse */
-  8705: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftRedeemRewardResponse,
+  8705: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftRedeemRewardResponse,
   /** k_EMsgClientToGCRequestActiveGuildChallengeResponse */
-  8714: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestActiveGuildChallengeResponse,
+  8714: _chunkKNCAQGVIcjs.CMsgClientToGCRequestActiveGuildChallengeResponse,
   /** k_EMsgGCToClientActiveGuildChallengeUpdated */
-  8715: _chunkCU4ZEV3Ucjs.CMsgGCToClientActiveGuildChallengeUpdated,
+  8715: _chunkKNCAQGVIcjs.CMsgGCToClientActiveGuildChallengeUpdated,
   /** k_EMsgClientToGCRequestReporterUpdatesResponse */
-  8717: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestReporterUpdatesResponse,
+  8717: _chunkKNCAQGVIcjs.CMsgClientToGCRequestReporterUpdatesResponse,
   /** k_EMsgClientToGCRequestGuildEventMembersResponse */
-  8722: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestGuildEventMembersResponse,
+  8722: _chunkKNCAQGVIcjs.CMsgClientToGCRequestGuildEventMembersResponse,
   /** k_EMsgClientToGCReportGuildContentResponse */
-  8726: _chunkCU4ZEV3Ucjs.CMsgClientToGCReportGuildContentResponse,
+  8726: _chunkKNCAQGVIcjs.CMsgClientToGCReportGuildContentResponse,
   /** k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse */
-  8728: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestAccountGuildPersonaInfoResponse,
+  8728: _chunkKNCAQGVIcjs.CMsgClientToGCRequestAccountGuildPersonaInfoResponse,
   /** k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse */
-  8730: _chunkCU4ZEV3Ucjs.CMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse,
+  8730: _chunkKNCAQGVIcjs.CMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse,
   /** k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse */
-  8737: _chunkCU4ZEV3Ucjs.CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse,
+  8737: _chunkKNCAQGVIcjs.CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse,
   /** k_EMsgClientToGCUnderDraftRollBackBenchResponse */
-  8741: _chunkCU4ZEV3Ucjs.CMsgClientToGCUnderDraftRollBackBenchResponse,
+  8741: _chunkKNCAQGVIcjs.CMsgClientToGCUnderDraftRollBackBenchResponse,
   /** k_EMsgGCToClientGuildMembersDataUpdated */
-  8747: _chunkCU4ZEV3Ucjs.CMsgGCToClientGuildMembersDataUpdated,
+  8747: _chunkKNCAQGVIcjs.CMsgGCToClientGuildMembersDataUpdated,
   /** k_EMsgClientToGCGetOWMatchDetailsResponse */
-  8752: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetOWMatchDetailsResponse,
+  8752: _chunkKNCAQGVIcjs.CMsgClientToGCGetOWMatchDetailsResponse,
   /** k_EMsgClientToGCSubmitOWConvictionResponse */
-  8754: _chunkCU4ZEV3Ucjs.CMsgClientToGCSubmitOWConvictionResponse,
+  8754: _chunkKNCAQGVIcjs.CMsgClientToGCSubmitOWConvictionResponse,
   /** k_EMsgClientToGCClaimLeaderboardRewardsResponse */
-  8758: _chunkCU4ZEV3Ucjs.CMsgClientToGCClaimLeaderboardRewardsResponse,
+  8758: _chunkKNCAQGVIcjs.CMsgClientToGCClaimLeaderboardRewardsResponse,
   /** k_EMsgClientToGCRecalibrateMMRResponse */
-  8760: _chunkCU4ZEV3Ucjs.CMsgClientToGCRecalibrateMMRResponse,
+  8760: _chunkKNCAQGVIcjs.CMsgClientToGCRecalibrateMMRResponse,
   /** k_EMsgClientToGCChinaSSAURLResponse */
-  8765: _chunkCU4ZEV3Ucjs.CMsgClientToGCChinaSSAURLResponse,
+  8765: _chunkKNCAQGVIcjs.CMsgClientToGCChinaSSAURLResponse,
   /** k_EMsgClientToGCChinaSSAAcceptedResponse */
-  8767: _chunkCU4ZEV3Ucjs.CMsgClientToGCChinaSSAAcceptedResponse,
+  8767: _chunkKNCAQGVIcjs.CMsgClientToGCChinaSSAAcceptedResponse,
   /** k_EMsgGCToClientOverwatchCasesAvailable */
-  8772: _chunkCU4ZEV3Ucjs.CMsgGCToClientOverwatchCasesAvailable,
+  8772: _chunkKNCAQGVIcjs.CMsgGCToClientOverwatchCasesAvailable,
   /** k_EMsgClientToGCGetDPCFavoritesResponse */
-  8778: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetDPCFavoritesResponse,
+  8778: _chunkKNCAQGVIcjs.CMsgClientToGCGetDPCFavoritesResponse,
   /** k_EMsgClientToGCSetDPCFavoriteStateResponse */
-  8780: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetDPCFavoriteStateResponse,
+  8780: _chunkKNCAQGVIcjs.CMsgClientToGCSetDPCFavoriteStateResponse,
   /** k_EMsgClientToGCSetEventActiveSeasonIDResponse */
-  8807: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetEventActiveSeasonIDResponse,
+  8807: _chunkKNCAQGVIcjs.CMsgClientToGCSetEventActiveSeasonIDResponse,
   /** k_EMsgClientToGCCreateTeamPlayerCardPackResponse */
-  8811: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreateTeamPlayerCardPackResponse,
+  8811: _chunkKNCAQGVIcjs.CMsgClientToGCCreateTeamPlayerCardPackResponse,
   /** k_EMsgClientToGCGetStickerbookResponse */
-  8826: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetStickerbookResponse,
+  8826: _chunkKNCAQGVIcjs.CMsgClientToGCGetStickerbookResponse,
   /** k_EMsgClientToGCCreateStickerbookPageResponse */
-  8828: _chunkCU4ZEV3Ucjs.CMsgClientToGCCreateStickerbookPageResponse,
+  8828: _chunkKNCAQGVIcjs.CMsgClientToGCCreateStickerbookPageResponse,
   /** k_EMsgClientToGCDeleteStickerbookPageResponse */
-  8830: _chunkCU4ZEV3Ucjs.CMsgClientToGCDeleteStickerbookPageResponse,
+  8830: _chunkKNCAQGVIcjs.CMsgClientToGCDeleteStickerbookPageResponse,
   /** k_EMsgClientToGCPlaceStickersResponse */
-  8832: _chunkCU4ZEV3Ucjs.CMsgClientToGCPlaceStickersResponse,
+  8832: _chunkKNCAQGVIcjs.CMsgClientToGCPlaceStickersResponse,
   /** k_EMsgClientToGCPlaceCollectionStickersResponse */
-  8834: _chunkCU4ZEV3Ucjs.CMsgClientToGCPlaceCollectionStickersResponse,
+  8834: _chunkKNCAQGVIcjs.CMsgClientToGCPlaceCollectionStickersResponse,
   /** k_EMsgClientToGCOrderStickerbookTeamPageResponse */
-  8836: _chunkCU4ZEV3Ucjs.CMsgClientToGCOrderStickerbookTeamPageResponse,
+  8836: _chunkKNCAQGVIcjs.CMsgClientToGCOrderStickerbookTeamPageResponse,
   /** k_EMsgClientToGCSetHeroStickerResponse */
-  8852: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetHeroStickerResponse,
+  8852: _chunkKNCAQGVIcjs.CMsgClientToGCSetHeroStickerResponse,
   /** k_EMsgClientToGCGetHeroStickersResponse */
-  8854: _chunkCU4ZEV3Ucjs.CMsgClientToGCGetHeroStickersResponse,
+  8854: _chunkKNCAQGVIcjs.CMsgClientToGCGetHeroStickersResponse,
   /** k_EMsgClientToGCSetFavoritePageResponse */
-  8856: _chunkCU4ZEV3Ucjs.CMsgClientToGCSetFavoritePageResponse,
+  8856: _chunkKNCAQGVIcjs.CMsgClientToGCSetFavoritePageResponse,
   /** k_EMsgGCToClientCollectorsCacheAvailableDataResponse */
-  8872: _chunkCU4ZEV3Ucjs.CMsgGCToClientCollectorsCacheAvailableDataResponse,
+  8872: _chunkKNCAQGVIcjs.CMsgGCToClientCollectorsCacheAvailableDataResponse,
   /** k_EMsgGCToClientUploadMatchClipResponse */
-  8874: _chunkCU4ZEV3Ucjs.CMsgGCToClientUploadMatchClipResponse,
+  8874: _chunkKNCAQGVIcjs.CMsgGCToClientUploadMatchClipResponse,
   /** k_EMsgGCToClientRankResponse */
-  8880: _chunkCU4ZEV3Ucjs.CMsgGCToClientRankResponse,
+  8880: _chunkKNCAQGVIcjs.CMsgGCToClientRankResponse,
   /** k_EMsgGCToClientRankUpdate */
-  8881: _chunkCU4ZEV3Ucjs.CMsgGCToClientRankUpdate,
+  8881: _chunkKNCAQGVIcjs.CMsgGCToClientRankUpdate,
   /** k_EMsgGCToClientMapStatsResponse */
-  8884: _chunkCU4ZEV3Ucjs.CMsgGCToClientMapStatsResponse,
+  8884: _chunkKNCAQGVIcjs.CMsgGCToClientMapStatsResponse,
   /** k_EMsgClientToGCRoadToTIGetQuestsResponse */
-  8898: _chunkCU4ZEV3Ucjs.CMsgClientToGCRoadToTIGetQuestsResponse,
+  8898: _chunkKNCAQGVIcjs.CMsgClientToGCRoadToTIGetQuestsResponse,
   /** k_EMsgClientToGCRoadToTIGetActiveQuestResponse */
-  8900: _chunkCU4ZEV3Ucjs.CMsgClientToGCRoadToTIGetActiveQuestResponse,
+  8900: _chunkKNCAQGVIcjs.CMsgClientToGCRoadToTIGetActiveQuestResponse,
   /** k_EMsgGCToClientRoadToTIQuestDataUpdated */
-  8910: _chunkCU4ZEV3Ucjs.CMsgGCToClientRoadToTIQuestDataUpdated,
+  8910: _chunkKNCAQGVIcjs.CMsgGCToClientRoadToTIQuestDataUpdated,
   /** k_EMsgClientToGCRoadToTIUseItemResponse */
-  8912: _chunkCU4ZEV3Ucjs.CMsgClientToGCRoadToTIUseItemResponse,
+  8912: _chunkKNCAQGVIcjs.CMsgClientToGCRoadToTIUseItemResponse,
   /** k_EMsgClientToGCOverworldGetUserDataResponse */
-  8945: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldGetUserDataResponse,
+  8945: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldGetUserDataResponse,
   /** k_EMsgClientToGCOverworldCompletePathResponse */
-  8947: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldCompletePathResponse,
+  8947: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldCompletePathResponse,
   /** k_EMsgClientToGCOverworldClaimEncounterRewardResponse */
-  8949: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldClaimEncounterRewardResponse,
+  8949: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldClaimEncounterRewardResponse,
   /** k_EMsgClientToGCOverworldDevResetAllResponse */
-  8951: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevResetAllResponse,
+  8951: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevResetAllResponse,
   /** k_EMsgClientToGCOverworldDevResetNodeResponse */
-  8953: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevResetNodeResponse,
+  8953: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevResetNodeResponse,
   /** k_EMsgClientToGCOverworldDevGrantTokensResponse */
-  8957: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevGrantTokensResponse,
+  8957: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevGrantTokensResponse,
   /** k_EMsgClientToGCOverworldDevClearInventoryResponse */
-  8959: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldDevClearInventoryResponse,
+  8959: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldDevClearInventoryResponse,
   /** k_EMsgGCToClientOverworldUserDataUpdated */
-  8962: _chunkCU4ZEV3Ucjs.CMsgGCToClientOverworldUserDataUpdated,
+  8962: _chunkKNCAQGVIcjs.CMsgGCToClientOverworldUserDataUpdated,
   /** k_EMsgClientToGCOverworldMoveToNodeResponse */
-  8964: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldMoveToNodeResponse,
+  8964: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldMoveToNodeResponse,
   /** k_EMsgClientToGCNewBloomGiftResponse */
-  8966: _chunkCU4ZEV3Ucjs.CMsgClientToGCNewBloomGiftResponse,
+  8966: _chunkKNCAQGVIcjs.CMsgClientToGCNewBloomGiftResponse,
   /** k_EMsgClientToGCOverworldTradeTokensResponse */
-  8971: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldTradeTokensResponse,
+  8971: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldTradeTokensResponse,
   /** k_EMsgClientToGCOverworldFeedbackResponse */
-  8980: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldFeedbackResponse,
+  8980: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldFeedbackResponse,
   /** k_EMsgClientToGCOverworldVisitEncounterResponse */
-  8982: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldVisitEncounterResponse,
+  8982: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldVisitEncounterResponse,
   /** k_EMsgClientToGCOverworldGiftTokensResponse */
-  8984: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldGiftTokensResponse,
+  8984: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldGiftTokensResponse,
   /** k_EMsgClientToGCDotaLabsFeedbackResponse */
-  8986: _chunkCU4ZEV3Ucjs.CMsgClientToGCDotaLabsFeedbackResponse,
+  8986: _chunkKNCAQGVIcjs.CMsgClientToGCDotaLabsFeedbackResponse,
   /** k_EMsgClientToGCOverworldGetDynamicImageResponse */
-  8989: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldGetDynamicImageResponse,
+  8989: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldGetDynamicImageResponse,
   /** k_EMsgGCCompendiumRemoveAllSelectionsResponse */
-  9008: _chunkCU4ZEV3Ucjs.CMsgDOTACompendiumRemoveAllSelectionsResponse,
+  9008: _chunkKNCAQGVIcjs.CMsgDOTACompendiumRemoveAllSelectionsResponse,
   /** k_EMsgClientToGCOverworldMinigameActionResponse */
-  9010: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldMinigameActionResponse,
+  9010: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldMinigameActionResponse,
   /** k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse */
-  9014: _chunkCU4ZEV3Ucjs.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
+  9014: _chunkKNCAQGVIcjs.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
 };
 var allMessages = { ...clientMessages, ...gcMessages };
 var jobResponses = {
+  7042: 7043,
+  7044: 7113,
   7073: 7074,
   7078: 7079,
   7091: 7092,
@@ -1543,11 +1668,13 @@ var jobResponses = {
   7408: 7409,
   7454: 7455,
   7456: 7457,
+  7470: 7471,
   7518: 7519,
   7521: 7522,
   7527: 7528,
   7534: 7535,
   7606: 7607,
+  7623: 7624,
   7662: 7663,
   7664: 7665,
   7670: 7671,
@@ -1559,6 +1686,7 @@ var jobResponses = {
   7686: 7687,
   7688: 7689,
   8009: 8010,
+  8011: 8012,
   8078: 8079,
   8082: 8083,
   8111: 8112,
@@ -1572,6 +1700,7 @@ var jobResponses = {
   8174: 8175,
   8176: 8177,
   8187: 8188,
+  8189: 8190,
   8201: 8202,
   8209: 8210,
   8211: 8212,
@@ -1708,8 +1837,20 @@ var messageNames = {
   4524: "k_EMsgGCToClientAggregateMetricsBackoff",
   4525: "k_EMsgGCToServerSteamLearnAccessTokensChanged",
   4526: "k_EMsgGCToServerSteamLearnUseHTTP",
+  7033: "k_EMsgGCStartFindingMatch",
+  7035: "k_EMsgGCAbandonCurrentGame",
+  7036: "k_EMsgGCStopFindingMatch",
+  7038: "k_EMsgGCPracticeLobbyCreate",
+  7040: "k_EMsgGCPracticeLobbyLeave",
+  7041: "k_EMsgGCPracticeLobbyLaunch",
+  7042: "k_EMsgGCPracticeLobbyList",
+  7043: "k_EMsgGCPracticeLobbyListResponse",
+  7044: "k_EMsgGCPracticeLobbyJoin",
+  7046: "k_EMsgGCPracticeLobbySetDetails",
+  7047: "k_EMsgGCPracticeLobbySetTeamSlot",
   7049: "k_EMsgGCInitialQuestionnaireResponse",
   7056: "k_EMsgGCBroadcastNotification",
+  7070: "k_EMsgGCReadyUp",
   7071: "k_EMsgGCKickedFromMatchmakingQueue",
   7073: "k_EMsgGCSpectateFriendGame",
   7074: "k_EMsgGCSpectateFriendGameResponse",
@@ -1717,6 +1858,7 @@ var messageNames = {
   7077: "k_EMsgGCReportsRemainingResponse",
   7078: "k_EMsgGCSubmitPlayerReport",
   7079: "k_EMsgGCSubmitPlayerReportResponse",
+  7081: "k_EMsgGCPracticeLobbyKick",
   7082: "k_EMsgGCSubmitPlayerReportV2",
   7083: "k_EMsgGCSubmitPlayerReportResponseV2",
   7091: "k_EMsgGCWatchGame",
@@ -1725,9 +1867,16 @@ var messageNames = {
   7096: "k_EMsgGCMatchDetailsResponse",
   7097: "k_EMsgGCCancelWatchGame",
   7102: "k_EMsgGCPopup",
+  7111: "k_EMsgGCFriendPracticeLobbyListRequest",
+  7112: "k_EMsgGCFriendPracticeLobbyListResponse",
+  7113: "k_EMsgGCPracticeLobbyJoinResponse",
+  7142: "k_EMsgGCApplyTeamToPracticeLobby",
+  7149: "k_EMsgGCPracticeLobbyJoinBroadcastChannel",
+  7170: "k_EMsgGCReadyUpStatus",
   7188: "k_EMsgGCBalancedShuffleLobby",
   7197: "k_EMsgGCMatchmakingStatsRequest",
   7198: "k_EMsgGCMatchmakingStatsResponse",
+  7199: "k_EMsgGCBotGameCreate",
   7200: "k_EMsgGCSetMatchHistoryAccess",
   7201: "k_EMsgGCSetMatchHistoryAccessResponse",
   7203: "k_EMsgUpgradeLeagueItem",
@@ -1747,6 +1896,8 @@ var messageNames = {
   7327: "k_EMsgGCSetProfilePrivacy",
   7328: "k_EMsgGCSetProfilePrivacyResponse",
   7342: "k_EMsgGCClientSuspended",
+  7343: "k_EMsgGCPartyMemberSetCoach",
+  7346: "k_EMsgGCPracticeLobbySetCoach",
   7367: "k_EMsgGCLobbyUpdateBroadcastChannelInfo",
   7387: "k_EMsgDOTAGetEventPoints",
   7388: "k_EMsgDOTAGetEventPointsResponse",
@@ -1763,11 +1914,18 @@ var messageNames = {
   7455: "k_EMsgGCRankedPlayerInfoSubmitResponse",
   7456: "k_EMsgGCPlayerInfoSubmit",
   7457: "k_EMsgGCPlayerInfoSubmitResponse",
+  7466: "k_EMsgGCJoinableCustomGameModesRequest",
+  7467: "k_EMsgGCJoinableCustomGameModesResponse",
+  7468: "k_EMsgGCJoinableCustomLobbiesRequest",
+  7469: "k_EMsgGCJoinableCustomLobbiesResponse",
+  7470: "k_EMsgGCQuickJoinCustomLobby",
+  7471: "k_EMsgGCQuickJoinCustomLobbyResponse",
   7484: "k_EMsgGCHasItemQuery",
   7485: "k_EMsgGCHasItemResponse",
   7495: "k_EMsgGCToClientTournamentItemDrop",
   7503: "k_EMsgClientToGCEmoticonDataRequest",
   7504: "k_EMsgGCToClientEmoticonData",
+  7505: "k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus",
   7518: "k_EMsgDOTARedeemItem",
   7519: "k_EMsgDOTARedeemItemResponse",
   7521: "k_EMsgClientToGCGetAllHeroProgress",
@@ -1781,11 +1939,14 @@ var messageNames = {
   7547: "k_EMsgClientToGCCreateHeroStatue",
   7548: "k_EMsgGCToClientHeroStatueCreateResult",
   7572: "k_EMsgLobbyEventPoints",
+  7581: "k_EMsgGCToClientSteamDatagramTicket",
   7584: "k_EMsgClientToGCRerollPlayerChallenge",
   7586: "k_EMsgGCRerollPlayerChallengeResponse",
   7603: "k_EMsgClientToGCApplyGemCombiner",
   7606: "k_EMsgClientToGCGetAllHeroOrder",
   7607: "k_EMsgClientToGCGetAllHeroOrderResponse",
+  7623: "k_EMsgGCToClientRequestLaneSelection",
+  7624: "k_EMsgGCToClientRequestLaneSelectionResponse",
   7627: "k_EMsgClientToGCPlayerCardSpecificPurchaseRequest",
   7628: "k_EMsgClientToGCPlayerCardSpecificPurchaseResponse",
   7662: "k_EMsgClientToGCGetFilteredPlayers",
@@ -1807,6 +1968,8 @@ var messageNames = {
   7678: "k_EMsgClientToGCVerifyFavoritePlayers",
   7679: "k_EMsgGCToClientVerifyFavoritePlayersResponse",
   7680: "k_EMsgGCToClientPartySearchInvites",
+  7681: "k_EMsgGCToClientRequestMMInfo",
+  7682: "k_EMsgClientToGCMMInfo",
   7684: "k_EMsgClientToGCPurchaseLabyrinthBlessings",
   7685: "k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse",
   7686: "k_EMsgClientToGCPurchaseFilteredPlayerSlot",
@@ -1818,6 +1981,8 @@ var messageNames = {
   8007: "k_EMsgGCToClientPlayerStatsResponse",
   8009: "k_EMsgClientToGCFindTopSourceTVGames",
   8010: "k_EMsgGCToClientFindTopSourceTVGamesResponse",
+  8011: "k_EMsgGCLobbyList",
+  8012: "k_EMsgGCLobbyListResponse",
   8016: "k_EMsgClientToGCSocialFeedPostCommentRequest",
   8017: "k_EMsgGCToClientSocialFeedPostCommentResponse",
   8018: "k_EMsgClientToGCCustomGamesFriendsPlayedRequest",
@@ -1828,10 +1993,12 @@ var messageNames = {
   8034: "k_EMsgClientToGCGetProfileCardStats",
   8036: "k_EMsgClientToGCTopLeagueMatchesRequest",
   8037: "k_EMsgClientToGCTopFriendMatchesRequest",
+  8047: "k_EMsgGCPracticeLobbyKickFromTeam",
   8050: "k_EMsgClientToGCSocialFeedPostMessageRequest",
   8051: "k_EMsgGCToClientSocialFeedPostMessageResponse",
   8052: "k_EMsgCustomGameListenServerStartedLoading",
   8053: "k_EMsgCustomGameClientFinishedLoading",
+  8054: "k_EMsgGCPracticeLobbyCloseBroadcastChannel",
   8061: "k_EMsgGCToClientTopLeagueMatchesResponse",
   8062: "k_EMsgGCToClientTopFriendMatchesResponse",
   8063: "k_EMsgClientToGCMatchesMinimalRequest",
@@ -1864,6 +2031,7 @@ var messageNames = {
   8153: "k_EMsgGCToClientQuestProgressUpdated",
   8154: "k_EMsgGCToClientWageringUpdate",
   8155: "k_EMsgGCToClientArcanaVotesUpdate",
+  8163: "k_EMsgSpectatorLobbyGameDetails",
   8168: "k_EMsgClientToGCOpenPlayerCardPack",
   8169: "k_EMsgClientToGCOpenPlayerCardPackResponse",
   8170: "k_EMsgClientToGCSelectCompendiumInGamePrediction",
@@ -1874,6 +2042,8 @@ var messageNames = {
   8177: "k_EMsgClientToGCCreatePlayerCardPackResponse",
   8187: "k_EMsgGCGetPlayerCardItemInfo",
   8188: "k_EMsgGCGetPlayerCardItemInfoResponse",
+  8189: "k_EMsgClientToGCRequestSteamDatagramTicket",
+  8190: "k_EMsgClientToGCRequestSteamDatagramTicketResponse",
   8191: "k_EMsgGCToClientBattlePassRollupRequest",
   8192: "k_EMsgGCToClientBattlePassRollupResponse",
   8193: "k_EMsgClientToGCTransferSeasonalMMRRequest",
@@ -2588,4 +2758,4 @@ var Dota2GC = (_class2 = class extends _events.EventEmitter {
 
 
 exports.Dota2GCError = Dota2GCError; exports.NoEncoderError = NoEncoderError; exports.NoDecoderError = NoDecoderError; exports.UnexpectedResponseError = UnexpectedResponseError; exports.JobTimeoutError = JobTimeoutError; exports.JobAbortedError = JobAbortedError; exports.NotConnectedError = NotConnectedError; exports.clientMessages = clientMessages; exports.gcMessages = gcMessages; exports.allMessages = allMessages; exports.jobResponses = jobResponses; exports.messageNames = messageNames; exports.GCRouter = GCRouter; exports.DOTA2_APPID = DOTA2_APPID; exports.Dota2GC = Dota2GC;
-//# sourceMappingURL=chunk-CEY2YADC.cjs.map
+//# sourceMappingURL=chunk-IZ4S4CLQ.cjs.map

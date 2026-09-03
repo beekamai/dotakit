@@ -15,6 +15,7 @@ export * from "./gcsdk_gcmessages";
 export * from "./dota_gcmessages_common";
 export * from "./base_gcmessages";
 export * from "./dota_gcmessages_common_match_management";
+export * from "./dota_gcmessages_client_match_management";
 export * from "./dota_gcmessages_common_lobby";
 export * from "./dota_gcmessages_common_survivors";
 export * from "./dota_gcmessages_common_overworld";

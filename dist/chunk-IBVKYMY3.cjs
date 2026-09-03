@@ -5,14 +5,14 @@
 var _chunkR7TOZZ5Xcjs = require('./chunk-R7TOZZ5X.cjs');
 
 
-var _chunkCU4ZEV3Ucjs = require('./chunk-CU4ZEV3U.cjs');
+var _chunkKNCAQGVIcjs = require('./chunk-KNCAQGVI.cjs');
 
 // src/live/index.ts
 var POLL_INTERVAL_MS = 2e4;
 var MAX_MISSES = 3;
 var MAX_BACKOFF_MS = 6e4;
 var DEFAULT_MAX_PAGES = 3;
-var watchResultName = (result) => result === null ? "timeout (no GC response)" : _nullishCoalesce(_chunkCU4ZEV3Ucjs.CMsgSpectateFriendGameResponse_EWatchLiveResult[result], () => ( `result ${result}`));
+var watchResultName = (result) => result === null ? "timeout (no GC response)" : _nullishCoalesce(_chunkKNCAQGVIcjs.CMsgSpectateFriendGameResponse_EWatchLiveResult[result], () => ( `result ${result}`));
 var Live = class {
   
   
@@ -164,4 +164,4 @@ var Live = class {
 
 
 exports.POLL_INTERVAL_MS = POLL_INTERVAL_MS; exports.MAX_MISSES = MAX_MISSES; exports.MAX_BACKOFF_MS = MAX_BACKOFF_MS; exports.DEFAULT_MAX_PAGES = DEFAULT_MAX_PAGES; exports.Live = Live;
-//# sourceMappingURL=chunk-4AJOKWQU.cjs.map
+//# sourceMappingURL=chunk-IBVKYMY3.cjs.map

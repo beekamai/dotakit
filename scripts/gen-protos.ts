@@ -36,6 +36,10 @@ const ENTRY_PROTOS = [
     "dota_gcmessages_client_watch.proto",
     "dota_gcmessages_client_guild.proto",
     "dota_gcmessages_client_guild_events.proto",
+    /* Лобби: тела PracticeLobby* лежат только здесь. Без него у нас были id
+       сообщений и объект CSODOTALobby, но отправить create/setDetails/launch было
+       нечем. */
+    "dota_gcmessages_client_match_management.proto",
     "dota_gcmessages_common.proto",
     "dota_gcmessages_webapi.proto",
     "dota_match_metadata.proto",
@@ -60,8 +64,15 @@ async function requireTool(name: string, hint: string) {
 async function main() {
     await requireTool("protoc", "Install it from https://github.com/protocolbuffers/protobuf/releases");
 
-    const plugin = join(ROOT, "node_modules", ".bin", process.platform === "win32" ? "protoc-gen-ts_proto.cmd" : "protoc-gen-ts_proto");
-    if (!existsSync(plugin)) throw new Error("ts-proto is not installed. Run: bun add -d ts-proto");
+    /* Разные установщики кладут разный shim: npm — .cmd, bun — .exe или .bunx.
+       Ищем любой, иначе кодоген на Windows не запускался вовсе. */
+    const candidates = process.platform === "win32"
+        ? ["protoc-gen-ts_proto.cmd", "protoc-gen-ts_proto.exe", "protoc-gen-ts_proto.bunx"]
+        : ["protoc-gen-ts_proto"];
+    const plugin = candidates
+        .map((name) => join(ROOT, "node_modules", ".bin", name))
+        .find((path) => existsSync(path));
+    if (!plugin) throw new Error("ts-proto is not installed. Run: bun add -d ts-proto");
 
     await mkdir(WORK, { recursive: true });
     if (existsSync(REPO)) await $`git -C ${REPO} pull --ff-only`;

@@ -15,7 +15,7 @@ var _chunkR7TOZZ5Xcjs = require('./chunk-R7TOZZ5X.cjs');
 
 
 
-var _chunkCU4ZEV3Ucjs = require('./chunk-CU4ZEV3U.cjs');
+var _chunkKNCAQGVIcjs = require('./chunk-KNCAQGVI.cjs');
 
 // src/guild/index.ts
 var GUILD_ROLE_FLAG = {
@@ -26,17 +26,17 @@ var GUILD_ROLE_FLAG_MASK = 31;
 var GC_RESULT_TIMEOUT = -1;
 var GC_RESULT_STALE = -2;
 var RESULT_NAMES = {
-  find: _chunkCU4ZEV3Ucjs.cMsgClientToGCRequestAccountGuildPersonaInfoResponse_EResponseToJSON,
-  fetchData: _chunkCU4ZEV3Ucjs.cMsgClientToGCRequestGuildDataResponse_EResponseToJSON,
-  kick: _chunkCU4ZEV3Ucjs.cMsgClientToGCKickGuildMemberResponse_EResponseToJSON,
-  setRole: _chunkCU4ZEV3Ucjs.cMsgClientToGCSetGuildMemberRoleResponse_EResponseToJSON,
-  invite: _chunkCU4ZEV3Ucjs.cMsgClientToGCInviteToGuildResponse_EResponseToJSON,
-  cancelInvite: _chunkCU4ZEV3Ucjs.cMsgClientToGCCancelInviteToGuildResponse_EResponseToJSON,
-  setInfo: _chunkCU4ZEV3Ucjs.cMsgClientToGCSetGuildInfoResponse_EResponseToJSON,
-  addRole: _chunkCU4ZEV3Ucjs.cMsgClientToGCAddGuildRoleResponse_EResponseToJSON,
-  modifyRole: _chunkCU4ZEV3Ucjs.cMsgClientToGCModifyGuildRoleResponse_EResponseToJSON,
-  removeRole: _chunkCU4ZEV3Ucjs.cMsgClientToGCRemoveGuildRoleResponse_EResponseToJSON,
-  roleOrder: _chunkCU4ZEV3Ucjs.cMsgClientToGCSetGuildRoleOrderResponse_EResponseToJSON
+  find: _chunkKNCAQGVIcjs.cMsgClientToGCRequestAccountGuildPersonaInfoResponse_EResponseToJSON,
+  fetchData: _chunkKNCAQGVIcjs.cMsgClientToGCRequestGuildDataResponse_EResponseToJSON,
+  kick: _chunkKNCAQGVIcjs.cMsgClientToGCKickGuildMemberResponse_EResponseToJSON,
+  setRole: _chunkKNCAQGVIcjs.cMsgClientToGCSetGuildMemberRoleResponse_EResponseToJSON,
+  invite: _chunkKNCAQGVIcjs.cMsgClientToGCInviteToGuildResponse_EResponseToJSON,
+  cancelInvite: _chunkKNCAQGVIcjs.cMsgClientToGCCancelInviteToGuildResponse_EResponseToJSON,
+  setInfo: _chunkKNCAQGVIcjs.cMsgClientToGCSetGuildInfoResponse_EResponseToJSON,
+  addRole: _chunkKNCAQGVIcjs.cMsgClientToGCAddGuildRoleResponse_EResponseToJSON,
+  modifyRole: _chunkKNCAQGVIcjs.cMsgClientToGCModifyGuildRoleResponse_EResponseToJSON,
+  removeRole: _chunkKNCAQGVIcjs.cMsgClientToGCRemoveGuildRoleResponse_EResponseToJSON,
+  roleOrder: _chunkKNCAQGVIcjs.cMsgClientToGCSetGuildRoleOrderResponse_EResponseToJSON
 };
 function resultName(op, result) {
   if (result === GC_RESULT_TIMEOUT) return "timeout (no GC response)";
@@ -425,4 +425,4 @@ var Guild = (_class = class {
 
 
 exports.GUILD_ROLE_FLAG = GUILD_ROLE_FLAG; exports.GUILD_ROLE_FLAG_MASK = GUILD_ROLE_FLAG_MASK; exports.GC_RESULT_TIMEOUT = GC_RESULT_TIMEOUT; exports.GC_RESULT_STALE = GC_RESULT_STALE; exports.GCOperationError = GCOperationError; exports.NoGuildError = NoGuildError; exports.Guild = Guild;
-//# sourceMappingURL=chunk-NFWSEQMF.cjs.map
+//# sourceMappingURL=chunk-DI6HTADB.cjs.map

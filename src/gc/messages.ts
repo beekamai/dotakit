@@ -42,8 +42,30 @@ export const clientMessages = {
     4525: p.CMsgGCToServerSteamLearnAccessTokensChanged as MessageFns<p.CMsgGCToServerSteamLearnAccessTokensChanged>,
     /** k_EMsgGCToServerSteamLearnUseHTTP */
     4526: p.CMsgGCToServerSteamLearnUseHTTP as MessageFns<p.CMsgGCToServerSteamLearnUseHTTP>,
+    /** k_EMsgGCStartFindingMatch */
+    7033: p.CMsgStartFindingMatch as MessageFns<p.CMsgStartFindingMatch>,
+    /** k_EMsgGCAbandonCurrentGame */
+    7035: p.CMsgAbandonCurrentGame as MessageFns<p.CMsgAbandonCurrentGame>,
+    /** k_EMsgGCStopFindingMatch */
+    7036: p.CMsgStopFindingMatch as MessageFns<p.CMsgStopFindingMatch>,
+    /** k_EMsgGCPracticeLobbyCreate */
+    7038: p.CMsgPracticeLobbyCreate as MessageFns<p.CMsgPracticeLobbyCreate>,
+    /** k_EMsgGCPracticeLobbyLeave */
+    7040: p.CMsgPracticeLobbyLeave as MessageFns<p.CMsgPracticeLobbyLeave>,
+    /** k_EMsgGCPracticeLobbyLaunch */
+    7041: p.CMsgPracticeLobbyLaunch as MessageFns<p.CMsgPracticeLobbyLaunch>,
+    /** k_EMsgGCPracticeLobbyList */
+    7042: p.CMsgPracticeLobbyList as MessageFns<p.CMsgPracticeLobbyList>,
+    /** k_EMsgGCPracticeLobbyJoin */
+    7044: p.CMsgPracticeLobbyJoin as MessageFns<p.CMsgPracticeLobbyJoin>,
+    /** k_EMsgGCPracticeLobbySetDetails */
+    7046: p.CMsgPracticeLobbySetDetails as MessageFns<p.CMsgPracticeLobbySetDetails>,
+    /** k_EMsgGCPracticeLobbySetTeamSlot */
+    7047: p.CMsgPracticeLobbySetTeamSlot as MessageFns<p.CMsgPracticeLobbySetTeamSlot>,
     /** k_EMsgGCBroadcastNotification */
     7056: p.CMsgDOTABroadcastNotification as MessageFns<p.CMsgDOTABroadcastNotification>,
+    /** k_EMsgGCReadyUp */
+    7070: p.CMsgReadyUp as MessageFns<p.CMsgReadyUp>,
     /** k_EMsgGCKickedFromMatchmakingQueue */
     7071: p.CMsgDOTAKickedFromMatchmakingQueue as MessageFns<p.CMsgDOTAKickedFromMatchmakingQueue>,
     /** k_EMsgGCSpectateFriendGame */
@@ -52,6 +74,8 @@ export const clientMessages = {
     7076: p.CMsgDOTAReportsRemainingRequest as MessageFns<p.CMsgDOTAReportsRemainingRequest>,
     /** k_EMsgGCSubmitPlayerReport */
     7078: p.CMsgDOTASubmitPlayerReport as MessageFns<p.CMsgDOTASubmitPlayerReport>,
+    /** k_EMsgGCPracticeLobbyKick */
+    7081: p.CMsgPracticeLobbyKick as MessageFns<p.CMsgPracticeLobbyKick>,
     /** k_EMsgGCSubmitPlayerReportV2 */
     7082: p.CMsgDOTASubmitPlayerReportV2 as MessageFns<p.CMsgDOTASubmitPlayerReportV2>,
     /** k_EMsgGCSubmitPlayerReportResponseV2 */
@@ -64,10 +88,20 @@ export const clientMessages = {
     7097: p.CMsgCancelWatchGame as MessageFns<p.CMsgCancelWatchGame>,
     /** k_EMsgGCPopup */
     7102: p.CMsgDOTAPopup as MessageFns<p.CMsgDOTAPopup>,
+    /** k_EMsgGCFriendPracticeLobbyListRequest */
+    7111: p.CMsgFriendPracticeLobbyListRequest as MessageFns<p.CMsgFriendPracticeLobbyListRequest>,
+    /** k_EMsgGCApplyTeamToPracticeLobby */
+    7142: p.CMsgApplyTeamToPracticeLobby as MessageFns<p.CMsgApplyTeamToPracticeLobby>,
+    /** k_EMsgGCPracticeLobbyJoinBroadcastChannel */
+    7149: p.CMsgPracticeLobbyJoinBroadcastChannel as MessageFns<p.CMsgPracticeLobbyJoinBroadcastChannel>,
+    /** k_EMsgGCReadyUpStatus */
+    7170: p.CMsgReadyUpStatus as MessageFns<p.CMsgReadyUpStatus>,
     /** k_EMsgGCBalancedShuffleLobby */
     7188: p.CMsgBalancedShuffleLobby as MessageFns<p.CMsgBalancedShuffleLobby>,
     /** k_EMsgGCMatchmakingStatsRequest */
     7197: p.CMsgDOTAMatchmakingStatsRequest as MessageFns<p.CMsgDOTAMatchmakingStatsRequest>,
+    /** k_EMsgGCBotGameCreate */
+    7199: p.CMsgBotGameCreate as MessageFns<p.CMsgBotGameCreate>,
     /** k_EMsgGCSetMatchHistoryAccess */
     7200: p.CMsgDOTASetMatchHistoryAccess as MessageFns<p.CMsgDOTASetMatchHistoryAccess>,
     /** k_EMsgUpgradeLeagueItem */
@@ -92,6 +126,10 @@ export const clientMessages = {
     7327: p.CMsgDOTASetProfilePrivacy as MessageFns<p.CMsgDOTASetProfilePrivacy>,
     /** k_EMsgGCClientSuspended */
     7342: p.CMsgClientSuspended as MessageFns<p.CMsgClientSuspended>,
+    /** k_EMsgGCPartyMemberSetCoach */
+    7343: p.CMsgDOTAPartyMemberSetCoach as MessageFns<p.CMsgDOTAPartyMemberSetCoach>,
+    /** k_EMsgGCPracticeLobbySetCoach */
+    7346: p.CMsgPracticeLobbySetCoach as MessageFns<p.CMsgPracticeLobbySetCoach>,
     /** k_EMsgGCLobbyUpdateBroadcastChannelInfo */
     7367: p.CMsgGCLobbyUpdateBroadcastChannelInfo as MessageFns<p.CMsgGCLobbyUpdateBroadcastChannelInfo>,
     /** k_EMsgDOTAGetEventPoints */
@@ -112,10 +150,18 @@ export const clientMessages = {
     7454: p.CMsgGCRankedPlayerInfoSubmit as MessageFns<p.CMsgGCRankedPlayerInfoSubmit>,
     /** k_EMsgGCPlayerInfoSubmit */
     7456: p.CMsgGCPlayerInfoSubmit as MessageFns<p.CMsgGCPlayerInfoSubmit>,
+    /** k_EMsgGCJoinableCustomGameModesRequest */
+    7466: p.CMsgJoinableCustomGameModesRequest as MessageFns<p.CMsgJoinableCustomGameModesRequest>,
+    /** k_EMsgGCJoinableCustomLobbiesRequest */
+    7468: p.CMsgJoinableCustomLobbiesRequest as MessageFns<p.CMsgJoinableCustomLobbiesRequest>,
+    /** k_EMsgGCQuickJoinCustomLobby */
+    7470: p.CMsgQuickJoinCustomLobby as MessageFns<p.CMsgQuickJoinCustomLobby>,
     /** k_EMsgGCHasItemQuery */
     7484: p.CMsgDOTAHasItemQuery as MessageFns<p.CMsgDOTAHasItemQuery>,
     /** k_EMsgClientToGCEmoticonDataRequest */
     7503: p.CMsgClientToGCEmoticonDataRequest as MessageFns<p.CMsgClientToGCEmoticonDataRequest>,
+    /** k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus */
+    7505: p.CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus as MessageFns<p.CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus>,
     /** k_EMsgDOTARedeemItem */
     7518: p.CMsgDOTARedeemItem as MessageFns<p.CMsgDOTARedeemItem>,
     /** k_EMsgClientToGCGetAllHeroProgress */
@@ -154,6 +200,8 @@ export const clientMessages = {
     7676: p.CMsgClientToGCGetFavoritePlayers as MessageFns<p.CMsgClientToGCGetFavoritePlayers>,
     /** k_EMsgClientToGCVerifyFavoritePlayers */
     7678: p.CMsgClientToGCVerifyFavoritePlayers as MessageFns<p.CMsgClientToGCVerifyFavoritePlayers>,
+    /** k_EMsgClientToGCMMInfo */
+    7682: p.CMsgClientToGCMMInfo as MessageFns<p.CMsgClientToGCMMInfo>,
     /** k_EMsgClientToGCPurchaseLabyrinthBlessings */
     7684: p.CMsgClientToGCPurchaseLabyrinthBlessings as MessageFns<p.CMsgClientToGCPurchaseLabyrinthBlessings>,
     /** k_EMsgClientToGCPurchaseFilteredPlayerSlot */
@@ -166,6 +214,8 @@ export const clientMessages = {
     8006: p.CMsgClientToGCPlayerStatsRequest as MessageFns<p.CMsgClientToGCPlayerStatsRequest>,
     /** k_EMsgClientToGCFindTopSourceTVGames */
     8009: p.CMsgClientToGCFindTopSourceTVGames as MessageFns<p.CMsgClientToGCFindTopSourceTVGames>,
+    /** k_EMsgGCLobbyList */
+    8011: p.CMsgLobbyList as MessageFns<p.CMsgLobbyList>,
     /** k_EMsgClientToGCSocialFeedPostCommentRequest */
     8016: p.CMsgClientToGCSocialFeedPostCommentRequest as MessageFns<p.CMsgClientToGCSocialFeedPostCommentRequest>,
     /** k_EMsgClientToGCCustomGamesFriendsPlayedRequest */
@@ -180,12 +230,16 @@ export const clientMessages = {
     8036: p.CMsgClientToGCTopLeagueMatchesRequest as MessageFns<p.CMsgClientToGCTopLeagueMatchesRequest>,
     /** k_EMsgClientToGCTopFriendMatchesRequest */
     8037: p.CMsgClientToGCTopFriendMatchesRequest as MessageFns<p.CMsgClientToGCTopFriendMatchesRequest>,
+    /** k_EMsgGCPracticeLobbyKickFromTeam */
+    8047: p.CMsgPracticeLobbyKickFromTeam as MessageFns<p.CMsgPracticeLobbyKickFromTeam>,
     /** k_EMsgClientToGCSocialFeedPostMessageRequest */
     8050: p.CMsgClientToGCSocialFeedPostMessageRequest as MessageFns<p.CMsgClientToGCSocialFeedPostMessageRequest>,
     /** k_EMsgCustomGameListenServerStartedLoading */
     8052: p.CMsgDOTACustomGameListenServerStartedLoading as MessageFns<p.CMsgDOTACustomGameListenServerStartedLoading>,
     /** k_EMsgCustomGameClientFinishedLoading */
     8053: p.CMsgDOTACustomGameClientFinishedLoading as MessageFns<p.CMsgDOTACustomGameClientFinishedLoading>,
+    /** k_EMsgGCPracticeLobbyCloseBroadcastChannel */
+    8054: p.CMsgPracticeLobbyCloseBroadcastChannel as MessageFns<p.CMsgPracticeLobbyCloseBroadcastChannel>,
     /** k_EMsgClientToGCMatchesMinimalRequest */
     8063: p.CMsgClientToGCMatchesMinimalRequest as MessageFns<p.CMsgClientToGCMatchesMinimalRequest>,
     /** k_EMsgClientToGCGetProfileTickets */
@@ -214,6 +268,8 @@ export const clientMessages = {
     8140: p.CMsgClientToGCPublishUserStat as MessageFns<p.CMsgClientToGCPublishUserStat>,
     /** k_EMsgGCSubmitLobbyMVPVote */
     8144: p.CMsgDOTASubmitLobbyMVPVote as MessageFns<p.CMsgDOTASubmitLobbyMVPVote>,
+    /** k_EMsgSpectatorLobbyGameDetails */
+    8163: p.CMsgSpectatorLobbyGameDetails as MessageFns<p.CMsgSpectatorLobbyGameDetails>,
     /** k_EMsgClientToGCOpenPlayerCardPack */
     8168: p.CMsgClientToGCOpenPlayerCardPack as MessageFns<p.CMsgClientToGCOpenPlayerCardPack>,
     /** k_EMsgClientToGCSelectCompendiumInGamePrediction */
@@ -224,6 +280,8 @@ export const clientMessages = {
     8176: p.CMsgClientToGCCreatePlayerCardPack as MessageFns<p.CMsgClientToGCCreatePlayerCardPack>,
     /** k_EMsgGCGetPlayerCardItemInfo */
     8187: p.CMsgGCGetPlayerCardItemInfo as MessageFns<p.CMsgGCGetPlayerCardItemInfo>,
+    /** k_EMsgClientToGCRequestSteamDatagramTicket */
+    8189: p.CMsgClientToGCRequestSteamDatagramTicket as MessageFns<p.CMsgClientToGCRequestSteamDatagramTicket>,
     /** k_EMsgClientToGCTransferSeasonalMMRRequest */
     8193: p.CMsgClientToGCTransferSeasonalMMRRequest as MessageFns<p.CMsgClientToGCTransferSeasonalMMRRequest>,
     /** k_EMsgClientToGCJoinPlaytest */
@@ -552,6 +610,8 @@ export const gcMessages = {
     4520: p.CMsgGCToClientApplyRemoteConVars as MessageFns<p.CMsgGCToClientApplyRemoteConVars>,
     /** k_EMsgGCToClientAggregateMetricsBackoff */
     4524: p.CMsgGCToClientAggregateMetricsBackoff as MessageFns<p.CMsgGCToClientAggregateMetricsBackoff>,
+    /** k_EMsgGCPracticeLobbyListResponse */
+    7043: p.CMsgPracticeLobbyListResponse as MessageFns<p.CMsgPracticeLobbyListResponse>,
     /** k_EMsgGCInitialQuestionnaireResponse */
     7049: p.CMsgInitialQuestionnaireResponse as MessageFns<p.CMsgInitialQuestionnaireResponse>,
     /** k_EMsgGCSpectateFriendGameResponse */
@@ -564,6 +624,10 @@ export const gcMessages = {
     7092: p.CMsgWatchGameResponse as MessageFns<p.CMsgWatchGameResponse>,
     /** k_EMsgGCMatchDetailsResponse */
     7096: p.CMsgGCMatchDetailsResponse as MessageFns<p.CMsgGCMatchDetailsResponse>,
+    /** k_EMsgGCFriendPracticeLobbyListResponse */
+    7112: p.CMsgFriendPracticeLobbyListResponse as MessageFns<p.CMsgFriendPracticeLobbyListResponse>,
+    /** k_EMsgGCPracticeLobbyJoinResponse */
+    7113: p.CMsgPracticeLobbyJoinResponse as MessageFns<p.CMsgPracticeLobbyJoinResponse>,
     /** k_EMsgGCMatchmakingStatsResponse */
     7198: p.CMsgDOTAMatchmakingStatsResponse as MessageFns<p.CMsgDOTAMatchmakingStatsResponse>,
     /** k_EMsgGCSetMatchHistoryAccessResponse */
@@ -592,6 +656,12 @@ export const gcMessages = {
     7455: p.CMsgGCRankedPlayerInfoSubmitResponse as MessageFns<p.CMsgGCRankedPlayerInfoSubmitResponse>,
     /** k_EMsgGCPlayerInfoSubmitResponse */
     7457: p.CMsgGCPlayerInfoSubmitResponse as MessageFns<p.CMsgGCPlayerInfoSubmitResponse>,
+    /** k_EMsgGCJoinableCustomGameModesResponse */
+    7467: p.CMsgJoinableCustomGameModesResponse as MessageFns<p.CMsgJoinableCustomGameModesResponse>,
+    /** k_EMsgGCJoinableCustomLobbiesResponse */
+    7469: p.CMsgJoinableCustomLobbiesResponse as MessageFns<p.CMsgJoinableCustomLobbiesResponse>,
+    /** k_EMsgGCQuickJoinCustomLobbyResponse */
+    7471: p.CMsgQuickJoinCustomLobbyResponse as MessageFns<p.CMsgQuickJoinCustomLobbyResponse>,
     /** k_EMsgGCHasItemResponse */
     7485: p.CMsgDOTAHasItemResponse as MessageFns<p.CMsgDOTAHasItemResponse>,
     /** k_EMsgGCToClientTournamentItemDrop */
@@ -610,10 +680,16 @@ export const gcMessages = {
     7535: p.CMsgDOTAProfileCard as MessageFns<p.CMsgDOTAProfileCard>,
     /** k_EMsgGCToClientHeroStatueCreateResult */
     7548: p.CMsgGCToClientHeroStatueCreateResult as MessageFns<p.CMsgGCToClientHeroStatueCreateResult>,
+    /** k_EMsgGCToClientSteamDatagramTicket */
+    7581: p.CMsgGCToClientSteamDatagramTicket as MessageFns<p.CMsgGCToClientSteamDatagramTicket>,
     /** k_EMsgGCRerollPlayerChallengeResponse */
     7586: p.CMsgGCRerollPlayerChallengeResponse as MessageFns<p.CMsgGCRerollPlayerChallengeResponse>,
     /** k_EMsgClientToGCGetAllHeroOrderResponse */
     7607: p.CMsgClientToGCGetAllHeroOrderResponse as MessageFns<p.CMsgClientToGCGetAllHeroOrderResponse>,
+    /** k_EMsgGCToClientRequestLaneSelection */
+    7623: p.CMsgGCToClientRequestLaneSelection as MessageFns<p.CMsgGCToClientRequestLaneSelection>,
+    /** k_EMsgGCToClientRequestLaneSelectionResponse */
+    7624: p.CMsgGCToClientRequestLaneSelectionResponse as MessageFns<p.CMsgGCToClientRequestLaneSelectionResponse>,
     /** k_EMsgClientToGCPlayerCardSpecificPurchaseResponse */
     7628: p.CMsgClientToGCPlayerCardSpecificPurchaseResponse as MessageFns<p.CMsgClientToGCPlayerCardSpecificPurchaseResponse>,
     /** k_EMsgGCToClientGetFilteredPlayersResponse */
@@ -638,6 +714,8 @@ export const gcMessages = {
     7679: p.CMsgGCToClientVerifyFavoritePlayersResponse as MessageFns<p.CMsgGCToClientVerifyFavoritePlayersResponse>,
     /** k_EMsgGCToClientPartySearchInvites */
     7680: p.CMsgGCToClientPartySearchInvites as MessageFns<p.CMsgGCToClientPartySearchInvites>,
+    /** k_EMsgGCToClientRequestMMInfo */
+    7681: p.CMsgGCToClientRequestMMInfo as MessageFns<p.CMsgGCToClientRequestMMInfo>,
     /** k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse */
     7685: p.CMsgClientToGCPurchaseLabyrinthBlessingsResponse as MessageFns<p.CMsgClientToGCPurchaseLabyrinthBlessingsResponse>,
     /** k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse */
@@ -648,6 +726,8 @@ export const gcMessages = {
     8007: p.CMsgGCToClientPlayerStatsResponse as MessageFns<p.CMsgGCToClientPlayerStatsResponse>,
     /** k_EMsgGCToClientFindTopSourceTVGamesResponse */
     8010: p.CMsgGCToClientFindTopSourceTVGamesResponse as MessageFns<p.CMsgGCToClientFindTopSourceTVGamesResponse>,
+    /** k_EMsgGCLobbyListResponse */
+    8012: p.CMsgLobbyListResponse as MessageFns<p.CMsgLobbyListResponse>,
     /** k_EMsgGCToClientSocialFeedPostCommentResponse */
     8017: p.CMsgGCToClientSocialFeedPostCommentResponse as MessageFns<p.CMsgGCToClientSocialFeedPostCommentResponse>,
     /** k_EMsgGCToClientCustomGamesFriendsPlayedResponse */
@@ -702,6 +782,8 @@ export const gcMessages = {
     8177: p.CMsgClientToGCCreatePlayerCardPackResponse as MessageFns<p.CMsgClientToGCCreatePlayerCardPackResponse>,
     /** k_EMsgGCGetPlayerCardItemInfoResponse */
     8188: p.CMsgGCGetPlayerCardItemInfoResponse as MessageFns<p.CMsgGCGetPlayerCardItemInfoResponse>,
+    /** k_EMsgClientToGCRequestSteamDatagramTicketResponse */
+    8190: p.CMsgClientToGCRequestSteamDatagramTicketResponse as MessageFns<p.CMsgClientToGCRequestSteamDatagramTicketResponse>,
     /** k_EMsgGCToClientBattlePassRollupRequest */
     8191: p.CMsgGCToClientBattlePassRollupRequest as MessageFns<p.CMsgGCToClientBattlePassRollupRequest>,
     /** k_EMsgGCToClientBattlePassRollupResponse */
@@ -989,6 +1071,8 @@ export const allMessages = { ...clientMessages, ...gcMessages } as const;
 
 /** Request message id -> the id the GC answers it with. */
 export const jobResponses = {
+    7042: 7043,
+    7044: 7113,
     7073: 7074,
     7078: 7079,
     7091: 7092,
@@ -1002,11 +1086,13 @@ export const jobResponses = {
     7408: 7409,
     7454: 7455,
     7456: 7457,
+    7470: 7471,
     7518: 7519,
     7521: 7522,
     7527: 7528,
     7534: 7535,
     7606: 7607,
+    7623: 7624,
     7662: 7663,
     7664: 7665,
     7670: 7671,
@@ -1018,6 +1104,7 @@ export const jobResponses = {
     7686: 7687,
     7688: 7689,
     8009: 8010,
+    8011: 8012,
     8078: 8079,
     8082: 8083,
     8111: 8112,
@@ -1031,6 +1118,7 @@ export const jobResponses = {
     8174: 8175,
     8176: 8177,
     8187: 8188,
+    8189: 8190,
     8201: 8202,
     8209: 8210,
     8211: 8212,
@@ -1169,8 +1257,20 @@ export const messageNames: Readonly<Record<number, string>> = {
     4524: "k_EMsgGCToClientAggregateMetricsBackoff",
     4525: "k_EMsgGCToServerSteamLearnAccessTokensChanged",
     4526: "k_EMsgGCToServerSteamLearnUseHTTP",
+    7033: "k_EMsgGCStartFindingMatch",
+    7035: "k_EMsgGCAbandonCurrentGame",
+    7036: "k_EMsgGCStopFindingMatch",
+    7038: "k_EMsgGCPracticeLobbyCreate",
+    7040: "k_EMsgGCPracticeLobbyLeave",
+    7041: "k_EMsgGCPracticeLobbyLaunch",
+    7042: "k_EMsgGCPracticeLobbyList",
+    7043: "k_EMsgGCPracticeLobbyListResponse",
+    7044: "k_EMsgGCPracticeLobbyJoin",
+    7046: "k_EMsgGCPracticeLobbySetDetails",
+    7047: "k_EMsgGCPracticeLobbySetTeamSlot",
     7049: "k_EMsgGCInitialQuestionnaireResponse",
     7056: "k_EMsgGCBroadcastNotification",
+    7070: "k_EMsgGCReadyUp",
     7071: "k_EMsgGCKickedFromMatchmakingQueue",
     7073: "k_EMsgGCSpectateFriendGame",
     7074: "k_EMsgGCSpectateFriendGameResponse",
@@ -1178,6 +1278,7 @@ export const messageNames: Readonly<Record<number, string>> = {
     7077: "k_EMsgGCReportsRemainingResponse",
     7078: "k_EMsgGCSubmitPlayerReport",
     7079: "k_EMsgGCSubmitPlayerReportResponse",
+    7081: "k_EMsgGCPracticeLobbyKick",
     7082: "k_EMsgGCSubmitPlayerReportV2",
     7083: "k_EMsgGCSubmitPlayerReportResponseV2",
     7091: "k_EMsgGCWatchGame",
@@ -1186,9 +1287,16 @@ export const messageNames: Readonly<Record<number, string>> = {
     7096: "k_EMsgGCMatchDetailsResponse",
     7097: "k_EMsgGCCancelWatchGame",
     7102: "k_EMsgGCPopup",
+    7111: "k_EMsgGCFriendPracticeLobbyListRequest",
+    7112: "k_EMsgGCFriendPracticeLobbyListResponse",
+    7113: "k_EMsgGCPracticeLobbyJoinResponse",
+    7142: "k_EMsgGCApplyTeamToPracticeLobby",
+    7149: "k_EMsgGCPracticeLobbyJoinBroadcastChannel",
+    7170: "k_EMsgGCReadyUpStatus",
     7188: "k_EMsgGCBalancedShuffleLobby",
     7197: "k_EMsgGCMatchmakingStatsRequest",
     7198: "k_EMsgGCMatchmakingStatsResponse",
+    7199: "k_EMsgGCBotGameCreate",
     7200: "k_EMsgGCSetMatchHistoryAccess",
     7201: "k_EMsgGCSetMatchHistoryAccessResponse",
     7203: "k_EMsgUpgradeLeagueItem",
@@ -1208,6 +1316,8 @@ export const messageNames: Readonly<Record<number, string>> = {
     7327: "k_EMsgGCSetProfilePrivacy",
     7328: "k_EMsgGCSetProfilePrivacyResponse",
     7342: "k_EMsgGCClientSuspended",
+    7343: "k_EMsgGCPartyMemberSetCoach",
+    7346: "k_EMsgGCPracticeLobbySetCoach",
     7367: "k_EMsgGCLobbyUpdateBroadcastChannelInfo",
     7387: "k_EMsgDOTAGetEventPoints",
     7388: "k_EMsgDOTAGetEventPointsResponse",
@@ -1224,11 +1334,18 @@ export const messageNames: Readonly<Record<number, string>> = {
     7455: "k_EMsgGCRankedPlayerInfoSubmitResponse",
     7456: "k_EMsgGCPlayerInfoSubmit",
     7457: "k_EMsgGCPlayerInfoSubmitResponse",
+    7466: "k_EMsgGCJoinableCustomGameModesRequest",
+    7467: "k_EMsgGCJoinableCustomGameModesResponse",
+    7468: "k_EMsgGCJoinableCustomLobbiesRequest",
+    7469: "k_EMsgGCJoinableCustomLobbiesResponse",
+    7470: "k_EMsgGCQuickJoinCustomLobby",
+    7471: "k_EMsgGCQuickJoinCustomLobbyResponse",
     7484: "k_EMsgGCHasItemQuery",
     7485: "k_EMsgGCHasItemResponse",
     7495: "k_EMsgGCToClientTournamentItemDrop",
     7503: "k_EMsgClientToGCEmoticonDataRequest",
     7504: "k_EMsgGCToClientEmoticonData",
+    7505: "k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus",
     7518: "k_EMsgDOTARedeemItem",
     7519: "k_EMsgDOTARedeemItemResponse",
     7521: "k_EMsgClientToGCGetAllHeroProgress",
@@ -1242,11 +1359,14 @@ export const messageNames: Readonly<Record<number, string>> = {
     7547: "k_EMsgClientToGCCreateHeroStatue",
     7548: "k_EMsgGCToClientHeroStatueCreateResult",
     7572: "k_EMsgLobbyEventPoints",
+    7581: "k_EMsgGCToClientSteamDatagramTicket",
     7584: "k_EMsgClientToGCRerollPlayerChallenge",
     7586: "k_EMsgGCRerollPlayerChallengeResponse",
     7603: "k_EMsgClientToGCApplyGemCombiner",
     7606: "k_EMsgClientToGCGetAllHeroOrder",
     7607: "k_EMsgClientToGCGetAllHeroOrderResponse",
+    7623: "k_EMsgGCToClientRequestLaneSelection",
+    7624: "k_EMsgGCToClientRequestLaneSelectionResponse",
     7627: "k_EMsgClientToGCPlayerCardSpecificPurchaseRequest",
     7628: "k_EMsgClientToGCPlayerCardSpecificPurchaseResponse",
     7662: "k_EMsgClientToGCGetFilteredPlayers",
@@ -1268,6 +1388,8 @@ export const messageNames: Readonly<Record<number, string>> = {
     7678: "k_EMsgClientToGCVerifyFavoritePlayers",
     7679: "k_EMsgGCToClientVerifyFavoritePlayersResponse",
     7680: "k_EMsgGCToClientPartySearchInvites",
+    7681: "k_EMsgGCToClientRequestMMInfo",
+    7682: "k_EMsgClientToGCMMInfo",
     7684: "k_EMsgClientToGCPurchaseLabyrinthBlessings",
     7685: "k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse",
     7686: "k_EMsgClientToGCPurchaseFilteredPlayerSlot",
@@ -1279,6 +1401,8 @@ export const messageNames: Readonly<Record<number, string>> = {
     8007: "k_EMsgGCToClientPlayerStatsResponse",
     8009: "k_EMsgClientToGCFindTopSourceTVGames",
     8010: "k_EMsgGCToClientFindTopSourceTVGamesResponse",
+    8011: "k_EMsgGCLobbyList",
+    8012: "k_EMsgGCLobbyListResponse",
     8016: "k_EMsgClientToGCSocialFeedPostCommentRequest",
     8017: "k_EMsgGCToClientSocialFeedPostCommentResponse",
     8018: "k_EMsgClientToGCCustomGamesFriendsPlayedRequest",
@@ -1289,10 +1413,12 @@ export const messageNames: Readonly<Record<number, string>> = {
     8034: "k_EMsgClientToGCGetProfileCardStats",
     8036: "k_EMsgClientToGCTopLeagueMatchesRequest",
     8037: "k_EMsgClientToGCTopFriendMatchesRequest",
+    8047: "k_EMsgGCPracticeLobbyKickFromTeam",
     8050: "k_EMsgClientToGCSocialFeedPostMessageRequest",
     8051: "k_EMsgGCToClientSocialFeedPostMessageResponse",
     8052: "k_EMsgCustomGameListenServerStartedLoading",
     8053: "k_EMsgCustomGameClientFinishedLoading",
+    8054: "k_EMsgGCPracticeLobbyCloseBroadcastChannel",
     8061: "k_EMsgGCToClientTopLeagueMatchesResponse",
     8062: "k_EMsgGCToClientTopFriendMatchesResponse",
     8063: "k_EMsgClientToGCMatchesMinimalRequest",
@@ -1325,6 +1451,7 @@ export const messageNames: Readonly<Record<number, string>> = {
     8153: "k_EMsgGCToClientQuestProgressUpdated",
     8154: "k_EMsgGCToClientWageringUpdate",
     8155: "k_EMsgGCToClientArcanaVotesUpdate",
+    8163: "k_EMsgSpectatorLobbyGameDetails",
     8168: "k_EMsgClientToGCOpenPlayerCardPack",
     8169: "k_EMsgClientToGCOpenPlayerCardPackResponse",
     8170: "k_EMsgClientToGCSelectCompendiumInGamePrediction",
@@ -1335,6 +1462,8 @@ export const messageNames: Readonly<Record<number, string>> = {
     8177: "k_EMsgClientToGCCreatePlayerCardPackResponse",
     8187: "k_EMsgGCGetPlayerCardItemInfo",
     8188: "k_EMsgGCGetPlayerCardItemInfoResponse",
+    8189: "k_EMsgClientToGCRequestSteamDatagramTicket",
+    8190: "k_EMsgClientToGCRequestSteamDatagramTicketResponse",
     8191: "k_EMsgGCToClientBattlePassRollupRequest",
     8192: "k_EMsgGCToClientBattlePassRollupResponse",
     8193: "k_EMsgClientToGCTransferSeasonalMMRRequest",

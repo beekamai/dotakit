@@ -1,5 +1,5 @@
 import { BinaryWriter, BinaryReader } from '@bufbuild/protobuf/wire';
-import { cm as DOTAGameState, d8 as MatchType, d1 as ETourneyQueueDeadlineState, c as EEvent, d as dotaGcTeam, co as DOTALeaverStatusT, bE as CMsgPendingEventAward, ef as dotaCmPick, cg as DOTABotDifficulty, cS as EMatchOutcome, cq as DOTALobbyVisibility, cu as DOTASelectionPriorityRules, ct as DOTASelectionPriorityChoice, E as EDOTAMMRBoostType, R as CMsgDOTAClaimEventActionResponse, cX as EProfileCardSlotType, x as CMsgArcanaVoteMatchVotes, f as ELeagueRegion, cH as EEventActionScoreMode, cI as EHeroRelicRarity, cU as EOverwatchConviction, cF as EDPCFavoriteType, c$ as EStickerbookPageType, b$ as CMsgStickerbookSticker, c0 as CMsgStickerbookTeamPageOrderSequence, q as CMatchClip, cY as ERankType, e as CMsgDOTAMatch, cs as DOTAMatchVote, cR as EMatchGroupServerStatus, c5 as CPartySearchClientParty, aJ as CMsgDOTASDOHeroStatsHistory, c1 as CMsgSuccessfulHero, bT as CMsgRecentMatchInfo, b_ as CMsgStickerbookPage, bJ as CMsgPlayerRecentAccomplishments, bH as CMsgPlayerHeroRecentAccomplishments, c2 as CMsgUnderDraftData, cV as EOverwatchReportReason, bZ as CMsgStickerbook, bY as CMsgStickerHeroes, bx as CMsgMapStatsSnapshot, be as CMsgGlobalMapStats, cT as ENewBloomGiftingResponse, cl as DOTAGameMode, aP as CMsgDOTATriviaQuestion } from './dota_gcmessages_common-D8GmtIqO.js';
+import { cm as DOTAGameState, d8 as MatchType, d1 as ETourneyQueueDeadlineState, c as EEvent, d as dotaGcTeam, co as DOTALeaverStatusT, bE as CMsgPendingEventAward, ef as dotaCmPick, cg as DOTABotDifficulty, cS as EMatchOutcome, cq as DOTALobbyVisibility, cu as DOTASelectionPriorityRules, ct as DOTASelectionPriorityChoice, E as EDOTAMMRBoostType, d7 as MatchLanguages, cl as DOTAGameMode, cp as DOTALobbyReadyState, h as CDOTAClientHardwareSpecs, cn as DOTAJoinLobbyResult, R as CMsgDOTAClaimEventActionResponse, cX as EProfileCardSlotType, x as CMsgArcanaVoteMatchVotes, f as ELeagueRegion, cH as EEventActionScoreMode, cI as EHeroRelicRarity, cU as EOverwatchConviction, cF as EDPCFavoriteType, c$ as EStickerbookPageType, b$ as CMsgStickerbookSticker, c0 as CMsgStickerbookTeamPageOrderSequence, q as CMatchClip, cY as ERankType, e as CMsgDOTAMatch, cs as DOTAMatchVote, cR as EMatchGroupServerStatus, c5 as CPartySearchClientParty, aJ as CMsgDOTASDOHeroStatsHistory, c1 as CMsgSuccessfulHero, bT as CMsgRecentMatchInfo, b_ as CMsgStickerbookPage, bJ as CMsgPlayerRecentAccomplishments, bH as CMsgPlayerHeroRecentAccomplishments, c2 as CMsgUnderDraftData, cV as EOverwatchReportReason, bZ as CMsgStickerbook, bY as CMsgStickerHeroes, bx as CMsgMapStatsSnapshot, be as CMsgGlobalMapStats, cT as ENewBloomGiftingResponse, aP as CMsgDOTATriviaQuestion } from './dota_gcmessages_common-D8GmtIqO.js';
 
 declare enum EGCPlatform {
     k_eGCPlatform_None = 0,
@@ -33,12 +33,12 @@ interface CMsgProtoBufHeader {
     gcMsgSrc: GCProtoBufMsgSrc;
     gcDirIndexSource: number;
 }
-declare const CMsgProtoBufHeader: MessageFns$b<CMsgProtoBufHeader>;
+declare const CMsgProtoBufHeader: MessageFns$c<CMsgProtoBufHeader>;
 interface CGCSystemMsgGetAccountDetails {
     steamid: string;
     appid: number;
 }
-declare const CGCSystemMsgGetAccountDetails: MessageFns$b<CGCSystemMsgGetAccountDetails>;
+declare const CGCSystemMsgGetAccountDetails: MessageFns$c<CGCSystemMsgGetAccountDetails>;
 interface CGCSystemMsgGetAccountDetailsResponse {
     eresultDeprecated: number;
     accountName: string;
@@ -78,7 +78,7 @@ interface CGCSystemMsgGetAccountDetailsResponse {
     hasAcceptedChinaSsa: boolean;
     isBannedSteamChina: boolean;
 }
-declare const CGCSystemMsgGetAccountDetailsResponse: MessageFns$b<CGCSystemMsgGetAccountDetailsResponse>;
+declare const CGCSystemMsgGetAccountDetailsResponse: MessageFns$c<CGCSystemMsgGetAccountDetailsResponse>;
 interface CIPLocationInfo {
     ip: number;
     latitude: number;
@@ -87,22 +87,22 @@ interface CIPLocationInfo {
     state: string;
     city: string;
 }
-declare const CIPLocationInfo: MessageFns$b<CIPLocationInfo>;
+declare const CIPLocationInfo: MessageFns$c<CIPLocationInfo>;
 interface CGCMsgGetIPLocationResponse {
     infos: CIPLocationInfo[];
 }
-declare const CGCMsgGetIPLocationResponse: MessageFns$b<CGCMsgGetIPLocationResponse>;
-type Builtin$b = Date | Function | Uint8Array | string | number | boolean | undefined;
-type DeepPartial$b<T> = T extends Builtin$b ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$b<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$b<U>> : T extends {} ? {
-    [K in keyof T]?: DeepPartial$b<T[K]>;
+declare const CGCMsgGetIPLocationResponse: MessageFns$c<CGCMsgGetIPLocationResponse>;
+type Builtin$c = Date | Function | Uint8Array | string | number | boolean | undefined;
+type DeepPartial$c<T> = T extends Builtin$c ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$c<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$c<U>> : T extends {} ? {
+    [K in keyof T]?: DeepPartial$c<T[K]>;
 } : Partial<T>;
-interface MessageFns$b<T> {
+interface MessageFns$c<T> {
     encode(message: T, writer?: BinaryWriter): BinaryWriter;
     decode(input: BinaryReader | Uint8Array, length?: number): T;
     fromJSON(object: any): T;
     toJSON(message: T): unknown;
-    create(base?: DeepPartial$b<T>): T;
-    fromPartial(object: DeepPartial$b<T>): T;
+    create(base?: DeepPartial$c<T>): T;
+    fromPartial(object: DeepPartial$c<T>): T;
 }
 
 declare enum ESteamLearnDataType {
@@ -194,14 +194,14 @@ declare function eSteamLearnInferenceMetadataResultToJSON(object: ESteamLearnInf
 interface CMsgSteamLearnDataSourceDescObject {
     elements: CMsgSteamLearnDataSourceDescElement[];
 }
-declare const CMsgSteamLearnDataSourceDescObject: MessageFns$a<CMsgSteamLearnDataSourceDescObject>;
+declare const CMsgSteamLearnDataSourceDescObject: MessageFns$b<CMsgSteamLearnDataSourceDescObject>;
 interface CMsgSteamLearnDataSourceDescElement {
     name: string;
     dataType: ESteamLearnDataType;
     object: CMsgSteamLearnDataSourceDescObject | undefined;
     count: number;
 }
-declare const CMsgSteamLearnDataSourceDescElement: MessageFns$a<CMsgSteamLearnDataSourceDescElement>;
+declare const CMsgSteamLearnDataSourceDescElement: MessageFns$b<CMsgSteamLearnDataSourceDescElement>;
 interface CMsgSteamLearnDataSource {
     id: number;
     name: string;
@@ -211,11 +211,11 @@ interface CMsgSteamLearnDataSource {
     structureCrc: number;
     cacheDurationSeconds: number;
 }
-declare const CMsgSteamLearnDataSource: MessageFns$a<CMsgSteamLearnDataSource>;
+declare const CMsgSteamLearnDataSource: MessageFns$b<CMsgSteamLearnDataSource>;
 interface CMsgSteamLearnDataObject {
     elements: CMsgSteamLearnDataElement[];
 }
-declare const CMsgSteamLearnDataObject: MessageFns$a<CMsgSteamLearnDataObject>;
+declare const CMsgSteamLearnDataObject: MessageFns$b<CMsgSteamLearnDataObject>;
 interface CMsgSteamLearnDataElement {
     name: string;
     dataInt32s: number[];
@@ -224,36 +224,36 @@ interface CMsgSteamLearnDataElement {
     dataStrings: string[];
     dataObjects: CMsgSteamLearnDataObject[];
 }
-declare const CMsgSteamLearnDataElement: MessageFns$a<CMsgSteamLearnDataElement>;
+declare const CMsgSteamLearnDataElement: MessageFns$b<CMsgSteamLearnDataElement>;
 interface CMsgSteamLearnData {
     dataSourceId: number;
     keys: string[];
     dataObject: CMsgSteamLearnDataObject | undefined;
 }
-declare const CMsgSteamLearnData: MessageFns$a<CMsgSteamLearnData>;
+declare const CMsgSteamLearnData: MessageFns$b<CMsgSteamLearnData>;
 interface CMsgSteamLearnDataList {
     data: CMsgSteamLearnData[];
 }
-declare const CMsgSteamLearnDataList: MessageFns$a<CMsgSteamLearnDataList>;
+declare const CMsgSteamLearnDataList: MessageFns$b<CMsgSteamLearnDataList>;
 interface CMsgSteamLearnRegisterDataSourceRequest {
     accessToken: string;
     dataSource: CMsgSteamLearnDataSource | undefined;
 }
-declare const CMsgSteamLearnRegisterDataSourceRequest: MessageFns$a<CMsgSteamLearnRegisterDataSourceRequest>;
+declare const CMsgSteamLearnRegisterDataSourceRequest: MessageFns$b<CMsgSteamLearnRegisterDataSourceRequest>;
 interface CMsgSteamLearnRegisterDataSourceResponse {
     result: ESteammLearnRegisterDataSourceResult;
     dataSource: CMsgSteamLearnDataSource | undefined;
 }
-declare const CMsgSteamLearnRegisterDataSourceResponse: MessageFns$a<CMsgSteamLearnRegisterDataSourceResponse>;
+declare const CMsgSteamLearnRegisterDataSourceResponse: MessageFns$b<CMsgSteamLearnRegisterDataSourceResponse>;
 interface CMsgSteamLearnCacheDataRequest {
     accessToken: string;
     data: CMsgSteamLearnData | undefined;
 }
-declare const CMsgSteamLearnCacheDataRequest: MessageFns$a<CMsgSteamLearnCacheDataRequest>;
+declare const CMsgSteamLearnCacheDataRequest: MessageFns$b<CMsgSteamLearnCacheDataRequest>;
 interface CMsgSteamLearnCacheDataResponse {
     cacheDataResult: ESteamLearnCacheDataResult;
 }
-declare const CMsgSteamLearnCacheDataResponse: MessageFns$a<CMsgSteamLearnCacheDataResponse>;
+declare const CMsgSteamLearnCacheDataResponse: MessageFns$b<CMsgSteamLearnCacheDataResponse>;
 interface CMsgSteamLearnSnapshotProjectRequest {
     accessToken: string;
     projectId: number;
@@ -262,54 +262,54 @@ interface CMsgSteamLearnSnapshotProjectRequest {
     data: CMsgSteamLearnData[];
     pendingDataLimitSeconds: number;
 }
-declare const CMsgSteamLearnSnapshotProjectRequest: MessageFns$a<CMsgSteamLearnSnapshotProjectRequest>;
+declare const CMsgSteamLearnSnapshotProjectRequest: MessageFns$b<CMsgSteamLearnSnapshotProjectRequest>;
 interface CMsgSteamLearnSnapshotProjectResponse {
     snapshotResult: ESteamLearnSnapshotProjectResult;
 }
-declare const CMsgSteamLearnSnapshotProjectResponse: MessageFns$a<CMsgSteamLearnSnapshotProjectResponse>;
+declare const CMsgSteamLearnSnapshotProjectResponse: MessageFns$b<CMsgSteamLearnSnapshotProjectResponse>;
 interface CMsgSteamLearnBatchOperationRequest {
     cacheDataRequests: CMsgSteamLearnCacheDataRequest[];
     snapshotRequests: CMsgSteamLearnSnapshotProjectRequest[];
     inferenceRequests: CMsgSteamLearnInferenceRequest[];
 }
-declare const CMsgSteamLearnBatchOperationRequest: MessageFns$a<CMsgSteamLearnBatchOperationRequest>;
+declare const CMsgSteamLearnBatchOperationRequest: MessageFns$b<CMsgSteamLearnBatchOperationRequest>;
 interface CMsgSteamLearnBatchOperationResponse {
     cacheDataResponses: CMsgSteamLearnCacheDataResponse[];
     snapshotResponses: CMsgSteamLearnSnapshotProjectResponse[];
     inferenceResponses: CMsgSteamLearnInferenceResponse[];
 }
-declare const CMsgSteamLearnBatchOperationResponse: MessageFns$a<CMsgSteamLearnBatchOperationResponse>;
+declare const CMsgSteamLearnBatchOperationResponse: MessageFns$b<CMsgSteamLearnBatchOperationResponse>;
 interface CMsgSteamLearnAccessTokens {
     registerDataSourceAccessToken: string;
     cacheDataAccessTokens: CMsgSteamLearnAccessTokens_CacheDataAccessToken[];
     snapshotProjectAccessTokens: CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken[];
     inferenceAccessTokens: CMsgSteamLearnAccessTokens_InferenceAccessToken[];
 }
-declare const CMsgSteamLearnAccessTokens: MessageFns$a<CMsgSteamLearnAccessTokens>;
+declare const CMsgSteamLearnAccessTokens: MessageFns$b<CMsgSteamLearnAccessTokens>;
 interface CMsgSteamLearnAccessTokens_CacheDataAccessToken {
     dataSourceId: number;
     accessToken: string;
 }
-declare const CMsgSteamLearnAccessTokens_CacheDataAccessToken: MessageFns$a<CMsgSteamLearnAccessTokens_CacheDataAccessToken>;
+declare const CMsgSteamLearnAccessTokens_CacheDataAccessToken: MessageFns$b<CMsgSteamLearnAccessTokens_CacheDataAccessToken>;
 interface CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken {
     projectId: number;
     accessToken: string;
 }
-declare const CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken: MessageFns$a<CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken>;
+declare const CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken: MessageFns$b<CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken>;
 interface CMsgSteamLearnAccessTokens_InferenceAccessToken {
     projectId: number;
     accessToken: string;
 }
-declare const CMsgSteamLearnAccessTokens_InferenceAccessToken: MessageFns$a<CMsgSteamLearnAccessTokens_InferenceAccessToken>;
+declare const CMsgSteamLearnAccessTokens_InferenceAccessToken: MessageFns$b<CMsgSteamLearnAccessTokens_InferenceAccessToken>;
 interface CMsgSteamLearnGetAccessTokensRequest {
     appid: number;
 }
-declare const CMsgSteamLearnGetAccessTokensRequest: MessageFns$a<CMsgSteamLearnGetAccessTokensRequest>;
+declare const CMsgSteamLearnGetAccessTokensRequest: MessageFns$b<CMsgSteamLearnGetAccessTokensRequest>;
 interface CMsgSteamLearnGetAccessTokensResponse {
     result: ESteamLearnGetAccessTokensResult;
     accessTokens: CMsgSteamLearnAccessTokens | undefined;
 }
-declare const CMsgSteamLearnGetAccessTokensResponse: MessageFns$a<CMsgSteamLearnGetAccessTokensResponse>;
+declare const CMsgSteamLearnGetAccessTokensResponse: MessageFns$b<CMsgSteamLearnGetAccessTokensResponse>;
 interface CMsgSteamLearnInferenceRequest {
     accessToken: string;
     projectId: number;
@@ -318,19 +318,19 @@ interface CMsgSteamLearnInferenceRequest {
     data: CMsgSteamLearnDataList | undefined;
     additionalData: number[];
 }
-declare const CMsgSteamLearnInferenceRequest: MessageFns$a<CMsgSteamLearnInferenceRequest>;
+declare const CMsgSteamLearnInferenceRequest: MessageFns$b<CMsgSteamLearnInferenceRequest>;
 interface CMsgSteamLearnInferenceMetadataRequest {
     accessToken: string;
     projectId: number;
     publishedVersion: number;
     overrideTrainId: number;
 }
-declare const CMsgSteamLearnInferenceMetadataRequest: MessageFns$a<CMsgSteamLearnInferenceMetadataRequest>;
+declare const CMsgSteamLearnInferenceMetadataRequest: MessageFns$b<CMsgSteamLearnInferenceMetadataRequest>;
 interface CMsgSteamLearnInferenceMetadataBackendRequest {
     projectId: number;
     fetchId: number;
 }
-declare const CMsgSteamLearnInferenceMetadataBackendRequest: MessageFns$a<CMsgSteamLearnInferenceMetadataBackendRequest>;
+declare const CMsgSteamLearnInferenceMetadataBackendRequest: MessageFns$b<CMsgSteamLearnInferenceMetadataBackendRequest>;
 interface CMsgSteamLearnInferenceMetadataResponse {
     inferenceMetadataResult: ESteamLearnInferenceMetadataResult;
     rowRange: CMsgSteamLearnInferenceMetadataResponse_RowRange | undefined;
@@ -342,74 +342,74 @@ interface CMsgSteamLearnInferenceMetadataResponse {
     appInfo: CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry[];
     snapshotHistogram: CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram | undefined;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse>;
+declare const CMsgSteamLearnInferenceMetadataResponse: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse>;
 interface CMsgSteamLearnInferenceMetadataResponse_RowRange {
     minRow: string;
     maxRow: string;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_RowRange: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_RowRange>;
+declare const CMsgSteamLearnInferenceMetadataResponse_RowRange: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_RowRange>;
 interface CMsgSteamLearnInferenceMetadataResponse_Range {
     dataElementPath: string;
     minValue: number;
     maxValue: number;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_Range: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_Range>;
+declare const CMsgSteamLearnInferenceMetadataResponse_Range: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_Range>;
 interface CMsgSteamLearnInferenceMetadataResponse_StdDev {
     dataElementPath: string;
     mean: number;
     stdDev: number;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_StdDev: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_StdDev>;
+declare const CMsgSteamLearnInferenceMetadataResponse_StdDev: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_StdDev>;
 interface CMsgSteamLearnInferenceMetadataResponse_CompactTable {
     name: string;
     mapValues: CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry[];
     mapMappings: CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry[];
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_CompactTable>;
+declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_CompactTable>;
 interface CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry {
     value: number;
     mapping: number;
     count: string;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry>;
+declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry>;
 interface CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry {
     key: number;
     value: CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry | undefined;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry>;
+declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry>;
 interface CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry {
     key: number;
     value: CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry | undefined;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry>;
+declare const CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry>;
 interface CMsgSteamLearnInferenceMetadataResponse_SequenceTable {
     name: string;
     mapValues: CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry[];
     mapMappings: CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry[];
     totalCount: string;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_SequenceTable>;
+declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_SequenceTable>;
 interface CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry {
     values: number[];
     crc: number;
     count: number;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry>;
+declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry>;
 interface CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry {
     key: number;
     value: CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry | undefined;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry>;
+declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry>;
 interface CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry {
     key: string;
     value: CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry | undefined;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry>;
+declare const CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry>;
 interface CMsgSteamLearnInferenceMetadataResponse_KMeans {
     name: string;
     clusters: CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster[];
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_KMeans: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_KMeans>;
+declare const CMsgSteamLearnInferenceMetadataResponse_KMeans: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_KMeans>;
 interface CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster {
     x: number;
     y: number;
@@ -418,14 +418,14 @@ interface CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster {
     radius50pct: number;
     radius25pct: number;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster>;
+declare const CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster>;
 interface CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram {
     minValue: number;
     maxValue: number;
     numBuckets: number;
     bucketCounts: number[];
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram>;
+declare const CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram>;
 interface CMsgSteamLearnInferenceMetadataResponse_AppInfo {
     countryAllow: string;
     countryDeny: string;
@@ -435,53 +435,53 @@ interface CMsgSteamLearnInferenceMetadataResponse_AppInfo {
     adultViolence: boolean;
     adultSex: boolean;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_AppInfo: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_AppInfo>;
+declare const CMsgSteamLearnInferenceMetadataResponse_AppInfo: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_AppInfo>;
 interface CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry {
     key: number;
     value: CMsgSteamLearnInferenceMetadataResponse_AppInfo | undefined;
 }
-declare const CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry: MessageFns$a<CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry>;
+declare const CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry: MessageFns$b<CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry>;
 interface CMsgSteamLearnInferenceBackendResponse {
     outputs: CMsgSteamLearnInferenceBackendResponse_Output[];
 }
-declare const CMsgSteamLearnInferenceBackendResponse: MessageFns$a<CMsgSteamLearnInferenceBackendResponse>;
+declare const CMsgSteamLearnInferenceBackendResponse: MessageFns$b<CMsgSteamLearnInferenceBackendResponse>;
 interface CMsgSteamLearnInferenceBackendResponse_Sequence {
     value: number[];
 }
-declare const CMsgSteamLearnInferenceBackendResponse_Sequence: MessageFns$a<CMsgSteamLearnInferenceBackendResponse_Sequence>;
+declare const CMsgSteamLearnInferenceBackendResponse_Sequence: MessageFns$b<CMsgSteamLearnInferenceBackendResponse_Sequence>;
 interface CMsgSteamLearnInferenceBackendResponse_RegressionOutput {
     value: number;
 }
-declare const CMsgSteamLearnInferenceBackendResponse_RegressionOutput: MessageFns$a<CMsgSteamLearnInferenceBackendResponse_RegressionOutput>;
+declare const CMsgSteamLearnInferenceBackendResponse_RegressionOutput: MessageFns$b<CMsgSteamLearnInferenceBackendResponse_RegressionOutput>;
 interface CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput {
     value: number;
 }
-declare const CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput: MessageFns$a<CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput>;
+declare const CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput: MessageFns$b<CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput>;
 interface CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput {
     weight: number[];
     value: number[];
     valueSequence: CMsgSteamLearnInferenceBackendResponse_Sequence[];
 }
-declare const CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput: MessageFns$a<CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput>;
+declare const CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput: MessageFns$b<CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput>;
 interface CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput {
     weight: number[];
     value: number[];
     valueSequence: CMsgSteamLearnInferenceBackendResponse_Sequence[];
 }
-declare const CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput: MessageFns$a<CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput>;
+declare const CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput: MessageFns$b<CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput>;
 interface CMsgSteamLearnInferenceBackendResponse_Output {
     binaryCrossentropy?: CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput | undefined;
     categoricalCrossentropy?: CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput | undefined;
     multiBinaryCrossentropy?: CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput | undefined;
     regression?: CMsgSteamLearnInferenceBackendResponse_RegressionOutput | undefined;
 }
-declare const CMsgSteamLearnInferenceBackendResponse_Output: MessageFns$a<CMsgSteamLearnInferenceBackendResponse_Output>;
+declare const CMsgSteamLearnInferenceBackendResponse_Output: MessageFns$b<CMsgSteamLearnInferenceBackendResponse_Output>;
 interface CMsgSteamLearnInferenceResponse {
     inferenceResult: ESteamLearnInferenceResult;
     backendResponse: CMsgSteamLearnInferenceBackendResponse | undefined;
     keys: string[];
 }
-declare const CMsgSteamLearnInferenceResponse: MessageFns$a<CMsgSteamLearnInferenceResponse>;
+declare const CMsgSteamLearnInferenceResponse: MessageFns$b<CMsgSteamLearnInferenceResponse>;
 interface SteamLearn {
     RegisterDataSource(request: CMsgSteamLearnRegisterDataSourceRequest): Promise<CMsgSteamLearnRegisterDataSourceResponse>;
     CacheData(request: CMsgSteamLearnCacheDataRequest): Promise<CMsgSteamLearnCacheDataResponse>;
@@ -509,17 +509,17 @@ declare class SteamLearnClientImpl implements SteamLearn {
 interface Rpc {
     request(service: string, method: string, data: Uint8Array): Promise<Uint8Array>;
 }
-type Builtin$a = Date | Function | Uint8Array | string | number | boolean | undefined;
-type DeepPartial$a<T> = T extends Builtin$a ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$a<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$a<U>> : T extends {} ? {
-    [K in keyof T]?: DeepPartial$a<T[K]>;
+type Builtin$b = Date | Function | Uint8Array | string | number | boolean | undefined;
+type DeepPartial$b<T> = T extends Builtin$b ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$b<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$b<U>> : T extends {} ? {
+    [K in keyof T]?: DeepPartial$b<T[K]>;
 } : Partial<T>;
-interface MessageFns$a<T> {
+interface MessageFns$b<T> {
     encode(message: T, writer?: BinaryWriter): BinaryWriter;
     decode(input: BinaryReader | Uint8Array, length?: number): T;
     fromJSON(object: any): T;
     toJSON(message: T): unknown;
-    create(base?: DeepPartial$a<T>): T;
-    fromPartial(object: DeepPartial$a<T>): T;
+    create(base?: DeepPartial$b<T>): T;
+    fromPartial(object: DeepPartial$b<T>): T;
 }
 
 declare enum ESourceEngine {
@@ -552,12 +552,12 @@ interface CExtraMsgBlock {
     msgKey: string;
     isCompressed: boolean;
 }
-declare const CExtraMsgBlock: MessageFns$9<CExtraMsgBlock>;
+declare const CExtraMsgBlock: MessageFns$a<CExtraMsgBlock>;
 interface CMsgSteamLearnServerInfo {
     accessTokens: CMsgSteamLearnAccessTokens | undefined;
     projectInfos: CMsgSteamLearnServerInfo_ProjectInfo[];
 }
-declare const CMsgSteamLearnServerInfo: MessageFns$9<CMsgSteamLearnServerInfo>;
+declare const CMsgSteamLearnServerInfo: MessageFns$a<CMsgSteamLearnServerInfo>;
 interface CMsgSteamLearnServerInfo_ProjectInfo {
     projectId: number;
     snapshotPublishedVersion: number;
@@ -565,31 +565,31 @@ interface CMsgSteamLearnServerInfo_ProjectInfo {
     snapshotPercentage: number;
     snapshotEnabled: boolean;
 }
-declare const CMsgSteamLearnServerInfo_ProjectInfo: MessageFns$9<CMsgSteamLearnServerInfo_ProjectInfo>;
+declare const CMsgSteamLearnServerInfo_ProjectInfo: MessageFns$a<CMsgSteamLearnServerInfo_ProjectInfo>;
 interface CMsgGCAssertJobData {
     messageType: string;
     messageData: Buffer;
 }
-declare const CMsgGCAssertJobData: MessageFns$9<CMsgGCAssertJobData>;
+declare const CMsgGCAssertJobData: MessageFns$a<CMsgGCAssertJobData>;
 interface CMsgGCConCommand {
     command: string;
 }
-declare const CMsgGCConCommand: MessageFns$9<CMsgGCConCommand>;
+declare const CMsgGCConCommand: MessageFns$a<CMsgGCConCommand>;
 interface CMsgSDOAssert {
     sdoType: number;
     requests: CMsgSDOAssert_Request[];
 }
-declare const CMsgSDOAssert: MessageFns$9<CMsgSDOAssert>;
+declare const CMsgSDOAssert: MessageFns$a<CMsgSDOAssert>;
 interface CMsgSDOAssert_Request {
     key: string[];
     requestingJob: string;
 }
-declare const CMsgSDOAssert_Request: MessageFns$9<CMsgSDOAssert_Request>;
+declare const CMsgSDOAssert_Request: MessageFns$a<CMsgSDOAssert_Request>;
 interface CMsgSOIDOwner {
     type: number;
     id: string;
 }
-declare const CMsgSOIDOwner: MessageFns$9<CMsgSOIDOwner>;
+declare const CMsgSOIDOwner: MessageFns$a<CMsgSOIDOwner>;
 interface CMsgSOSingleObject {
     typeId: number;
     objectData: Buffer;
@@ -597,7 +597,7 @@ interface CMsgSOSingleObject {
     ownerSoid: CMsgSOIDOwner | undefined;
     serviceId: number;
 }
-declare const CMsgSOSingleObject: MessageFns$9<CMsgSOSingleObject>;
+declare const CMsgSOSingleObject: MessageFns$a<CMsgSOSingleObject>;
 interface CMsgSOMultipleObjects {
     objectsModified: CMsgSOMultipleObjects_SingleObject[];
     version: string;
@@ -606,12 +606,12 @@ interface CMsgSOMultipleObjects {
     ownerSoid: CMsgSOIDOwner | undefined;
     serviceId: number;
 }
-declare const CMsgSOMultipleObjects: MessageFns$9<CMsgSOMultipleObjects>;
+declare const CMsgSOMultipleObjects: MessageFns$a<CMsgSOMultipleObjects>;
 interface CMsgSOMultipleObjects_SingleObject {
     typeId: number;
     objectData: Buffer;
 }
-declare const CMsgSOMultipleObjects_SingleObject: MessageFns$9<CMsgSOMultipleObjects_SingleObject>;
+declare const CMsgSOMultipleObjects_SingleObject: MessageFns$a<CMsgSOMultipleObjects_SingleObject>;
 interface CMsgSOCacheSubscribed {
     objects: CMsgSOCacheSubscribed_SubscribedType[];
     version: string;
@@ -620,12 +620,12 @@ interface CMsgSOCacheSubscribed {
     serviceList: number[];
     syncVersion: string;
 }
-declare const CMsgSOCacheSubscribed: MessageFns$9<CMsgSOCacheSubscribed>;
+declare const CMsgSOCacheSubscribed: MessageFns$a<CMsgSOCacheSubscribed>;
 interface CMsgSOCacheSubscribed_SubscribedType {
     typeId: number;
     objectData: Buffer[];
 }
-declare const CMsgSOCacheSubscribed_SubscribedType: MessageFns$9<CMsgSOCacheSubscribed_SubscribedType>;
+declare const CMsgSOCacheSubscribed_SubscribedType: MessageFns$a<CMsgSOCacheSubscribed_SubscribedType>;
 interface CMsgSOCacheSubscribedUpToDate {
     version: string;
     ownerSoid: CMsgSOIDOwner | undefined;
@@ -633,11 +633,11 @@ interface CMsgSOCacheSubscribedUpToDate {
     serviceList: number[];
     syncVersion: string;
 }
-declare const CMsgSOCacheSubscribedUpToDate: MessageFns$9<CMsgSOCacheSubscribedUpToDate>;
+declare const CMsgSOCacheSubscribedUpToDate: MessageFns$a<CMsgSOCacheSubscribedUpToDate>;
 interface CMsgSOCacheUnsubscribed {
     ownerSoid: CMsgSOIDOwner | undefined;
 }
-declare const CMsgSOCacheUnsubscribed: MessageFns$9<CMsgSOCacheUnsubscribed>;
+declare const CMsgSOCacheUnsubscribed: MessageFns$a<CMsgSOCacheUnsubscribed>;
 interface CMsgSOCacheSubscriptionCheck {
     version: string;
     ownerSoid: CMsgSOIDOwner | undefined;
@@ -645,97 +645,97 @@ interface CMsgSOCacheSubscriptionCheck {
     serviceList: number[];
     syncVersion: string;
 }
-declare const CMsgSOCacheSubscriptionCheck: MessageFns$9<CMsgSOCacheSubscriptionCheck>;
+declare const CMsgSOCacheSubscriptionCheck: MessageFns$a<CMsgSOCacheSubscriptionCheck>;
 interface CMsgSOCacheSubscriptionRefresh {
     ownerSoid: CMsgSOIDOwner | undefined;
 }
-declare const CMsgSOCacheSubscriptionRefresh: MessageFns$9<CMsgSOCacheSubscriptionRefresh>;
+declare const CMsgSOCacheSubscriptionRefresh: MessageFns$a<CMsgSOCacheSubscriptionRefresh>;
 interface CMsgSOCacheVersion {
     version: string;
 }
-declare const CMsgSOCacheVersion: MessageFns$9<CMsgSOCacheVersion>;
+declare const CMsgSOCacheVersion: MessageFns$a<CMsgSOCacheVersion>;
 interface CMsgGCMultiplexMessage {
     msgtype: number;
     payload: Buffer;
     steamids: string[];
 }
-declare const CMsgGCMultiplexMessage: MessageFns$9<CMsgGCMultiplexMessage>;
+declare const CMsgGCMultiplexMessage: MessageFns$a<CMsgGCMultiplexMessage>;
 interface CMsgGCToGCSubGCStarting {
     dirIndex: number;
 }
-declare const CMsgGCToGCSubGCStarting: MessageFns$9<CMsgGCToGCSubGCStarting>;
+declare const CMsgGCToGCSubGCStarting: MessageFns$a<CMsgGCToGCSubGCStarting>;
 interface CGCToGCMsgMasterAck {
     dirIndex: number;
     machineName: string;
     processName: string;
     directory: CGCToGCMsgMasterAck_Process[];
 }
-declare const CGCToGCMsgMasterAck: MessageFns$9<CGCToGCMsgMasterAck>;
+declare const CGCToGCMsgMasterAck: MessageFns$a<CGCToGCMsgMasterAck>;
 interface CGCToGCMsgMasterAck_Process {
     dirIndex: number;
     typeInstances: number[];
 }
-declare const CGCToGCMsgMasterAck_Process: MessageFns$9<CGCToGCMsgMasterAck_Process>;
+declare const CGCToGCMsgMasterAck_Process: MessageFns$a<CGCToGCMsgMasterAck_Process>;
 interface CGCToGCMsgMasterAckResponse {
     eresult: number;
 }
-declare const CGCToGCMsgMasterAckResponse: MessageFns$9<CGCToGCMsgMasterAckResponse>;
+declare const CGCToGCMsgMasterAckResponse: MessageFns$a<CGCToGCMsgMasterAckResponse>;
 interface CMsgGCToGCUniverseStartup {
     isInitialStartup: boolean;
 }
-declare const CMsgGCToGCUniverseStartup: MessageFns$9<CMsgGCToGCUniverseStartup>;
+declare const CMsgGCToGCUniverseStartup: MessageFns$a<CMsgGCToGCUniverseStartup>;
 interface CMsgGCToGCUniverseStartupResponse {
     eresult: number;
 }
-declare const CMsgGCToGCUniverseStartupResponse: MessageFns$9<CMsgGCToGCUniverseStartupResponse>;
+declare const CMsgGCToGCUniverseStartupResponse: MessageFns$a<CMsgGCToGCUniverseStartupResponse>;
 interface CGCToGCMsgMasterStartupComplete {
     gcInfo: CGCToGCMsgMasterStartupComplete_GCInfo[];
 }
-declare const CGCToGCMsgMasterStartupComplete: MessageFns$9<CGCToGCMsgMasterStartupComplete>;
+declare const CGCToGCMsgMasterStartupComplete: MessageFns$a<CGCToGCMsgMasterStartupComplete>;
 interface CGCToGCMsgMasterStartupComplete_GCInfo {
     dirIndex: number;
     machineName: string;
 }
-declare const CGCToGCMsgMasterStartupComplete_GCInfo: MessageFns$9<CGCToGCMsgMasterStartupComplete_GCInfo>;
+declare const CGCToGCMsgMasterStartupComplete_GCInfo: MessageFns$a<CGCToGCMsgMasterStartupComplete_GCInfo>;
 interface CGCToGCMsgRouted {
     msgType: number;
     senderId: string;
     netMessage: Buffer;
 }
-declare const CGCToGCMsgRouted: MessageFns$9<CGCToGCMsgRouted>;
+declare const CGCToGCMsgRouted: MessageFns$a<CGCToGCMsgRouted>;
 interface CGCToGCMsgRoutedReply {
     msgType: number;
     netMessage: Buffer;
 }
-declare const CGCToGCMsgRoutedReply: MessageFns$9<CGCToGCMsgRoutedReply>;
+declare const CGCToGCMsgRoutedReply: MessageFns$a<CGCToGCMsgRoutedReply>;
 interface CMsgGCUpdateSubGCSessionInfo {
     updates: CMsgGCUpdateSubGCSessionInfo_CMsgUpdate[];
 }
-declare const CMsgGCUpdateSubGCSessionInfo: MessageFns$9<CMsgGCUpdateSubGCSessionInfo>;
+declare const CMsgGCUpdateSubGCSessionInfo: MessageFns$a<CMsgGCUpdateSubGCSessionInfo>;
 interface CMsgGCUpdateSubGCSessionInfo_CMsgUpdate {
     steamid: string;
     ip: number;
     trusted: boolean;
 }
-declare const CMsgGCUpdateSubGCSessionInfo_CMsgUpdate: MessageFns$9<CMsgGCUpdateSubGCSessionInfo_CMsgUpdate>;
+declare const CMsgGCUpdateSubGCSessionInfo_CMsgUpdate: MessageFns$a<CMsgGCUpdateSubGCSessionInfo_CMsgUpdate>;
 interface CMsgGCRequestSubGCSessionInfo {
     steamid: string;
 }
-declare const CMsgGCRequestSubGCSessionInfo: MessageFns$9<CMsgGCRequestSubGCSessionInfo>;
+declare const CMsgGCRequestSubGCSessionInfo: MessageFns$a<CMsgGCRequestSubGCSessionInfo>;
 interface CMsgGCRequestSubGCSessionInfoResponse {
     ip: number;
     trusted: boolean;
     port: number;
     success: boolean;
 }
-declare const CMsgGCRequestSubGCSessionInfoResponse: MessageFns$9<CMsgGCRequestSubGCSessionInfoResponse>;
+declare const CMsgGCRequestSubGCSessionInfoResponse: MessageFns$a<CMsgGCRequestSubGCSessionInfoResponse>;
 interface CMsgSOCacheHaveVersion {
     soid: CMsgSOIDOwner | undefined;
     version: string;
     serviceId: number;
     cachedFileVersion: number;
 }
-declare const CMsgSOCacheHaveVersion: MessageFns$9<CMsgSOCacheHaveVersion>;
+declare const CMsgSOCacheHaveVersion: MessageFns$a<CMsgSOCacheHaveVersion>;
 interface CMsgClientHello {
     version: number;
     socacheHaveVersions: CMsgSOCacheHaveVersion[];
@@ -761,7 +761,7 @@ interface CMsgClientHello {
     isSteamChinaClient: boolean;
     platformName: string;
 }
-declare const CMsgClientHello: MessageFns$9<CMsgClientHello>;
+declare const CMsgClientHello: MessageFns$a<CMsgClientHello>;
 interface CMsgClientWelcome {
     version: number;
     gameData: Buffer;
@@ -780,13 +780,13 @@ interface CMsgClientWelcome {
     additionalWelcomeMsgs: CExtraMsgBlock | undefined;
     steamLearnServerInfo: CMsgSteamLearnServerInfo | undefined;
 }
-declare const CMsgClientWelcome: MessageFns$9<CMsgClientWelcome>;
+declare const CMsgClientWelcome: MessageFns$a<CMsgClientWelcome>;
 interface CMsgClientWelcome_Location {
     latitude: number;
     longitude: number;
     country: string;
 }
-declare const CMsgClientWelcome_Location: MessageFns$9<CMsgClientWelcome_Location>;
+declare const CMsgClientWelcome_Location: MessageFns$a<CMsgClientWelcome_Location>;
 interface CMsgConnectionStatus {
     status: GCConnectionStatus;
     clientSessionNeed: number;
@@ -795,7 +795,7 @@ interface CMsgConnectionStatus {
     waitSeconds: number;
     estimatedWaitSecondsRemaining: number;
 }
-declare const CMsgConnectionStatus: MessageFns$9<CMsgConnectionStatus>;
+declare const CMsgConnectionStatus: MessageFns$a<CMsgConnectionStatus>;
 interface CMsgGCToGCSOCacheSubscribe {
     subscriber: string;
     subscribeToId: string;
@@ -803,68 +803,68 @@ interface CMsgGCToGCSOCacheSubscribe {
     haveVersions: CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions[];
     subscribeToType: number;
 }
-declare const CMsgGCToGCSOCacheSubscribe: MessageFns$9<CMsgGCToGCSOCacheSubscribe>;
+declare const CMsgGCToGCSOCacheSubscribe: MessageFns$a<CMsgGCToGCSOCacheSubscribe>;
 interface CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions {
     serviceId: number;
     version: string;
 }
-declare const CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions: MessageFns$9<CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions>;
+declare const CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions: MessageFns$a<CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions>;
 interface CMsgGCToGCSOCacheUnsubscribe {
     subscriber: string;
     unsubscribeFromId: string;
     unsubscribeFromType: number;
 }
-declare const CMsgGCToGCSOCacheUnsubscribe: MessageFns$9<CMsgGCToGCSOCacheUnsubscribe>;
+declare const CMsgGCToGCSOCacheUnsubscribe: MessageFns$a<CMsgGCToGCSOCacheUnsubscribe>;
 interface CMsgGCClientPing {
 }
-declare const CMsgGCClientPing: MessageFns$9<CMsgGCClientPing>;
+declare const CMsgGCClientPing: MessageFns$a<CMsgGCClientPing>;
 interface CMsgGCToGCForwardAccountDetails {
     steamid: string;
     accountDetails: CGCSystemMsgGetAccountDetailsResponse | undefined;
     ageSeconds: number;
 }
-declare const CMsgGCToGCForwardAccountDetails: MessageFns$9<CMsgGCToGCForwardAccountDetails>;
+declare const CMsgGCToGCForwardAccountDetails: MessageFns$a<CMsgGCToGCForwardAccountDetails>;
 interface CMsgGCToGCLoadSessionSOCache {
     accountId: number;
     forwardAccountDetails: CMsgGCToGCForwardAccountDetails | undefined;
 }
-declare const CMsgGCToGCLoadSessionSOCache: MessageFns$9<CMsgGCToGCLoadSessionSOCache>;
+declare const CMsgGCToGCLoadSessionSOCache: MessageFns$a<CMsgGCToGCLoadSessionSOCache>;
 interface CMsgGCToGCLoadSessionSOCacheResponse {
 }
-declare const CMsgGCToGCLoadSessionSOCacheResponse: MessageFns$9<CMsgGCToGCLoadSessionSOCacheResponse>;
+declare const CMsgGCToGCLoadSessionSOCacheResponse: MessageFns$a<CMsgGCToGCLoadSessionSOCacheResponse>;
 interface CMsgGCToGCUpdateSessionStats {
     userSessions: number;
     serverSessions: number;
     inLogonSurge: boolean;
 }
-declare const CMsgGCToGCUpdateSessionStats: MessageFns$9<CMsgGCToGCUpdateSessionStats>;
+declare const CMsgGCToGCUpdateSessionStats: MessageFns$a<CMsgGCToGCUpdateSessionStats>;
 interface CMsgGCToClientRequestDropped {
 }
-declare const CMsgGCToClientRequestDropped: MessageFns$9<CMsgGCToClientRequestDropped>;
+declare const CMsgGCToClientRequestDropped: MessageFns$a<CMsgGCToClientRequestDropped>;
 interface CWorkshopPopulateItemDescriptionsRequest {
     appid: number;
     languages: CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock[];
 }
-declare const CWorkshopPopulateItemDescriptionsRequest: MessageFns$9<CWorkshopPopulateItemDescriptionsRequest>;
+declare const CWorkshopPopulateItemDescriptionsRequest: MessageFns$a<CWorkshopPopulateItemDescriptionsRequest>;
 interface CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription {
     gameitemid: number;
     itemDescription: string;
 }
-declare const CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription: MessageFns$9<CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription>;
+declare const CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription: MessageFns$a<CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription>;
 interface CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock {
     language: string;
     descriptions: CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription[];
 }
-declare const CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock: MessageFns$9<CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock>;
+declare const CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock: MessageFns$a<CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock>;
 interface CWorkshopGetContributorsRequest {
     appid: number;
     gameitemid: number;
 }
-declare const CWorkshopGetContributorsRequest: MessageFns$9<CWorkshopGetContributorsRequest>;
+declare const CWorkshopGetContributorsRequest: MessageFns$a<CWorkshopGetContributorsRequest>;
 interface CWorkshopGetContributorsResponse {
     contributors: string[];
 }
-declare const CWorkshopGetContributorsResponse: MessageFns$9<CWorkshopGetContributorsResponse>;
+declare const CWorkshopGetContributorsResponse: MessageFns$a<CWorkshopGetContributorsResponse>;
 interface CWorkshopSetItemPaymentRulesRequest {
     appid: number;
     gameitemid: number;
@@ -874,29 +874,29 @@ interface CWorkshopSetItemPaymentRulesRequest {
     makeWorkshopFilesSubscribable: boolean;
     associatedWorkshopFileForDirectPayments: CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule | undefined;
 }
-declare const CWorkshopSetItemPaymentRulesRequest: MessageFns$9<CWorkshopSetItemPaymentRulesRequest>;
+declare const CWorkshopSetItemPaymentRulesRequest: MessageFns$a<CWorkshopSetItemPaymentRulesRequest>;
 interface CWorkshopSetItemPaymentRulesRequest_WorkshopItemPaymentRule {
     workshopFileId: string;
     revenuePercentage: number;
     ruleDescription: string;
     ruleType: number;
 }
-declare const CWorkshopSetItemPaymentRulesRequest_WorkshopItemPaymentRule: MessageFns$9<CWorkshopSetItemPaymentRulesRequest_WorkshopItemPaymentRule>;
+declare const CWorkshopSetItemPaymentRulesRequest_WorkshopItemPaymentRule: MessageFns$a<CWorkshopSetItemPaymentRulesRequest_WorkshopItemPaymentRule>;
 interface CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule {
     workshopFileId: string;
     ruleDescription: string;
 }
-declare const CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule: MessageFns$9<CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule>;
+declare const CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule: MessageFns$a<CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule>;
 interface CWorkshopSetItemPaymentRulesRequest_PartnerItemPaymentRule {
     accountId: number;
     revenuePercentage: number;
     ruleDescription: string;
 }
-declare const CWorkshopSetItemPaymentRulesRequest_PartnerItemPaymentRule: MessageFns$9<CWorkshopSetItemPaymentRulesRequest_PartnerItemPaymentRule>;
+declare const CWorkshopSetItemPaymentRulesRequest_PartnerItemPaymentRule: MessageFns$a<CWorkshopSetItemPaymentRulesRequest_PartnerItemPaymentRule>;
 interface CWorkshopSetItemPaymentRulesResponse {
     validationErrors: string[];
 }
-declare const CWorkshopSetItemPaymentRulesResponse: MessageFns$9<CWorkshopSetItemPaymentRulesResponse>;
+declare const CWorkshopSetItemPaymentRulesResponse: MessageFns$a<CWorkshopSetItemPaymentRulesResponse>;
 interface CCommunityClanAnnouncementInfo {
     gid: string;
     clanid: string;
@@ -911,7 +911,7 @@ interface CCommunityClanAnnouncementInfo {
     hidden: boolean;
     forumTopicId: string;
 }
-declare const CCommunityClanAnnouncementInfo: MessageFns$9<CCommunityClanAnnouncementInfo>;
+declare const CCommunityClanAnnouncementInfo: MessageFns$a<CCommunityClanAnnouncementInfo>;
 interface CCommunityGetClanAnnouncementsRequest {
     steamid: string;
     offset: number;
@@ -927,59 +927,59 @@ interface CCommunityGetClanAnnouncementsRequest {
     includeHidden: boolean;
     includePartnerEvents: boolean;
 }
-declare const CCommunityGetClanAnnouncementsRequest: MessageFns$9<CCommunityGetClanAnnouncementsRequest>;
+declare const CCommunityGetClanAnnouncementsRequest: MessageFns$a<CCommunityGetClanAnnouncementsRequest>;
 interface CCommunityGetClanAnnouncementsResponse {
     maxchars: number;
     stripHtml: boolean;
     announcements: CCommunityClanAnnouncementInfo[];
 }
-declare const CCommunityGetClanAnnouncementsResponse: MessageFns$9<CCommunityGetClanAnnouncementsResponse>;
+declare const CCommunityGetClanAnnouncementsResponse: MessageFns$a<CCommunityGetClanAnnouncementsResponse>;
 interface CBroadcastPostGameDataFrameRequest {
     appid: number;
     steamid: string;
     broadcastId: string;
     frameData: Buffer;
 }
-declare const CBroadcastPostGameDataFrameRequest: MessageFns$9<CBroadcastPostGameDataFrameRequest>;
+declare const CBroadcastPostGameDataFrameRequest: MessageFns$a<CBroadcastPostGameDataFrameRequest>;
 interface CMsgSerializedSOCache {
     fileVersion: number;
     caches: CMsgSerializedSOCache_Cache[];
     gcSocacheFileVersion: number;
 }
-declare const CMsgSerializedSOCache: MessageFns$9<CMsgSerializedSOCache>;
+declare const CMsgSerializedSOCache: MessageFns$a<CMsgSerializedSOCache>;
 interface CMsgSerializedSOCache_TypeCache {
     type: number;
     objects: Buffer[];
     serviceId: number;
 }
-declare const CMsgSerializedSOCache_TypeCache: MessageFns$9<CMsgSerializedSOCache_TypeCache>;
+declare const CMsgSerializedSOCache_TypeCache: MessageFns$a<CMsgSerializedSOCache_TypeCache>;
 interface CMsgSerializedSOCache_Cache {
     type: number;
     id: string;
     versions: CMsgSerializedSOCache_Cache_Version[];
     typeCaches: CMsgSerializedSOCache_TypeCache[];
 }
-declare const CMsgSerializedSOCache_Cache: MessageFns$9<CMsgSerializedSOCache_Cache>;
+declare const CMsgSerializedSOCache_Cache: MessageFns$a<CMsgSerializedSOCache_Cache>;
 interface CMsgSerializedSOCache_Cache_Version {
     service: number;
     version: string;
 }
-declare const CMsgSerializedSOCache_Cache_Version: MessageFns$9<CMsgSerializedSOCache_Cache_Version>;
+declare const CMsgSerializedSOCache_Cache_Version: MessageFns$a<CMsgSerializedSOCache_Cache_Version>;
 interface CMsgGCToClientPollConvarRequest {
     convarName: string;
     pollId: number;
 }
-declare const CMsgGCToClientPollConvarRequest: MessageFns$9<CMsgGCToClientPollConvarRequest>;
+declare const CMsgGCToClientPollConvarRequest: MessageFns$a<CMsgGCToClientPollConvarRequest>;
 interface CMsgGCToClientPollConvarResponse {
     pollId: number;
     convarValue: string;
 }
-declare const CMsgGCToClientPollConvarResponse: MessageFns$9<CMsgGCToClientPollConvarResponse>;
+declare const CMsgGCToClientPollConvarResponse: MessageFns$a<CMsgGCToClientPollConvarResponse>;
 interface CGCMsgCompressedMsgToClient {
     msgId: number;
     compressedMsg: Buffer;
 }
-declare const CGCMsgCompressedMsgToClient: MessageFns$9<CGCMsgCompressedMsgToClient>;
+declare const CGCMsgCompressedMsgToClient: MessageFns$a<CGCMsgCompressedMsgToClient>;
 interface CMsgGCToGCMasterBroadcastMessage {
     usersPerSecond: number;
     sendToUsers: boolean;
@@ -987,44 +987,44 @@ interface CMsgGCToGCMasterBroadcastMessage {
     msgId: number;
     msgData: Buffer;
 }
-declare const CMsgGCToGCMasterBroadcastMessage: MessageFns$9<CMsgGCToGCMasterBroadcastMessage>;
+declare const CMsgGCToGCMasterBroadcastMessage: MessageFns$a<CMsgGCToGCMasterBroadcastMessage>;
 interface CMsgGCToGCMasterSubscribeToCache {
     soidType: number;
     soidId: string;
     accountIds: number[];
     steamIds: string[];
 }
-declare const CMsgGCToGCMasterSubscribeToCache: MessageFns$9<CMsgGCToGCMasterSubscribeToCache>;
+declare const CMsgGCToGCMasterSubscribeToCache: MessageFns$a<CMsgGCToGCMasterSubscribeToCache>;
 interface CMsgGCToGCMasterSubscribeToCacheResponse {
 }
-declare const CMsgGCToGCMasterSubscribeToCacheResponse: MessageFns$9<CMsgGCToGCMasterSubscribeToCacheResponse>;
+declare const CMsgGCToGCMasterSubscribeToCacheResponse: MessageFns$a<CMsgGCToGCMasterSubscribeToCacheResponse>;
 interface CMsgGCToGCMasterSubscribeToCacheAsync {
     subscribeMsg: CMsgGCToGCMasterSubscribeToCache | undefined;
 }
-declare const CMsgGCToGCMasterSubscribeToCacheAsync: MessageFns$9<CMsgGCToGCMasterSubscribeToCacheAsync>;
+declare const CMsgGCToGCMasterSubscribeToCacheAsync: MessageFns$a<CMsgGCToGCMasterSubscribeToCacheAsync>;
 interface CMsgGCToGCMasterUnsubscribeFromCache {
     soidType: number;
     soidId: string;
     accountIds: number[];
     steamIds: string[];
 }
-declare const CMsgGCToGCMasterUnsubscribeFromCache: MessageFns$9<CMsgGCToGCMasterUnsubscribeFromCache>;
+declare const CMsgGCToGCMasterUnsubscribeFromCache: MessageFns$a<CMsgGCToGCMasterUnsubscribeFromCache>;
 interface CMsgGCToGCMasterDestroyCache {
     soidType: number;
     soidId: string;
 }
-declare const CMsgGCToGCMasterDestroyCache: MessageFns$9<CMsgGCToGCMasterDestroyCache>;
-type Builtin$9 = Date | Function | Uint8Array | string | number | boolean | undefined;
-type DeepPartial$9<T> = T extends Builtin$9 ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$9<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$9<U>> : T extends {} ? {
-    [K in keyof T]?: DeepPartial$9<T[K]>;
+declare const CMsgGCToGCMasterDestroyCache: MessageFns$a<CMsgGCToGCMasterDestroyCache>;
+type Builtin$a = Date | Function | Uint8Array | string | number | boolean | undefined;
+type DeepPartial$a<T> = T extends Builtin$a ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$a<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$a<U>> : T extends {} ? {
+    [K in keyof T]?: DeepPartial$a<T[K]>;
 } : Partial<T>;
-interface MessageFns$9<T> {
+interface MessageFns$a<T> {
     encode(message: T, writer?: BinaryWriter): BinaryWriter;
     decode(input: BinaryReader | Uint8Array, length?: number): T;
     fromJSON(object: any): T;
     toJSON(message: T): unknown;
-    create(base?: DeepPartial$9<T>): T;
-    fromPartial(object: DeepPartial$9<T>): T;
+    create(base?: DeepPartial$a<T>): T;
+    fromPartial(object: DeepPartial$a<T>): T;
 }
 
 declare enum EGCBaseMsg {
@@ -1115,19 +1115,19 @@ interface CGCStorePurchaseInitLineItem {
     sourceReferenceId: string;
     priceIndex: number;
 }
-declare const CGCStorePurchaseInitLineItem: MessageFns$8<CGCStorePurchaseInitLineItem>;
+declare const CGCStorePurchaseInitLineItem: MessageFns$9<CGCStorePurchaseInitLineItem>;
 interface CMsgGCStorePurchaseInit {
     country: string;
     language: number;
     currency: number;
     lineItems: CGCStorePurchaseInitLineItem[];
 }
-declare const CMsgGCStorePurchaseInit: MessageFns$8<CMsgGCStorePurchaseInit>;
+declare const CMsgGCStorePurchaseInit: MessageFns$9<CMsgGCStorePurchaseInit>;
 interface CMsgGCStorePurchaseInitResponse {
     result: number;
     txnId: string;
 }
-declare const CMsgGCStorePurchaseInitResponse: MessageFns$8<CMsgGCStorePurchaseInitResponse>;
+declare const CMsgGCStorePurchaseInitResponse: MessageFns$9<CMsgGCStorePurchaseInitResponse>;
 interface CMsgClientPingData {
     relayCodes: number[];
     relayPings: number[];
@@ -1135,7 +1135,7 @@ interface CMsgClientPingData {
     regionPings: number[];
     regionPingFailedBitmask: number;
 }
-declare const CMsgClientPingData: MessageFns$8<CMsgClientPingData>;
+declare const CMsgClientPingData: MessageFns$9<CMsgClientPingData>;
 interface CMsgInviteToParty {
     steamId: string;
     clientVersion: number;
@@ -1143,25 +1143,25 @@ interface CMsgInviteToParty {
     asCoach: boolean;
     pingData: CMsgClientPingData | undefined;
 }
-declare const CMsgInviteToParty: MessageFns$8<CMsgInviteToParty>;
+declare const CMsgInviteToParty: MessageFns$9<CMsgInviteToParty>;
 interface CMsgInviteToLobby {
     steamId: string;
     clientVersion: number;
 }
-declare const CMsgInviteToLobby: MessageFns$8<CMsgInviteToLobby>;
+declare const CMsgInviteToLobby: MessageFns$9<CMsgInviteToLobby>;
 interface CMsgInvitationCreated {
     groupId: string;
     steamId: string;
     userOffline: boolean;
 }
-declare const CMsgInvitationCreated: MessageFns$8<CMsgInvitationCreated>;
+declare const CMsgInvitationCreated: MessageFns$9<CMsgInvitationCreated>;
 interface CMsgPartyInviteResponse {
     partyId: string;
     accept: boolean;
     clientVersion: number;
     pingData: CMsgClientPingData | undefined;
 }
-declare const CMsgPartyInviteResponse: MessageFns$8<CMsgPartyInviteResponse>;
+declare const CMsgPartyInviteResponse: MessageFns$9<CMsgPartyInviteResponse>;
 interface CMsgLobbyInviteResponse {
     lobbyId: string;
     accept: boolean;
@@ -1169,28 +1169,28 @@ interface CMsgLobbyInviteResponse {
     customGameCrc: string;
     customGameTimestamp: number;
 }
-declare const CMsgLobbyInviteResponse: MessageFns$8<CMsgLobbyInviteResponse>;
+declare const CMsgLobbyInviteResponse: MessageFns$9<CMsgLobbyInviteResponse>;
 interface CMsgKickFromParty {
     steamId: string;
 }
-declare const CMsgKickFromParty: MessageFns$8<CMsgKickFromParty>;
+declare const CMsgKickFromParty: MessageFns$9<CMsgKickFromParty>;
 interface CMsgLeaveParty {
 }
-declare const CMsgLeaveParty: MessageFns$8<CMsgLeaveParty>;
+declare const CMsgLeaveParty: MessageFns$9<CMsgLeaveParty>;
 interface CMsgCustomGameInstallStatus {
     status: ECustomGameInstallStatus;
     message: string;
     latestTimestampFromSteam: number;
 }
-declare const CMsgCustomGameInstallStatus: MessageFns$8<CMsgCustomGameInstallStatus>;
+declare const CMsgCustomGameInstallStatus: MessageFns$9<CMsgCustomGameInstallStatus>;
 interface CMsgServerAvailable {
     customGameInstallStatus: CMsgCustomGameInstallStatus | undefined;
 }
-declare const CMsgServerAvailable: MessageFns$8<CMsgServerAvailable>;
+declare const CMsgServerAvailable: MessageFns$9<CMsgServerAvailable>;
 interface CMsgLANServerAvailable {
     lobbyId: string;
 }
-declare const CMsgLANServerAvailable: MessageFns$8<CMsgLANServerAvailable>;
+declare const CMsgLANServerAvailable: MessageFns$9<CMsgLANServerAvailable>;
 interface CSOEconGameAccountClient {
     additionalBackpackSlots: number;
     trialAccount: boolean;
@@ -1201,33 +1201,33 @@ interface CSOEconGameAccountClient {
     duelBanExpiration: number;
     madeFirstPurchase: boolean;
 }
-declare const CSOEconGameAccountClient: MessageFns$8<CSOEconGameAccountClient>;
+declare const CSOEconGameAccountClient: MessageFns$9<CSOEconGameAccountClient>;
 interface CMsgApplyStrangePart {
     strangePartItemId: string;
     itemItemId: string;
 }
-declare const CMsgApplyStrangePart: MessageFns$8<CMsgApplyStrangePart>;
+declare const CMsgApplyStrangePart: MessageFns$9<CMsgApplyStrangePart>;
 interface CMsgApplyPennantUpgrade {
     upgradeItemId: string;
     pennantItemId: string;
 }
-declare const CMsgApplyPennantUpgrade: MessageFns$8<CMsgApplyPennantUpgrade>;
+declare const CMsgApplyPennantUpgrade: MessageFns$9<CMsgApplyPennantUpgrade>;
 interface CMsgApplyEggEssence {
     essenceItemId: string;
     eggItemId: string;
 }
-declare const CMsgApplyEggEssence: MessageFns$8<CMsgApplyEggEssence>;
+declare const CMsgApplyEggEssence: MessageFns$9<CMsgApplyEggEssence>;
 interface CSOEconItemAttribute {
     defIndex: number;
     value: number;
     valueBytes: Buffer;
 }
-declare const CSOEconItemAttribute: MessageFns$8<CSOEconItemAttribute>;
+declare const CSOEconItemAttribute: MessageFns$9<CSOEconItemAttribute>;
 interface CSOEconItemEquipped {
     newClass: number;
     newSlot: number;
 }
-declare const CSOEconItemEquipped: MessageFns$8<CSOEconItemEquipped>;
+declare const CSOEconItemEquipped: MessageFns$9<CSOEconItemEquipped>;
 interface CSOEconItem {
     id: string;
     accountId: number;
@@ -1244,11 +1244,11 @@ interface CSOEconItem {
     originalId: string;
     equippedState: CSOEconItemEquipped[];
 }
-declare const CSOEconItem: MessageFns$8<CSOEconItem>;
+declare const CSOEconItem: MessageFns$9<CSOEconItem>;
 interface CMsgSortItems {
     sortType: number;
 }
-declare const CMsgSortItems: MessageFns$8<CMsgSortItems>;
+declare const CMsgSortItems: MessageFns$9<CMsgSortItems>;
 interface CMsgItemAcknowledged {
     accountId: number;
     inventory: number;
@@ -1257,141 +1257,141 @@ interface CMsgItemAcknowledged {
     rarity: number;
     origin: number;
 }
-declare const CMsgItemAcknowledged: MessageFns$8<CMsgItemAcknowledged>;
+declare const CMsgItemAcknowledged: MessageFns$9<CMsgItemAcknowledged>;
 interface CMsgSetItemPositions {
     itemPositions: CMsgSetItemPositions_ItemPosition[];
 }
-declare const CMsgSetItemPositions: MessageFns$8<CMsgSetItemPositions>;
+declare const CMsgSetItemPositions: MessageFns$9<CMsgSetItemPositions>;
 interface CMsgSetItemPositions_ItemPosition {
     itemId: string;
     position: number;
 }
-declare const CMsgSetItemPositions_ItemPosition: MessageFns$8<CMsgSetItemPositions_ItemPosition>;
+declare const CMsgSetItemPositions_ItemPosition: MessageFns$9<CMsgSetItemPositions_ItemPosition>;
 interface CMsgGCStorePurchaseCancel {
     txnId: string;
 }
-declare const CMsgGCStorePurchaseCancel: MessageFns$8<CMsgGCStorePurchaseCancel>;
+declare const CMsgGCStorePurchaseCancel: MessageFns$9<CMsgGCStorePurchaseCancel>;
 interface CMsgGCStorePurchaseCancelResponse {
     result: number;
 }
-declare const CMsgGCStorePurchaseCancelResponse: MessageFns$8<CMsgGCStorePurchaseCancelResponse>;
+declare const CMsgGCStorePurchaseCancelResponse: MessageFns$9<CMsgGCStorePurchaseCancelResponse>;
 interface CMsgGCStorePurchaseFinalize {
     txnId: string;
 }
-declare const CMsgGCStorePurchaseFinalize: MessageFns$8<CMsgGCStorePurchaseFinalize>;
+declare const CMsgGCStorePurchaseFinalize: MessageFns$9<CMsgGCStorePurchaseFinalize>;
 interface CMsgGCStorePurchaseFinalizeResponse {
     result: number;
     itemIds: string[];
 }
-declare const CMsgGCStorePurchaseFinalizeResponse: MessageFns$8<CMsgGCStorePurchaseFinalizeResponse>;
+declare const CMsgGCStorePurchaseFinalizeResponse: MessageFns$9<CMsgGCStorePurchaseFinalizeResponse>;
 interface CMsgGCToGCBannedWordListUpdated {
     groupId: number;
 }
-declare const CMsgGCToGCBannedWordListUpdated: MessageFns$8<CMsgGCToGCBannedWordListUpdated>;
+declare const CMsgGCToGCBannedWordListUpdated: MessageFns$9<CMsgGCToGCBannedWordListUpdated>;
 interface CMsgGCToGCDirtySDOCache {
     sdoType: number;
     keyUint64: string;
 }
-declare const CMsgGCToGCDirtySDOCache: MessageFns$8<CMsgGCToGCDirtySDOCache>;
+declare const CMsgGCToGCDirtySDOCache: MessageFns$9<CMsgGCToGCDirtySDOCache>;
 interface CMsgSDONoMemcached {
 }
-declare const CMsgSDONoMemcached: MessageFns$8<CMsgSDONoMemcached>;
+declare const CMsgSDONoMemcached: MessageFns$9<CMsgSDONoMemcached>;
 interface CMsgGCToGCUpdateSQLKeyValue {
     keyName: string;
 }
-declare const CMsgGCToGCUpdateSQLKeyValue: MessageFns$8<CMsgGCToGCUpdateSQLKeyValue>;
+declare const CMsgGCToGCUpdateSQLKeyValue: MessageFns$9<CMsgGCToGCUpdateSQLKeyValue>;
 interface CMsgGCServerVersionUpdated {
     serverVersion: number;
 }
-declare const CMsgGCServerVersionUpdated: MessageFns$8<CMsgGCServerVersionUpdated>;
+declare const CMsgGCServerVersionUpdated: MessageFns$9<CMsgGCServerVersionUpdated>;
 interface CMsgGCClientVersionUpdated {
     clientVersion: number;
 }
-declare const CMsgGCClientVersionUpdated: MessageFns$8<CMsgGCClientVersionUpdated>;
+declare const CMsgGCClientVersionUpdated: MessageFns$9<CMsgGCClientVersionUpdated>;
 interface CMsgGCToGCWebAPIAccountChanged {
 }
-declare const CMsgGCToGCWebAPIAccountChanged: MessageFns$8<CMsgGCToGCWebAPIAccountChanged>;
+declare const CMsgGCToGCWebAPIAccountChanged: MessageFns$9<CMsgGCToGCWebAPIAccountChanged>;
 interface CMsgExtractGems {
     toolItemId: string;
     itemItemId: string;
     itemSocketId: number;
 }
-declare const CMsgExtractGems: MessageFns$8<CMsgExtractGems>;
+declare const CMsgExtractGems: MessageFns$9<CMsgExtractGems>;
 interface CMsgExtractGemsResponse {
     itemId: string;
     response: CMsgExtractGemsResponse_EExtractGems;
 }
-declare const CMsgExtractGemsResponse: MessageFns$8<CMsgExtractGemsResponse>;
+declare const CMsgExtractGemsResponse: MessageFns$9<CMsgExtractGemsResponse>;
 interface CMsgAddSocket {
     toolItemId: string;
     itemItemId: string;
     unusual: boolean;
 }
-declare const CMsgAddSocket: MessageFns$8<CMsgAddSocket>;
+declare const CMsgAddSocket: MessageFns$9<CMsgAddSocket>;
 interface CMsgAddSocketResponse {
     itemId: string;
     updatedSocketIndex: number[];
     response: CMsgAddSocketResponse_EAddSocket;
 }
-declare const CMsgAddSocketResponse: MessageFns$8<CMsgAddSocketResponse>;
+declare const CMsgAddSocketResponse: MessageFns$9<CMsgAddSocketResponse>;
 interface CMsgAddItemToSocketData {
     gemItemId: string;
     socketIndex: number;
 }
-declare const CMsgAddItemToSocketData: MessageFns$8<CMsgAddItemToSocketData>;
+declare const CMsgAddItemToSocketData: MessageFns$9<CMsgAddItemToSocketData>;
 interface CMsgAddItemToSocket {
     itemItemId: string;
     gemsToSocket: CMsgAddItemToSocketData[];
 }
-declare const CMsgAddItemToSocket: MessageFns$8<CMsgAddItemToSocket>;
+declare const CMsgAddItemToSocket: MessageFns$9<CMsgAddItemToSocket>;
 interface CMsgAddItemToSocketResponse {
     itemItemId: string;
     updatedSocketIndex: number[];
     response: CMsgAddItemToSocketResponse_EAddGem;
 }
-declare const CMsgAddItemToSocketResponse: MessageFns$8<CMsgAddItemToSocketResponse>;
+declare const CMsgAddItemToSocketResponse: MessageFns$9<CMsgAddItemToSocketResponse>;
 interface CMsgResetStrangeGemCount {
     itemItemId: string;
     socketIndex: number;
 }
-declare const CMsgResetStrangeGemCount: MessageFns$8<CMsgResetStrangeGemCount>;
+declare const CMsgResetStrangeGemCount: MessageFns$9<CMsgResetStrangeGemCount>;
 interface CMsgResetStrangeGemCountResponse {
     response: CMsgResetStrangeGemCountResponse_EResetGem;
 }
-declare const CMsgResetStrangeGemCountResponse: MessageFns$8<CMsgResetStrangeGemCountResponse>;
+declare const CMsgResetStrangeGemCountResponse: MessageFns$9<CMsgResetStrangeGemCountResponse>;
 interface CMsgGCToClientPollFileRequest {
     fileName: string;
     clientVersion: number;
     pollId: number;
 }
-declare const CMsgGCToClientPollFileRequest: MessageFns$8<CMsgGCToClientPollFileRequest>;
+declare const CMsgGCToClientPollFileRequest: MessageFns$9<CMsgGCToClientPollFileRequest>;
 interface CMsgGCToClientPollFileResponse {
     pollId: number;
     fileSize: number;
     fileCrc: number;
 }
-declare const CMsgGCToClientPollFileResponse: MessageFns$8<CMsgGCToClientPollFileResponse>;
+declare const CMsgGCToClientPollFileResponse: MessageFns$9<CMsgGCToClientPollFileResponse>;
 interface CMsgGCToGCPerformManualOp {
     opId: string;
     groupCode: number;
 }
-declare const CMsgGCToGCPerformManualOp: MessageFns$8<CMsgGCToGCPerformManualOp>;
+declare const CMsgGCToGCPerformManualOp: MessageFns$9<CMsgGCToGCPerformManualOp>;
 interface CMsgGCToGCPerformManualOpCompleted {
     success: boolean;
     sourceGc: number;
 }
-declare const CMsgGCToGCPerformManualOpCompleted: MessageFns$8<CMsgGCToGCPerformManualOpCompleted>;
+declare const CMsgGCToGCPerformManualOpCompleted: MessageFns$9<CMsgGCToGCPerformManualOpCompleted>;
 interface CMsgGCToGCReloadServerRegionSettings {
 }
-declare const CMsgGCToGCReloadServerRegionSettings: MessageFns$8<CMsgGCToGCReloadServerRegionSettings>;
+declare const CMsgGCToGCReloadServerRegionSettings: MessageFns$9<CMsgGCToGCReloadServerRegionSettings>;
 interface CMsgGCAdditionalWelcomeMsgList {
     welcomeMessages: CExtraMsgBlock[];
 }
-declare const CMsgGCAdditionalWelcomeMsgList: MessageFns$8<CMsgGCAdditionalWelcomeMsgList>;
+declare const CMsgGCAdditionalWelcomeMsgList: MessageFns$9<CMsgGCAdditionalWelcomeMsgList>;
 interface CMsgApplyRemoteConVars {
     conVars: CMsgApplyRemoteConVars_ConVar[];
 }
-declare const CMsgApplyRemoteConVars: MessageFns$8<CMsgApplyRemoteConVars>;
+declare const CMsgApplyRemoteConVars: MessageFns$9<CMsgApplyRemoteConVars>;
 interface CMsgApplyRemoteConVars_ConVar {
     name: string;
     value: string;
@@ -1399,60 +1399,60 @@ interface CMsgApplyRemoteConVars_ConVar {
     versionMax: number;
     platform: EGCPlatform;
 }
-declare const CMsgApplyRemoteConVars_ConVar: MessageFns$8<CMsgApplyRemoteConVars_ConVar>;
+declare const CMsgApplyRemoteConVars_ConVar: MessageFns$9<CMsgApplyRemoteConVars_ConVar>;
 interface CMsgGCToClientApplyRemoteConVars {
     msg: CMsgApplyRemoteConVars | undefined;
 }
-declare const CMsgGCToClientApplyRemoteConVars: MessageFns$8<CMsgGCToClientApplyRemoteConVars>;
+declare const CMsgGCToClientApplyRemoteConVars: MessageFns$9<CMsgGCToClientApplyRemoteConVars>;
 interface CMsgGCToServerApplyRemoteConVars {
     msg: CMsgApplyRemoteConVars | undefined;
 }
-declare const CMsgGCToServerApplyRemoteConVars: MessageFns$8<CMsgGCToServerApplyRemoteConVars>;
+declare const CMsgGCToServerApplyRemoteConVars: MessageFns$9<CMsgGCToServerApplyRemoteConVars>;
 interface CMsgClientToGCIntegrityStatus {
     report: string;
     secureAllowed: boolean;
     diagnostics: CMsgClientToGCIntegrityStatus_keyvalue[];
 }
-declare const CMsgClientToGCIntegrityStatus: MessageFns$8<CMsgClientToGCIntegrityStatus>;
+declare const CMsgClientToGCIntegrityStatus: MessageFns$9<CMsgClientToGCIntegrityStatus>;
 interface CMsgClientToGCIntegrityStatus_keyvalue {
     id: number;
     extended: number;
     value: string;
     stringValue: string;
 }
-declare const CMsgClientToGCIntegrityStatus_keyvalue: MessageFns$8<CMsgClientToGCIntegrityStatus_keyvalue>;
+declare const CMsgClientToGCIntegrityStatus_keyvalue: MessageFns$9<CMsgClientToGCIntegrityStatus_keyvalue>;
 interface CMsgClientToGCAggregateMetrics {
     metrics: CMsgClientToGCAggregateMetrics_SingleMetric[];
 }
-declare const CMsgClientToGCAggregateMetrics: MessageFns$8<CMsgClientToGCAggregateMetrics>;
+declare const CMsgClientToGCAggregateMetrics: MessageFns$9<CMsgClientToGCAggregateMetrics>;
 interface CMsgClientToGCAggregateMetrics_SingleMetric {
     metricName: string;
     metricCount: number;
 }
-declare const CMsgClientToGCAggregateMetrics_SingleMetric: MessageFns$8<CMsgClientToGCAggregateMetrics_SingleMetric>;
+declare const CMsgClientToGCAggregateMetrics_SingleMetric: MessageFns$9<CMsgClientToGCAggregateMetrics_SingleMetric>;
 interface CMsgGCToClientAggregateMetricsBackoff {
     uploadRateModifier: number;
 }
-declare const CMsgGCToClientAggregateMetricsBackoff: MessageFns$8<CMsgGCToClientAggregateMetricsBackoff>;
+declare const CMsgGCToClientAggregateMetricsBackoff: MessageFns$9<CMsgGCToClientAggregateMetricsBackoff>;
 interface CMsgGCToServerSteamLearnAccessTokensChanged {
     accessTokens: CMsgSteamLearnAccessTokens | undefined;
 }
-declare const CMsgGCToServerSteamLearnAccessTokensChanged: MessageFns$8<CMsgGCToServerSteamLearnAccessTokensChanged>;
+declare const CMsgGCToServerSteamLearnAccessTokensChanged: MessageFns$9<CMsgGCToServerSteamLearnAccessTokensChanged>;
 interface CMsgGCToServerSteamLearnUseHTTP {
     useHttp: boolean;
 }
-declare const CMsgGCToServerSteamLearnUseHTTP: MessageFns$8<CMsgGCToServerSteamLearnUseHTTP>;
-type Builtin$8 = Date | Function | Uint8Array | string | number | boolean | undefined;
-type DeepPartial$8<T> = T extends Builtin$8 ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$8<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$8<U>> : T extends {} ? {
-    [K in keyof T]?: DeepPartial$8<T[K]>;
+declare const CMsgGCToServerSteamLearnUseHTTP: MessageFns$9<CMsgGCToServerSteamLearnUseHTTP>;
+type Builtin$9 = Date | Function | Uint8Array | string | number | boolean | undefined;
+type DeepPartial$9<T> = T extends Builtin$9 ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$9<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$9<U>> : T extends {} ? {
+    [K in keyof T]?: DeepPartial$9<T[K]>;
 } : Partial<T>;
-interface MessageFns$8<T> {
+interface MessageFns$9<T> {
     encode(message: T, writer?: BinaryWriter): BinaryWriter;
     decode(input: BinaryReader | Uint8Array, length?: number): T;
     fromJSON(object: any): T;
     toJSON(message: T): unknown;
-    create(base?: DeepPartial$8<T>): T;
-    fromPartial(object: DeepPartial$8<T>): T;
+    create(base?: DeepPartial$9<T>): T;
+    fromPartial(object: DeepPartial$9<T>): T;
 }
 
 declare enum ELaneSelection {
@@ -1829,7 +1829,7 @@ interface CSODOTAPartyMember {
     isSteamChina: boolean;
     bannedHeroIds: number[];
 }
-declare const CSODOTAPartyMember: MessageFns$7<CSODOTAPartyMember>;
+declare const CSODOTAPartyMember: MessageFns$8<CSODOTAPartyMember>;
 interface CSODOTAParty {
     partyId: string;
     leaderId: string;
@@ -1887,7 +1887,7 @@ interface CSODOTAParty {
     rankSpreadLikertScale: number;
     behaviorScoreLikertScale: number;
 }
-declare const CSODOTAParty: MessageFns$7<CSODOTAParty>;
+declare const CSODOTAParty: MessageFns$8<CSODOTAParty>;
 interface CSODOTAPartyInvite {
     groupId: string;
     senderId: string;
@@ -1898,13 +1898,13 @@ interface CSODOTAPartyInvite {
     asCoach: boolean;
     inviteGid: string;
 }
-declare const CSODOTAPartyInvite: MessageFns$7<CSODOTAPartyInvite>;
+declare const CSODOTAPartyInvite: MessageFns$8<CSODOTAPartyInvite>;
 interface CSODOTAPartyInvite_PartyMember {
     name: string;
     steamId: string;
     isCoach: boolean;
 }
-declare const CSODOTAPartyInvite_PartyMember: MessageFns$7<CSODOTAPartyInvite_PartyMember>;
+declare const CSODOTAPartyInvite_PartyMember: MessageFns$8<CSODOTAPartyInvite_PartyMember>;
 interface CMsgLeaverState {
     lobbyState: number;
     gameState: DOTAGameState;
@@ -1913,66 +1913,79 @@ interface CMsgLeaverState {
     discardMatchResults: boolean;
     massDisconnect: boolean;
 }
-declare const CMsgLeaverState: MessageFns$7<CMsgLeaverState>;
+declare const CMsgLeaverState: MessageFns$8<CMsgLeaverState>;
 interface CMsgReadyCheckStatus {
     startTimestamp: number;
     finishTimestamp: number;
     initiatorAccountId: number;
     readyMembers: CMsgReadyCheckStatus_ReadyMember[];
 }
-declare const CMsgReadyCheckStatus: MessageFns$7<CMsgReadyCheckStatus>;
+declare const CMsgReadyCheckStatus: MessageFns$8<CMsgReadyCheckStatus>;
 interface CMsgReadyCheckStatus_ReadyMember {
     accountId: number;
     readyStatus: EReadyCheckStatus;
 }
-declare const CMsgReadyCheckStatus_ReadyMember: MessageFns$7<CMsgReadyCheckStatus_ReadyMember>;
+declare const CMsgReadyCheckStatus_ReadyMember: MessageFns$8<CMsgReadyCheckStatus_ReadyMember>;
 interface CMsgPartyReadyCheckRequest {
 }
-declare const CMsgPartyReadyCheckRequest: MessageFns$7<CMsgPartyReadyCheckRequest>;
+declare const CMsgPartyReadyCheckRequest: MessageFns$8<CMsgPartyReadyCheckRequest>;
 interface CMsgPartyReadyCheckResponse {
     result: EReadyCheckRequestResult;
 }
-declare const CMsgPartyReadyCheckResponse: MessageFns$7<CMsgPartyReadyCheckResponse>;
+declare const CMsgPartyReadyCheckResponse: MessageFns$8<CMsgPartyReadyCheckResponse>;
 interface CMsgPartyReadyCheckAcknowledge {
     readyStatus: EReadyCheckStatus;
 }
-declare const CMsgPartyReadyCheckAcknowledge: MessageFns$7<CMsgPartyReadyCheckAcknowledge>;
+declare const CMsgPartyReadyCheckAcknowledge: MessageFns$8<CMsgPartyReadyCheckAcknowledge>;
 interface CMsgLobbyEventGameDetails {
     kvData: Buffer;
 }
-declare const CMsgLobbyEventGameDetails: MessageFns$7<CMsgLobbyEventGameDetails>;
+declare const CMsgLobbyEventGameDetails: MessageFns$8<CMsgLobbyEventGameDetails>;
 interface CMsgMatchMatchmakingStats {
     averageQueueTime: number;
     maximumQueueTime: number;
     behaviorScoreVariance: EMatchBehaviorScoreVariance;
 }
-declare const CMsgMatchMatchmakingStats: MessageFns$7<CMsgMatchMatchmakingStats>;
+declare const CMsgMatchMatchmakingStats: MessageFns$8<CMsgMatchMatchmakingStats>;
 interface CMvpData {
     mvps: CMvpData_MvpDatum[];
     eventMvps: CMvpData_MvpDatum[];
 }
-declare const CMvpData: MessageFns$7<CMvpData>;
+declare const CMvpData: MessageFns$8<CMvpData>;
 interface CMvpData_MvpDatum {
     playerSlot: number;
     accolades: CMvpData_MvpDatum_MvpAccolade[];
 }
-declare const CMvpData_MvpDatum: MessageFns$7<CMvpData_MvpDatum>;
+declare const CMvpData_MvpDatum: MessageFns$8<CMvpData_MvpDatum>;
 interface CMvpData_MvpDatum_MvpAccolade {
     type: CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType;
     detailValue: number;
 }
-declare const CMvpData_MvpDatum_MvpAccolade: MessageFns$7<CMvpData_MvpDatum_MvpAccolade>;
-type Builtin$7 = Date | Function | Uint8Array | string | number | boolean | undefined;
-type DeepPartial$7<T> = T extends Builtin$7 ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$7<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$7<U>> : T extends {} ? {
-    [K in keyof T]?: DeepPartial$7<T[K]>;
+declare const CMvpData_MvpDatum_MvpAccolade: MessageFns$8<CMvpData_MvpDatum_MvpAccolade>;
+type Builtin$8 = Date | Function | Uint8Array | string | number | boolean | undefined;
+type DeepPartial$8<T> = T extends Builtin$8 ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$8<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$8<U>> : T extends {} ? {
+    [K in keyof T]?: DeepPartial$8<T[K]>;
 } : Partial<T>;
-interface MessageFns$7<T> {
+interface MessageFns$8<T> {
     encode(message: T, writer?: BinaryWriter): BinaryWriter;
     decode(input: BinaryReader | Uint8Array, length?: number): T;
     fromJSON(object: any): T;
     toJSON(message: T): unknown;
-    create(base?: DeepPartial$7<T>): T;
-    fromPartial(object: DeepPartial$7<T>): T;
+    create(base?: DeepPartial$8<T>): T;
+    fromPartial(object: DeepPartial$8<T>): T;
+}
+
+declare enum EDOTAGroupMergeResult {
+    k_EDOTAGroupMergeResult_OK = 0,
+    k_EDOTAGroupMergeResult_FAILED_GENERIC = 1,
+    k_EDOTAGroupMergeResult_NOT_LEADER = 2,
+    k_EDOTAGroupMergeResult_TOO_MANY_PLAYERS = 3,
+    k_EDOTAGroupMergeResult_TOO_MANY_COACHES = 4,
+    k_EDOTAGroupMergeResult_ENGINE_MISMATCH = 5,
+    k_EDOTAGroupMergeResult_NO_SUCH_GROUP = 6,
+    k_EDOTAGroupMergeResult_OTHER_GROUP_NOT_OPEN = 7,
+    k_EDOTAGroupMergeResult_ALREADY_INVITED = 8,
+    k_EDOTAGroupMergeResult_NOT_INVITED = 9
 }
 
 declare enum ELobbyMemberCoachRequestState {
@@ -2028,32 +2041,32 @@ interface CMsgLobbyCoachFriendRequest {
     playerAccountId: number;
     requestState: ELobbyMemberCoachRequestState;
 }
-declare const CMsgLobbyCoachFriendRequest: MessageFns$6<CMsgLobbyCoachFriendRequest>;
+declare const CMsgLobbyCoachFriendRequest: MessageFns$7<CMsgLobbyCoachFriendRequest>;
 interface CMsgLobbyPlayerPlusSubscriptionData {
     heroBadges: CMsgLobbyPlayerPlusSubscriptionData_HeroBadge[];
 }
-declare const CMsgLobbyPlayerPlusSubscriptionData: MessageFns$6<CMsgLobbyPlayerPlusSubscriptionData>;
+declare const CMsgLobbyPlayerPlusSubscriptionData: MessageFns$7<CMsgLobbyPlayerPlusSubscriptionData>;
 interface CMsgLobbyPlayerPlusSubscriptionData_HeroBadge {
     heroId: number;
     heroBadgeXp: number;
 }
-declare const CMsgLobbyPlayerPlusSubscriptionData_HeroBadge: MessageFns$6<CMsgLobbyPlayerPlusSubscriptionData_HeroBadge>;
+declare const CMsgLobbyPlayerPlusSubscriptionData_HeroBadge: MessageFns$7<CMsgLobbyPlayerPlusSubscriptionData_HeroBadge>;
 interface CMsgEventActionData {
     actionId: number;
     actionScore: number;
 }
-declare const CMsgEventActionData: MessageFns$6<CMsgEventActionData>;
+declare const CMsgEventActionData: MessageFns$7<CMsgEventActionData>;
 interface CMsgPeriodicResourceData {
     periodicResourceId: number;
     remaining: number;
     max: number;
 }
-declare const CMsgPeriodicResourceData: MessageFns$6<CMsgPeriodicResourceData>;
+declare const CMsgPeriodicResourceData: MessageFns$7<CMsgPeriodicResourceData>;
 interface CMsgLobbyEventPoints {
     eventId: number;
     accountPoints: CMsgLobbyEventPoints_AccountPoints[];
 }
-declare const CMsgLobbyEventPoints: MessageFns$6<CMsgLobbyEventPoints>;
+declare const CMsgLobbyEventPoints: MessageFns$7<CMsgLobbyEventPoints>;
 interface CMsgLobbyEventPoints_AccountPoints {
     accountId: number;
     normalPoints: number;
@@ -2070,12 +2083,12 @@ interface CMsgLobbyEventPoints_AccountPoints {
     periodicResources: CMsgPeriodicResourceData[];
     extraEventMessages: CExtraMsgBlock[];
 }
-declare const CMsgLobbyEventPoints_AccountPoints: MessageFns$6<CMsgLobbyEventPoints_AccountPoints>;
+declare const CMsgLobbyEventPoints_AccountPoints: MessageFns$7<CMsgLobbyEventPoints_AccountPoints>;
 interface CMsgLobbyEventGameData {
     gameSeed: number;
     eventWindowStartTime: number;
 }
-declare const CMsgLobbyEventGameData: MessageFns$6<CMsgLobbyEventGameData>;
+declare const CMsgLobbyEventGameData: MessageFns$7<CMsgLobbyEventGameData>;
 interface CSODOTALobbyInvite {
     groupId: string;
     senderId: string;
@@ -2086,12 +2099,12 @@ interface CSODOTALobbyInvite {
     customGameCrc: string;
     customGameTimestamp: number;
 }
-declare const CSODOTALobbyInvite: MessageFns$6<CSODOTALobbyInvite>;
+declare const CSODOTALobbyInvite: MessageFns$7<CSODOTALobbyInvite>;
 interface CSODOTALobbyInvite_LobbyMember {
     name: string;
     steamId: string;
 }
-declare const CSODOTALobbyInvite_LobbyMember: MessageFns$6<CSODOTALobbyInvite_LobbyMember>;
+declare const CSODOTALobbyInvite_LobbyMember: MessageFns$7<CSODOTALobbyInvite_LobbyMember>;
 interface CSODOTALobbyMember {
     id: string;
     heroId: number;
@@ -2108,17 +2121,17 @@ interface CSODOTALobbyMember {
     liveSpectatorAccountId: number;
     commsReportsAvailable: number;
 }
-declare const CSODOTALobbyMember: MessageFns$6<CSODOTALobbyMember>;
+declare const CSODOTALobbyMember: MessageFns$7<CSODOTALobbyMember>;
 interface CSODOTAServerLobbyMember {
 }
-declare const CSODOTAServerLobbyMember: MessageFns$6<CSODOTAServerLobbyMember>;
+declare const CSODOTAServerLobbyMember: MessageFns$7<CSODOTAServerLobbyMember>;
 interface CSODOTAStaticLobbyMember {
     name: string;
     partyId: string;
     channel: number;
     cameraman: boolean;
 }
-declare const CSODOTAStaticLobbyMember: MessageFns$6<CSODOTAStaticLobbyMember>;
+declare const CSODOTAStaticLobbyMember: MessageFns$7<CSODOTAStaticLobbyMember>;
 interface CSODOTAServerStaticLobbyMember {
     steamId: string;
     rankTier: number;
@@ -2139,7 +2152,7 @@ interface CSODOTAServerStaticLobbyMember {
     enabledHeroId: number[];
     bannedHeroIds: number[];
 }
-declare const CSODOTAServerStaticLobbyMember: MessageFns$6<CSODOTAServerStaticLobbyMember>;
+declare const CSODOTAServerStaticLobbyMember: MessageFns$7<CSODOTAServerStaticLobbyMember>;
 interface CLobbyTeamDetails {
     teamName: string;
     teamTag: string;
@@ -2156,7 +2169,7 @@ interface CLobbyTeamDetails {
     teamLogoUrl: string;
     teamAbbreviation: string;
 }
-declare const CLobbyTeamDetails: MessageFns$6<CLobbyTeamDetails>;
+declare const CLobbyTeamDetails: MessageFns$7<CLobbyTeamDetails>;
 interface CLobbyGuildDetails {
     guildId: number;
     guildPrimaryColor: number;
@@ -2170,7 +2183,7 @@ interface CLobbyGuildDetails {
     guildTag: string;
     guildWeeklyPercentile: number;
 }
-declare const CLobbyGuildDetails: MessageFns$6<CLobbyGuildDetails>;
+declare const CLobbyGuildDetails: MessageFns$7<CLobbyGuildDetails>;
 interface CLobbyTimedRewardDetails {
     itemDefIndex: number;
     isSupplyCrate: boolean;
@@ -2178,14 +2191,14 @@ interface CLobbyTimedRewardDetails {
     accountId: number;
     origin: number;
 }
-declare const CLobbyTimedRewardDetails: MessageFns$6<CLobbyTimedRewardDetails>;
+declare const CLobbyTimedRewardDetails: MessageFns$7<CLobbyTimedRewardDetails>;
 interface CLobbyBroadcastChannelInfo {
     channelId: number;
     countryCode: string;
     description: string;
     languageCode: string;
 }
-declare const CLobbyBroadcastChannelInfo: MessageFns$6<CLobbyBroadcastChannelInfo>;
+declare const CLobbyBroadcastChannelInfo: MessageFns$7<CLobbyBroadcastChannelInfo>;
 interface CLobbyGuildChallenge {
     guildId: number;
     eventId: EEvent;
@@ -2196,14 +2209,14 @@ interface CLobbyGuildChallenge {
     challengeProgressAtStart: number;
     eligibleAccountIds: number[];
 }
-declare const CLobbyGuildChallenge: MessageFns$6<CLobbyGuildChallenge>;
+declare const CLobbyGuildChallenge: MessageFns$7<CLobbyGuildChallenge>;
 interface CDOTALobbyMatchQualityData {
     overallQuality: number;
     teamBalance: number;
     matchSkillRange: number;
     matchBehavior: number;
 }
-declare const CDOTALobbyMatchQualityData: MessageFns$6<CDOTALobbyMatchQualityData>;
+declare const CDOTALobbyMatchQualityData: MessageFns$7<CDOTALobbyMatchQualityData>;
 interface CSODOTALobby {
     lobbyId: string;
     allMembers: CSODOTALobbyMember[];
@@ -2296,53 +2309,53 @@ interface CSODOTALobby {
     matchQualityData: CDOTALobbyMatchQualityData | undefined;
     requestedHeroTeams: number[];
 }
-declare const CSODOTALobby: MessageFns$6<CSODOTALobby>;
+declare const CSODOTALobby: MessageFns$7<CSODOTALobby>;
 interface CSODOTALobby_CExtraMsg {
     id: number;
     contents: Buffer;
 }
-declare const CSODOTALobby_CExtraMsg: MessageFns$6<CSODOTALobby_CExtraMsg>;
+declare const CSODOTALobby_CExtraMsg: MessageFns$7<CSODOTALobby_CExtraMsg>;
 interface CSODOTAServerLobby {
     allMembers: CSODOTAServerLobbyMember[];
     extraStartupMessages: CSODOTALobby_CExtraMsg[];
 }
-declare const CSODOTAServerLobby: MessageFns$6<CSODOTAServerLobby>;
+declare const CSODOTAServerLobby: MessageFns$7<CSODOTAServerLobby>;
 interface CSODOTAStaticLobby {
     allMembers: CSODOTAStaticLobbyMember[];
     isPlayerDraft: boolean;
     isLastMatchInSeries: boolean;
 }
-declare const CSODOTAStaticLobby: MessageFns$6<CSODOTAStaticLobby>;
+declare const CSODOTAStaticLobby: MessageFns$7<CSODOTAStaticLobby>;
 interface CSODOTAServerStaticLobby {
     allMembers: CSODOTAServerStaticLobbyMember[];
     postPatchStrategyTimeBuffer: number;
     lobbyEventPoints: CMsgLobbyEventPoints[];
 }
-declare const CSODOTAServerStaticLobby: MessageFns$6<CSODOTAServerStaticLobby>;
+declare const CSODOTAServerStaticLobby: MessageFns$7<CSODOTAServerStaticLobby>;
 interface CMsgAdditionalLobbyStartupAccountData {
     accountId: number;
     plusData: CMsgLobbyPlayerPlusSubscriptionData | undefined;
     unlockedChatWheelMessageRanges: CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange[];
     unlockedPingWheelMessageRanges: CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange[];
 }
-declare const CMsgAdditionalLobbyStartupAccountData: MessageFns$6<CMsgAdditionalLobbyStartupAccountData>;
+declare const CMsgAdditionalLobbyStartupAccountData: MessageFns$7<CMsgAdditionalLobbyStartupAccountData>;
 interface CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange {
     messageIdStart: number;
     messageIdEnd: number;
 }
-declare const CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange: MessageFns$6<CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange>;
+declare const CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange: MessageFns$7<CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange>;
 interface CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange {
     messageIdStart: number;
     messageIdEnd: number;
 }
-declare const CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange: MessageFns$6<CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange>;
+declare const CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange: MessageFns$7<CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange>;
 interface CMsgLobbyInitializationComplete {
 }
-declare const CMsgLobbyInitializationComplete: MessageFns$6<CMsgLobbyInitializationComplete>;
+declare const CMsgLobbyInitializationComplete: MessageFns$7<CMsgLobbyInitializationComplete>;
 interface CMsgLobbyPlaytestDetails {
     json: string;
 }
-declare const CMsgLobbyPlaytestDetails: MessageFns$6<CMsgLobbyPlaytestDetails>;
+declare const CMsgLobbyPlaytestDetails: MessageFns$7<CMsgLobbyPlaytestDetails>;
 interface CMsgLocalServerGuildData {
     guildId: number;
     eventId: EEvent;
@@ -2354,7 +2367,7 @@ interface CMsgLocalServerGuildData {
     guildFlags: number;
     guildWeeklyPercentile: number;
 }
-declare const CMsgLocalServerGuildData: MessageFns$6<CMsgLocalServerGuildData>;
+declare const CMsgLocalServerGuildData: MessageFns$7<CMsgLocalServerGuildData>;
 interface CMsgLocalServerFakeLobbyData {
     accountId: number;
     eventPoints: CMsgLobbyEventPoints[];
@@ -2366,18 +2379,497 @@ interface CMsgLocalServerFakeLobbyData {
     teleportFxLevel: number;
     additionalData: CMsgAdditionalLobbyStartupAccountData | undefined;
 }
-declare const CMsgLocalServerFakeLobbyData: MessageFns$6<CMsgLocalServerFakeLobbyData>;
+declare const CMsgLocalServerFakeLobbyData: MessageFns$7<CMsgLocalServerFakeLobbyData>;
+type Builtin$7 = Date | Function | Uint8Array | string | number | boolean | undefined;
+type DeepPartial$7<T> = T extends Builtin$7 ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$7<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$7<U>> : T extends {} ? {
+    [K in keyof T]?: DeepPartial$7<T[K]>;
+} : Partial<T>;
+interface MessageFns$7<T> {
+    encode(message: T, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): T;
+    fromJSON(object: any): T;
+    toJSON(message: T): unknown;
+    create(base?: DeepPartial$7<T>): T;
+    fromPartial(object: DeepPartial$7<T>): T;
+}
+
+declare enum EStartFindingMatchResult {
+    k_EStartFindingMatchResult_Invalid = 0,
+    k_EStartFindingMatchResult_OK = 1,
+    k_EStartFindingMatchResult_AlreadySearching = 2,
+    k_EStartFindingMatchResult_FailGeneric = 100,
+    k_EStartFindingMatchResult_FailedIgnore = 101,
+    k_EStartFindingMatchResult_MatchmakingDisabled = 102,
+    k_EStartFindingMatchResult_RegionOffline = 103,
+    k_EStartFindingMatchResult_MatchmakingCooldown = 104,
+    k_EStartFindingMatchResult_ClientOutOfDate = 105,
+    k_EStartFindingMatchResult_CompetitiveNoLowPriority = 106,
+    k_EStartFindingMatchResult_CompetitiveNotUnlocked = 107,
+    k_EStartFindingMatchResult_GameModeNotUnlocked = 108,
+    k_EStartFindingMatchResult_CompetitiveNotEnoughPlayTime = 109,
+    k_EStartFindingMatchResult_MissingInitialSkill = 110,
+    k_EStartFindingMatchResult_CompetitiveRankSpreadTooLarge = 111,
+    k_EStartFindingMatchResult_MemberAlreadyInLobby = 112,
+    k_EStartFindingMatchResult_MemberNotVACVerified = 113,
+    k_EStartFindingMatchResult_WeekendTourneyBadPartySize = 114,
+    k_EStartFindingMatchResult_WeekendTourneyTeamBuyInTooSmall = 115,
+    k_EStartFindingMatchResult_WeekendTourneyIndividualBuyInTooLarge = 116,
+    k_EStartFindingMatchResult_WeekendTourneyTeamBuyInTooLarge = 117,
+    k_EStartFindingMatchResult_MemberMissingEventOwnership = 118,
+    k_EStartFindingMatchResult_WeekendTourneyNotUnlocked = 119,
+    k_EStartFindingMatchResult_WeekendTourneyRecentParticipation = 120,
+    k_EStartFindingMatchResult_MemberMissingAnchoredPhoneNumber = 121,
+    k_EStartFindingMatchResult_NotMemberOfClan = 122,
+    k_EStartFindingMatchResult_CoachesChallengeBadPartySize = 123,
+    k_EStartFindingMatchResult_CoachesChallengeRequirementsNotMet = 124,
+    k_EStartFindingMatchResult_InvalidRoleSelections = 125,
+    k_EStartFindingMatchResult_PhoneNumberDiscrepancy = 126,
+    k_EStartFindingMatchResult_NoQueuePoints = 127,
+    k_EStartFindingMatchResult_MemberMissingGauntletFlag = 128,
+    k_EStartFindingMatchResult_MemberGauntletTooRecent = 129,
+    k_EStartFindingMatchResult_DifficultyNotUnlocked = 130,
+    k_EStartFindingMatchResult_CoachesNotAllowedInParty = 131,
+    k_EStartFindingMatchResult_MatchmakingBusy = 132,
+    k_EStartFindingMatchResult_SteamChinaBanned = 133,
+    k_EStartFindingMatchResult_SteamChinaInvalidMixedParty = 134,
+    k_EStartFindingMatchResult_RestrictedFromRanked = 135,
+    k_EStartFindingMatchResult_RankPreventsParties = 136,
+    k_EStartFindingMatchResult_RegisteredNameRequired = 137
+}
+declare function eStartFindingMatchResultFromJSON(object: any): EStartFindingMatchResult;
+declare function eStartFindingMatchResultToJSON(object: EStartFindingMatchResult): string;
+interface CMsgStartFindingMatch {
+    key?: string | undefined;
+    matchgroups?: number | undefined;
+    clientVersion?: number | undefined;
+    gameModes?: number | undefined;
+    matchType?: MatchType | undefined;
+    matchlanguages?: number | undefined;
+    teamId?: number | undefined;
+    gameLanguageEnum?: MatchLanguages | undefined;
+    gameLanguageName?: string | undefined;
+    pingData?: CMsgClientPingData | undefined;
+    regionSelectFlags?: number | undefined;
+    soloQueue?: boolean | undefined;
+    steamClanAccountId?: number | undefined;
+    isChallengeMatch?: boolean | undefined;
+    laneSelectionFlags?: number | undefined;
+    highPriorityDisabled?: boolean | undefined;
+    disableExperimentalGameplay?: boolean | undefined;
+    customGameDifficultyMask?: number | undefined;
+    botDifficultyMask?: number | undefined;
+    botScriptIndexMask?: number | undefined;
+}
+declare const CMsgStartFindingMatch: MessageFns$6<CMsgStartFindingMatch>;
+interface CMsgStartFindingMatchResult {
+    legacyGenericEresult?: number | undefined;
+    result?: EStartFindingMatchResult | undefined;
+    errorToken?: string | undefined;
+    debugMessage?: string | undefined;
+    responsiblePartyMembers: string[];
+    resultMetadata?: number | undefined;
+}
+declare const CMsgStartFindingMatchResult: MessageFns$6<CMsgStartFindingMatchResult>;
+interface CMsgStopFindingMatch {
+    acceptCooldown?: boolean | undefined;
+}
+declare const CMsgStopFindingMatch: MessageFns$6<CMsgStopFindingMatch>;
+interface CMsgPartyBuilderOptions {
+    additionalSlots?: number | undefined;
+    matchType?: MatchType | undefined;
+    matchgroups?: number | undefined;
+    clientVersion?: number | undefined;
+    language?: MatchLanguages | undefined;
+}
+declare const CMsgPartyBuilderOptions: MessageFns$6<CMsgPartyBuilderOptions>;
+interface CMsgReadyUp {
+    state?: DOTALobbyReadyState | undefined;
+    readyUpKey?: string | undefined;
+    hardwareSpecs?: CDOTAClientHardwareSpecs | undefined;
+}
+declare const CMsgReadyUp: MessageFns$6<CMsgReadyUp>;
+interface CMsgReadyUpStatus {
+    lobbyId?: string | undefined;
+    acceptedIds: number[];
+    declinedIds: number[];
+    acceptedIndices: number[];
+    declinedIndices: number[];
+    localReadyState?: DOTALobbyReadyState | undefined;
+}
+declare const CMsgReadyUpStatus: MessageFns$6<CMsgReadyUpStatus>;
+interface CMsgAbandonCurrentGame {
+}
+declare const CMsgAbandonCurrentGame: MessageFns$6<CMsgAbandonCurrentGame>;
+interface CMsgLobbyScenarioSave {
+    version?: number | undefined;
+    data?: Uint8Array | undefined;
+}
+declare const CMsgLobbyScenarioSave: MessageFns$6<CMsgLobbyScenarioSave>;
+interface CMsgPracticeLobbySetDetails {
+    lobbyId?: string | undefined;
+    gameName?: string | undefined;
+    teamDetails: CLobbyTeamDetails[];
+    serverRegion?: number | undefined;
+    gameMode?: number | undefined;
+    cmPick?: dotaCmPick | undefined;
+    botDifficultyRadiant?: DOTABotDifficulty | undefined;
+    allowCheats?: boolean | undefined;
+    fillWithBots?: boolean | undefined;
+    allowSpectating?: boolean | undefined;
+    passKey?: string | undefined;
+    leagueid?: number | undefined;
+    penaltyLevelRadiant?: number | undefined;
+    penaltyLevelDire?: number | undefined;
+    seriesType?: number | undefined;
+    radiantSeriesWins?: number | undefined;
+    direSeriesWins?: number | undefined;
+    allchat?: boolean | undefined;
+    dotaTvDelay?: LobbyDotaTVDelay | undefined;
+    lan?: boolean | undefined;
+    customGameMode?: string | undefined;
+    customMapName?: string | undefined;
+    customDifficulty?: number | undefined;
+    customGameId?: string | undefined;
+    customMinPlayers?: number | undefined;
+    customMaxPlayers?: number | undefined;
+    visibility?: DOTALobbyVisibility | undefined;
+    customGameCrc?: string | undefined;
+    customGameTimestamp?: number | undefined;
+    previousMatchOverride?: string | undefined;
+    pauseSetting?: LobbyDotaPauseSetting | undefined;
+    botDifficultyDire?: DOTABotDifficulty | undefined;
+    botRadiant?: string | undefined;
+    botDire?: string | undefined;
+    selectionPriorityRules?: DOTASelectionPriorityRules | undefined;
+    customGamePenalties?: boolean | undefined;
+    lanHostPingLocation?: string | undefined;
+    leagueNodeId?: number | undefined;
+    requestedHeroIds: number[];
+    scenarioSave?: CMsgLobbyScenarioSave | undefined;
+    abilityDraftSpecificDetails?: CMsgPracticeLobbySetDetails_AbilityDraftSpecificDetails | undefined;
+    doPlayerDraft?: boolean | undefined;
+    requestedHeroTeams: number[];
+}
+declare const CMsgPracticeLobbySetDetails: MessageFns$6<CMsgPracticeLobbySetDetails>;
+interface CMsgPracticeLobbySetDetails_AbilityDraftSpecificDetails {
+    shuffleDraftOrder?: boolean | undefined;
+}
+declare const CMsgPracticeLobbySetDetails_AbilityDraftSpecificDetails: MessageFns$6<CMsgPracticeLobbySetDetails_AbilityDraftSpecificDetails>;
+interface CMsgPracticeLobbyCreate {
+    searchKey?: string | undefined;
+    passKey?: string | undefined;
+    clientVersion?: number | undefined;
+    lobbyDetails?: CMsgPracticeLobbySetDetails | undefined;
+}
+declare const CMsgPracticeLobbyCreate: MessageFns$6<CMsgPracticeLobbyCreate>;
+interface CMsgPracticeLobbySetTeamSlot {
+    team?: dotaGcTeam | undefined;
+    slot?: number | undefined;
+    botDifficulty?: DOTABotDifficulty | undefined;
+}
+declare const CMsgPracticeLobbySetTeamSlot: MessageFns$6<CMsgPracticeLobbySetTeamSlot>;
+interface CMsgPracticeLobbySetCoach {
+    team?: dotaGcTeam | undefined;
+}
+declare const CMsgPracticeLobbySetCoach: MessageFns$6<CMsgPracticeLobbySetCoach>;
+interface CMsgPracticeLobbyJoinBroadcastChannel {
+    channel?: number | undefined;
+    preferredDescription?: string | undefined;
+    preferredCountryCode?: string | undefined;
+    preferredLanguageCode?: string | undefined;
+}
+declare const CMsgPracticeLobbyJoinBroadcastChannel: MessageFns$6<CMsgPracticeLobbyJoinBroadcastChannel>;
+interface CMsgPracticeLobbyCloseBroadcastChannel {
+    channel?: number | undefined;
+}
+declare const CMsgPracticeLobbyCloseBroadcastChannel: MessageFns$6<CMsgPracticeLobbyCloseBroadcastChannel>;
+interface CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus {
+}
+declare const CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus: MessageFns$6<CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus>;
+interface CMsgPracticeLobbyKick {
+    accountId?: number | undefined;
+}
+declare const CMsgPracticeLobbyKick: MessageFns$6<CMsgPracticeLobbyKick>;
+interface CMsgPracticeLobbyKickFromTeam {
+    accountId?: number | undefined;
+}
+declare const CMsgPracticeLobbyKickFromTeam: MessageFns$6<CMsgPracticeLobbyKickFromTeam>;
+interface CMsgPracticeLobbyLeave {
+}
+declare const CMsgPracticeLobbyLeave: MessageFns$6<CMsgPracticeLobbyLeave>;
+interface CMsgPracticeLobbyLaunch {
+    clientVersion?: number | undefined;
+}
+declare const CMsgPracticeLobbyLaunch: MessageFns$6<CMsgPracticeLobbyLaunch>;
+interface CMsgApplyTeamToPracticeLobby {
+    teamId?: number | undefined;
+}
+declare const CMsgApplyTeamToPracticeLobby: MessageFns$6<CMsgApplyTeamToPracticeLobby>;
+interface CMsgPracticeLobbyList {
+    passKey?: string | undefined;
+    region?: number | undefined;
+    gameMode?: DOTAGameMode | undefined;
+}
+declare const CMsgPracticeLobbyList: MessageFns$6<CMsgPracticeLobbyList>;
+interface CMsgPracticeLobbyListResponseEntry {
+    id?: string | undefined;
+    members: CMsgPracticeLobbyListResponseEntry_CLobbyMember[];
+    requiresPassKey?: boolean | undefined;
+    leaderAccountId?: number | undefined;
+    name?: string | undefined;
+    customGameMode?: string | undefined;
+    gameMode?: DOTAGameMode | undefined;
+    friendPresent?: boolean | undefined;
+    players?: number | undefined;
+    customMapName?: string | undefined;
+    maxPlayerCount?: number | undefined;
+    serverRegion?: number | undefined;
+    leagueId?: number | undefined;
+    lanHostPingLocation?: string | undefined;
+    minPlayerCount?: number | undefined;
+    penaltiesEnabled?: boolean | undefined;
+}
+declare const CMsgPracticeLobbyListResponseEntry: MessageFns$6<CMsgPracticeLobbyListResponseEntry>;
+interface CMsgPracticeLobbyListResponseEntry_CLobbyMember {
+    accountId?: number | undefined;
+    playerName?: string | undefined;
+}
+declare const CMsgPracticeLobbyListResponseEntry_CLobbyMember: MessageFns$6<CMsgPracticeLobbyListResponseEntry_CLobbyMember>;
+interface CMsgPracticeLobbyListResponse {
+    lobbies: CMsgPracticeLobbyListResponseEntry[];
+}
+declare const CMsgPracticeLobbyListResponse: MessageFns$6<CMsgPracticeLobbyListResponse>;
+interface CMsgLobbyList {
+    serverRegion?: number | undefined;
+    gameMode?: DOTAGameMode | undefined;
+}
+declare const CMsgLobbyList: MessageFns$6<CMsgLobbyList>;
+interface CMsgLobbyListResponse {
+    lobbies: CMsgPracticeLobbyListResponseEntry[];
+}
+declare const CMsgLobbyListResponse: MessageFns$6<CMsgLobbyListResponse>;
+interface CMsgPracticeLobbyJoin {
+    lobbyId?: string | undefined;
+    clientVersion?: number | undefined;
+    passKey?: string | undefined;
+    customGameCrc?: string | undefined;
+    customGameTimestamp?: number | undefined;
+}
+declare const CMsgPracticeLobbyJoin: MessageFns$6<CMsgPracticeLobbyJoin>;
+interface CMsgPracticeLobbyJoinResponse {
+    result?: DOTAJoinLobbyResult | undefined;
+}
+declare const CMsgPracticeLobbyJoinResponse: MessageFns$6<CMsgPracticeLobbyJoinResponse>;
+interface CMsgFriendPracticeLobbyListRequest {
+    friends: number[];
+}
+declare const CMsgFriendPracticeLobbyListRequest: MessageFns$6<CMsgFriendPracticeLobbyListRequest>;
+interface CMsgFriendPracticeLobbyListResponse {
+    lobbies: CMsgPracticeLobbyListResponseEntry[];
+}
+declare const CMsgFriendPracticeLobbyListResponse: MessageFns$6<CMsgFriendPracticeLobbyListResponse>;
+interface CMsgJoinableCustomGameModesRequest {
+    serverRegion?: number | undefined;
+}
+declare const CMsgJoinableCustomGameModesRequest: MessageFns$6<CMsgJoinableCustomGameModesRequest>;
+interface CMsgJoinableCustomGameModesResponseEntry {
+    customGameId?: string | undefined;
+    lobbyCount?: number | undefined;
+    playerCount?: number | undefined;
+}
+declare const CMsgJoinableCustomGameModesResponseEntry: MessageFns$6<CMsgJoinableCustomGameModesResponseEntry>;
+interface CMsgJoinableCustomGameModesResponse {
+    gameModes: CMsgJoinableCustomGameModesResponseEntry[];
+}
+declare const CMsgJoinableCustomGameModesResponse: MessageFns$6<CMsgJoinableCustomGameModesResponse>;
+interface CMsgJoinableCustomLobbiesRequest {
+    serverRegion?: number | undefined;
+    customGameId?: string | undefined;
+}
+declare const CMsgJoinableCustomLobbiesRequest: MessageFns$6<CMsgJoinableCustomLobbiesRequest>;
+interface CMsgJoinableCustomLobbiesResponseEntry {
+    lobbyId?: string | undefined;
+    customGameId?: string | undefined;
+    lobbyName?: string | undefined;
+    memberCount?: number | undefined;
+    leaderAccountId?: number | undefined;
+    leaderName?: string | undefined;
+    customMapName?: string | undefined;
+    maxPlayerCount?: number | undefined;
+    serverRegion?: number | undefined;
+    hasPassKey?: boolean | undefined;
+    lanHostPingLocation?: string | undefined;
+    lobbyCreationTime?: number | undefined;
+    customGameTimestamp?: number | undefined;
+    customGameCrc?: string | undefined;
+    minPlayerCount?: number | undefined;
+    penaltiesEnabled?: boolean | undefined;
+}
+declare const CMsgJoinableCustomLobbiesResponseEntry: MessageFns$6<CMsgJoinableCustomLobbiesResponseEntry>;
+interface CMsgJoinableCustomLobbiesResponse {
+    lobbies: CMsgJoinableCustomLobbiesResponseEntry[];
+}
+declare const CMsgJoinableCustomLobbiesResponse: MessageFns$6<CMsgJoinableCustomLobbiesResponse>;
+interface CMsgQuickJoinCustomLobby {
+    legacyServerRegion?: number | undefined;
+    customGameId?: string | undefined;
+    clientVersion?: number | undefined;
+    createLobbyDetails?: CMsgPracticeLobbySetDetails | undefined;
+    allowAnyMap?: boolean | undefined;
+    legacyRegionPings: CMsgQuickJoinCustomLobby_LegacyRegionPing[];
+    pingData?: CMsgClientPingData | undefined;
+}
+declare const CMsgQuickJoinCustomLobby: MessageFns$6<CMsgQuickJoinCustomLobby>;
+interface CMsgQuickJoinCustomLobby_LegacyRegionPing {
+    serverRegion?: number | undefined;
+    ping?: number | undefined;
+    regionCode?: number | undefined;
+}
+declare const CMsgQuickJoinCustomLobby_LegacyRegionPing: MessageFns$6<CMsgQuickJoinCustomLobby_LegacyRegionPing>;
+interface CMsgQuickJoinCustomLobbyResponse {
+    result?: DOTAJoinLobbyResult | undefined;
+}
+declare const CMsgQuickJoinCustomLobbyResponse: MessageFns$6<CMsgQuickJoinCustomLobbyResponse>;
+interface CMsgBotGameCreate {
+    searchKey?: string | undefined;
+    clientVersion?: number | undefined;
+    difficultyRadiant?: DOTABotDifficulty | undefined;
+    team?: dotaGcTeam | undefined;
+    gameMode?: number | undefined;
+    difficultyDire?: DOTABotDifficulty | undefined;
+}
+declare const CMsgBotGameCreate: MessageFns$6<CMsgBotGameCreate>;
+interface CMsgDOTAPartyMemberSetCoach {
+    wantsCoach?: boolean | undefined;
+}
+declare const CMsgDOTAPartyMemberSetCoach: MessageFns$6<CMsgDOTAPartyMemberSetCoach>;
+interface CMsgDOTASetGroupLeader {
+    newLeaderSteamid?: string | undefined;
+}
+declare const CMsgDOTASetGroupLeader: MessageFns$6<CMsgDOTASetGroupLeader>;
+interface CMsgDOTACancelGroupInvites {
+    invitedSteamids: string[];
+    invitedGroupids: string[];
+}
+declare const CMsgDOTACancelGroupInvites: MessageFns$6<CMsgDOTACancelGroupInvites>;
+interface CMsgDOTASetGroupOpenStatus {
+    open?: boolean | undefined;
+}
+declare const CMsgDOTASetGroupOpenStatus: MessageFns$6<CMsgDOTASetGroupOpenStatus>;
+interface CMsgDOTAGroupMergeInvite {
+    otherGroupId?: string | undefined;
+}
+declare const CMsgDOTAGroupMergeInvite: MessageFns$6<CMsgDOTAGroupMergeInvite>;
+interface CMsgDOTAGroupMergeResponse {
+    initiatorGroupId?: string | undefined;
+    accept?: boolean | undefined;
+}
+declare const CMsgDOTAGroupMergeResponse: MessageFns$6<CMsgDOTAGroupMergeResponse>;
+interface CMsgDOTAGroupMergeReply {
+    result?: EDOTAGroupMergeResult | undefined;
+}
+declare const CMsgDOTAGroupMergeReply: MessageFns$6<CMsgDOTAGroupMergeReply>;
+interface CMsgSpectatorLobbyGameDetails {
+    language?: number | undefined;
+    matchId?: string | undefined;
+    serverSteamId?: string | undefined;
+    streamUrl?: string | undefined;
+    streamName?: string | undefined;
+    leagueId?: number | undefined;
+    seriesType?: number | undefined;
+    seriesGame?: number | undefined;
+    radiantTeam?: CMsgSpectatorLobbyGameDetails_Team | undefined;
+    direTeam?: CMsgSpectatorLobbyGameDetails_Team | undefined;
+}
+declare const CMsgSpectatorLobbyGameDetails: MessageFns$6<CMsgSpectatorLobbyGameDetails>;
+interface CMsgSpectatorLobbyGameDetails_Team {
+    teamId?: number | undefined;
+    teamName?: string | undefined;
+    teamLogo?: string | undefined;
+}
+declare const CMsgSpectatorLobbyGameDetails_Team: MessageFns$6<CMsgSpectatorLobbyGameDetails_Team>;
+interface CMsgSetSpectatorLobbyDetails {
+    lobbyId?: string | undefined;
+    lobbyName?: string | undefined;
+    passKey?: string | undefined;
+    gameDetails?: CMsgSpectatorLobbyGameDetails | undefined;
+}
+declare const CMsgSetSpectatorLobbyDetails: MessageFns$6<CMsgSetSpectatorLobbyDetails>;
+interface CMsgCreateSpectatorLobby {
+    clientVersion?: number | undefined;
+    details?: CMsgSetSpectatorLobbyDetails | undefined;
+}
+declare const CMsgCreateSpectatorLobby: MessageFns$6<CMsgCreateSpectatorLobby>;
+interface CMsgSpectatorLobbyList {
+}
+declare const CMsgSpectatorLobbyList: MessageFns$6<CMsgSpectatorLobbyList>;
+interface CMsgSpectatorLobbyListResponse {
+    lobbies: CMsgSpectatorLobbyListResponse_SpectatorLobby[];
+}
+declare const CMsgSpectatorLobbyListResponse: MessageFns$6<CMsgSpectatorLobbyListResponse>;
+interface CMsgSpectatorLobbyListResponse_SpectatorLobby {
+    lobbyId?: string | undefined;
+    gameName?: string | undefined;
+    requiresPassKey?: boolean | undefined;
+    leaderAccountId?: number | undefined;
+    memberCount?: number | undefined;
+    gameDetails?: CMsgSpectatorLobbyGameDetails | undefined;
+}
+declare const CMsgSpectatorLobbyListResponse_SpectatorLobby: MessageFns$6<CMsgSpectatorLobbyListResponse_SpectatorLobby>;
+interface CMsgClientToGCRequestSteamDatagramTicket {
+    serverSteamId?: string | undefined;
+}
+declare const CMsgClientToGCRequestSteamDatagramTicket: MessageFns$6<CMsgClientToGCRequestSteamDatagramTicket>;
+interface CMsgClientToGCRequestSteamDatagramTicketResponse {
+    serializedTicket?: Uint8Array | undefined;
+    message?: string | undefined;
+}
+declare const CMsgClientToGCRequestSteamDatagramTicketResponse: MessageFns$6<CMsgClientToGCRequestSteamDatagramTicketResponse>;
+interface CMsgGCToClientSteamDatagramTicket {
+    legacyTimeExpiry?: number | undefined;
+    legacyAuthorizedSteamId?: string | undefined;
+    legacyAuthorizedPublicIp?: number | undefined;
+    legacyGameserverSteamId?: string | undefined;
+    legacyGameserverNetId?: string | undefined;
+    legacySignature?: Uint8Array | undefined;
+    legacyAppId?: number | undefined;
+    legacyExtraFields: Uint8Array[];
+    serializedTicket?: Uint8Array | undefined;
+}
+declare const CMsgGCToClientSteamDatagramTicket: MessageFns$6<CMsgGCToClientSteamDatagramTicket>;
+interface CMsgGCToClientRequestLaneSelection {
+}
+declare const CMsgGCToClientRequestLaneSelection: MessageFns$6<CMsgGCToClientRequestLaneSelection>;
+interface CMsgGCToClientRequestLaneSelectionResponse {
+    laneSelectionFlags?: number | undefined;
+    highPriorityDisabled?: boolean | undefined;
+}
+declare const CMsgGCToClientRequestLaneSelectionResponse: MessageFns$6<CMsgGCToClientRequestLaneSelectionResponse>;
+interface CMsgGCToClientRequestMMInfo {
+}
+declare const CMsgGCToClientRequestMMInfo: MessageFns$6<CMsgGCToClientRequestMMInfo>;
+interface CMsgClientToGCMMInfo {
+    laneSelectionFlags?: number | undefined;
+    highPriorityDisabled?: boolean | undefined;
+}
+declare const CMsgClientToGCMMInfo: MessageFns$6<CMsgClientToGCMMInfo>;
 type Builtin$6 = Date | Function | Uint8Array | string | number | boolean | undefined;
 type DeepPartial$6<T> = T extends Builtin$6 ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial$6<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial$6<U>> : T extends {} ? {
     [K in keyof T]?: DeepPartial$6<T[K]>;
 } : Partial<T>;
+type KeysOfUnion<T> = T extends T ? keyof T : never;
+type Exact<P, I extends P> = P extends Builtin$6 ? P : P & {
+    [K in keyof P]: Exact<P[K], I[K]>;
+} & {
+    [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
+};
 interface MessageFns$6<T> {
     encode(message: T, writer?: BinaryWriter): BinaryWriter;
     decode(input: BinaryReader | Uint8Array, length?: number): T;
     fromJSON(object: any): T;
     toJSON(message: T): unknown;
-    create(base?: DeepPartial$6<T>): T;
-    fromPartial(object: DeepPartial$6<T>): T;
+    create<I extends Exact<DeepPartial$6<T>, I>>(base?: I): T;
+    fromPartial<I extends Exact<DeepPartial$6<T>, I>>(object: I): T;
 }
 
 declare enum CMsgClientToGCSurvivorsGameTelemetryDataResponse_EResponse {
@@ -8801,4 +9293,4 @@ interface MessageFns<T> {
     fromPartial(object: DeepPartial<T>): T;
 }
 
-export { CMsgAdjustItemEquippedState as $, CGCToGCMsgMasterStartupComplete_GCInfo as A, CGCToGCMsgRouted as B, CMsgClientWelcome as C, CGCToGCMsgRoutedReply as D, EDOTAGCMsg as E, CIPLocationInfo as F, GCConnectionStatus as G, CLobbyBroadcastChannelInfo as H, CLobbyGuildChallenge as I, CLobbyGuildDetails as J, CLobbyTeamDetails as K, CLobbyTimedRewardDetails as L, CMatchPlayerTimedStatAverages as M, CMatchPlayerTimedStatStdDeviations as N, CMsgAccountGuildEventData as O, CMsgActivatePlusFreeTrialResponse as P, CMsgActivatePlusFreeTrialResponse_Result as Q, CMsgAddItemToSocket as R, CMsgAddItemToSocketData as S, CMsgAddItemToSocketResponse as T, CMsgAddItemToSocketResponse_EAddGem as U, CMsgAddSocket as V, CMsgAddSocketResponse as W, CMsgAddSocketResponse_EAddSocket as X, CMsgAdditionalLobbyStartupAccountData as Y, CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange as Z, CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange as _, EGCBaseClientMsg as a, CMsgClientToGCCreateStickerbookPageResponse_EResponse as a$, CMsgApplyAutograph as a0, CMsgApplyEggEssence as a1, CMsgApplyPennantUpgrade as a2, CMsgApplyRemoteConVars as a3, CMsgApplyRemoteConVars_ConVar as a4, CMsgApplyStrangePart as a5, CMsgBalancedShuffleLobby as a6, CMsgBannedWordList as a7, CMsgClientHello as a8, CMsgClientPingData as a9, CMsgClientToGCCavernCrawlUseItemOnRoomResponse_Result as aA, CMsgClientToGCChinaSSAAcceptedRequest as aB, CMsgClientToGCChinaSSAAcceptedResponse as aC, CMsgClientToGCChinaSSAURLRequest as aD, CMsgClientToGCChinaSSAURLResponse as aE, CMsgClientToGCClaimEventActionUsingItem as aF, CMsgClientToGCClaimEventActionUsingItemResponse as aG, CMsgClientToGCClaimLeaderboardRewards as aH, CMsgClientToGCClaimLeaderboardRewardsResponse as aI, CMsgClientToGCClaimLeaderboardRewardsResponse_EResponse as aJ, CMsgClientToGCClaimSwag as aK, CMsgClientToGCClaimSwagResponse as aL, CMsgClientToGCClaimSwagResponse_EResponse as aM, CMsgClientToGCCollectorsCacheAvailableDataRequest as aN, CMsgClientToGCCreateHeroStatue as aO, CMsgClientToGCCreatePlayerCardPack as aP, CMsgClientToGCCreatePlayerCardPackResponse as aQ, CMsgClientToGCCreatePlayerCardPackResponse_Result as aR, CMsgClientToGCCreateStaticRecipe as aS, CMsgClientToGCCreateStaticRecipeResponse as aT, CMsgClientToGCCreateStaticRecipeResponse_AdditionalOutput as aU, CMsgClientToGCCreateStaticRecipeResponse_EResponse as aV, CMsgClientToGCCreateStaticRecipeResponse_InputError as aW, CMsgClientToGCCreateStaticRecipeResponse_OutputItem as aX, CMsgClientToGCCreateStaticRecipe_Item as aY, CMsgClientToGCCreateStickerbookPageRequest as aZ, CMsgClientToGCCreateStickerbookPageResponse as a_, CMsgClientSuspended as aa, CMsgClientToGCAcknowledgeReporterUpdates as ab, CMsgClientToGCAggregateMetrics as ac, CMsgClientToGCAggregateMetrics_SingleMetric as ad, CMsgClientToGCApplyGemCombiner as ae, CMsgClientToGCCancelUnfinalizedTransactions as af, CMsgClientToGCCancelUnfinalizedTransactionsResponse as ag, CMsgClientToGCCavernCrawlClaimRoom as ah, CMsgClientToGCCavernCrawlClaimRoomResponse as ai, CMsgClientToGCCavernCrawlClaimRoomResponse_Result as aj, CMsgClientToGCCavernCrawlGetClaimedRoomCount as ak, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse as al, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant as am, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_Result as an, CMsgClientToGCCavernCrawlRequestMapState as ao, CMsgClientToGCCavernCrawlRequestMapStateResponse as ap, CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem as aq, CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant as ar, CMsgClientToGCCavernCrawlRequestMapStateResponse_Result as as, CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge as at, CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap as au, CMsgClientToGCCavernCrawlUseItemOnPath as av, CMsgClientToGCCavernCrawlUseItemOnPathResponse as aw, CMsgClientToGCCavernCrawlUseItemOnPathResponse_Result as ax, CMsgClientToGCCavernCrawlUseItemOnRoom as ay, CMsgClientToGCCavernCrawlUseItemOnRoomResponse as az, EGCBaseMsg as b, CMsgClientToGCManageFavorites as b$, CMsgClientToGCCreateTeamPlayerCardPack as b0, CMsgClientToGCCreateTeamPlayerCardPackResponse as b1, CMsgClientToGCCreateTeamPlayerCardPackResponse_Result as b2, CMsgClientToGCCustomGamesFriendsPlayedRequest as b3, CMsgClientToGCDeleteStickerbookPageRequest as b4, CMsgClientToGCDeleteStickerbookPageResponse as b5, CMsgClientToGCDeleteStickerbookPageResponse_EResponse as b6, CMsgClientToGCEmoticonDataRequest as b7, CMsgClientToGCEquipItems as b8, CMsgClientToGCEquipItemsResponse as b9, CMsgClientToGCGetOWMatchDetailsResponse_EResponse as bA, CMsgClientToGCGetOWMatchDetailsResponse_Marker as bB, CMsgClientToGCGetProfileCard as bC, CMsgClientToGCGetProfileCardStats as bD, CMsgClientToGCGetProfileTickets as bE, CMsgClientToGCGetQuestProgress as bF, CMsgClientToGCGetQuestProgressResponse as bG, CMsgClientToGCGetQuestProgressResponse_Challenge as bH, CMsgClientToGCGetQuestProgressResponse_Quest as bI, CMsgClientToGCGetStickerbookRequest as bJ, CMsgClientToGCGetStickerbookResponse as bK, CMsgClientToGCGetStickerbookResponse_EResponse as bL, CMsgClientToGCGetTrophyList as bM, CMsgClientToGCGetTrophyListResponse as bN, CMsgClientToGCGetTrophyListResponse_Trophy as bO, CMsgClientToGCH264Unsupported as bP, CMsgClientToGCHasPlayerVotedForMVP as bQ, CMsgClientToGCHasPlayerVotedForMVPResponse as bR, CMsgClientToGCIntegrityStatus as bS, CMsgClientToGCIntegrityStatus_keyvalue as bT, CMsgClientToGCJoinPartyFromBeacon as bU, CMsgClientToGCJoinPlaytest as bV, CMsgClientToGCJoinPlaytestResponse as bW, CMsgClientToGCLookupAccountName as bX, CMsgClientToGCLookupAccountNameResponse as bY, CMsgClientToGCMVPVoteTimeout as bZ, CMsgClientToGCMVPVoteTimeoutResponse as b_, CMsgClientToGCFriendsPlayedCustomGameRequest as ba, CMsgClientToGCGetAllHeroOrder as bb, CMsgClientToGCGetAllHeroOrderResponse as bc, CMsgClientToGCGetAllHeroProgress as bd, CMsgClientToGCGetAllHeroProgressResponse as be, CMsgClientToGCGetDPCFavorites as bf, CMsgClientToGCGetDPCFavoritesResponse as bg, CMsgClientToGCGetDPCFavoritesResponse_EResponse as bh, CMsgClientToGCGetDPCFavoritesResponse_Favorite as bi, CMsgClientToGCGetEventGoals as bj, CMsgClientToGCGetFavoritePlayers as bk, CMsgClientToGCGetFilteredPlayers as bl, CMsgClientToGCGetGiftPermissions as bm, CMsgClientToGCGetGiftPermissionsResponse as bn, CMsgClientToGCGetGiftPermissionsResponse_FriendPermission as bo, CMsgClientToGCGetHeroStickers as bp, CMsgClientToGCGetHeroStickersResponse as bq, CMsgClientToGCGetHeroStickersResponse_EResponse as br, CMsgClientToGCGetInFlightItemCharges as bs, CMsgClientToGCGetInFlightItemChargesResponse as bt, CMsgClientToGCGetInFlightItemChargesResponse_EResponse as bu, CMsgClientToGCGetLimitedItemPurchaseQuantity as bv, CMsgClientToGCGetLimitedItemPurchaseQuantityResponse as bw, CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse as bx, CMsgClientToGCGetOWMatchDetails as by, CMsgClientToGCGetOWMatchDetailsResponse as bz, ESOMsg as c, CMsgClientToGCPlaceCollectionStickersRequest as c$, CMsgClientToGCManageFavorites_Action as c0, CMsgClientToGCMapStatsRequest as c1, CMsgClientToGCNameItem as c2, CMsgClientToGCNameItemResponse as c3, CMsgClientToGCNameItemResponse_ENameItem as c4, CMsgClientToGCNewBloomGift as c5, CMsgClientToGCNewBloomGiftResponse as c6, CMsgClientToGCOpenPlayerCardPack as c7, CMsgClientToGCOpenPlayerCardPackResponse as c8, CMsgClientToGCOpenPlayerCardPackResponse_Result as c9, CMsgClientToGCOverworldGetDynamicImageResponse as cA, CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat as cB, CMsgClientToGCOverworldGetDynamicImageResponse_Image as cC, CMsgClientToGCOverworldGetUserData as cD, CMsgClientToGCOverworldGetUserDataResponse as cE, CMsgClientToGCOverworldGetUserDataResponse_EResponse as cF, CMsgClientToGCOverworldGiftTokens as cG, CMsgClientToGCOverworldGiftTokensResponse as cH, CMsgClientToGCOverworldGiftTokensResponse_EResponse as cI, CMsgClientToGCOverworldMinigameAction as cJ, CMsgClientToGCOverworldMinigameActionResponse as cK, CMsgClientToGCOverworldMinigameActionResponse_EResponse as cL, CMsgClientToGCOverworldMoveToNode as cM, CMsgClientToGCOverworldMoveToNodeResponse as cN, CMsgClientToGCOverworldMoveToNodeResponse_EResponse as cO, CMsgClientToGCOverworldRequestTokensNeededByFriend as cP, CMsgClientToGCOverworldRequestTokensNeededByFriendResponse as cQ, CMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponse as cR, CMsgClientToGCOverworldTradeTokens as cS, CMsgClientToGCOverworldTradeTokensResponse as cT, CMsgClientToGCOverworldTradeTokensResponse_EResponse as cU, CMsgClientToGCOverworldVisitEncounter as cV, CMsgClientToGCOverworldVisitEncounterResponse as cW, CMsgClientToGCOverworldVisitEncounterResponse_EResponse as cX, CMsgClientToGCPackBundle as cY, CMsgClientToGCPackBundleResponse as cZ, CMsgClientToGCPackBundleResponse_EPackBundle as c_, CMsgClientToGCOrderStickerbookTeamPageRequest as ca, CMsgClientToGCOrderStickerbookTeamPageResponse as cb, CMsgClientToGCOrderStickerbookTeamPageResponse_EResponse as cc, CMsgClientToGCOverwatchReplayError as cd, CMsgClientToGCOverworldClaimEncounterReward as ce, CMsgClientToGCOverworldClaimEncounterRewardResponse as cf, CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse as cg, CMsgClientToGCOverworldCompletePath as ch, CMsgClientToGCOverworldCompletePathResponse as ci, CMsgClientToGCOverworldCompletePathResponse_EResponse as cj, CMsgClientToGCOverworldDevClearInventory as ck, CMsgClientToGCOverworldDevClearInventoryResponse as cl, CMsgClientToGCOverworldDevClearInventoryResponse_EResponse as cm, CMsgClientToGCOverworldDevGrantTokens as cn, CMsgClientToGCOverworldDevGrantTokensResponse as co, CMsgClientToGCOverworldDevGrantTokensResponse_EResponse as cp, CMsgClientToGCOverworldDevResetAll as cq, CMsgClientToGCOverworldDevResetAllResponse as cr, CMsgClientToGCOverworldDevResetAllResponse_EResponse as cs, CMsgClientToGCOverworldDevResetNode as ct, CMsgClientToGCOverworldDevResetNodeResponse as cu, CMsgClientToGCOverworldDevResetNodeResponse_EResponse as cv, CMsgClientToGCOverworldFeedback as cw, CMsgClientToGCOverworldFeedbackResponse as cx, CMsgClientToGCOverworldFeedbackResponse_EResponse as cy, CMsgClientToGCOverworldGetDynamicImage as cz, CExtraMsgBlock as d, CMsgClientToGCRequestReporterUpdates as d$, CMsgClientToGCPlaceCollectionStickersRequest_Slot as d0, CMsgClientToGCPlaceCollectionStickersResponse as d1, CMsgClientToGCPlaceCollectionStickersResponse_EResponse as d2, CMsgClientToGCPlaceStickersRequest as d3, CMsgClientToGCPlaceStickersRequest_StickerItem as d4, CMsgClientToGCPlaceStickersResponse as d5, CMsgClientToGCPlaceStickersResponse_EResponse as d6, CMsgClientToGCPlayerCardSpecificPurchaseRequest as d7, CMsgClientToGCPlayerCardSpecificPurchaseResponse as d8, CMsgClientToGCPlayerCardSpecificPurchaseResponse_Result as d9, CMsgClientToGCRequestActiveBeaconParties as dA, CMsgClientToGCRequestActiveGuildChallenge as dB, CMsgClientToGCRequestActiveGuildChallengeResponse as dC, CMsgClientToGCRequestActiveGuildChallengeResponse_EResponse as dD, CMsgClientToGCRequestActiveGuildContracts as dE, CMsgClientToGCRequestActiveGuildContractsResponse as dF, CMsgClientToGCRequestActiveGuildContractsResponse_EResponse as dG, CMsgClientToGCRequestArcanaVotesRemaining as dH, CMsgClientToGCRequestArcanaVotesRemainingResponse as dI, CMsgClientToGCRequestContestVotes as dJ, CMsgClientToGCRequestContestVotesResponse as dK, CMsgClientToGCRequestContestVotesResponse_EResponse as dL, CMsgClientToGCRequestContestVotesResponse_ItemVote as dM, CMsgClientToGCRequestEventPointLogResponseV2 as dN, CMsgClientToGCRequestEventPointLogResponseV2_LogEntry as dO, CMsgClientToGCRequestEventPointLogV2 as dP, CMsgClientToGCRequestGuildEventMembers as dQ, CMsgClientToGCRequestGuildEventMembersResponse as dR, CMsgClientToGCRequestGuildEventMembersResponse_EResponse as dS, CMsgClientToGCRequestPlayerHeroRecentAccomplishments as dT, CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse as dU, CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponse as dV, CMsgClientToGCRequestPlayerRecentAccomplishments as dW, CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse as dX, CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponse as dY, CMsgClientToGCRequestPlusWeeklyChallengeResult as dZ, CMsgClientToGCRequestPlusWeeklyChallengeResultResponse as d_, CMsgClientToGCPlayerStatsRequest as da, CMsgClientToGCPublishUserStat as db, CMsgClientToGCPurchaseChargeCostItems as dc, CMsgClientToGCPurchaseChargeCostItemsResponse as dd, CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse as de, CMsgClientToGCPurchaseChargeCostItems_Item as df, CMsgClientToGCPurchaseFilteredPlayerSlot as dg, CMsgClientToGCPurchaseLabyrinthBlessings as dh, CMsgClientToGCPurchaseLabyrinthBlessingsResponse as di, CMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponse as dj, CMsgClientToGCRankRequest as dk, CMsgClientToGCRecalibrateMMR as dl, CMsgClientToGCRecalibrateMMRResponse as dm, CMsgClientToGCRecalibrateMMRResponse_EResponse as dn, CMsgClientToGCRecordContestVote as dp, CMsgClientToGCRecyclePlayerCard as dq, CMsgClientToGCRecyclePlayerCardResponse as dr, CMsgClientToGCRecyclePlayerCardResponse_Result as ds, CMsgClientToGCRemoveFilteredPlayer as dt, CMsgClientToGCRemoveItemAttribute as du, CMsgClientToGCRemoveItemAttributeResponse as dv, CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute as dw, CMsgClientToGCRequestAccountGuildEventData as dx, CMsgClientToGCRequestAccountGuildEventDataResponse as dy, CMsgClientToGCRequestAccountGuildEventDataResponse_EResponse as dz, CSOEconItemAttribute as e, CMsgClientToGCUnderDraftBuyResponse as e$, CMsgClientToGCRequestReporterUpdatesResponse as e0, CMsgClientToGCRequestReporterUpdatesResponse_EResponse as e1, CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate as e2, CMsgClientToGCRequestSlarkGameResult as e3, CMsgClientToGCRequestSlarkGameResultResponse as e4, CMsgClientToGCRoadToTIDevForceQuest as e5, CMsgClientToGCRoadToTIGetActiveQuest as e6, CMsgClientToGCRoadToTIGetActiveQuestResponse as e7, CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse as e8, CMsgClientToGCRoadToTIGetQuests as e9, CMsgClientToGCSetItemStyle as eA, CMsgClientToGCSetItemStyleResponse as eB, CMsgClientToGCSetItemStyleResponse_ESetStyle as eC, CMsgClientToGCSetProfileCardSlots as eD, CMsgClientToGCSetProfileCardSlots_CardSlot as eE, CMsgClientToGCSocialFeedPostCommentRequest as eF, CMsgClientToGCSocialFeedPostMessageRequest as eG, CMsgClientToGCStartWatchingOverwatch as eH, CMsgClientToGCStopWatchingOverwatch as eI, CMsgClientToGCSubmitDraftTriviaMatchAnswer as eJ, CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse as eK, CMsgClientToGCSubmitOWConviction as eL, CMsgClientToGCSubmitOWConvictionResponse as eM, CMsgClientToGCSubmitOWConvictionResponse_EResponse as eN, CMsgClientToGCSubmitPlayerMatchSurvey as eO, CMsgClientToGCSubmitPlayerMatchSurveyResponse as eP, CMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponse as eQ, CMsgClientToGCSurvivorsGameTelemetryData as eR, CMsgClientToGCSurvivorsGameTelemetryDataResponse as eS, CMsgClientToGCSurvivorsGameTelemetryDataResponse_EResponse as eT, CMsgClientToGCSurvivorsPowerUpTelemetryData as eU, CMsgClientToGCTeammateStatsRequest as eV, CMsgClientToGCTeammateStatsResponse as eW, CMsgClientToGCTeammateStatsResponse_TeammateStat as eX, CMsgClientToGCTransferSeasonalMMRRequest as eY, CMsgClientToGCTransferSeasonalMMRResponse as eZ, CMsgClientToGCUnderDraftBuy as e_, CMsgClientToGCRoadToTIGetQuestsResponse as ea, CMsgClientToGCRoadToTIGetQuestsResponse_EResponse as eb, CMsgClientToGCRoadToTIUseItem as ec, CMsgClientToGCRoadToTIUseItemResponse as ed, CMsgClientToGCRoadToTIUseItemResponse_EResponse as ee, CMsgClientToGCSelectCompendiumInGamePrediction as ef, CMsgClientToGCSelectCompendiumInGamePredictionResponse as eg, CMsgClientToGCSelectCompendiumInGamePredictionResponse_EResult as eh, CMsgClientToGCSelectCompendiumInGamePrediction_Prediction as ei, CMsgClientToGCSelectGuildContract as ej, CMsgClientToGCSelectGuildContractResponse as ek, CMsgClientToGCSelectGuildContractResponse_EResponse as el, CMsgClientToGCSetBannedHeroes as em, CMsgClientToGCSetDPCFavoriteState as en, CMsgClientToGCSetDPCFavoriteStateResponse as eo, CMsgClientToGCSetDPCFavoriteStateResponse_EResponse as ep, CMsgClientToGCSetEventActiveSeasonID as eq, CMsgClientToGCSetEventActiveSeasonIDResponse as er, CMsgClientToGCSetEventActiveSeasonIDResponse_EResponse as es, CMsgClientToGCSetFavoritePage as et, CMsgClientToGCSetFavoritePageResponse as eu, CMsgClientToGCSetFavoritePageResponse_EResponse as ev, CMsgClientToGCSetHeroSticker as ew, CMsgClientToGCSetHeroStickerResponse as ex, CMsgClientToGCSetHeroStickerResponse_EResponse as ey, CMsgClientToGCSetItemInventoryCategory as ez, CSOEconItemEquipped as f, CMsgDOTADestroyLobbyRequest as f$, CMsgClientToGCUnderDraftRedeemReward as f0, CMsgClientToGCUnderDraftRedeemRewardResponse as f1, CMsgClientToGCUnderDraftRequest as f2, CMsgClientToGCUnderDraftReroll as f3, CMsgClientToGCUnderDraftRerollResponse as f4, CMsgClientToGCUnderDraftResponse as f5, CMsgClientToGCUnderDraftRollBackBench as f6, CMsgClientToGCUnderDraftRollBackBenchResponse as f7, CMsgClientToGCUnderDraftSell as f8, CMsgClientToGCUnderDraftSellResponse as f9, CMsgClientToGCWrapAndDeliverGiftResponse as fA, CMsgClientWelcome_Location as fB, CMsgClientsRejoinChatChannels as fC, CMsgConnectionStatus as fD, CMsgConsumeEventSupportGrantItem as fE, CMsgConsumeEventSupportGrantItemResponse as fF, CMsgCraftStatue as fG, CMsgCraftingResponse as fH, CMsgCustomGameInstallStatus as fI, CMsgDOTAAnchorPhoneNumberRequest as fJ, CMsgDOTAAnchorPhoneNumberResponse as fK, CMsgDOTAAnchorPhoneNumberResponse_Result as fL, CMsgDOTAClaimEventAction as fM, CMsgDOTAClaimEventActionData as fN, CMsgDOTAClaimEventActionData_GrantItemGiftData as fO, CMsgDOTAClientToGCQuickStatsRequest as fP, CMsgDOTAClientToGCQuickStatsResponse as fQ, CMsgDOTAClientToGCQuickStatsResponse_SimpleStats as fR, CMsgDOTACompendiumData as fS, CMsgDOTACompendiumDataRequest as fT, CMsgDOTACompendiumDataResponse as fU, CMsgDOTACompendiumRemoveAllSelections as fV, CMsgDOTACompendiumRemoveAllSelectionsResponse as fW, CMsgDOTACompendiumSelection as fX, CMsgDOTACompendiumSelectionResponse as fY, CMsgDOTACustomGameClientFinishedLoading as fZ, CMsgDOTACustomGameListenServerStartedLoading as f_, CMsgClientToGCUnlockCrate as fa, CMsgClientToGCUnlockCrateResponse as fb, CMsgClientToGCUnlockCrateResponse_Item as fc, CMsgClientToGCUnlockItemStyle as fd, CMsgClientToGCUnlockItemStyleResponse as fe, CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle as ff, CMsgClientToGCUnpackBundle as fg, CMsgClientToGCUnpackBundleResponse as fh, CMsgClientToGCUnpackBundleResponse_EUnpackBundle as fi, CMsgClientToGCUnwrapGift as fj, CMsgClientToGCUpdateComicBookStatType as fk, CMsgClientToGCUpdateComicBookStats as fl, CMsgClientToGCUpdateComicBookStats_LanguageStats as fm, CMsgClientToGCUpdateComicBookStats_SingleStat as fn, CMsgClientToGCUpdateFilteredPlayerNote as fo, CMsgClientToGCUpdatePartyBeacon as fp, CMsgClientToGCUpdatePartyBeacon_Action as fq, CMsgClientToGCUploadMatchClip as fr, CMsgClientToGCVerifyFavoritePlayers as fs, CMsgClientToGCVoteForArcana as ft, CMsgClientToGCVoteForArcanaResponse as fu, CMsgClientToGCVoteForArcanaResponse_Result as fv, CMsgClientToGCVoteForMVP as fw, CMsgClientToGCVoteForMVPResponse as fx, CMsgClientToGCWageringRequest as fy, CMsgClientToGCWrapAndDeliverGift as fz, CMsgOverworldTokenQuantity as g, CMsgDOTASubmitTriviaQuestionAnswer as g$, CMsgDOTADestroyLobbyResponse as g0, CMsgDOTADestroyLobbyResponse_Result as g1, CMsgDOTAEmoticonAccessSDO as g2, CMsgDOTAGameAutographReward as g3, CMsgDOTAGameAutographRewardResponse as g4, CMsgDOTAGameAutographRewardResponse_Result as g5, CMsgDOTAGetEventPoints as g6, CMsgDOTAGetEventPointsResponse as g7, CMsgDOTAGetEventPointsResponse_Action as g8, CMsgDOTAGetPeriodicResource as g9, CMsgDOTARedeemItemResponse as gA, CMsgDOTARedeemItemResponse_EResultCode as gB, CMsgDOTAReportsRemainingRequest as gC, CMsgDOTAReportsRemainingResponse as gD, CMsgDOTARequestMatchesResponse as gE, CMsgDOTARequestMatchesResponse_Series as gF, CMsgDOTARequestMatchesSkillLevel as gG, CMsgDOTASelectionPriorityChoiceRequest as gH, CMsgDOTASelectionPriorityChoiceResponse as gI, CMsgDOTASelectionPriorityChoiceResponse_Result as gJ, CMsgDOTASetFavoriteTeam as gK, CMsgDOTASetMatchHistoryAccess as gL, CMsgDOTASetMatchHistoryAccessResponse as gM, CMsgDOTASetProfilePrivacy as gN, CMsgDOTASetProfilePrivacyResponse as gO, CMsgDOTAStartTriviaSession as gP, CMsgDOTAStartTriviaSessionResponse as gQ, CMsgDOTASubmitLobbyMVPVote as gR, CMsgDOTASubmitLobbyMVPVoteResponse as gS, CMsgDOTASubmitPlayerAvoidRequest as gT, CMsgDOTASubmitPlayerAvoidRequestResponse as gU, CMsgDOTASubmitPlayerReport as gV, CMsgDOTASubmitPlayerReportResponse as gW, CMsgDOTASubmitPlayerReportResponseV2 as gX, CMsgDOTASubmitPlayerReportResponseV2_EResult as gY, CMsgDOTASubmitPlayerReportResponse_EResult as gZ, CMsgDOTASubmitPlayerReportV2 as g_, CMsgDOTAGetPeriodicResourceResponse as ga, CMsgDOTAGetPlayerMatchHistory as gb, CMsgDOTAGetPlayerMatchHistoryResponse as gc, CMsgDOTAGetPlayerMatchHistoryResponse_Match as gd, CMsgDOTAGetRecentPlayTimeFriendsRequest as ge, CMsgDOTAGetRecentPlayTimeFriendsResponse as gf, CMsgDOTAKickedFromMatchmakingQueue as gg, CMsgDOTALobbyMVPAwarded as gh, CMsgDOTALobbyRichPresence as gi, CMsgDOTAMatchVotes as gj, CMsgDOTAMatchVotes_PlayerVote as gk, CMsgDOTAMatchmakingStatsRequest as gl, CMsgDOTAMatchmakingStatsResponse as gm, CMsgDOTAMutationList as gn, CMsgDOTAMutationList_Mutation as go, CMsgDOTANotifyAccountFlagsChange as gp, CMsgDOTAPartyRichPresence as gq, CMsgDOTAPartyRichPresence_Member as gr, CMsgDOTAPartyRichPresence_WeekendTourney as gs, CMsgDOTAPeriodicResourceUpdated as gt, CMsgDOTAPopup as gu, CMsgDOTAPopup_PopupID as gv, CMsgDOTAPostGameItemAwardNotification as gw, CMsgDOTAProfileTickets as gx, CMsgDOTAProfileTickets_LeaguePass as gy, CMsgDOTARedeemItem as gz, CMsgMatchMatchmakingStats as h, CMsgGCNotificationsMarkReadRequest as h$, CMsgDOTASubmitTriviaQuestionAnswerResponse as h0, CMsgDOTATriviaCurrentQuestions as h1, CMsgDOTAUnanchorPhoneNumberRequest as h2, CMsgDOTAUnanchorPhoneNumberResponse as h3, CMsgDOTAUnanchorPhoneNumberResponse_Result as h4, CMsgDOTAUpdateMatchManagementStats as h5, CMsgDOTAUpdateMatchmakingStats as h6, CMsgDOTAWelcome as h7, CMsgDOTAWelcome_CExtraMsg as h8, CMsgDevDeleteEventActions as h9, CMsgGCAssertJobData as hA, CMsgGCClientPing as hB, CMsgGCClientVersionUpdated as hC, CMsgGCConCommand as hD, CMsgGCEconSQLWorkItemEmbeddedRollbackData as hE, CMsgGCGetAccountSubscriptionItem as hF, CMsgGCGetAccountSubscriptionItemResponse as hG, CMsgGCGetHeroStandings as hH, CMsgGCGetHeroStandingsResponse as hI, CMsgGCGetHeroStandingsResponse_Hero as hJ, CMsgGCGetHeroStatsHistory as hK, CMsgGCGetHeroStatsHistoryResponse as hL, CMsgGCGetHeroStatsHistoryResponse_EResponse as hM, CMsgGCGetHeroTimedStatsResponse as hN, CMsgGCGetHeroTimedStatsResponse_RankChunkedStats as hO, CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer as hP, CMsgGCItemEditorReleaseReservation as hQ, CMsgGCItemEditorReleaseReservationResponse as hR, CMsgGCItemEditorReservation as hS, CMsgGCItemEditorReservationsRequest as hT, CMsgGCItemEditorReservationsResponse as hU, CMsgGCItemEditorReserveItemDef as hV, CMsgGCItemEditorReserveItemDefResponse as hW, CMsgGCLobbyUpdateBroadcastChannelInfo as hX, CMsgGCMatchDetailsRequest as hY, CMsgGCMatchDetailsResponse as hZ, CMsgGCMultiplexMessage as h_, CMsgDevDeleteEventActionsResponse as ha, CMsgDevGrantEventAction as hb, CMsgDevGrantEventActionResponse as hc, CMsgDevGrantEventPoints as hd, CMsgDevGrantEventPointsResponse as he, CMsgDevNewItemRequest as hf, CMsgDevNewItemRequestResponse as hg, CMsgDevResetEventState as hh, CMsgDevResetEventStateResponse as hi, CMsgDevUnlockAllItemStyles as hj, CMsgDevUnlockAllItemStylesResponse as hk, CMsgDraftTriviaVoteCount as hl, CMsgEconPlayerStrangeCountAdjustment as hm, CMsgEconPlayerStrangeCountAdjustment_CStrangeCountAdjustment as hn, CMsgEventActionData as ho, CMsgEventGoals as hp, CMsgEventGoals_EventGoal as hq, CMsgEventTipsSummaryRequest as hr, CMsgEventTipsSummaryResponse as hs, CMsgEventTipsSummaryResponse_Tipper as ht, CMsgExtractGems as hu, CMsgExtractGemsResponse as hv, CMsgExtractGemsResponse_EExtractGems as hw, CMsgFlipLobbyTeams as hx, CMsgGCAddGiftItem as hy, CMsgGCAdditionalWelcomeMsgList as hz, CMvpData as i, CMsgGCToClientBattlePassRollupTI7_Predictions as i$, CMsgGCNotificationsNotification as i0, CMsgGCNotificationsRequest as i1, CMsgGCNotificationsResponse as i2, CMsgGCNotificationsUpdate as i3, CMsgGCNotificationsUpdate_EResult as i4, CMsgGCPlayerInfoSubmit as i5, CMsgGCPlayerInfoSubmitResponse as i6, CMsgGCPlayerInfoSubmitResponse_EResult as i7, CMsgGCRankedPlayerInfoSubmit as i8, CMsgGCRankedPlayerInfoSubmitResponse as i9, CMsgGCToClientBattlePassRollupFall2016_Bracket as iA, CMsgGCToClientBattlePassRollupFall2016_FantasyChallenge as iB, CMsgGCToClientBattlePassRollupFall2016_PlayerCard as iC, CMsgGCToClientBattlePassRollupFall2016_Predictions as iD, CMsgGCToClientBattlePassRollupFall2016_Questlines as iE, CMsgGCToClientBattlePassRollupFall2016_Wagering as iF, CMsgGCToClientBattlePassRollupInternational2016 as iG, CMsgGCToClientBattlePassRollupInternational2016_Achievements as iH, CMsgGCToClientBattlePassRollupInternational2016_BattleCup as iI, CMsgGCToClientBattlePassRollupInternational2016_Bracket as iJ, CMsgGCToClientBattlePassRollupInternational2016_FantasyChallenge as iK, CMsgGCToClientBattlePassRollupInternational2016_PlayerCard as iL, CMsgGCToClientBattlePassRollupInternational2016_Predictions as iM, CMsgGCToClientBattlePassRollupInternational2016_Questlines as iN, CMsgGCToClientBattlePassRollupInternational2016_Wagering as iO, CMsgGCToClientBattlePassRollupListRequest as iP, CMsgGCToClientBattlePassRollupListResponse as iQ, CMsgGCToClientBattlePassRollupListResponse_EventInfo as iR, CMsgGCToClientBattlePassRollupRequest as iS, CMsgGCToClientBattlePassRollupResponse as iT, CMsgGCToClientBattlePassRollupTI10 as iU, CMsgGCToClientBattlePassRollupTI7 as iV, CMsgGCToClientBattlePassRollupTI7_Achievements as iW, CMsgGCToClientBattlePassRollupTI7_BattleCup as iX, CMsgGCToClientBattlePassRollupTI7_Bracket as iY, CMsgGCToClientBattlePassRollupTI7_FantasyChallenge as iZ, CMsgGCToClientBattlePassRollupTI7_PlayerCard as i_, CMsgGCRankedPlayerInfoSubmitResponse_EResult as ia, CMsgGCRequestStoreSalesData as ib, CMsgGCRequestStoreSalesDataResponse as ic, CMsgGCRequestStoreSalesDataResponse_Price as id, CMsgGCRequestStoreSalesDataUpToDateResponse as ie, CMsgGCRequestSubGCSessionInfo as ig, CMsgGCRequestSubGCSessionInfoResponse as ih, CMsgGCServerVersionUpdated as ii, CMsgGCSetItemPosition as ij, CMsgGCStorePurchaseCancel as ik, CMsgGCStorePurchaseCancelResponse as il, CMsgGCStorePurchaseFinalize as im, CMsgGCStorePurchaseFinalizeResponse as io, CMsgGCStorePurchaseInit as ip, CMsgGCStorePurchaseInitResponse as iq, CMsgGCToClientAccountGuildEventDataUpdated as ir, CMsgGCToClientActiveGuildChallengeUpdated as is, CMsgGCToClientActiveGuildContractsUpdated as it, CMsgGCToClientAggregateMetricsBackoff as iu, CMsgGCToClientApplyRemoteConVars as iv, CMsgGCToClientArcanaVotesUpdate as iw, CMsgGCToClientBattlePassRollupFall2016 as ix, CMsgGCToClientBattlePassRollupFall2016_Achievements as iy, CMsgGCToClientBattlePassRollupFall2016_BattleCup as iz, CAttributeItemDynamicRecipeComponent as j, CMsgGCToClientPurchaseFilteredPlayerSlotResponse_Result as j$, CMsgGCToClientBattlePassRollupTI7_Questlines as j0, CMsgGCToClientBattlePassRollupTI7_Wagering as j1, CMsgGCToClientBattlePassRollupTI8 as j2, CMsgGCToClientBattlePassRollupTI8_Achievements as j3, CMsgGCToClientBattlePassRollupTI8_Bracket as j4, CMsgGCToClientBattlePassRollupTI8_CavernCrawl as j5, CMsgGCToClientBattlePassRollupTI8_FantasyChallenge as j6, CMsgGCToClientBattlePassRollupTI8_PlayerCard as j7, CMsgGCToClientBattlePassRollupTI8_Predictions as j8, CMsgGCToClientBattlePassRollupTI8_Wagering as j9, CMsgGCToClientGetFilteredPlayersResponse as jA, CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry as jB, CMsgGCToClientGetFilteredPlayersResponse_Result as jC, CMsgGCToClientGuildUnderDraftGoldUpdated as jD, CMsgGCToClientHeroStatueCreateResult as jE, CMsgGCToClientInFlightChargesUpdated as jF, CMsgGCToClientInFlightChargesUpdated_ItemCharges as jG, CMsgGCToClientJoinPartyFromBeaconResponse as jH, CMsgGCToClientJoinPartyFromBeaconResponse_EResponse as jI, CMsgGCToClientManageFavoritesResponse as jJ, CMsgGCToClientManageFavoritesResponse_EResponse as jK, CMsgGCToClientMapStatsResponse as jL, CMsgGCToClientMapStatsResponse_EResponse as jM, CMsgGCToClientMatchSignedOut as jN, CMsgGCToClientOverwatchCasesAvailable as jO, CMsgGCToClientOverworldUserDataUpdated as jP, CMsgGCToClientPartyBeaconUpdate as jQ, CMsgGCToClientPartySearchInvite as jR, CMsgGCToClientPartySearchInvites as jS, CMsgGCToClientPlayerBeaconState as jT, CMsgGCToClientPlayerStatsResponse as jU, CMsgGCToClientPlaytestStatus as jV, CMsgGCToClientPollConvarRequest as jW, CMsgGCToClientPollConvarResponse as jX, CMsgGCToClientPollFileRequest as jY, CMsgGCToClientPollFileResponse as jZ, CMsgGCToClientPurchaseFilteredPlayerSlotResponse as j_, CMsgGCToClientBattlePassRollupTI9 as ja, CMsgGCToClientBattlePassRollupWinter2017 as jb, CMsgGCToClientBattlePassRollupWinter2017_Achievements as jc, CMsgGCToClientBattlePassRollupWinter2017_BattleCup as jd, CMsgGCToClientBattlePassRollupWinter2017_Bracket as je, CMsgGCToClientBattlePassRollupWinter2017_FantasyChallenge as jf, CMsgGCToClientBattlePassRollupWinter2017_PlayerCard as jg, CMsgGCToClientBattlePassRollupWinter2017_Predictions as jh, CMsgGCToClientBattlePassRollupWinter2017_Questlines as ji, CMsgGCToClientBattlePassRollupWinter2017_Wagering as jj, CMsgGCToClientCavernCrawlMapPathCompleted as jk, CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo as jl, CMsgGCToClientCavernCrawlMapUpdated as jm, CMsgGCToClientClaimEventActionUsingItemCompleted as jn, CMsgGCToClientCollectorsCacheAvailableDataResponse as jo, CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote as jp, CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteType as jq, CMsgGCToClientCommendNotification as jr, CMsgGCToClientCurrencyPricePoints as js, CMsgGCToClientCurrencyPricePoints_Currency as jt, CMsgGCToClientCustomGamesFriendsPlayedResponse as ju, CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame as jv, CMsgGCToClientEmoticonData as jw, CMsgGCToClientFriendsPlayedCustomGameResponse as jx, CMsgGCToClientGetFavoritePlayersResponse as jy, CMsgGCToClientGetFavoritePlayersResponse_EResponse as jz, CAttributeString as k, CMsgGCToGCPingRequest as k$, CMsgGCToClientQuestProgressUpdated as k0, CMsgGCToClientQuestProgressUpdated_Challenge as k1, CMsgGCToClientRankResponse as k2, CMsgGCToClientRankResponse_EResultCode as k3, CMsgGCToClientRankUpdate as k4, CMsgGCToClientRecordContestVoteResponse as k5, CMsgGCToClientRecordContestVoteResponse_EResult as k6, CMsgGCToClientRemoveFilteredPlayerResponse as k7, CMsgGCToClientRemoveFilteredPlayerResponse_Result as k8, CMsgGCToClientRequestActiveBeaconPartiesResponse as k9, CMsgGCToGCDirtySDOCache as kA, CMsgGCToGCFlushSteamInventoryCache as kB, CMsgGCToGCFlushSteamInventoryCache_Key as kC, CMsgGCToGCForwardAccountDetails as kD, CMsgGCToGCGetInfuxIntervalStats as kE, CMsgGCToGCGetInfuxIntervalStatsResponse as kF, CMsgGCToGCGetUserServerMembers as kG, CMsgGCToGCGetUserServerMembersResponse as kH, CMsgGCToGCGetUserSessionServer as kI, CMsgGCToGCGetUserSessionServerResponse as kJ, CMsgGCToGCGrantAccountRolledItems as kK, CMsgGCToGCGrantAccountRolledItems_Item as kL, CMsgGCToGCGrantAccountRolledItems_Item_AdditionalAuditEntry as kM, CMsgGCToGCGrantAccountRolledItems_Item_DynamicAttribute as kN, CMsgGCToGCGrantSelfMadeItemToAccount as kO, CMsgGCToGCInternalTestMsg as kP, CMsgGCToGCLeaguePredictions as kQ, CMsgGCToGCLoadSessionSOCache as kR, CMsgGCToGCLoadSessionSOCacheResponse as kS, CMsgGCToGCMasterBroadcastMessage as kT, CMsgGCToGCMasterDestroyCache as kU, CMsgGCToGCMasterSubscribeToCache as kV, CMsgGCToGCMasterSubscribeToCacheAsync as kW, CMsgGCToGCMasterSubscribeToCacheResponse as kX, CMsgGCToGCMasterUnsubscribeFromCache as kY, CMsgGCToGCPerformManualOp as kZ, CMsgGCToGCPerformManualOpCompleted as k_, CMsgGCToClientRequestActiveBeaconPartiesResponse_EResponse as ka, CMsgGCToClientRequestDropped as kb, CMsgGCToClientRoadToTIQuestDataUpdated as kc, CMsgGCToClientSocialFeedPostCommentResponse as kd, CMsgGCToClientSocialFeedPostMessageResponse as ke, CMsgGCToClientStoreTransactionCompleted as kf, CMsgGCToClientTournamentItemDrop as kg, CMsgGCToClientTrophyAwarded as kh, CMsgGCToClientUpdateFilteredPlayerNoteResponse as ki, CMsgGCToClientUpdateFilteredPlayerNoteResponse_Result as kj, CMsgGCToClientUploadMatchClipResponse as kk, CMsgGCToClientUploadMatchClipResponse_EResponse as kl, CMsgGCToClientVACReminder as km, CMsgGCToClientVerifyFavoritePlayersResponse as kn, CMsgGCToClientVerifyFavoritePlayersResponse_Result as ko, CMsgGCToClientWageringResponse as kp, CMsgGCToClientWageringUpdate as kq, CMsgGCToGCAddSubscriptionTime as kr, CMsgGCToGCBannedWordListUpdated as ks, CMsgGCToGCBetaDeleteItems as kt, CMsgGCToGCBroadcastConsoleCommand as ku, CMsgGCToGCBroadcastMessageFromSub as kv, CMsgGCToGCCanUseDropRateBonus as kw, CMsgGCToGCClientServerVersionsUpdated as kx, CMsgGCToGCConsoleOutput as ky, CMsgGCToGCConsoleOutput_OutputLine as kz, CBroadcastPostGameDataFrameRequest as l, CMsgLobbyPlaytestDetails as l$, CMsgGCToGCPingResponse as l0, CMsgGCToGCPurchaseSucceeded as l1, CMsgGCToGCRefreshSOCache as l2, CMsgGCToGCReloadServerRegionSettings as l3, CMsgGCToGCSOCacheSubscribe as l4, CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions as l5, CMsgGCToGCSOCacheUnsubscribe as l6, CMsgGCToGCSelfPing as l7, CMsgGCToGCStoreProcessCDKeyTransaction as l8, CMsgGCToGCStoreProcessCDKeyTransactionResponse as l9, CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData as lA, CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData as lB, CMsgHeroGlobalDataRequest as lC, CMsgHeroGlobalDataResponse as lD, CMsgHeroGlobalDataResponse_GraphData as lE, CMsgHeroGlobalDataResponse_HeroDataPerRankChunk as lF, CMsgHeroGlobalDataResponse_WeekData as lG, CMsgInitialQuestionnaireResponse as lH, CMsgInvitationCreated as lI, CMsgInviteToLobby as lJ, CMsgInviteToParty as lK, CMsgItemAcknowledged as lL, CMsgItemAges as lM, CMsgItemAges_MaxItemIDTimestamp as lN, CMsgKickFromParty as lO, CMsgLANServerAvailable as lP, CMsgLeaveParty as lQ, CMsgLeaverState as lR, CMsgLobbyCoachFriendRequest as lS, CMsgLobbyEventGameData as lT, CMsgLobbyEventGameDetails as lU, CMsgLobbyEventPoints as lV, CMsgLobbyEventPoints_AccountPoints as lW, CMsgLobbyInitializationComplete as lX, CMsgLobbyInviteResponse as lY, CMsgLobbyPlayerPlusSubscriptionData as lZ, CMsgLobbyPlayerPlusSubscriptionData_HeroBadge as l_, CMsgGCToGCStoreProcessSettlement as la, CMsgGCToGCStoreProcessSettlementResponse as lb, CMsgGCToGCSubGCStarting as lc, CMsgGCToGCUniverseStartup as ld, CMsgGCToGCUniverseStartupResponse as le, CMsgGCToGCUpdateSQLKeyValue as lf, CMsgGCToGCUpdateSessionStats as lg, CMsgGCToGCUpdateSubscriptionItems as lh, CMsgGCToGCUpdateWelcomeMsg as li, CMsgGCToGCWebAPIAccountChanged as lj, CMsgGCToServerApplyRemoteConVars as lk, CMsgGCToServerSteamLearnAccessTokensChanged as ll, CMsgGCToServerSteamLearnUseHTTP as lm, CMsgGCUpdateSubGCSessionInfo as ln, CMsgGCUpdateSubGCSessionInfo_CMsgUpdate as lo, CMsgGCWatchDownloadedReplay as lp, CMsgGenericResult as lq, CMsgGlobalHeroAverages as lr, CMsgGuildActiveContracts as ls, CMsgGuildChallenge as lt, CMsgGuildContract as lu, CMsgGuildContractSlot as lv, CMsgGuildEventMember as lw, CMsgGuildLeaderboardCombinedResponse as lx, CMsgHeroGlobalDataAllHeroes as ly, CMsgHeroGlobalDataHeroesAlliesAndEnemies as lz, CCommunityClanAnnouncementInfo as m, CMsgRequestCrateEscalationLevel as m$, CMsgLobbyRoadToTIMatchQuestData as m0, CMsgLocalServerFakeLobbyData as m1, CMsgLocalServerGuildData as m2, CMsgLookupMultipleAccountNames as m3, CMsgLookupMultipleAccountNamesResponse as m4, CMsgLookupMultipleAccountNamesResponse_Account as m5, CMsgMatchmakingMatchGroupInfo as m6, CMsgOverworldEncounterChooseHeroData as m7, CMsgOverworldEncounterData as m8, CMsgOverworldEncounterPitFighterRewardData as m9, CMsgPredictionRankings_PredictionLine as mA, CMsgPredictionResults as mB, CMsgPredictionResults_Result as mC, CMsgPredictionResults_ResultBreakdown as mD, CMsgPrivateMetadataKeyRequest as mE, CMsgPrivateMetadataKeyResponse as mF, CMsgProcessTransactionOrder as mG, CMsgProcessTransactionOrder_Item as mH, CMsgProfileRequest as mI, CMsgProfileResponse as mJ, CMsgProfileResponse_EResponse as mK, CMsgProfileResponse_FeaturedHero as mL, CMsgProfileResponse_MatchInfo as mM, CMsgProfileUpdate as mN, CMsgProfileUpdateResponse as mO, CMsgProfileUpdateResponse_Result as mP, CMsgProtoBufHeader as mQ, CMsgPurchaseHeroRandomRelic as mR, CMsgPurchaseHeroRandomRelicResponse as mS, CMsgPurchaseItemWithEventPoints as mT, CMsgPurchaseItemWithEventPointsResponse as mU, CMsgPurchaseItemWithEventPointsResponse_Result as mV, CMsgReadyCheckStatus as mW, CMsgReadyCheckStatus_ReadyMember as mX, CMsgRedeemCode as mY, CMsgRedeemCodeResponse as mZ, CMsgRedeemCodeResponse_EResultCode as m_, CMsgOverworldEncounterProgressData as ma, CMsgOverworldEncounterTokenQuestData as mb, CMsgOverworldEncounterTokenQuestData_Quest as mc, CMsgOverworldEncounterTokenTreasureData as md, CMsgOverworldEncounterTokenTreasureData_RewardOption as me, CMsgOverworldHeroList as mf, CMsgOverworldMatchRewards as mg, CMsgOverworldMatchRewards_Player as mh, CMsgOverworldMinigameCustomData as mi, CMsgOverworldMinigameUserData as mj, CMsgOverworldNode as mk, CMsgOverworldPath as ml, CMsgOverworldTokenCount as mm, CMsgOverworldUserData as mn, CMsgOverworldUserData_MinigameDataEntry as mo, CMsgPartyInviteResponse as mp, CMsgPartyReadyCheckAcknowledge as mq, CMsgPartyReadyCheckRequest as mr, CMsgPartyReadyCheckResponse as ms, CMsgPartySearchPlayer as mt, CMsgPeriodicResourceData as mu, CMsgPlayerConductScorecard as mv, CMsgPlayerConductScorecardRequest as mw, CMsgPlayerConductScorecard_EBehaviorRating as mx, CMsgPredictionRankings as my, CMsgPredictionRankings_Prediction as mz, CCommunityGetClanAnnouncementsRequest as n, CMsgSteamLearnInferenceBackendResponse as n$, CMsgRequestCrateEscalationLevelResponse as n0, CMsgRequestCrateEscalationLevelResponse_EResult as n1, CMsgRequestCrateItems as n2, CMsgRequestCrateItemsResponse as n3, CMsgRequestCrateItemsResponse_EResult as n4, CMsgResetStrangeGemCount as n5, CMsgResetStrangeGemCountResponse as n6, CMsgResetStrangeGemCountResponse_EResetGem as n7, CMsgRoadToTIAssignedQuest as n8, CMsgRoadToTIUserData as n9, CMsgSetItemPositions_ItemPosition as nA, CMsgSocialFeedCommentsRequest as nB, CMsgSocialFeedCommentsResponse as nC, CMsgSocialFeedCommentsResponse_FeedComment as nD, CMsgSocialFeedCommentsResponse_Result as nE, CMsgSocialFeedRequest as nF, CMsgSocialFeedResponse as nG, CMsgSocialFeedResponse_FeedEvent as nH, CMsgSocialFeedResponse_Result as nI, CMsgSortItems as nJ, CMsgSteamLearnAccessTokens as nK, CMsgSteamLearnAccessTokens_CacheDataAccessToken as nL, CMsgSteamLearnAccessTokens_InferenceAccessToken as nM, CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken as nN, CMsgSteamLearnBatchOperationRequest as nO, CMsgSteamLearnBatchOperationResponse as nP, CMsgSteamLearnCacheDataRequest as nQ, CMsgSteamLearnCacheDataResponse as nR, CMsgSteamLearnData as nS, CMsgSteamLearnDataElement as nT, CMsgSteamLearnDataList as nU, CMsgSteamLearnDataObject as nV, CMsgSteamLearnDataSource as nW, CMsgSteamLearnDataSourceDescElement as nX, CMsgSteamLearnDataSourceDescObject as nY, CMsgSteamLearnGetAccessTokensRequest as nZ, CMsgSteamLearnGetAccessTokensResponse as n_, CMsgSDOAssert as na, CMsgSDOAssert_Request as nb, CMsgSDONoMemcached as nc, CMsgSOCacheHaveVersion as nd, CMsgSOCacheSubscribed as ne, CMsgSOCacheSubscribedUpToDate as nf, CMsgSOCacheSubscribed_SubscribedType as ng, CMsgSOCacheSubscriptionCheck as nh, CMsgSOCacheSubscriptionRefresh as ni, CMsgSOCacheUnsubscribed as nj, CMsgSOCacheVersion as nk, CMsgSOIDOwner as nl, CMsgSOMultipleObjects as nm, CMsgSOMultipleObjects_SingleObject as nn, CMsgSOSingleObject as no, CMsgSQLAddDropRateBonus as np, CMsgSQLGCToGCGrantBackpackSlots as nq, CMsgSQLGCToGCRevokeUntrustedGift as nr, CMsgSQLUpgradeBattleBooster as ns, CMsgSerializedSOCache as nt, CMsgSerializedSOCache_Cache as nu, CMsgSerializedSOCache_Cache_Version as nv, CMsgSerializedSOCache_TypeCache as nw, CMsgServerAvailable as nx, CMsgServerUseItem as ny, CMsgSetItemPositions as nz, CCommunityGetClanAnnouncementsResponse as o, CSODOTAPartyInvite as o$, CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput as o0, CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput as o1, CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput as o2, CMsgSteamLearnInferenceBackendResponse_Output as o3, CMsgSteamLearnInferenceBackendResponse_RegressionOutput as o4, CMsgSteamLearnInferenceBackendResponse_Sequence as o5, CMsgSteamLearnInferenceMetadataBackendRequest as o6, CMsgSteamLearnInferenceMetadataRequest as o7, CMsgSteamLearnInferenceMetadataResponse as o8, CMsgSteamLearnInferenceMetadataResponse_AppInfo as o9, CMsgUpgradeLeagueItem as oA, CMsgUpgradeLeagueItemResponse as oB, CMsgUseItem as oC, CMsgUseMultipleItems as oD, CMvpData_MvpDatum as oE, CMvpData_MvpDatum_MvpAccolade as oF, CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType as oG, CProtoItemSocket as oH, CProtoItemSocketAssetModifier as oI, CProtoItemSocketAssetModifierDESERIALIZEFROMSTRINGONLY as oJ, CProtoItemSocketAutograph as oK, CProtoItemSocketColor as oL, CProtoItemSocketEffect as oM, CProtoItemSocketEmpty as oN, CProtoItemSocketSpectator as oO, CProtoItemSocketStaticVisuals as oP, CProtoItemSocketStrange as oQ, CProtoItemSocketStrangeDESERIALIZEFROMSTRINGONLY as oR, CSODOTAGameHeroFavorites as oS, CSODOTALobby as oT, CSODOTALobbyInvite as oU, CSODOTALobbyInvite_LobbyMember as oV, CSODOTALobbyMember as oW, CSODOTALobby_CExtraMsg as oX, CSODOTALobby_LobbyType as oY, CSODOTALobby_State as oZ, CSODOTAParty as o_, CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry as oa, CMsgSteamLearnInferenceMetadataResponse_CompactTable as ob, CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry as oc, CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry as od, CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry as oe, CMsgSteamLearnInferenceMetadataResponse_KMeans as of, CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster as og, CMsgSteamLearnInferenceMetadataResponse_Range as oh, CMsgSteamLearnInferenceMetadataResponse_RowRange as oi, CMsgSteamLearnInferenceMetadataResponse_SequenceTable as oj, CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry as ok, CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry as ol, CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry as om, CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram as on, CMsgSteamLearnInferenceMetadataResponse_StdDev as oo, CMsgSteamLearnInferenceRequest as op, CMsgSteamLearnInferenceResponse as oq, CMsgSteamLearnRegisterDataSourceRequest as or, CMsgSteamLearnRegisterDataSourceResponse as os, CMsgSteamLearnServerInfo as ot, CMsgSteamLearnServerInfo_ProjectInfo as ou, CMsgSteamLearnSnapshotProjectRequest as ov, CMsgSteamLearnSnapshotProjectResponse as ow, CMsgSurvivorsUserData as ox, CMsgSurvivorsUserData_AttributeLevelsEntry as oy, CMsgTalentWinRates as oz, CDOTALobbyMatchQualityData as p, EWeekendTourneyRichPresenceEvent as p$, CSODOTAPartyInvite_PartyMember as p0, CSODOTAPartyMember as p1, CSODOTAParty_State as p2, CSODOTAServerLobby as p3, CSODOTAServerLobbyMember as p4, CSODOTAServerStaticLobby as p5, CSODOTAServerStaticLobbyMember as p6, CSODOTAStaticLobby as p7, CSODOTAStaticLobbyMember as p8, CSOEconGameAccountClient as p9, EGCMsgUseItemResponse as pA, EGCPlatform as pB, EGuildEventAuditAction as pC, EHighPriorityMMState as pD, EItemEditorReservationResult as pE, ELaneSelection as pF, ELaneSelectionFlags as pG, ELobbyMemberCoachRequestState as pH, EMatchBehaviorScoreVariance as pI, EOverworldAuditAction as pJ, EOverworldMinigameAction as pK, EOverworldNodeState as pL, EOverworldPathState as pM, EPartyMatchmakingFlags as pN, EPurchaseHeroRelicResult as pO, EReadyCheckRequestResult as pP, EReadyCheckStatus as pQ, ESourceEngine as pR, ESteamLearnCacheDataResult as pS, ESteamLearnDataType as pT, ESteamLearnGetAccessTokensResult as pU, ESteamLearnInferenceMetadataResult as pV, ESteamLearnInferenceResult as pW, ESteamLearnSnapshotProjectResult as pX, ESteammLearnRegisterDataSourceResult as pY, ESupportEventRequestResult as pZ, EUnderDraftResponse as p_, CSOEconItem as pa, CWorkshopGetContributorsRequest as pb, CWorkshopGetContributorsResponse as pc, CWorkshopGetItemDailyRevenueRequest as pd, CWorkshopGetItemDailyRevenueResponse as pe, CWorkshopGetItemDailyRevenueResponse_CountryDailyRevenue as pf, CWorkshopGetPackageDailyRevenueRequest as pg, CWorkshopGetPackageDailyRevenueResponse as ph, CWorkshopGetPackageDailyRevenueResponse_CountryDailyRevenue as pi, CWorkshopPopulateItemDescriptionsRequest as pj, CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock as pk, CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription as pl, CWorkshopSetItemPaymentRulesRequest as pm, CWorkshopSetItemPaymentRulesRequest_PartnerItemPaymentRule as pn, CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule as po, CWorkshopSetItemPaymentRulesRequest_WorkshopItemPaymentRule as pp, CWorkshopSetItemPaymentRulesResponse as pq, DOTAWatchReplayType as pr, ECustomGameInstallStatus as ps, EDOTADraftTriviaAnswerResult as pt, EDOTATriviaAnswerResult as pu, EDevEventRequestResult as pv, EGCEconBaseMsg as pw, EGCItemMsg as px, EGCMsgInitiateTradeResponse as py, EGCMsgResponse as pz, CGCMsgCompressedMsgToClient as q, cMsgClientToGCOverworldDevGrantTokensResponse_EResponseFromJSON as q$, GCProtoBufMsgSrc as q0, LobbyDotaPauseSetting as q1, LobbyDotaTVDelay as q2, PartnerAccountType as q3, type SteamLearn as q4, SteamLearnClientImpl as q5, SteamLearnServiceName as q6, cMsgActivatePlusFreeTrialResponse_ResultFromJSON as q7, cMsgActivatePlusFreeTrialResponse_ResultToJSON as q8, cMsgAddItemToSocketResponse_EAddGemFromJSON as q9, cMsgClientToGCDeleteStickerbookPageResponse_EResponseToJSON as qA, cMsgClientToGCGetDPCFavoritesResponse_EResponseFromJSON as qB, cMsgClientToGCGetDPCFavoritesResponse_EResponseToJSON as qC, cMsgClientToGCGetHeroStickersResponse_EResponseFromJSON as qD, cMsgClientToGCGetHeroStickersResponse_EResponseToJSON as qE, cMsgClientToGCGetInFlightItemChargesResponse_EResponseFromJSON as qF, cMsgClientToGCGetInFlightItemChargesResponse_EResponseToJSON as qG, cMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponseFromJSON as qH, cMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponseToJSON as qI, cMsgClientToGCGetOWMatchDetailsResponse_EResponseFromJSON as qJ, cMsgClientToGCGetOWMatchDetailsResponse_EResponseToJSON as qK, cMsgClientToGCGetStickerbookResponse_EResponseFromJSON as qL, cMsgClientToGCGetStickerbookResponse_EResponseToJSON as qM, cMsgClientToGCManageFavorites_ActionFromJSON as qN, cMsgClientToGCManageFavorites_ActionToJSON as qO, cMsgClientToGCNameItemResponse_ENameItemFromJSON as qP, cMsgClientToGCNameItemResponse_ENameItemToJSON as qQ, cMsgClientToGCOpenPlayerCardPackResponse_ResultFromJSON as qR, cMsgClientToGCOpenPlayerCardPackResponse_ResultToJSON as qS, cMsgClientToGCOrderStickerbookTeamPageResponse_EResponseFromJSON as qT, cMsgClientToGCOrderStickerbookTeamPageResponse_EResponseToJSON as qU, cMsgClientToGCOverworldClaimEncounterRewardResponse_EResponseFromJSON as qV, cMsgClientToGCOverworldClaimEncounterRewardResponse_EResponseToJSON as qW, cMsgClientToGCOverworldCompletePathResponse_EResponseFromJSON as qX, cMsgClientToGCOverworldCompletePathResponse_EResponseToJSON as qY, cMsgClientToGCOverworldDevClearInventoryResponse_EResponseFromJSON as qZ, cMsgClientToGCOverworldDevClearInventoryResponse_EResponseToJSON as q_, cMsgAddItemToSocketResponse_EAddGemToJSON as qa, cMsgAddSocketResponse_EAddSocketFromJSON as qb, cMsgAddSocketResponse_EAddSocketToJSON as qc, cMsgClientToGCCavernCrawlClaimRoomResponse_ResultFromJSON as qd, cMsgClientToGCCavernCrawlClaimRoomResponse_ResultToJSON as qe, cMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_ResultFromJSON as qf, cMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_ResultToJSON as qg, cMsgClientToGCCavernCrawlRequestMapStateResponse_ResultFromJSON as qh, cMsgClientToGCCavernCrawlRequestMapStateResponse_ResultToJSON as qi, cMsgClientToGCCavernCrawlUseItemOnPathResponse_ResultFromJSON as qj, cMsgClientToGCCavernCrawlUseItemOnPathResponse_ResultToJSON as qk, cMsgClientToGCCavernCrawlUseItemOnRoomResponse_ResultFromJSON as ql, cMsgClientToGCCavernCrawlUseItemOnRoomResponse_ResultToJSON as qm, cMsgClientToGCClaimLeaderboardRewardsResponse_EResponseFromJSON as qn, cMsgClientToGCClaimLeaderboardRewardsResponse_EResponseToJSON as qo, cMsgClientToGCClaimSwagResponse_EResponseFromJSON as qp, cMsgClientToGCClaimSwagResponse_EResponseToJSON as qq, cMsgClientToGCCreatePlayerCardPackResponse_ResultFromJSON as qr, cMsgClientToGCCreatePlayerCardPackResponse_ResultToJSON as qs, cMsgClientToGCCreateStaticRecipeResponse_EResponseFromJSON as qt, cMsgClientToGCCreateStaticRecipeResponse_EResponseToJSON as qu, cMsgClientToGCCreateStickerbookPageResponse_EResponseFromJSON as qv, cMsgClientToGCCreateStickerbookPageResponse_EResponseToJSON as qw, cMsgClientToGCCreateTeamPlayerCardPackResponse_ResultFromJSON as qx, cMsgClientToGCCreateTeamPlayerCardPackResponse_ResultToJSON as qy, cMsgClientToGCDeleteStickerbookPageResponse_EResponseFromJSON as qz, CGCMsgGetIPLocationResponse as r, cMsgClientToGCSelectCompendiumInGamePredictionResponse_EResultFromJSON as r$, cMsgClientToGCOverworldDevGrantTokensResponse_EResponseToJSON as r0, cMsgClientToGCOverworldDevResetAllResponse_EResponseFromJSON as r1, cMsgClientToGCOverworldDevResetAllResponse_EResponseToJSON as r2, cMsgClientToGCOverworldDevResetNodeResponse_EResponseFromJSON as r3, cMsgClientToGCOverworldDevResetNodeResponse_EResponseToJSON as r4, cMsgClientToGCOverworldFeedbackResponse_EResponseFromJSON as r5, cMsgClientToGCOverworldFeedbackResponse_EResponseToJSON as r6, cMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormatFromJSON as r7, cMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormatToJSON as r8, cMsgClientToGCOverworldGetUserDataResponse_EResponseFromJSON as r9, cMsgClientToGCRecalibrateMMRResponse_EResponseToJSON as rA, cMsgClientToGCRecyclePlayerCardResponse_ResultFromJSON as rB, cMsgClientToGCRecyclePlayerCardResponse_ResultToJSON as rC, cMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttributeFromJSON as rD, cMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttributeToJSON as rE, cMsgClientToGCRequestAccountGuildEventDataResponse_EResponseFromJSON as rF, cMsgClientToGCRequestAccountGuildEventDataResponse_EResponseToJSON as rG, cMsgClientToGCRequestActiveGuildChallengeResponse_EResponseFromJSON as rH, cMsgClientToGCRequestActiveGuildChallengeResponse_EResponseToJSON as rI, cMsgClientToGCRequestActiveGuildContractsResponse_EResponseFromJSON as rJ, cMsgClientToGCRequestActiveGuildContractsResponse_EResponseToJSON as rK, cMsgClientToGCRequestContestVotesResponse_EResponseFromJSON as rL, cMsgClientToGCRequestContestVotesResponse_EResponseToJSON as rM, cMsgClientToGCRequestGuildEventMembersResponse_EResponseFromJSON as rN, cMsgClientToGCRequestGuildEventMembersResponse_EResponseToJSON as rO, cMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponseFromJSON as rP, cMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponseToJSON as rQ, cMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponseFromJSON as rR, cMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponseToJSON as rS, cMsgClientToGCRequestReporterUpdatesResponse_EResponseFromJSON as rT, cMsgClientToGCRequestReporterUpdatesResponse_EResponseToJSON as rU, cMsgClientToGCRoadToTIGetActiveQuestResponse_EResponseFromJSON as rV, cMsgClientToGCRoadToTIGetActiveQuestResponse_EResponseToJSON as rW, cMsgClientToGCRoadToTIGetQuestsResponse_EResponseFromJSON as rX, cMsgClientToGCRoadToTIGetQuestsResponse_EResponseToJSON as rY, cMsgClientToGCRoadToTIUseItemResponse_EResponseFromJSON as rZ, cMsgClientToGCRoadToTIUseItemResponse_EResponseToJSON as r_, cMsgClientToGCOverworldGetUserDataResponse_EResponseToJSON as ra, cMsgClientToGCOverworldGiftTokensResponse_EResponseFromJSON as rb, cMsgClientToGCOverworldGiftTokensResponse_EResponseToJSON as rc, cMsgClientToGCOverworldMinigameActionResponse_EResponseFromJSON as rd, cMsgClientToGCOverworldMinigameActionResponse_EResponseToJSON as re, cMsgClientToGCOverworldMoveToNodeResponse_EResponseFromJSON as rf, cMsgClientToGCOverworldMoveToNodeResponse_EResponseToJSON as rg, cMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponseFromJSON as rh, cMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponseToJSON as ri, cMsgClientToGCOverworldTradeTokensResponse_EResponseFromJSON as rj, cMsgClientToGCOverworldTradeTokensResponse_EResponseToJSON as rk, cMsgClientToGCOverworldVisitEncounterResponse_EResponseFromJSON as rl, cMsgClientToGCOverworldVisitEncounterResponse_EResponseToJSON as rm, cMsgClientToGCPackBundleResponse_EPackBundleFromJSON as rn, cMsgClientToGCPackBundleResponse_EPackBundleToJSON as ro, cMsgClientToGCPlaceCollectionStickersResponse_EResponseFromJSON as rp, cMsgClientToGCPlaceCollectionStickersResponse_EResponseToJSON as rq, cMsgClientToGCPlaceStickersResponse_EResponseFromJSON as rr, cMsgClientToGCPlaceStickersResponse_EResponseToJSON as rs, cMsgClientToGCPlayerCardSpecificPurchaseResponse_ResultFromJSON as rt, cMsgClientToGCPlayerCardSpecificPurchaseResponse_ResultToJSON as ru, cMsgClientToGCPurchaseChargeCostItemsResponse_EResponseFromJSON as rv, cMsgClientToGCPurchaseChargeCostItemsResponse_EResponseToJSON as rw, cMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponseFromJSON as rx, cMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponseToJSON as ry, cMsgClientToGCRecalibrateMMRResponse_EResponseFromJSON as rz, CGCStorePurchaseInitLineItem as s, cMsgGCToClientGetFilteredPlayersResponse_ResultFromJSON as s$, cMsgClientToGCSelectCompendiumInGamePredictionResponse_EResultToJSON as s0, cMsgClientToGCSelectGuildContractResponse_EResponseFromJSON as s1, cMsgClientToGCSelectGuildContractResponse_EResponseToJSON as s2, cMsgClientToGCSetDPCFavoriteStateResponse_EResponseFromJSON as s3, cMsgClientToGCSetDPCFavoriteStateResponse_EResponseToJSON as s4, cMsgClientToGCSetEventActiveSeasonIDResponse_EResponseFromJSON as s5, cMsgClientToGCSetEventActiveSeasonIDResponse_EResponseToJSON as s6, cMsgClientToGCSetFavoritePageResponse_EResponseFromJSON as s7, cMsgClientToGCSetFavoritePageResponse_EResponseToJSON as s8, cMsgClientToGCSetHeroStickerResponse_EResponseFromJSON as s9, cMsgDOTAPopup_PopupIDToJSON as sA, cMsgDOTARedeemItemResponse_EResultCodeFromJSON as sB, cMsgDOTARedeemItemResponse_EResultCodeToJSON as sC, cMsgDOTARequestMatchesSkillLevelFromJSON as sD, cMsgDOTARequestMatchesSkillLevelToJSON as sE, cMsgDOTASelectionPriorityChoiceResponse_ResultFromJSON as sF, cMsgDOTASelectionPriorityChoiceResponse_ResultToJSON as sG, cMsgDOTASubmitPlayerReportResponseV2_EResultFromJSON as sH, cMsgDOTASubmitPlayerReportResponseV2_EResultToJSON as sI, cMsgDOTASubmitPlayerReportResponse_EResultFromJSON as sJ, cMsgDOTASubmitPlayerReportResponse_EResultToJSON as sK, cMsgDOTAUnanchorPhoneNumberResponse_ResultFromJSON as sL, cMsgDOTAUnanchorPhoneNumberResponse_ResultToJSON as sM, cMsgExtractGemsResponse_EExtractGemsFromJSON as sN, cMsgExtractGemsResponse_EExtractGemsToJSON as sO, cMsgGCGetHeroStatsHistoryResponse_EResponseFromJSON as sP, cMsgGCGetHeroStatsHistoryResponse_EResponseToJSON as sQ, cMsgGCNotificationsUpdate_EResultFromJSON as sR, cMsgGCNotificationsUpdate_EResultToJSON as sS, cMsgGCPlayerInfoSubmitResponse_EResultFromJSON as sT, cMsgGCPlayerInfoSubmitResponse_EResultToJSON as sU, cMsgGCRankedPlayerInfoSubmitResponse_EResultFromJSON as sV, cMsgGCRankedPlayerInfoSubmitResponse_EResultToJSON as sW, cMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteTypeFromJSON as sX, cMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteTypeToJSON as sY, cMsgGCToClientGetFavoritePlayersResponse_EResponseFromJSON as sZ, cMsgGCToClientGetFavoritePlayersResponse_EResponseToJSON as s_, cMsgClientToGCSetHeroStickerResponse_EResponseToJSON as sa, cMsgClientToGCSetItemStyleResponse_ESetStyleFromJSON as sb, cMsgClientToGCSetItemStyleResponse_ESetStyleToJSON as sc, cMsgClientToGCSubmitOWConvictionResponse_EResponseFromJSON as sd, cMsgClientToGCSubmitOWConvictionResponse_EResponseToJSON as se, cMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponseFromJSON as sf, cMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponseToJSON as sg, cMsgClientToGCSurvivorsGameTelemetryDataResponse_EResponseFromJSON as sh, cMsgClientToGCSurvivorsGameTelemetryDataResponse_EResponseToJSON as si, cMsgClientToGCUnlockItemStyleResponse_EUnlockStyleFromJSON as sj, cMsgClientToGCUnlockItemStyleResponse_EUnlockStyleToJSON as sk, cMsgClientToGCUnpackBundleResponse_EUnpackBundleFromJSON as sl, cMsgClientToGCUnpackBundleResponse_EUnpackBundleToJSON as sm, cMsgClientToGCUpdateComicBookStatTypeFromJSON as sn, cMsgClientToGCUpdateComicBookStatTypeToJSON as so, cMsgClientToGCUpdatePartyBeacon_ActionFromJSON as sp, cMsgClientToGCUpdatePartyBeacon_ActionToJSON as sq, cMsgClientToGCVoteForArcanaResponse_ResultFromJSON as sr, cMsgClientToGCVoteForArcanaResponse_ResultToJSON as ss, cMsgDOTAAnchorPhoneNumberResponse_ResultFromJSON as st, cMsgDOTAAnchorPhoneNumberResponse_ResultToJSON as su, cMsgDOTADestroyLobbyResponse_ResultFromJSON as sv, cMsgDOTADestroyLobbyResponse_ResultToJSON as sw, cMsgDOTAGameAutographRewardResponse_ResultFromJSON as sx, cMsgDOTAGameAutographRewardResponse_ResultToJSON as sy, cMsgDOTAPopup_PopupIDFromJSON as sz, CGCStoreRechargeRedirectLineItem as t, eGCBaseMsgFromJSON as t$, cMsgGCToClientGetFilteredPlayersResponse_ResultToJSON as t0, cMsgGCToClientJoinPartyFromBeaconResponse_EResponseFromJSON as t1, cMsgGCToClientJoinPartyFromBeaconResponse_EResponseToJSON as t2, cMsgGCToClientManageFavoritesResponse_EResponseFromJSON as t3, cMsgGCToClientManageFavoritesResponse_EResponseToJSON as t4, cMsgGCToClientMapStatsResponse_EResponseFromJSON as t5, cMsgGCToClientMapStatsResponse_EResponseToJSON as t6, cMsgGCToClientPurchaseFilteredPlayerSlotResponse_ResultFromJSON as t7, cMsgGCToClientPurchaseFilteredPlayerSlotResponse_ResultToJSON as t8, cMsgGCToClientRankResponse_EResultCodeFromJSON as t9, cMsgResetStrangeGemCountResponse_EResetGemToJSON as tA, cMsgSocialFeedCommentsResponse_ResultFromJSON as tB, cMsgSocialFeedCommentsResponse_ResultToJSON as tC, cMsgSocialFeedResponse_ResultFromJSON as tD, cMsgSocialFeedResponse_ResultToJSON as tE, cMvpData_MvpDatum_MvpAccolade_MvpAccoladeTypeFromJSON as tF, cMvpData_MvpDatum_MvpAccolade_MvpAccoladeTypeToJSON as tG, cSODOTALobby_LobbyTypeFromJSON as tH, cSODOTALobby_LobbyTypeToJSON as tI, cSODOTALobby_StateFromJSON as tJ, cSODOTALobby_StateToJSON as tK, cSODOTAParty_StateFromJSON as tL, cSODOTAParty_StateToJSON as tM, dOTAWatchReplayTypeFromJSON as tN, dOTAWatchReplayTypeToJSON as tO, eCustomGameInstallStatusFromJSON as tP, eCustomGameInstallStatusToJSON as tQ, eDOTADraftTriviaAnswerResultFromJSON as tR, eDOTADraftTriviaAnswerResultToJSON as tS, eDOTAGCMsgFromJSON as tT, eDOTAGCMsgToJSON as tU, eDOTATriviaAnswerResultFromJSON as tV, eDOTATriviaAnswerResultToJSON as tW, eDevEventRequestResultFromJSON as tX, eDevEventRequestResultToJSON as tY, eGCBaseClientMsgFromJSON as tZ, eGCBaseClientMsgToJSON as t_, cMsgGCToClientRankResponse_EResultCodeToJSON as ta, cMsgGCToClientRecordContestVoteResponse_EResultFromJSON as tb, cMsgGCToClientRecordContestVoteResponse_EResultToJSON as tc, cMsgGCToClientRemoveFilteredPlayerResponse_ResultFromJSON as td, cMsgGCToClientRemoveFilteredPlayerResponse_ResultToJSON as te, cMsgGCToClientRequestActiveBeaconPartiesResponse_EResponseFromJSON as tf, cMsgGCToClientRequestActiveBeaconPartiesResponse_EResponseToJSON as tg, cMsgGCToClientUpdateFilteredPlayerNoteResponse_ResultFromJSON as th, cMsgGCToClientUpdateFilteredPlayerNoteResponse_ResultToJSON as ti, cMsgGCToClientUploadMatchClipResponse_EResponseFromJSON as tj, cMsgGCToClientUploadMatchClipResponse_EResponseToJSON as tk, cMsgPlayerConductScorecard_EBehaviorRatingFromJSON as tl, cMsgPlayerConductScorecard_EBehaviorRatingToJSON as tm, cMsgProfileResponse_EResponseFromJSON as tn, cMsgProfileResponse_EResponseToJSON as to, cMsgProfileUpdateResponse_ResultFromJSON as tp, cMsgProfileUpdateResponse_ResultToJSON as tq, cMsgPurchaseItemWithEventPointsResponse_ResultFromJSON as tr, cMsgPurchaseItemWithEventPointsResponse_ResultToJSON as ts, cMsgRedeemCodeResponse_EResultCodeFromJSON as tt, cMsgRedeemCodeResponse_EResultCodeToJSON as tu, cMsgRequestCrateEscalationLevelResponse_EResultFromJSON as tv, cMsgRequestCrateEscalationLevelResponse_EResultToJSON as tw, cMsgRequestCrateItemsResponse_EResultFromJSON as tx, cMsgRequestCrateItemsResponse_EResultToJSON as ty, cMsgResetStrangeGemCountResponse_EResetGemFromJSON as tz, CGCSystemMsgGetAccountDetails as u, eUnderDraftResponseFromJSON as u$, eGCBaseMsgToJSON as u0, eGCEconBaseMsgFromJSON as u1, eGCEconBaseMsgToJSON as u2, eGCItemMsgFromJSON as u3, eGCItemMsgToJSON as u4, eGCMsgInitiateTradeResponseFromJSON as u5, eGCMsgInitiateTradeResponseToJSON as u6, eGCMsgResponseFromJSON as u7, eGCMsgResponseToJSON as u8, eGCMsgUseItemResponseFromJSON as u9, ePartyMatchmakingFlagsToJSON as uA, ePurchaseHeroRelicResultFromJSON as uB, ePurchaseHeroRelicResultToJSON as uC, eReadyCheckRequestResultFromJSON as uD, eReadyCheckRequestResultToJSON as uE, eReadyCheckStatusFromJSON as uF, eReadyCheckStatusToJSON as uG, eSOMsgFromJSON as uH, eSOMsgToJSON as uI, eSourceEngineFromJSON as uJ, eSourceEngineToJSON as uK, eSteamLearnCacheDataResultFromJSON as uL, eSteamLearnCacheDataResultToJSON as uM, eSteamLearnDataTypeFromJSON as uN, eSteamLearnDataTypeToJSON as uO, eSteamLearnGetAccessTokensResultFromJSON as uP, eSteamLearnGetAccessTokensResultToJSON as uQ, eSteamLearnInferenceMetadataResultFromJSON as uR, eSteamLearnInferenceMetadataResultToJSON as uS, eSteamLearnInferenceResultFromJSON as uT, eSteamLearnInferenceResultToJSON as uU, eSteamLearnSnapshotProjectResultFromJSON as uV, eSteamLearnSnapshotProjectResultToJSON as uW, eSteammLearnRegisterDataSourceResultFromJSON as uX, eSteammLearnRegisterDataSourceResultToJSON as uY, eSupportEventRequestResultFromJSON as uZ, eSupportEventRequestResultToJSON as u_, eGCMsgUseItemResponseToJSON as ua, eGCPlatformFromJSON as ub, eGCPlatformToJSON as uc, eGuildEventAuditActionFromJSON as ud, eGuildEventAuditActionToJSON as ue, eHighPriorityMMStateFromJSON as uf, eHighPriorityMMStateToJSON as ug, eItemEditorReservationResultFromJSON as uh, eItemEditorReservationResultToJSON as ui, eLaneSelectionFlagsFromJSON as uj, eLaneSelectionFlagsToJSON as uk, eLaneSelectionFromJSON as ul, eLaneSelectionToJSON as um, eLobbyMemberCoachRequestStateFromJSON as un, eLobbyMemberCoachRequestStateToJSON as uo, eMatchBehaviorScoreVarianceFromJSON as up, eMatchBehaviorScoreVarianceToJSON as uq, eOverworldAuditActionFromJSON as ur, eOverworldAuditActionToJSON as us, eOverworldMinigameActionFromJSON as ut, eOverworldMinigameActionToJSON as uu, eOverworldNodeStateFromJSON as uv, eOverworldNodeStateToJSON as uw, eOverworldPathStateFromJSON as ux, eOverworldPathStateToJSON as uy, ePartyMatchmakingFlagsFromJSON as uz, CGCSystemMsgGetAccountDetailsResponse as v, eUnderDraftResponseToJSON as v0, eWeekendTourneyRichPresenceEventFromJSON as v1, eWeekendTourneyRichPresenceEventToJSON as v2, gCConnectionStatusFromJSON as v3, gCConnectionStatusToJSON as v4, gCProtoBufMsgSrcFromJSON as v5, gCProtoBufMsgSrcToJSON as v6, lobbyDotaPauseSettingFromJSON as v7, lobbyDotaPauseSettingToJSON as v8, lobbyDotaTVDelayFromJSON as v9, lobbyDotaTVDelayToJSON as va, partnerAccountTypeFromJSON as vb, partnerAccountTypeToJSON as vc, CGCToGCMsgMasterAck as w, CGCToGCMsgMasterAckResponse as x, CGCToGCMsgMasterAck_Process as y, CGCToGCMsgMasterStartupComplete as z };
+export { CMsgAdditionalLobbyStartupAccountData_PingWheelMessageRange as $, CGCToGCMsgMasterStartupComplete_GCInfo as A, CGCToGCMsgRouted as B, CMsgClientWelcome as C, CGCToGCMsgRoutedReply as D, EDOTAGCMsg as E, CIPLocationInfo as F, GCConnectionStatus as G, CLobbyBroadcastChannelInfo as H, CLobbyGuildChallenge as I, CLobbyGuildDetails as J, CLobbyTeamDetails as K, CLobbyTimedRewardDetails as L, CMatchPlayerTimedStatAverages as M, CMatchPlayerTimedStatStdDeviations as N, CMsgAbandonCurrentGame as O, CMsgAccountGuildEventData as P, CMsgActivatePlusFreeTrialResponse as Q, CMsgActivatePlusFreeTrialResponse_Result as R, CMsgAddItemToSocket as S, CMsgAddItemToSocketData as T, CMsgAddItemToSocketResponse as U, CMsgAddItemToSocketResponse_EAddGem as V, CMsgAddSocket as W, CMsgAddSocketResponse as X, CMsgAddSocketResponse_EAddSocket as Y, CMsgAdditionalLobbyStartupAccountData as Z, CMsgAdditionalLobbyStartupAccountData_ChatWheelMessageRange as _, EGCBaseClientMsg as a, CMsgClientToGCCreateStaticRecipe_Item as a$, CMsgAdjustItemEquippedState as a0, CMsgApplyAutograph as a1, CMsgApplyEggEssence as a2, CMsgApplyPennantUpgrade as a3, CMsgApplyRemoteConVars as a4, CMsgApplyRemoteConVars_ConVar as a5, CMsgApplyStrangePart as a6, CMsgApplyTeamToPracticeLobby as a7, CMsgBalancedShuffleLobby as a8, CMsgBannedWordList as a9, CMsgClientToGCCavernCrawlUseItemOnPathResponse_Result as aA, CMsgClientToGCCavernCrawlUseItemOnRoom as aB, CMsgClientToGCCavernCrawlUseItemOnRoomResponse as aC, CMsgClientToGCCavernCrawlUseItemOnRoomResponse_Result as aD, CMsgClientToGCChinaSSAAcceptedRequest as aE, CMsgClientToGCChinaSSAAcceptedResponse as aF, CMsgClientToGCChinaSSAURLRequest as aG, CMsgClientToGCChinaSSAURLResponse as aH, CMsgClientToGCClaimEventActionUsingItem as aI, CMsgClientToGCClaimEventActionUsingItemResponse as aJ, CMsgClientToGCClaimLeaderboardRewards as aK, CMsgClientToGCClaimLeaderboardRewardsResponse as aL, CMsgClientToGCClaimLeaderboardRewardsResponse_EResponse as aM, CMsgClientToGCClaimSwag as aN, CMsgClientToGCClaimSwagResponse as aO, CMsgClientToGCClaimSwagResponse_EResponse as aP, CMsgClientToGCCollectorsCacheAvailableDataRequest as aQ, CMsgClientToGCCreateHeroStatue as aR, CMsgClientToGCCreatePlayerCardPack as aS, CMsgClientToGCCreatePlayerCardPackResponse as aT, CMsgClientToGCCreatePlayerCardPackResponse_Result as aU, CMsgClientToGCCreateStaticRecipe as aV, CMsgClientToGCCreateStaticRecipeResponse as aW, CMsgClientToGCCreateStaticRecipeResponse_AdditionalOutput as aX, CMsgClientToGCCreateStaticRecipeResponse_EResponse as aY, CMsgClientToGCCreateStaticRecipeResponse_InputError as aZ, CMsgClientToGCCreateStaticRecipeResponse_OutputItem as a_, CMsgBotGameCreate as aa, CMsgClientHello as ab, CMsgClientPingData as ac, CMsgClientSuspended as ad, CMsgClientToGCAcknowledgeReporterUpdates as ae, CMsgClientToGCAggregateMetrics as af, CMsgClientToGCAggregateMetrics_SingleMetric as ag, CMsgClientToGCApplyGemCombiner as ah, CMsgClientToGCCancelUnfinalizedTransactions as ai, CMsgClientToGCCancelUnfinalizedTransactionsResponse as aj, CMsgClientToGCCavernCrawlClaimRoom as ak, CMsgClientToGCCavernCrawlClaimRoomResponse as al, CMsgClientToGCCavernCrawlClaimRoomResponse_Result as am, CMsgClientToGCCavernCrawlGetClaimedRoomCount as an, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse as ao, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant as ap, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_Result as aq, CMsgClientToGCCavernCrawlRequestMapState as ar, CMsgClientToGCCavernCrawlRequestMapStateResponse as as, CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem as at, CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant as au, CMsgClientToGCCavernCrawlRequestMapStateResponse_Result as av, CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge as aw, CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap as ax, CMsgClientToGCCavernCrawlUseItemOnPath as ay, CMsgClientToGCCavernCrawlUseItemOnPathResponse as az, EGCBaseMsg as b, CMsgClientToGCLookupAccountNameResponse as b$, CMsgClientToGCCreateStickerbookPageRequest as b0, CMsgClientToGCCreateStickerbookPageResponse as b1, CMsgClientToGCCreateStickerbookPageResponse_EResponse as b2, CMsgClientToGCCreateTeamPlayerCardPack as b3, CMsgClientToGCCreateTeamPlayerCardPackResponse as b4, CMsgClientToGCCreateTeamPlayerCardPackResponse_Result as b5, CMsgClientToGCCustomGamesFriendsPlayedRequest as b6, CMsgClientToGCDeleteStickerbookPageRequest as b7, CMsgClientToGCDeleteStickerbookPageResponse as b8, CMsgClientToGCDeleteStickerbookPageResponse_EResponse as b9, CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse as bA, CMsgClientToGCGetOWMatchDetails as bB, CMsgClientToGCGetOWMatchDetailsResponse as bC, CMsgClientToGCGetOWMatchDetailsResponse_EResponse as bD, CMsgClientToGCGetOWMatchDetailsResponse_Marker as bE, CMsgClientToGCGetProfileCard as bF, CMsgClientToGCGetProfileCardStats as bG, CMsgClientToGCGetProfileTickets as bH, CMsgClientToGCGetQuestProgress as bI, CMsgClientToGCGetQuestProgressResponse as bJ, CMsgClientToGCGetQuestProgressResponse_Challenge as bK, CMsgClientToGCGetQuestProgressResponse_Quest as bL, CMsgClientToGCGetStickerbookRequest as bM, CMsgClientToGCGetStickerbookResponse as bN, CMsgClientToGCGetStickerbookResponse_EResponse as bO, CMsgClientToGCGetTrophyList as bP, CMsgClientToGCGetTrophyListResponse as bQ, CMsgClientToGCGetTrophyListResponse_Trophy as bR, CMsgClientToGCH264Unsupported as bS, CMsgClientToGCHasPlayerVotedForMVP as bT, CMsgClientToGCHasPlayerVotedForMVPResponse as bU, CMsgClientToGCIntegrityStatus as bV, CMsgClientToGCIntegrityStatus_keyvalue as bW, CMsgClientToGCJoinPartyFromBeacon as bX, CMsgClientToGCJoinPlaytest as bY, CMsgClientToGCJoinPlaytestResponse as bZ, CMsgClientToGCLookupAccountName as b_, CMsgClientToGCEmoticonDataRequest as ba, CMsgClientToGCEquipItems as bb, CMsgClientToGCEquipItemsResponse as bc, CMsgClientToGCFriendsPlayedCustomGameRequest as bd, CMsgClientToGCGetAllHeroOrder as be, CMsgClientToGCGetAllHeroOrderResponse as bf, CMsgClientToGCGetAllHeroProgress as bg, CMsgClientToGCGetAllHeroProgressResponse as bh, CMsgClientToGCGetDPCFavorites as bi, CMsgClientToGCGetDPCFavoritesResponse as bj, CMsgClientToGCGetDPCFavoritesResponse_EResponse as bk, CMsgClientToGCGetDPCFavoritesResponse_Favorite as bl, CMsgClientToGCGetEventGoals as bm, CMsgClientToGCGetFavoritePlayers as bn, CMsgClientToGCGetFilteredPlayers as bo, CMsgClientToGCGetGiftPermissions as bp, CMsgClientToGCGetGiftPermissionsResponse as bq, CMsgClientToGCGetGiftPermissionsResponse_FriendPermission as br, CMsgClientToGCGetHeroStickers as bs, CMsgClientToGCGetHeroStickersResponse as bt, CMsgClientToGCGetHeroStickersResponse_EResponse as bu, CMsgClientToGCGetInFlightItemCharges as bv, CMsgClientToGCGetInFlightItemChargesResponse as bw, CMsgClientToGCGetInFlightItemChargesResponse_EResponse as bx, CMsgClientToGCGetLimitedItemPurchaseQuantity as by, CMsgClientToGCGetLimitedItemPurchaseQuantityResponse as bz, ESOMsg as c, CMsgClientToGCOverworldVisitEncounterResponse_EResponse as c$, CMsgClientToGCMMInfo as c0, CMsgClientToGCMVPVoteTimeout as c1, CMsgClientToGCMVPVoteTimeoutResponse as c2, CMsgClientToGCManageFavorites as c3, CMsgClientToGCManageFavorites_Action as c4, CMsgClientToGCMapStatsRequest as c5, CMsgClientToGCNameItem as c6, CMsgClientToGCNameItemResponse as c7, CMsgClientToGCNameItemResponse_ENameItem as c8, CMsgClientToGCNewBloomGift as c9, CMsgClientToGCOverworldFeedback as cA, CMsgClientToGCOverworldFeedbackResponse as cB, CMsgClientToGCOverworldFeedbackResponse_EResponse as cC, CMsgClientToGCOverworldGetDynamicImage as cD, CMsgClientToGCOverworldGetDynamicImageResponse as cE, CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat as cF, CMsgClientToGCOverworldGetDynamicImageResponse_Image as cG, CMsgClientToGCOverworldGetUserData as cH, CMsgClientToGCOverworldGetUserDataResponse as cI, CMsgClientToGCOverworldGetUserDataResponse_EResponse as cJ, CMsgClientToGCOverworldGiftTokens as cK, CMsgClientToGCOverworldGiftTokensResponse as cL, CMsgClientToGCOverworldGiftTokensResponse_EResponse as cM, CMsgClientToGCOverworldMinigameAction as cN, CMsgClientToGCOverworldMinigameActionResponse as cO, CMsgClientToGCOverworldMinigameActionResponse_EResponse as cP, CMsgClientToGCOverworldMoveToNode as cQ, CMsgClientToGCOverworldMoveToNodeResponse as cR, CMsgClientToGCOverworldMoveToNodeResponse_EResponse as cS, CMsgClientToGCOverworldRequestTokensNeededByFriend as cT, CMsgClientToGCOverworldRequestTokensNeededByFriendResponse as cU, CMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponse as cV, CMsgClientToGCOverworldTradeTokens as cW, CMsgClientToGCOverworldTradeTokensResponse as cX, CMsgClientToGCOverworldTradeTokensResponse_EResponse as cY, CMsgClientToGCOverworldVisitEncounter as cZ, CMsgClientToGCOverworldVisitEncounterResponse as c_, CMsgClientToGCNewBloomGiftResponse as ca, CMsgClientToGCOpenPlayerCardPack as cb, CMsgClientToGCOpenPlayerCardPackResponse as cc, CMsgClientToGCOpenPlayerCardPackResponse_Result as cd, CMsgClientToGCOrderStickerbookTeamPageRequest as ce, CMsgClientToGCOrderStickerbookTeamPageResponse as cf, CMsgClientToGCOrderStickerbookTeamPageResponse_EResponse as cg, CMsgClientToGCOverwatchReplayError as ch, CMsgClientToGCOverworldClaimEncounterReward as ci, CMsgClientToGCOverworldClaimEncounterRewardResponse as cj, CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse as ck, CMsgClientToGCOverworldCompletePath as cl, CMsgClientToGCOverworldCompletePathResponse as cm, CMsgClientToGCOverworldCompletePathResponse_EResponse as cn, CMsgClientToGCOverworldDevClearInventory as co, CMsgClientToGCOverworldDevClearInventoryResponse as cp, CMsgClientToGCOverworldDevClearInventoryResponse_EResponse as cq, CMsgClientToGCOverworldDevGrantTokens as cr, CMsgClientToGCOverworldDevGrantTokensResponse as cs, CMsgClientToGCOverworldDevGrantTokensResponse_EResponse as ct, CMsgClientToGCOverworldDevResetAll as cu, CMsgClientToGCOverworldDevResetAllResponse as cv, CMsgClientToGCOverworldDevResetAllResponse_EResponse as cw, CMsgClientToGCOverworldDevResetNode as cx, CMsgClientToGCOverworldDevResetNodeResponse as cy, CMsgClientToGCOverworldDevResetNodeResponse_EResponse as cz, CExtraMsgBlock as d, CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse as d$, CMsgClientToGCPackBundle as d0, CMsgClientToGCPackBundleResponse as d1, CMsgClientToGCPackBundleResponse_EPackBundle as d2, CMsgClientToGCPlaceCollectionStickersRequest as d3, CMsgClientToGCPlaceCollectionStickersRequest_Slot as d4, CMsgClientToGCPlaceCollectionStickersResponse as d5, CMsgClientToGCPlaceCollectionStickersResponse_EResponse as d6, CMsgClientToGCPlaceStickersRequest as d7, CMsgClientToGCPlaceStickersRequest_StickerItem as d8, CMsgClientToGCPlaceStickersResponse as d9, CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute as dA, CMsgClientToGCRequestAccountGuildEventData as dB, CMsgClientToGCRequestAccountGuildEventDataResponse as dC, CMsgClientToGCRequestAccountGuildEventDataResponse_EResponse as dD, CMsgClientToGCRequestActiveBeaconParties as dE, CMsgClientToGCRequestActiveGuildChallenge as dF, CMsgClientToGCRequestActiveGuildChallengeResponse as dG, CMsgClientToGCRequestActiveGuildChallengeResponse_EResponse as dH, CMsgClientToGCRequestActiveGuildContracts as dI, CMsgClientToGCRequestActiveGuildContractsResponse as dJ, CMsgClientToGCRequestActiveGuildContractsResponse_EResponse as dK, CMsgClientToGCRequestArcanaVotesRemaining as dL, CMsgClientToGCRequestArcanaVotesRemainingResponse as dM, CMsgClientToGCRequestContestVotes as dN, CMsgClientToGCRequestContestVotesResponse as dO, CMsgClientToGCRequestContestVotesResponse_EResponse as dP, CMsgClientToGCRequestContestVotesResponse_ItemVote as dQ, CMsgClientToGCRequestEventPointLogResponseV2 as dR, CMsgClientToGCRequestEventPointLogResponseV2_LogEntry as dS, CMsgClientToGCRequestEventPointLogV2 as dT, CMsgClientToGCRequestGuildEventMembers as dU, CMsgClientToGCRequestGuildEventMembersResponse as dV, CMsgClientToGCRequestGuildEventMembersResponse_EResponse as dW, CMsgClientToGCRequestPlayerHeroRecentAccomplishments as dX, CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse as dY, CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponse as dZ, CMsgClientToGCRequestPlayerRecentAccomplishments as d_, CMsgClientToGCPlaceStickersResponse_EResponse as da, CMsgClientToGCPlayerCardSpecificPurchaseRequest as db, CMsgClientToGCPlayerCardSpecificPurchaseResponse as dc, CMsgClientToGCPlayerCardSpecificPurchaseResponse_Result as dd, CMsgClientToGCPlayerStatsRequest as de, CMsgClientToGCPublishUserStat as df, CMsgClientToGCPurchaseChargeCostItems as dg, CMsgClientToGCPurchaseChargeCostItemsResponse as dh, CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse as di, CMsgClientToGCPurchaseChargeCostItems_Item as dj, CMsgClientToGCPurchaseFilteredPlayerSlot as dk, CMsgClientToGCPurchaseLabyrinthBlessings as dl, CMsgClientToGCPurchaseLabyrinthBlessingsResponse as dm, CMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponse as dn, CMsgClientToGCRankRequest as dp, CMsgClientToGCRecalibrateMMR as dq, CMsgClientToGCRecalibrateMMRResponse as dr, CMsgClientToGCRecalibrateMMRResponse_EResponse as ds, CMsgClientToGCRecordContestVote as dt, CMsgClientToGCRecyclePlayerCard as du, CMsgClientToGCRecyclePlayerCardResponse as dv, CMsgClientToGCRecyclePlayerCardResponse_Result as dw, CMsgClientToGCRemoveFilteredPlayer as dx, CMsgClientToGCRemoveItemAttribute as dy, CMsgClientToGCRemoveItemAttributeResponse as dz, CSOEconItemAttribute as e, CMsgClientToGCTeammateStatsRequest as e$, CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponse as e0, CMsgClientToGCRequestPlusWeeklyChallengeResult as e1, CMsgClientToGCRequestPlusWeeklyChallengeResultResponse as e2, CMsgClientToGCRequestReporterUpdates as e3, CMsgClientToGCRequestReporterUpdatesResponse as e4, CMsgClientToGCRequestReporterUpdatesResponse_EResponse as e5, CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate as e6, CMsgClientToGCRequestSlarkGameResult as e7, CMsgClientToGCRequestSlarkGameResultResponse as e8, CMsgClientToGCRequestSteamDatagramTicket as e9, CMsgClientToGCSetFavoritePageResponse as eA, CMsgClientToGCSetFavoritePageResponse_EResponse as eB, CMsgClientToGCSetHeroSticker as eC, CMsgClientToGCSetHeroStickerResponse as eD, CMsgClientToGCSetHeroStickerResponse_EResponse as eE, CMsgClientToGCSetItemInventoryCategory as eF, CMsgClientToGCSetItemStyle as eG, CMsgClientToGCSetItemStyleResponse as eH, CMsgClientToGCSetItemStyleResponse_ESetStyle as eI, CMsgClientToGCSetProfileCardSlots as eJ, CMsgClientToGCSetProfileCardSlots_CardSlot as eK, CMsgClientToGCSocialFeedPostCommentRequest as eL, CMsgClientToGCSocialFeedPostMessageRequest as eM, CMsgClientToGCStartWatchingOverwatch as eN, CMsgClientToGCStopWatchingOverwatch as eO, CMsgClientToGCSubmitDraftTriviaMatchAnswer as eP, CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse as eQ, CMsgClientToGCSubmitOWConviction as eR, CMsgClientToGCSubmitOWConvictionResponse as eS, CMsgClientToGCSubmitOWConvictionResponse_EResponse as eT, CMsgClientToGCSubmitPlayerMatchSurvey as eU, CMsgClientToGCSubmitPlayerMatchSurveyResponse as eV, CMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponse as eW, CMsgClientToGCSurvivorsGameTelemetryData as eX, CMsgClientToGCSurvivorsGameTelemetryDataResponse as eY, CMsgClientToGCSurvivorsGameTelemetryDataResponse_EResponse as eZ, CMsgClientToGCSurvivorsPowerUpTelemetryData as e_, CMsgClientToGCRequestSteamDatagramTicketResponse as ea, CMsgClientToGCRoadToTIDevForceQuest as eb, CMsgClientToGCRoadToTIGetActiveQuest as ec, CMsgClientToGCRoadToTIGetActiveQuestResponse as ed, CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse as ee, CMsgClientToGCRoadToTIGetQuests as ef, CMsgClientToGCRoadToTIGetQuestsResponse as eg, CMsgClientToGCRoadToTIGetQuestsResponse_EResponse as eh, CMsgClientToGCRoadToTIUseItem as ei, CMsgClientToGCRoadToTIUseItemResponse as ej, CMsgClientToGCRoadToTIUseItemResponse_EResponse as ek, CMsgClientToGCSelectCompendiumInGamePrediction as el, CMsgClientToGCSelectCompendiumInGamePredictionResponse as em, CMsgClientToGCSelectCompendiumInGamePredictionResponse_EResult as en, CMsgClientToGCSelectCompendiumInGamePrediction_Prediction as eo, CMsgClientToGCSelectGuildContract as ep, CMsgClientToGCSelectGuildContractResponse as eq, CMsgClientToGCSelectGuildContractResponse_EResponse as er, CMsgClientToGCSetBannedHeroes as es, CMsgClientToGCSetDPCFavoriteState as et, CMsgClientToGCSetDPCFavoriteStateResponse as eu, CMsgClientToGCSetDPCFavoriteStateResponse_EResponse as ev, CMsgClientToGCSetEventActiveSeasonID as ew, CMsgClientToGCSetEventActiveSeasonIDResponse as ex, CMsgClientToGCSetEventActiveSeasonIDResponse_EResponse as ey, CMsgClientToGCSetFavoritePage as ez, CSOEconItemEquipped as f, CMsgDOTACompendiumDataRequest as f$, CMsgClientToGCTeammateStatsResponse as f0, CMsgClientToGCTeammateStatsResponse_TeammateStat as f1, CMsgClientToGCTransferSeasonalMMRRequest as f2, CMsgClientToGCTransferSeasonalMMRResponse as f3, CMsgClientToGCUnderDraftBuy as f4, CMsgClientToGCUnderDraftBuyResponse as f5, CMsgClientToGCUnderDraftRedeemReward as f6, CMsgClientToGCUnderDraftRedeemRewardResponse as f7, CMsgClientToGCUnderDraftRequest as f8, CMsgClientToGCUnderDraftReroll as f9, CMsgClientToGCVoteForArcanaResponse as fA, CMsgClientToGCVoteForArcanaResponse_Result as fB, CMsgClientToGCVoteForMVP as fC, CMsgClientToGCVoteForMVPResponse as fD, CMsgClientToGCWageringRequest as fE, CMsgClientToGCWrapAndDeliverGift as fF, CMsgClientToGCWrapAndDeliverGiftResponse as fG, CMsgClientWelcome_Location as fH, CMsgClientsRejoinChatChannels as fI, CMsgConnectionStatus as fJ, CMsgConsumeEventSupportGrantItem as fK, CMsgConsumeEventSupportGrantItemResponse as fL, CMsgCraftStatue as fM, CMsgCraftingResponse as fN, CMsgCreateSpectatorLobby as fO, CMsgCustomGameInstallStatus as fP, CMsgDOTAAnchorPhoneNumberRequest as fQ, CMsgDOTAAnchorPhoneNumberResponse as fR, CMsgDOTAAnchorPhoneNumberResponse_Result as fS, CMsgDOTACancelGroupInvites as fT, CMsgDOTAClaimEventAction as fU, CMsgDOTAClaimEventActionData as fV, CMsgDOTAClaimEventActionData_GrantItemGiftData as fW, CMsgDOTAClientToGCQuickStatsRequest as fX, CMsgDOTAClientToGCQuickStatsResponse as fY, CMsgDOTAClientToGCQuickStatsResponse_SimpleStats as fZ, CMsgDOTACompendiumData as f_, CMsgClientToGCUnderDraftRerollResponse as fa, CMsgClientToGCUnderDraftResponse as fb, CMsgClientToGCUnderDraftRollBackBench as fc, CMsgClientToGCUnderDraftRollBackBenchResponse as fd, CMsgClientToGCUnderDraftSell as fe, CMsgClientToGCUnderDraftSellResponse as ff, CMsgClientToGCUnlockCrate as fg, CMsgClientToGCUnlockCrateResponse as fh, CMsgClientToGCUnlockCrateResponse_Item as fi, CMsgClientToGCUnlockItemStyle as fj, CMsgClientToGCUnlockItemStyleResponse as fk, CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle as fl, CMsgClientToGCUnpackBundle as fm, CMsgClientToGCUnpackBundleResponse as fn, CMsgClientToGCUnpackBundleResponse_EUnpackBundle as fo, CMsgClientToGCUnwrapGift as fp, CMsgClientToGCUpdateComicBookStatType as fq, CMsgClientToGCUpdateComicBookStats as fr, CMsgClientToGCUpdateComicBookStats_LanguageStats as fs, CMsgClientToGCUpdateComicBookStats_SingleStat as ft, CMsgClientToGCUpdateFilteredPlayerNote as fu, CMsgClientToGCUpdatePartyBeacon as fv, CMsgClientToGCUpdatePartyBeacon_Action as fw, CMsgClientToGCUploadMatchClip as fx, CMsgClientToGCVerifyFavoritePlayers as fy, CMsgClientToGCVoteForArcana as fz, CMsgOverworldTokenQuantity as g, CMsgDOTASetProfilePrivacy as g$, CMsgDOTACompendiumDataResponse as g0, CMsgDOTACompendiumRemoveAllSelections as g1, CMsgDOTACompendiumRemoveAllSelectionsResponse as g2, CMsgDOTACompendiumSelection as g3, CMsgDOTACompendiumSelectionResponse as g4, CMsgDOTACustomGameClientFinishedLoading as g5, CMsgDOTACustomGameListenServerStartedLoading as g6, CMsgDOTADestroyLobbyRequest as g7, CMsgDOTADestroyLobbyResponse as g8, CMsgDOTADestroyLobbyResponse_Result as g9, CMsgDOTANotifyAccountFlagsChange as gA, CMsgDOTAPartyMemberSetCoach as gB, CMsgDOTAPartyRichPresence as gC, CMsgDOTAPartyRichPresence_Member as gD, CMsgDOTAPartyRichPresence_WeekendTourney as gE, CMsgDOTAPeriodicResourceUpdated as gF, CMsgDOTAPopup as gG, CMsgDOTAPopup_PopupID as gH, CMsgDOTAPostGameItemAwardNotification as gI, CMsgDOTAProfileTickets as gJ, CMsgDOTAProfileTickets_LeaguePass as gK, CMsgDOTARedeemItem as gL, CMsgDOTARedeemItemResponse as gM, CMsgDOTARedeemItemResponse_EResultCode as gN, CMsgDOTAReportsRemainingRequest as gO, CMsgDOTAReportsRemainingResponse as gP, CMsgDOTARequestMatchesResponse as gQ, CMsgDOTARequestMatchesResponse_Series as gR, CMsgDOTARequestMatchesSkillLevel as gS, CMsgDOTASelectionPriorityChoiceRequest as gT, CMsgDOTASelectionPriorityChoiceResponse as gU, CMsgDOTASelectionPriorityChoiceResponse_Result as gV, CMsgDOTASetFavoriteTeam as gW, CMsgDOTASetGroupLeader as gX, CMsgDOTASetGroupOpenStatus as gY, CMsgDOTASetMatchHistoryAccess as gZ, CMsgDOTASetMatchHistoryAccessResponse as g_, CMsgDOTAEmoticonAccessSDO as ga, CMsgDOTAGameAutographReward as gb, CMsgDOTAGameAutographRewardResponse as gc, CMsgDOTAGameAutographRewardResponse_Result as gd, CMsgDOTAGetEventPoints as ge, CMsgDOTAGetEventPointsResponse as gf, CMsgDOTAGetEventPointsResponse_Action as gg, CMsgDOTAGetPeriodicResource as gh, CMsgDOTAGetPeriodicResourceResponse as gi, CMsgDOTAGetPlayerMatchHistory as gj, CMsgDOTAGetPlayerMatchHistoryResponse as gk, CMsgDOTAGetPlayerMatchHistoryResponse_Match as gl, CMsgDOTAGetRecentPlayTimeFriendsRequest as gm, CMsgDOTAGetRecentPlayTimeFriendsResponse as gn, CMsgDOTAGroupMergeInvite as go, CMsgDOTAGroupMergeReply as gp, CMsgDOTAGroupMergeResponse as gq, CMsgDOTAKickedFromMatchmakingQueue as gr, CMsgDOTALobbyMVPAwarded as gs, CMsgDOTALobbyRichPresence as gt, CMsgDOTAMatchVotes as gu, CMsgDOTAMatchVotes_PlayerVote as gv, CMsgDOTAMatchmakingStatsRequest as gw, CMsgDOTAMatchmakingStatsResponse as gx, CMsgDOTAMutationList as gy, CMsgDOTAMutationList_Mutation as gz, CMsgMatchMatchmakingStats as h, CMsgGCGetHeroStatsHistoryResponse as h$, CMsgDOTASetProfilePrivacyResponse as h0, CMsgDOTAStartTriviaSession as h1, CMsgDOTAStartTriviaSessionResponse as h2, CMsgDOTASubmitLobbyMVPVote as h3, CMsgDOTASubmitLobbyMVPVoteResponse as h4, CMsgDOTASubmitPlayerAvoidRequest as h5, CMsgDOTASubmitPlayerAvoidRequestResponse as h6, CMsgDOTASubmitPlayerReport as h7, CMsgDOTASubmitPlayerReportResponse as h8, CMsgDOTASubmitPlayerReportResponseV2 as h9, CMsgEconPlayerStrangeCountAdjustment as hA, CMsgEconPlayerStrangeCountAdjustment_CStrangeCountAdjustment as hB, CMsgEventActionData as hC, CMsgEventGoals as hD, CMsgEventGoals_EventGoal as hE, CMsgEventTipsSummaryRequest as hF, CMsgEventTipsSummaryResponse as hG, CMsgEventTipsSummaryResponse_Tipper as hH, CMsgExtractGems as hI, CMsgExtractGemsResponse as hJ, CMsgExtractGemsResponse_EExtractGems as hK, CMsgFlipLobbyTeams as hL, CMsgFriendPracticeLobbyListRequest as hM, CMsgFriendPracticeLobbyListResponse as hN, CMsgGCAddGiftItem as hO, CMsgGCAdditionalWelcomeMsgList as hP, CMsgGCAssertJobData as hQ, CMsgGCClientPing as hR, CMsgGCClientVersionUpdated as hS, CMsgGCConCommand as hT, CMsgGCEconSQLWorkItemEmbeddedRollbackData as hU, CMsgGCGetAccountSubscriptionItem as hV, CMsgGCGetAccountSubscriptionItemResponse as hW, CMsgGCGetHeroStandings as hX, CMsgGCGetHeroStandingsResponse as hY, CMsgGCGetHeroStandingsResponse_Hero as hZ, CMsgGCGetHeroStatsHistory as h_, CMsgDOTASubmitPlayerReportResponseV2_EResult as ha, CMsgDOTASubmitPlayerReportResponse_EResult as hb, CMsgDOTASubmitPlayerReportV2 as hc, CMsgDOTASubmitTriviaQuestionAnswer as hd, CMsgDOTASubmitTriviaQuestionAnswerResponse as he, CMsgDOTATriviaCurrentQuestions as hf, CMsgDOTAUnanchorPhoneNumberRequest as hg, CMsgDOTAUnanchorPhoneNumberResponse as hh, CMsgDOTAUnanchorPhoneNumberResponse_Result as hi, CMsgDOTAUpdateMatchManagementStats as hj, CMsgDOTAUpdateMatchmakingStats as hk, CMsgDOTAWelcome as hl, CMsgDOTAWelcome_CExtraMsg as hm, CMsgDevDeleteEventActions as hn, CMsgDevDeleteEventActionsResponse as ho, CMsgDevGrantEventAction as hp, CMsgDevGrantEventActionResponse as hq, CMsgDevGrantEventPoints as hr, CMsgDevGrantEventPointsResponse as hs, CMsgDevNewItemRequest as ht, CMsgDevNewItemRequestResponse as hu, CMsgDevResetEventState as hv, CMsgDevResetEventStateResponse as hw, CMsgDevUnlockAllItemStyles as hx, CMsgDevUnlockAllItemStylesResponse as hy, CMsgDraftTriviaVoteCount as hz, CMvpData as i, CMsgGCToClientBattlePassRollupInternational2016_PlayerCard as i$, CMsgGCGetHeroStatsHistoryResponse_EResponse as i0, CMsgGCGetHeroTimedStatsResponse as i1, CMsgGCGetHeroTimedStatsResponse_RankChunkedStats as i2, CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer as i3, CMsgGCItemEditorReleaseReservation as i4, CMsgGCItemEditorReleaseReservationResponse as i5, CMsgGCItemEditorReservation as i6, CMsgGCItemEditorReservationsRequest as i7, CMsgGCItemEditorReservationsResponse as i8, CMsgGCItemEditorReserveItemDef as i9, CMsgGCSetItemPosition as iA, CMsgGCStorePurchaseCancel as iB, CMsgGCStorePurchaseCancelResponse as iC, CMsgGCStorePurchaseFinalize as iD, CMsgGCStorePurchaseFinalizeResponse as iE, CMsgGCStorePurchaseInit as iF, CMsgGCStorePurchaseInitResponse as iG, CMsgGCToClientAccountGuildEventDataUpdated as iH, CMsgGCToClientActiveGuildChallengeUpdated as iI, CMsgGCToClientActiveGuildContractsUpdated as iJ, CMsgGCToClientAggregateMetricsBackoff as iK, CMsgGCToClientApplyRemoteConVars as iL, CMsgGCToClientArcanaVotesUpdate as iM, CMsgGCToClientBattlePassRollupFall2016 as iN, CMsgGCToClientBattlePassRollupFall2016_Achievements as iO, CMsgGCToClientBattlePassRollupFall2016_BattleCup as iP, CMsgGCToClientBattlePassRollupFall2016_Bracket as iQ, CMsgGCToClientBattlePassRollupFall2016_FantasyChallenge as iR, CMsgGCToClientBattlePassRollupFall2016_PlayerCard as iS, CMsgGCToClientBattlePassRollupFall2016_Predictions as iT, CMsgGCToClientBattlePassRollupFall2016_Questlines as iU, CMsgGCToClientBattlePassRollupFall2016_Wagering as iV, CMsgGCToClientBattlePassRollupInternational2016 as iW, CMsgGCToClientBattlePassRollupInternational2016_Achievements as iX, CMsgGCToClientBattlePassRollupInternational2016_BattleCup as iY, CMsgGCToClientBattlePassRollupInternational2016_Bracket as iZ, CMsgGCToClientBattlePassRollupInternational2016_FantasyChallenge as i_, CMsgGCItemEditorReserveItemDefResponse as ia, CMsgGCLobbyUpdateBroadcastChannelInfo as ib, CMsgGCMatchDetailsRequest as ic, CMsgGCMatchDetailsResponse as id, CMsgGCMultiplexMessage as ie, CMsgGCNotificationsMarkReadRequest as ig, CMsgGCNotificationsNotification as ih, CMsgGCNotificationsRequest as ii, CMsgGCNotificationsResponse as ij, CMsgGCNotificationsUpdate as ik, CMsgGCNotificationsUpdate_EResult as il, CMsgGCPlayerInfoSubmit as im, CMsgGCPlayerInfoSubmitResponse as io, CMsgGCPlayerInfoSubmitResponse_EResult as ip, CMsgGCRankedPlayerInfoSubmit as iq, CMsgGCRankedPlayerInfoSubmitResponse as ir, CMsgGCRankedPlayerInfoSubmitResponse_EResult as is, CMsgGCRequestStoreSalesData as it, CMsgGCRequestStoreSalesDataResponse as iu, CMsgGCRequestStoreSalesDataResponse_Price as iv, CMsgGCRequestStoreSalesDataUpToDateResponse as iw, CMsgGCRequestSubGCSessionInfo as ix, CMsgGCRequestSubGCSessionInfoResponse as iy, CMsgGCServerVersionUpdated as iz, CAttributeItemDynamicRecipeComponent as j, CMsgGCToClientMapStatsResponse as j$, CMsgGCToClientBattlePassRollupInternational2016_Predictions as j0, CMsgGCToClientBattlePassRollupInternational2016_Questlines as j1, CMsgGCToClientBattlePassRollupInternational2016_Wagering as j2, CMsgGCToClientBattlePassRollupListRequest as j3, CMsgGCToClientBattlePassRollupListResponse as j4, CMsgGCToClientBattlePassRollupListResponse_EventInfo as j5, CMsgGCToClientBattlePassRollupRequest as j6, CMsgGCToClientBattlePassRollupResponse as j7, CMsgGCToClientBattlePassRollupTI10 as j8, CMsgGCToClientBattlePassRollupTI7 as j9, CMsgGCToClientCavernCrawlMapPathCompleted as jA, CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo as jB, CMsgGCToClientCavernCrawlMapUpdated as jC, CMsgGCToClientClaimEventActionUsingItemCompleted as jD, CMsgGCToClientCollectorsCacheAvailableDataResponse as jE, CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote as jF, CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteType as jG, CMsgGCToClientCommendNotification as jH, CMsgGCToClientCurrencyPricePoints as jI, CMsgGCToClientCurrencyPricePoints_Currency as jJ, CMsgGCToClientCustomGamesFriendsPlayedResponse as jK, CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame as jL, CMsgGCToClientEmoticonData as jM, CMsgGCToClientFriendsPlayedCustomGameResponse as jN, CMsgGCToClientGetFavoritePlayersResponse as jO, CMsgGCToClientGetFavoritePlayersResponse_EResponse as jP, CMsgGCToClientGetFilteredPlayersResponse as jQ, CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry as jR, CMsgGCToClientGetFilteredPlayersResponse_Result as jS, CMsgGCToClientGuildUnderDraftGoldUpdated as jT, CMsgGCToClientHeroStatueCreateResult as jU, CMsgGCToClientInFlightChargesUpdated as jV, CMsgGCToClientInFlightChargesUpdated_ItemCharges as jW, CMsgGCToClientJoinPartyFromBeaconResponse as jX, CMsgGCToClientJoinPartyFromBeaconResponse_EResponse as jY, CMsgGCToClientManageFavoritesResponse as jZ, CMsgGCToClientManageFavoritesResponse_EResponse as j_, CMsgGCToClientBattlePassRollupTI7_Achievements as ja, CMsgGCToClientBattlePassRollupTI7_BattleCup as jb, CMsgGCToClientBattlePassRollupTI7_Bracket as jc, CMsgGCToClientBattlePassRollupTI7_FantasyChallenge as jd, CMsgGCToClientBattlePassRollupTI7_PlayerCard as je, CMsgGCToClientBattlePassRollupTI7_Predictions as jf, CMsgGCToClientBattlePassRollupTI7_Questlines as jg, CMsgGCToClientBattlePassRollupTI7_Wagering as jh, CMsgGCToClientBattlePassRollupTI8 as ji, CMsgGCToClientBattlePassRollupTI8_Achievements as jj, CMsgGCToClientBattlePassRollupTI8_Bracket as jk, CMsgGCToClientBattlePassRollupTI8_CavernCrawl as jl, CMsgGCToClientBattlePassRollupTI8_FantasyChallenge as jm, CMsgGCToClientBattlePassRollupTI8_PlayerCard as jn, CMsgGCToClientBattlePassRollupTI8_Predictions as jo, CMsgGCToClientBattlePassRollupTI8_Wagering as jp, CMsgGCToClientBattlePassRollupTI9 as jq, CMsgGCToClientBattlePassRollupWinter2017 as jr, CMsgGCToClientBattlePassRollupWinter2017_Achievements as js, CMsgGCToClientBattlePassRollupWinter2017_BattleCup as jt, CMsgGCToClientBattlePassRollupWinter2017_Bracket as ju, CMsgGCToClientBattlePassRollupWinter2017_FantasyChallenge as jv, CMsgGCToClientBattlePassRollupWinter2017_PlayerCard as jw, CMsgGCToClientBattlePassRollupWinter2017_Predictions as jx, CMsgGCToClientBattlePassRollupWinter2017_Questlines as jy, CMsgGCToClientBattlePassRollupWinter2017_Wagering as jz, CAttributeString as k, CMsgGCToGCGetUserServerMembersResponse as k$, CMsgGCToClientMapStatsResponse_EResponse as k0, CMsgGCToClientMatchSignedOut as k1, CMsgGCToClientOverwatchCasesAvailable as k2, CMsgGCToClientOverworldUserDataUpdated as k3, CMsgGCToClientPartyBeaconUpdate as k4, CMsgGCToClientPartySearchInvite as k5, CMsgGCToClientPartySearchInvites as k6, CMsgGCToClientPlayerBeaconState as k7, CMsgGCToClientPlayerStatsResponse as k8, CMsgGCToClientPlaytestStatus as k9, CMsgGCToClientTournamentItemDrop as kA, CMsgGCToClientTrophyAwarded as kB, CMsgGCToClientUpdateFilteredPlayerNoteResponse as kC, CMsgGCToClientUpdateFilteredPlayerNoteResponse_Result as kD, CMsgGCToClientUploadMatchClipResponse as kE, CMsgGCToClientUploadMatchClipResponse_EResponse as kF, CMsgGCToClientVACReminder as kG, CMsgGCToClientVerifyFavoritePlayersResponse as kH, CMsgGCToClientVerifyFavoritePlayersResponse_Result as kI, CMsgGCToClientWageringResponse as kJ, CMsgGCToClientWageringUpdate as kK, CMsgGCToGCAddSubscriptionTime as kL, CMsgGCToGCBannedWordListUpdated as kM, CMsgGCToGCBetaDeleteItems as kN, CMsgGCToGCBroadcastConsoleCommand as kO, CMsgGCToGCBroadcastMessageFromSub as kP, CMsgGCToGCCanUseDropRateBonus as kQ, CMsgGCToGCClientServerVersionsUpdated as kR, CMsgGCToGCConsoleOutput as kS, CMsgGCToGCConsoleOutput_OutputLine as kT, CMsgGCToGCDirtySDOCache as kU, CMsgGCToGCFlushSteamInventoryCache as kV, CMsgGCToGCFlushSteamInventoryCache_Key as kW, CMsgGCToGCForwardAccountDetails as kX, CMsgGCToGCGetInfuxIntervalStats as kY, CMsgGCToGCGetInfuxIntervalStatsResponse as kZ, CMsgGCToGCGetUserServerMembers as k_, CMsgGCToClientPollConvarRequest as ka, CMsgGCToClientPollConvarResponse as kb, CMsgGCToClientPollFileRequest as kc, CMsgGCToClientPollFileResponse as kd, CMsgGCToClientPurchaseFilteredPlayerSlotResponse as ke, CMsgGCToClientPurchaseFilteredPlayerSlotResponse_Result as kf, CMsgGCToClientQuestProgressUpdated as kg, CMsgGCToClientQuestProgressUpdated_Challenge as kh, CMsgGCToClientRankResponse as ki, CMsgGCToClientRankResponse_EResultCode as kj, CMsgGCToClientRankUpdate as kk, CMsgGCToClientRecordContestVoteResponse as kl, CMsgGCToClientRecordContestVoteResponse_EResult as km, CMsgGCToClientRemoveFilteredPlayerResponse as kn, CMsgGCToClientRemoveFilteredPlayerResponse_Result as ko, CMsgGCToClientRequestActiveBeaconPartiesResponse as kp, CMsgGCToClientRequestActiveBeaconPartiesResponse_EResponse as kq, CMsgGCToClientRequestDropped as kr, CMsgGCToClientRequestLaneSelection as ks, CMsgGCToClientRequestLaneSelectionResponse as kt, CMsgGCToClientRequestMMInfo as ku, CMsgGCToClientRoadToTIQuestDataUpdated as kv, CMsgGCToClientSocialFeedPostCommentResponse as kw, CMsgGCToClientSocialFeedPostMessageResponse as kx, CMsgGCToClientSteamDatagramTicket as ky, CMsgGCToClientStoreTransactionCompleted as kz, CBroadcastPostGameDataFrameRequest as l, CMsgInitialQuestionnaireResponse as l$, CMsgGCToGCGetUserSessionServer as l0, CMsgGCToGCGetUserSessionServerResponse as l1, CMsgGCToGCGrantAccountRolledItems as l2, CMsgGCToGCGrantAccountRolledItems_Item as l3, CMsgGCToGCGrantAccountRolledItems_Item_AdditionalAuditEntry as l4, CMsgGCToGCGrantAccountRolledItems_Item_DynamicAttribute as l5, CMsgGCToGCGrantSelfMadeItemToAccount as l6, CMsgGCToGCInternalTestMsg as l7, CMsgGCToGCLeaguePredictions as l8, CMsgGCToGCLoadSessionSOCache as l9, CMsgGCToGCUpdateSessionStats as lA, CMsgGCToGCUpdateSubscriptionItems as lB, CMsgGCToGCUpdateWelcomeMsg as lC, CMsgGCToGCWebAPIAccountChanged as lD, CMsgGCToServerApplyRemoteConVars as lE, CMsgGCToServerSteamLearnAccessTokensChanged as lF, CMsgGCToServerSteamLearnUseHTTP as lG, CMsgGCUpdateSubGCSessionInfo as lH, CMsgGCUpdateSubGCSessionInfo_CMsgUpdate as lI, CMsgGCWatchDownloadedReplay as lJ, CMsgGenericResult as lK, CMsgGlobalHeroAverages as lL, CMsgGuildActiveContracts as lM, CMsgGuildChallenge as lN, CMsgGuildContract as lO, CMsgGuildContractSlot as lP, CMsgGuildEventMember as lQ, CMsgGuildLeaderboardCombinedResponse as lR, CMsgHeroGlobalDataAllHeroes as lS, CMsgHeroGlobalDataHeroesAlliesAndEnemies as lT, CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData as lU, CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData as lV, CMsgHeroGlobalDataRequest as lW, CMsgHeroGlobalDataResponse as lX, CMsgHeroGlobalDataResponse_GraphData as lY, CMsgHeroGlobalDataResponse_HeroDataPerRankChunk as lZ, CMsgHeroGlobalDataResponse_WeekData as l_, CMsgGCToGCLoadSessionSOCacheResponse as la, CMsgGCToGCMasterBroadcastMessage as lb, CMsgGCToGCMasterDestroyCache as lc, CMsgGCToGCMasterSubscribeToCache as ld, CMsgGCToGCMasterSubscribeToCacheAsync as le, CMsgGCToGCMasterSubscribeToCacheResponse as lf, CMsgGCToGCMasterUnsubscribeFromCache as lg, CMsgGCToGCPerformManualOp as lh, CMsgGCToGCPerformManualOpCompleted as li, CMsgGCToGCPingRequest as lj, CMsgGCToGCPingResponse as lk, CMsgGCToGCPurchaseSucceeded as ll, CMsgGCToGCRefreshSOCache as lm, CMsgGCToGCReloadServerRegionSettings as ln, CMsgGCToGCSOCacheSubscribe as lo, CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions as lp, CMsgGCToGCSOCacheUnsubscribe as lq, CMsgGCToGCSelfPing as lr, CMsgGCToGCStoreProcessCDKeyTransaction as ls, CMsgGCToGCStoreProcessCDKeyTransactionResponse as lt, CMsgGCToGCStoreProcessSettlement as lu, CMsgGCToGCStoreProcessSettlementResponse as lv, CMsgGCToGCSubGCStarting as lw, CMsgGCToGCUniverseStartup as lx, CMsgGCToGCUniverseStartupResponse as ly, CMsgGCToGCUpdateSQLKeyValue as lz, CCommunityClanAnnouncementInfo as m, CMsgPlayerConductScorecard_EBehaviorRating as m$, CMsgInvitationCreated as m0, CMsgInviteToLobby as m1, CMsgInviteToParty as m2, CMsgItemAcknowledged as m3, CMsgItemAges as m4, CMsgItemAges_MaxItemIDTimestamp as m5, CMsgJoinableCustomGameModesRequest as m6, CMsgJoinableCustomGameModesResponse as m7, CMsgJoinableCustomGameModesResponseEntry as m8, CMsgJoinableCustomLobbiesRequest as m9, CMsgOverworldEncounterChooseHeroData as mA, CMsgOverworldEncounterData as mB, CMsgOverworldEncounterPitFighterRewardData as mC, CMsgOverworldEncounterProgressData as mD, CMsgOverworldEncounterTokenQuestData as mE, CMsgOverworldEncounterTokenQuestData_Quest as mF, CMsgOverworldEncounterTokenTreasureData as mG, CMsgOverworldEncounterTokenTreasureData_RewardOption as mH, CMsgOverworldHeroList as mI, CMsgOverworldMatchRewards as mJ, CMsgOverworldMatchRewards_Player as mK, CMsgOverworldMinigameCustomData as mL, CMsgOverworldMinigameUserData as mM, CMsgOverworldNode as mN, CMsgOverworldPath as mO, CMsgOverworldTokenCount as mP, CMsgOverworldUserData as mQ, CMsgOverworldUserData_MinigameDataEntry as mR, CMsgPartyBuilderOptions as mS, CMsgPartyInviteResponse as mT, CMsgPartyReadyCheckAcknowledge as mU, CMsgPartyReadyCheckRequest as mV, CMsgPartyReadyCheckResponse as mW, CMsgPartySearchPlayer as mX, CMsgPeriodicResourceData as mY, CMsgPlayerConductScorecard as mZ, CMsgPlayerConductScorecardRequest as m_, CMsgJoinableCustomLobbiesResponse as ma, CMsgJoinableCustomLobbiesResponseEntry as mb, CMsgKickFromParty as mc, CMsgLANServerAvailable as md, CMsgLeaveParty as me, CMsgLeaverState as mf, CMsgLobbyCoachFriendRequest as mg, CMsgLobbyEventGameData as mh, CMsgLobbyEventGameDetails as mi, CMsgLobbyEventPoints as mj, CMsgLobbyEventPoints_AccountPoints as mk, CMsgLobbyInitializationComplete as ml, CMsgLobbyInviteResponse as mm, CMsgLobbyList as mn, CMsgLobbyListResponse as mo, CMsgLobbyPlayerPlusSubscriptionData as mp, CMsgLobbyPlayerPlusSubscriptionData_HeroBadge as mq, CMsgLobbyPlaytestDetails as mr, CMsgLobbyRoadToTIMatchQuestData as ms, CMsgLobbyScenarioSave as mt, CMsgLocalServerFakeLobbyData as mu, CMsgLocalServerGuildData as mv, CMsgLookupMultipleAccountNames as mw, CMsgLookupMultipleAccountNamesResponse as mx, CMsgLookupMultipleAccountNamesResponse_Account as my, CMsgMatchmakingMatchGroupInfo as mz, CCommunityGetClanAnnouncementsRequest as n, CMsgSDOAssert as n$, CMsgPracticeLobbyCloseBroadcastChannel as n0, CMsgPracticeLobbyCreate as n1, CMsgPracticeLobbyJoin as n2, CMsgPracticeLobbyJoinBroadcastChannel as n3, CMsgPracticeLobbyJoinResponse as n4, CMsgPracticeLobbyKick as n5, CMsgPracticeLobbyKickFromTeam as n6, CMsgPracticeLobbyLaunch as n7, CMsgPracticeLobbyLeave as n8, CMsgPracticeLobbyList as n9, CMsgProtoBufHeader as nA, CMsgPurchaseHeroRandomRelic as nB, CMsgPurchaseHeroRandomRelicResponse as nC, CMsgPurchaseItemWithEventPoints as nD, CMsgPurchaseItemWithEventPointsResponse as nE, CMsgPurchaseItemWithEventPointsResponse_Result as nF, CMsgQuickJoinCustomLobby as nG, CMsgQuickJoinCustomLobbyResponse as nH, CMsgQuickJoinCustomLobby_LegacyRegionPing as nI, CMsgReadyCheckStatus as nJ, CMsgReadyCheckStatus_ReadyMember as nK, CMsgReadyUp as nL, CMsgReadyUpStatus as nM, CMsgRedeemCode as nN, CMsgRedeemCodeResponse as nO, CMsgRedeemCodeResponse_EResultCode as nP, CMsgRequestCrateEscalationLevel as nQ, CMsgRequestCrateEscalationLevelResponse as nR, CMsgRequestCrateEscalationLevelResponse_EResult as nS, CMsgRequestCrateItems as nT, CMsgRequestCrateItemsResponse as nU, CMsgRequestCrateItemsResponse_EResult as nV, CMsgResetStrangeGemCount as nW, CMsgResetStrangeGemCountResponse as nX, CMsgResetStrangeGemCountResponse_EResetGem as nY, CMsgRoadToTIAssignedQuest as nZ, CMsgRoadToTIUserData as n_, CMsgPracticeLobbyListResponse as na, CMsgPracticeLobbyListResponseEntry as nb, CMsgPracticeLobbyListResponseEntry_CLobbyMember as nc, CMsgPracticeLobbySetCoach as nd, CMsgPracticeLobbySetDetails as ne, CMsgPracticeLobbySetDetails_AbilityDraftSpecificDetails as nf, CMsgPracticeLobbySetTeamSlot as ng, CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus as nh, CMsgPredictionRankings as ni, CMsgPredictionRankings_Prediction as nj, CMsgPredictionRankings_PredictionLine as nk, CMsgPredictionResults as nl, CMsgPredictionResults_Result as nm, CMsgPredictionResults_ResultBreakdown as nn, CMsgPrivateMetadataKeyRequest as no, CMsgPrivateMetadataKeyResponse as np, CMsgProcessTransactionOrder as nq, CMsgProcessTransactionOrder_Item as nr, CMsgProfileRequest as ns, CMsgProfileResponse as nt, CMsgProfileResponse_EResponse as nu, CMsgProfileResponse_FeaturedHero as nv, CMsgProfileResponse_MatchInfo as nw, CMsgProfileUpdate as nx, CMsgProfileUpdateResponse as ny, CMsgProfileUpdateResponse_Result as nz, CCommunityGetClanAnnouncementsResponse as o, CMsgSteamLearnInferenceBackendResponse_MutliBinaryCrossEntropyOutput as o$, CMsgSDOAssert_Request as o0, CMsgSDONoMemcached as o1, CMsgSOCacheHaveVersion as o2, CMsgSOCacheSubscribed as o3, CMsgSOCacheSubscribedUpToDate as o4, CMsgSOCacheSubscribed_SubscribedType as o5, CMsgSOCacheSubscriptionCheck as o6, CMsgSOCacheSubscriptionRefresh as o7, CMsgSOCacheUnsubscribed as o8, CMsgSOCacheVersion as o9, CMsgSpectatorLobbyGameDetails as oA, CMsgSpectatorLobbyGameDetails_Team as oB, CMsgSpectatorLobbyList as oC, CMsgSpectatorLobbyListResponse as oD, CMsgSpectatorLobbyListResponse_SpectatorLobby as oE, CMsgStartFindingMatch as oF, CMsgStartFindingMatchResult as oG, CMsgSteamLearnAccessTokens as oH, CMsgSteamLearnAccessTokens_CacheDataAccessToken as oI, CMsgSteamLearnAccessTokens_InferenceAccessToken as oJ, CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken as oK, CMsgSteamLearnBatchOperationRequest as oL, CMsgSteamLearnBatchOperationResponse as oM, CMsgSteamLearnCacheDataRequest as oN, CMsgSteamLearnCacheDataResponse as oO, CMsgSteamLearnData as oP, CMsgSteamLearnDataElement as oQ, CMsgSteamLearnDataList as oR, CMsgSteamLearnDataObject as oS, CMsgSteamLearnDataSource as oT, CMsgSteamLearnDataSourceDescElement as oU, CMsgSteamLearnDataSourceDescObject as oV, CMsgSteamLearnGetAccessTokensRequest as oW, CMsgSteamLearnGetAccessTokensResponse as oX, CMsgSteamLearnInferenceBackendResponse as oY, CMsgSteamLearnInferenceBackendResponse_BinaryCrossEntropyOutput as oZ, CMsgSteamLearnInferenceBackendResponse_CategoricalCrossEntropyOutput as o_, CMsgSOIDOwner as oa, CMsgSOMultipleObjects as ob, CMsgSOMultipleObjects_SingleObject as oc, CMsgSOSingleObject as od, CMsgSQLAddDropRateBonus as oe, CMsgSQLGCToGCGrantBackpackSlots as of, CMsgSQLGCToGCRevokeUntrustedGift as og, CMsgSQLUpgradeBattleBooster as oh, CMsgSerializedSOCache as oi, CMsgSerializedSOCache_Cache as oj, CMsgSerializedSOCache_Cache_Version as ok, CMsgSerializedSOCache_TypeCache as ol, CMsgServerAvailable as om, CMsgServerUseItem as on, CMsgSetItemPositions as oo, CMsgSetItemPositions_ItemPosition as op, CMsgSetSpectatorLobbyDetails as oq, CMsgSocialFeedCommentsRequest as or, CMsgSocialFeedCommentsResponse as os, CMsgSocialFeedCommentsResponse_FeedComment as ot, CMsgSocialFeedCommentsResponse_Result as ou, CMsgSocialFeedRequest as ov, CMsgSocialFeedResponse as ow, CMsgSocialFeedResponse_FeedEvent as ox, CMsgSocialFeedResponse_Result as oy, CMsgSortItems as oz, CDOTALobbyMatchQualityData as p, CSODOTAPartyMember as p$, CMsgSteamLearnInferenceBackendResponse_Output as p0, CMsgSteamLearnInferenceBackendResponse_RegressionOutput as p1, CMsgSteamLearnInferenceBackendResponse_Sequence as p2, CMsgSteamLearnInferenceMetadataBackendRequest as p3, CMsgSteamLearnInferenceMetadataRequest as p4, CMsgSteamLearnInferenceMetadataResponse as p5, CMsgSteamLearnInferenceMetadataResponse_AppInfo as p6, CMsgSteamLearnInferenceMetadataResponse_AppInfoEntry as p7, CMsgSteamLearnInferenceMetadataResponse_CompactTable as p8, CMsgSteamLearnInferenceMetadataResponse_CompactTable_Entry as p9, CMsgUseItem as pA, CMsgUseMultipleItems as pB, CMvpData_MvpDatum as pC, CMvpData_MvpDatum_MvpAccolade as pD, CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType as pE, CProtoItemSocket as pF, CProtoItemSocketAssetModifier as pG, CProtoItemSocketAssetModifierDESERIALIZEFROMSTRINGONLY as pH, CProtoItemSocketAutograph as pI, CProtoItemSocketColor as pJ, CProtoItemSocketEffect as pK, CProtoItemSocketEmpty as pL, CProtoItemSocketSpectator as pM, CProtoItemSocketStaticVisuals as pN, CProtoItemSocketStrange as pO, CProtoItemSocketStrangeDESERIALIZEFROMSTRINGONLY as pP, CSODOTAGameHeroFavorites as pQ, CSODOTALobby as pR, CSODOTALobbyInvite as pS, CSODOTALobbyInvite_LobbyMember as pT, CSODOTALobbyMember as pU, CSODOTALobby_CExtraMsg as pV, CSODOTALobby_LobbyType as pW, CSODOTALobby_State as pX, CSODOTAParty as pY, CSODOTAPartyInvite as pZ, CSODOTAPartyInvite_PartyMember as p_, CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapMappingsEntry as pa, CMsgSteamLearnInferenceMetadataResponse_CompactTable_MapValuesEntry as pb, CMsgSteamLearnInferenceMetadataResponse_KMeans as pc, CMsgSteamLearnInferenceMetadataResponse_KMeans_Cluster as pd, CMsgSteamLearnInferenceMetadataResponse_Range as pe, CMsgSteamLearnInferenceMetadataResponse_RowRange as pf, CMsgSteamLearnInferenceMetadataResponse_SequenceTable as pg, CMsgSteamLearnInferenceMetadataResponse_SequenceTable_Entry as ph, CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapMappingsEntry as pi, CMsgSteamLearnInferenceMetadataResponse_SequenceTable_MapValuesEntry as pj, CMsgSteamLearnInferenceMetadataResponse_SnapshotHistogram as pk, CMsgSteamLearnInferenceMetadataResponse_StdDev as pl, CMsgSteamLearnInferenceRequest as pm, CMsgSteamLearnInferenceResponse as pn, CMsgSteamLearnRegisterDataSourceRequest as po, CMsgSteamLearnRegisterDataSourceResponse as pp, CMsgSteamLearnServerInfo as pq, CMsgSteamLearnServerInfo_ProjectInfo as pr, CMsgSteamLearnSnapshotProjectRequest as ps, CMsgSteamLearnSnapshotProjectResponse as pt, CMsgStopFindingMatch as pu, CMsgSurvivorsUserData as pv, CMsgSurvivorsUserData_AttributeLevelsEntry as pw, CMsgTalentWinRates as px, CMsgUpgradeLeagueItem as py, CMsgUpgradeLeagueItemResponse as pz, CGCMsgCompressedMsgToClient as q, GCProtoBufMsgSrc as q$, CSODOTAParty_State as q0, CSODOTAServerLobby as q1, CSODOTAServerLobbyMember as q2, CSODOTAServerStaticLobby as q3, CSODOTAServerStaticLobbyMember as q4, CSODOTAStaticLobby as q5, CSODOTAStaticLobbyMember as q6, CSOEconGameAccountClient as q7, CSOEconItem as q8, CWorkshopGetContributorsRequest as q9, EGuildEventAuditAction as qA, EHighPriorityMMState as qB, EItemEditorReservationResult as qC, ELaneSelection as qD, ELaneSelectionFlags as qE, ELobbyMemberCoachRequestState as qF, EMatchBehaviorScoreVariance as qG, EOverworldAuditAction as qH, EOverworldMinigameAction as qI, EOverworldNodeState as qJ, EOverworldPathState as qK, EPartyMatchmakingFlags as qL, EPurchaseHeroRelicResult as qM, EReadyCheckRequestResult as qN, EReadyCheckStatus as qO, ESourceEngine as qP, EStartFindingMatchResult as qQ, ESteamLearnCacheDataResult as qR, ESteamLearnDataType as qS, ESteamLearnGetAccessTokensResult as qT, ESteamLearnInferenceMetadataResult as qU, ESteamLearnInferenceResult as qV, ESteamLearnSnapshotProjectResult as qW, ESteammLearnRegisterDataSourceResult as qX, ESupportEventRequestResult as qY, EUnderDraftResponse as qZ, EWeekendTourneyRichPresenceEvent as q_, CWorkshopGetContributorsResponse as qa, CWorkshopGetItemDailyRevenueRequest as qb, CWorkshopGetItemDailyRevenueResponse as qc, CWorkshopGetItemDailyRevenueResponse_CountryDailyRevenue as qd, CWorkshopGetPackageDailyRevenueRequest as qe, CWorkshopGetPackageDailyRevenueResponse as qf, CWorkshopGetPackageDailyRevenueResponse_CountryDailyRevenue as qg, CWorkshopPopulateItemDescriptionsRequest as qh, CWorkshopPopulateItemDescriptionsRequest_ItemDescriptionsLanguageBlock as qi, CWorkshopPopulateItemDescriptionsRequest_SingleItemDescription as qj, CWorkshopSetItemPaymentRulesRequest as qk, CWorkshopSetItemPaymentRulesRequest_PartnerItemPaymentRule as ql, CWorkshopSetItemPaymentRulesRequest_WorkshopDirectPaymentRule as qm, CWorkshopSetItemPaymentRulesRequest_WorkshopItemPaymentRule as qn, CWorkshopSetItemPaymentRulesResponse as qo, DOTAWatchReplayType as qp, ECustomGameInstallStatus as qq, EDOTADraftTriviaAnswerResult as qr, EDOTATriviaAnswerResult as qs, EDevEventRequestResult as qt, EGCEconBaseMsg as qu, EGCItemMsg as qv, EGCMsgInitiateTradeResponse as qw, EGCMsgResponse as qx, EGCMsgUseItemResponse as qy, EGCPlatform as qz, CGCMsgGetIPLocationResponse as r, cMsgClientToGCOverworldDevGrantTokensResponse_EResponseToJSON as r$, LobbyDotaPauseSetting as r0, LobbyDotaTVDelay as r1, PartnerAccountType as r2, type SteamLearn as r3, SteamLearnClientImpl as r4, SteamLearnServiceName as r5, cMsgActivatePlusFreeTrialResponse_ResultFromJSON as r6, cMsgActivatePlusFreeTrialResponse_ResultToJSON as r7, cMsgAddItemToSocketResponse_EAddGemFromJSON as r8, cMsgAddItemToSocketResponse_EAddGemToJSON as r9, cMsgClientToGCGetDPCFavoritesResponse_EResponseFromJSON as rA, cMsgClientToGCGetDPCFavoritesResponse_EResponseToJSON as rB, cMsgClientToGCGetHeroStickersResponse_EResponseFromJSON as rC, cMsgClientToGCGetHeroStickersResponse_EResponseToJSON as rD, cMsgClientToGCGetInFlightItemChargesResponse_EResponseFromJSON as rE, cMsgClientToGCGetInFlightItemChargesResponse_EResponseToJSON as rF, cMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponseFromJSON as rG, cMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponseToJSON as rH, cMsgClientToGCGetOWMatchDetailsResponse_EResponseFromJSON as rI, cMsgClientToGCGetOWMatchDetailsResponse_EResponseToJSON as rJ, cMsgClientToGCGetStickerbookResponse_EResponseFromJSON as rK, cMsgClientToGCGetStickerbookResponse_EResponseToJSON as rL, cMsgClientToGCManageFavorites_ActionFromJSON as rM, cMsgClientToGCManageFavorites_ActionToJSON as rN, cMsgClientToGCNameItemResponse_ENameItemFromJSON as rO, cMsgClientToGCNameItemResponse_ENameItemToJSON as rP, cMsgClientToGCOpenPlayerCardPackResponse_ResultFromJSON as rQ, cMsgClientToGCOpenPlayerCardPackResponse_ResultToJSON as rR, cMsgClientToGCOrderStickerbookTeamPageResponse_EResponseFromJSON as rS, cMsgClientToGCOrderStickerbookTeamPageResponse_EResponseToJSON as rT, cMsgClientToGCOverworldClaimEncounterRewardResponse_EResponseFromJSON as rU, cMsgClientToGCOverworldClaimEncounterRewardResponse_EResponseToJSON as rV, cMsgClientToGCOverworldCompletePathResponse_EResponseFromJSON as rW, cMsgClientToGCOverworldCompletePathResponse_EResponseToJSON as rX, cMsgClientToGCOverworldDevClearInventoryResponse_EResponseFromJSON as rY, cMsgClientToGCOverworldDevClearInventoryResponse_EResponseToJSON as rZ, cMsgClientToGCOverworldDevGrantTokensResponse_EResponseFromJSON as r_, cMsgAddSocketResponse_EAddSocketFromJSON as ra, cMsgAddSocketResponse_EAddSocketToJSON as rb, cMsgClientToGCCavernCrawlClaimRoomResponse_ResultFromJSON as rc, cMsgClientToGCCavernCrawlClaimRoomResponse_ResultToJSON as rd, cMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_ResultFromJSON as re, cMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_ResultToJSON as rf, cMsgClientToGCCavernCrawlRequestMapStateResponse_ResultFromJSON as rg, cMsgClientToGCCavernCrawlRequestMapStateResponse_ResultToJSON as rh, cMsgClientToGCCavernCrawlUseItemOnPathResponse_ResultFromJSON as ri, cMsgClientToGCCavernCrawlUseItemOnPathResponse_ResultToJSON as rj, cMsgClientToGCCavernCrawlUseItemOnRoomResponse_ResultFromJSON as rk, cMsgClientToGCCavernCrawlUseItemOnRoomResponse_ResultToJSON as rl, cMsgClientToGCClaimLeaderboardRewardsResponse_EResponseFromJSON as rm, cMsgClientToGCClaimLeaderboardRewardsResponse_EResponseToJSON as rn, cMsgClientToGCClaimSwagResponse_EResponseFromJSON as ro, cMsgClientToGCClaimSwagResponse_EResponseToJSON as rp, cMsgClientToGCCreatePlayerCardPackResponse_ResultFromJSON as rq, cMsgClientToGCCreatePlayerCardPackResponse_ResultToJSON as rr, cMsgClientToGCCreateStaticRecipeResponse_EResponseFromJSON as rs, cMsgClientToGCCreateStaticRecipeResponse_EResponseToJSON as rt, cMsgClientToGCCreateStickerbookPageResponse_EResponseFromJSON as ru, cMsgClientToGCCreateStickerbookPageResponse_EResponseToJSON as rv, cMsgClientToGCCreateTeamPlayerCardPackResponse_ResultFromJSON as rw, cMsgClientToGCCreateTeamPlayerCardPackResponse_ResultToJSON as rx, cMsgClientToGCDeleteStickerbookPageResponse_EResponseFromJSON as ry, cMsgClientToGCDeleteStickerbookPageResponse_EResponseToJSON as rz, CGCStorePurchaseInitLineItem as s, cMsgClientToGCSelectCompendiumInGamePredictionResponse_EResultToJSON as s$, cMsgClientToGCOverworldDevResetAllResponse_EResponseFromJSON as s0, cMsgClientToGCOverworldDevResetAllResponse_EResponseToJSON as s1, cMsgClientToGCOverworldDevResetNodeResponse_EResponseFromJSON as s2, cMsgClientToGCOverworldDevResetNodeResponse_EResponseToJSON as s3, cMsgClientToGCOverworldFeedbackResponse_EResponseFromJSON as s4, cMsgClientToGCOverworldFeedbackResponse_EResponseToJSON as s5, cMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormatFromJSON as s6, cMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormatToJSON as s7, cMsgClientToGCOverworldGetUserDataResponse_EResponseFromJSON as s8, cMsgClientToGCOverworldGetUserDataResponse_EResponseToJSON as s9, cMsgClientToGCRecyclePlayerCardResponse_ResultFromJSON as sA, cMsgClientToGCRecyclePlayerCardResponse_ResultToJSON as sB, cMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttributeFromJSON as sC, cMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttributeToJSON as sD, cMsgClientToGCRequestAccountGuildEventDataResponse_EResponseFromJSON as sE, cMsgClientToGCRequestAccountGuildEventDataResponse_EResponseToJSON as sF, cMsgClientToGCRequestActiveGuildChallengeResponse_EResponseFromJSON as sG, cMsgClientToGCRequestActiveGuildChallengeResponse_EResponseToJSON as sH, cMsgClientToGCRequestActiveGuildContractsResponse_EResponseFromJSON as sI, cMsgClientToGCRequestActiveGuildContractsResponse_EResponseToJSON as sJ, cMsgClientToGCRequestContestVotesResponse_EResponseFromJSON as sK, cMsgClientToGCRequestContestVotesResponse_EResponseToJSON as sL, cMsgClientToGCRequestGuildEventMembersResponse_EResponseFromJSON as sM, cMsgClientToGCRequestGuildEventMembersResponse_EResponseToJSON as sN, cMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponseFromJSON as sO, cMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponseToJSON as sP, cMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponseFromJSON as sQ, cMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponseToJSON as sR, cMsgClientToGCRequestReporterUpdatesResponse_EResponseFromJSON as sS, cMsgClientToGCRequestReporterUpdatesResponse_EResponseToJSON as sT, cMsgClientToGCRoadToTIGetActiveQuestResponse_EResponseFromJSON as sU, cMsgClientToGCRoadToTIGetActiveQuestResponse_EResponseToJSON as sV, cMsgClientToGCRoadToTIGetQuestsResponse_EResponseFromJSON as sW, cMsgClientToGCRoadToTIGetQuestsResponse_EResponseToJSON as sX, cMsgClientToGCRoadToTIUseItemResponse_EResponseFromJSON as sY, cMsgClientToGCRoadToTIUseItemResponse_EResponseToJSON as sZ, cMsgClientToGCSelectCompendiumInGamePredictionResponse_EResultFromJSON as s_, cMsgClientToGCOverworldGiftTokensResponse_EResponseFromJSON as sa, cMsgClientToGCOverworldGiftTokensResponse_EResponseToJSON as sb, cMsgClientToGCOverworldMinigameActionResponse_EResponseFromJSON as sc, cMsgClientToGCOverworldMinigameActionResponse_EResponseToJSON as sd, cMsgClientToGCOverworldMoveToNodeResponse_EResponseFromJSON as se, cMsgClientToGCOverworldMoveToNodeResponse_EResponseToJSON as sf, cMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponseFromJSON as sg, cMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponseToJSON as sh, cMsgClientToGCOverworldTradeTokensResponse_EResponseFromJSON as si, cMsgClientToGCOverworldTradeTokensResponse_EResponseToJSON as sj, cMsgClientToGCOverworldVisitEncounterResponse_EResponseFromJSON as sk, cMsgClientToGCOverworldVisitEncounterResponse_EResponseToJSON as sl, cMsgClientToGCPackBundleResponse_EPackBundleFromJSON as sm, cMsgClientToGCPackBundleResponse_EPackBundleToJSON as sn, cMsgClientToGCPlaceCollectionStickersResponse_EResponseFromJSON as so, cMsgClientToGCPlaceCollectionStickersResponse_EResponseToJSON as sp, cMsgClientToGCPlaceStickersResponse_EResponseFromJSON as sq, cMsgClientToGCPlaceStickersResponse_EResponseToJSON as sr, cMsgClientToGCPlayerCardSpecificPurchaseResponse_ResultFromJSON as ss, cMsgClientToGCPlayerCardSpecificPurchaseResponse_ResultToJSON as st, cMsgClientToGCPurchaseChargeCostItemsResponse_EResponseFromJSON as su, cMsgClientToGCPurchaseChargeCostItemsResponse_EResponseToJSON as sv, cMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponseFromJSON as sw, cMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponseToJSON as sx, cMsgClientToGCRecalibrateMMRResponse_EResponseFromJSON as sy, cMsgClientToGCRecalibrateMMRResponse_EResponseToJSON as sz, CGCStoreRechargeRedirectLineItem as t, cMsgGCToClientGetFilteredPlayersResponse_ResultToJSON as t$, cMsgClientToGCSelectGuildContractResponse_EResponseFromJSON as t0, cMsgClientToGCSelectGuildContractResponse_EResponseToJSON as t1, cMsgClientToGCSetDPCFavoriteStateResponse_EResponseFromJSON as t2, cMsgClientToGCSetDPCFavoriteStateResponse_EResponseToJSON as t3, cMsgClientToGCSetEventActiveSeasonIDResponse_EResponseFromJSON as t4, cMsgClientToGCSetEventActiveSeasonIDResponse_EResponseToJSON as t5, cMsgClientToGCSetFavoritePageResponse_EResponseFromJSON as t6, cMsgClientToGCSetFavoritePageResponse_EResponseToJSON as t7, cMsgClientToGCSetHeroStickerResponse_EResponseFromJSON as t8, cMsgClientToGCSetHeroStickerResponse_EResponseToJSON as t9, cMsgDOTARedeemItemResponse_EResultCodeFromJSON as tA, cMsgDOTARedeemItemResponse_EResultCodeToJSON as tB, cMsgDOTARequestMatchesSkillLevelFromJSON as tC, cMsgDOTARequestMatchesSkillLevelToJSON as tD, cMsgDOTASelectionPriorityChoiceResponse_ResultFromJSON as tE, cMsgDOTASelectionPriorityChoiceResponse_ResultToJSON as tF, cMsgDOTASubmitPlayerReportResponseV2_EResultFromJSON as tG, cMsgDOTASubmitPlayerReportResponseV2_EResultToJSON as tH, cMsgDOTASubmitPlayerReportResponse_EResultFromJSON as tI, cMsgDOTASubmitPlayerReportResponse_EResultToJSON as tJ, cMsgDOTAUnanchorPhoneNumberResponse_ResultFromJSON as tK, cMsgDOTAUnanchorPhoneNumberResponse_ResultToJSON as tL, cMsgExtractGemsResponse_EExtractGemsFromJSON as tM, cMsgExtractGemsResponse_EExtractGemsToJSON as tN, cMsgGCGetHeroStatsHistoryResponse_EResponseFromJSON as tO, cMsgGCGetHeroStatsHistoryResponse_EResponseToJSON as tP, cMsgGCNotificationsUpdate_EResultFromJSON as tQ, cMsgGCNotificationsUpdate_EResultToJSON as tR, cMsgGCPlayerInfoSubmitResponse_EResultFromJSON as tS, cMsgGCPlayerInfoSubmitResponse_EResultToJSON as tT, cMsgGCRankedPlayerInfoSubmitResponse_EResultFromJSON as tU, cMsgGCRankedPlayerInfoSubmitResponse_EResultToJSON as tV, cMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteTypeFromJSON as tW, cMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteTypeToJSON as tX, cMsgGCToClientGetFavoritePlayersResponse_EResponseFromJSON as tY, cMsgGCToClientGetFavoritePlayersResponse_EResponseToJSON as tZ, cMsgGCToClientGetFilteredPlayersResponse_ResultFromJSON as t_, cMsgClientToGCSetItemStyleResponse_ESetStyleFromJSON as ta, cMsgClientToGCSetItemStyleResponse_ESetStyleToJSON as tb, cMsgClientToGCSubmitOWConvictionResponse_EResponseFromJSON as tc, cMsgClientToGCSubmitOWConvictionResponse_EResponseToJSON as td, cMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponseFromJSON as te, cMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponseToJSON as tf, cMsgClientToGCSurvivorsGameTelemetryDataResponse_EResponseFromJSON as tg, cMsgClientToGCSurvivorsGameTelemetryDataResponse_EResponseToJSON as th, cMsgClientToGCUnlockItemStyleResponse_EUnlockStyleFromJSON as ti, cMsgClientToGCUnlockItemStyleResponse_EUnlockStyleToJSON as tj, cMsgClientToGCUnpackBundleResponse_EUnpackBundleFromJSON as tk, cMsgClientToGCUnpackBundleResponse_EUnpackBundleToJSON as tl, cMsgClientToGCUpdateComicBookStatTypeFromJSON as tm, cMsgClientToGCUpdateComicBookStatTypeToJSON as tn, cMsgClientToGCUpdatePartyBeacon_ActionFromJSON as to, cMsgClientToGCUpdatePartyBeacon_ActionToJSON as tp, cMsgClientToGCVoteForArcanaResponse_ResultFromJSON as tq, cMsgClientToGCVoteForArcanaResponse_ResultToJSON as tr, cMsgDOTAAnchorPhoneNumberResponse_ResultFromJSON as ts, cMsgDOTAAnchorPhoneNumberResponse_ResultToJSON as tt, cMsgDOTADestroyLobbyResponse_ResultFromJSON as tu, cMsgDOTADestroyLobbyResponse_ResultToJSON as tv, cMsgDOTAGameAutographRewardResponse_ResultFromJSON as tw, cMsgDOTAGameAutographRewardResponse_ResultToJSON as tx, cMsgDOTAPopup_PopupIDFromJSON as ty, cMsgDOTAPopup_PopupIDToJSON as tz, CGCSystemMsgGetAccountDetails as u, eGCBaseMsgToJSON as u$, cMsgGCToClientJoinPartyFromBeaconResponse_EResponseFromJSON as u0, cMsgGCToClientJoinPartyFromBeaconResponse_EResponseToJSON as u1, cMsgGCToClientManageFavoritesResponse_EResponseFromJSON as u2, cMsgGCToClientManageFavoritesResponse_EResponseToJSON as u3, cMsgGCToClientMapStatsResponse_EResponseFromJSON as u4, cMsgGCToClientMapStatsResponse_EResponseToJSON as u5, cMsgGCToClientPurchaseFilteredPlayerSlotResponse_ResultFromJSON as u6, cMsgGCToClientPurchaseFilteredPlayerSlotResponse_ResultToJSON as u7, cMsgGCToClientRankResponse_EResultCodeFromJSON as u8, cMsgGCToClientRankResponse_EResultCodeToJSON as u9, cMsgSocialFeedCommentsResponse_ResultFromJSON as uA, cMsgSocialFeedCommentsResponse_ResultToJSON as uB, cMsgSocialFeedResponse_ResultFromJSON as uC, cMsgSocialFeedResponse_ResultToJSON as uD, cMvpData_MvpDatum_MvpAccolade_MvpAccoladeTypeFromJSON as uE, cMvpData_MvpDatum_MvpAccolade_MvpAccoladeTypeToJSON as uF, cSODOTALobby_LobbyTypeFromJSON as uG, cSODOTALobby_LobbyTypeToJSON as uH, cSODOTALobby_StateFromJSON as uI, cSODOTALobby_StateToJSON as uJ, cSODOTAParty_StateFromJSON as uK, cSODOTAParty_StateToJSON as uL, dOTAWatchReplayTypeFromJSON as uM, dOTAWatchReplayTypeToJSON as uN, eCustomGameInstallStatusFromJSON as uO, eCustomGameInstallStatusToJSON as uP, eDOTADraftTriviaAnswerResultFromJSON as uQ, eDOTADraftTriviaAnswerResultToJSON as uR, eDOTAGCMsgFromJSON as uS, eDOTAGCMsgToJSON as uT, eDOTATriviaAnswerResultFromJSON as uU, eDOTATriviaAnswerResultToJSON as uV, eDevEventRequestResultFromJSON as uW, eDevEventRequestResultToJSON as uX, eGCBaseClientMsgFromJSON as uY, eGCBaseClientMsgToJSON as uZ, eGCBaseMsgFromJSON as u_, cMsgGCToClientRecordContestVoteResponse_EResultFromJSON as ua, cMsgGCToClientRecordContestVoteResponse_EResultToJSON as ub, cMsgGCToClientRemoveFilteredPlayerResponse_ResultFromJSON as uc, cMsgGCToClientRemoveFilteredPlayerResponse_ResultToJSON as ud, cMsgGCToClientRequestActiveBeaconPartiesResponse_EResponseFromJSON as ue, cMsgGCToClientRequestActiveBeaconPartiesResponse_EResponseToJSON as uf, cMsgGCToClientUpdateFilteredPlayerNoteResponse_ResultFromJSON as ug, cMsgGCToClientUpdateFilteredPlayerNoteResponse_ResultToJSON as uh, cMsgGCToClientUploadMatchClipResponse_EResponseFromJSON as ui, cMsgGCToClientUploadMatchClipResponse_EResponseToJSON as uj, cMsgPlayerConductScorecard_EBehaviorRatingFromJSON as uk, cMsgPlayerConductScorecard_EBehaviorRatingToJSON as ul, cMsgProfileResponse_EResponseFromJSON as um, cMsgProfileResponse_EResponseToJSON as un, cMsgProfileUpdateResponse_ResultFromJSON as uo, cMsgProfileUpdateResponse_ResultToJSON as up, cMsgPurchaseItemWithEventPointsResponse_ResultFromJSON as uq, cMsgPurchaseItemWithEventPointsResponse_ResultToJSON as ur, cMsgRedeemCodeResponse_EResultCodeFromJSON as us, cMsgRedeemCodeResponse_EResultCodeToJSON as ut, cMsgRequestCrateEscalationLevelResponse_EResultFromJSON as uu, cMsgRequestCrateEscalationLevelResponse_EResultToJSON as uv, cMsgRequestCrateItemsResponse_EResultFromJSON as uw, cMsgRequestCrateItemsResponse_EResultToJSON as ux, cMsgResetStrangeGemCountResponse_EResetGemFromJSON as uy, cMsgResetStrangeGemCountResponse_EResetGemToJSON as uz, CGCSystemMsgGetAccountDetailsResponse as v, eSupportEventRequestResultToJSON as v$, eGCEconBaseMsgFromJSON as v0, eGCEconBaseMsgToJSON as v1, eGCItemMsgFromJSON as v2, eGCItemMsgToJSON as v3, eGCMsgInitiateTradeResponseFromJSON as v4, eGCMsgInitiateTradeResponseToJSON as v5, eGCMsgResponseFromJSON as v6, eGCMsgResponseToJSON as v7, eGCMsgUseItemResponseFromJSON as v8, eGCMsgUseItemResponseToJSON as v9, ePurchaseHeroRelicResultFromJSON as vA, ePurchaseHeroRelicResultToJSON as vB, eReadyCheckRequestResultFromJSON as vC, eReadyCheckRequestResultToJSON as vD, eReadyCheckStatusFromJSON as vE, eReadyCheckStatusToJSON as vF, eSOMsgFromJSON as vG, eSOMsgToJSON as vH, eSourceEngineFromJSON as vI, eSourceEngineToJSON as vJ, eStartFindingMatchResultFromJSON as vK, eStartFindingMatchResultToJSON as vL, eSteamLearnCacheDataResultFromJSON as vM, eSteamLearnCacheDataResultToJSON as vN, eSteamLearnDataTypeFromJSON as vO, eSteamLearnDataTypeToJSON as vP, eSteamLearnGetAccessTokensResultFromJSON as vQ, eSteamLearnGetAccessTokensResultToJSON as vR, eSteamLearnInferenceMetadataResultFromJSON as vS, eSteamLearnInferenceMetadataResultToJSON as vT, eSteamLearnInferenceResultFromJSON as vU, eSteamLearnInferenceResultToJSON as vV, eSteamLearnSnapshotProjectResultFromJSON as vW, eSteamLearnSnapshotProjectResultToJSON as vX, eSteammLearnRegisterDataSourceResultFromJSON as vY, eSteammLearnRegisterDataSourceResultToJSON as vZ, eSupportEventRequestResultFromJSON as v_, eGCPlatformFromJSON as va, eGCPlatformToJSON as vb, eGuildEventAuditActionFromJSON as vc, eGuildEventAuditActionToJSON as vd, eHighPriorityMMStateFromJSON as ve, eHighPriorityMMStateToJSON as vf, eItemEditorReservationResultFromJSON as vg, eItemEditorReservationResultToJSON as vh, eLaneSelectionFlagsFromJSON as vi, eLaneSelectionFlagsToJSON as vj, eLaneSelectionFromJSON as vk, eLaneSelectionToJSON as vl, eLobbyMemberCoachRequestStateFromJSON as vm, eLobbyMemberCoachRequestStateToJSON as vn, eMatchBehaviorScoreVarianceFromJSON as vo, eMatchBehaviorScoreVarianceToJSON as vp, eOverworldAuditActionFromJSON as vq, eOverworldAuditActionToJSON as vr, eOverworldMinigameActionFromJSON as vs, eOverworldMinigameActionToJSON as vt, eOverworldNodeStateFromJSON as vu, eOverworldNodeStateToJSON as vv, eOverworldPathStateFromJSON as vw, eOverworldPathStateToJSON as vx, ePartyMatchmakingFlagsFromJSON as vy, ePartyMatchmakingFlagsToJSON as vz, CGCToGCMsgMasterAck as w, eUnderDraftResponseFromJSON as w0, eUnderDraftResponseToJSON as w1, eWeekendTourneyRichPresenceEventFromJSON as w2, eWeekendTourneyRichPresenceEventToJSON as w3, gCConnectionStatusFromJSON as w4, gCConnectionStatusToJSON as w5, gCProtoBufMsgSrcFromJSON as w6, gCProtoBufMsgSrcToJSON as w7, lobbyDotaPauseSettingFromJSON as w8, lobbyDotaPauseSettingToJSON as w9, lobbyDotaTVDelayFromJSON as wa, lobbyDotaTVDelayToJSON as wb, partnerAccountTypeFromJSON as wc, partnerAccountTypeToJSON as wd, CGCToGCMsgMasterAckResponse as x, CGCToGCMsgMasterAck_Process as y, CGCToGCMsgMasterStartupComplete as z };

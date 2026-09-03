@@ -15,7 +15,7 @@ import {
   cMsgClientToGCSetGuildInfoResponse_EResponseToJSON,
   cMsgClientToGCSetGuildMemberRoleResponse_EResponseToJSON,
   cMsgClientToGCSetGuildRoleOrderResponse_EResponseToJSON
-} from "./chunk-R5MSRNH2.js";
+} from "./chunk-MKNDBIHN.js";
 
 // src/guild/index.ts
 var GUILD_ROLE_FLAG = {
@@ -425,4 +425,4 @@ export {
   NoGuildError,
   Guild
 };
-//# sourceMappingURL=chunk-SC37SVHY.js.map
+//# sourceMappingURL=chunk-X4QX6UVW.js.map

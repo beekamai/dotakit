@@ -5,7 +5,7 @@ import {
 } from "./chunk-3P7DVYVL.js";
 import {
   CMsgSpectateFriendGameResponse_EWatchLiveResult
-} from "./chunk-R5MSRNH2.js";
+} from "./chunk-MKNDBIHN.js";
 
 // src/live/index.ts
 var POLL_INTERVAL_MS = 2e4;
@@ -164,4 +164,4 @@ export {
   DEFAULT_MAX_PAGES,
   Live
 };
-//# sourceMappingURL=chunk-3LR4BZFE.js.map
+//# sourceMappingURL=chunk-S4YO6S5S.js.map

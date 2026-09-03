@@ -1,5 +1,8 @@
 import {
+  CMsgAbandonCurrentGame,
+  CMsgApplyTeamToPracticeLobby,
   CMsgBalancedShuffleLobby,
+  CMsgBotGameCreate,
   CMsgCancelWatchGame,
   CMsgClientHello,
   CMsgClientSuspended,
@@ -91,6 +94,7 @@ import {
   CMsgClientToGCKickGuildMemberResponse,
   CMsgClientToGCLeaveGuild,
   CMsgClientToGCLeaveGuildResponse,
+  CMsgClientToGCMMInfo,
   CMsgClientToGCMVPVoteTimeout,
   CMsgClientToGCMVPVoteTimeoutResponse,
   CMsgClientToGCManageFavorites,
@@ -190,6 +194,8 @@ import {
   CMsgClientToGCRequestPlusWeeklyChallengeResultResponse,
   CMsgClientToGCRequestReporterUpdates,
   CMsgClientToGCRequestReporterUpdatesResponse,
+  CMsgClientToGCRequestSteamDatagramTicket,
+  CMsgClientToGCRequestSteamDatagramTicketResponse,
   CMsgClientToGCRerollPlayerChallenge,
   CMsgClientToGCRoadToTIDevForceQuest,
   CMsgClientToGCRoadToTIGetActiveQuest,
@@ -292,6 +298,7 @@ import {
   CMsgDOTAMatchmakingStatsRequest,
   CMsgDOTAMatchmakingStatsResponse,
   CMsgDOTANotifyAccountFlagsChange,
+  CMsgDOTAPartyMemberSetCoach,
   CMsgDOTAPeriodicResourceUpdated,
   CMsgDOTAPopup,
   CMsgDOTAProfileCard,
@@ -329,6 +336,8 @@ import {
   CMsgDevResetEventState,
   CMsgDevResetEventStateResponse,
   CMsgFlipLobbyTeams,
+  CMsgFriendPracticeLobbyListRequest,
+  CMsgFriendPracticeLobbyListResponse,
   CMsgGCAdditionalWelcomeMsgList,
   CMsgGCGetHeroStandings,
   CMsgGCGetHeroStandingsResponse,
@@ -404,9 +413,13 @@ import {
   CMsgGCToClientRemoveFilteredPlayerResponse,
   CMsgGCToClientRequestActiveBeaconPartiesResponse,
   CMsgGCToClientRequestDropped,
+  CMsgGCToClientRequestLaneSelection,
+  CMsgGCToClientRequestLaneSelectionResponse,
+  CMsgGCToClientRequestMMInfo,
   CMsgGCToClientRoadToTIQuestDataUpdated,
   CMsgGCToClientSocialFeedPostCommentResponse,
   CMsgGCToClientSocialFeedPostMessageResponse,
+  CMsgGCToClientSteamDatagramTicket,
   CMsgGCToClientTopFriendMatchesResponse,
   CMsgGCToClientTopLeagueMatchesResponse,
   CMsgGCToClientTournamentItemDrop,
@@ -433,6 +446,10 @@ import {
   CMsgInvitationCreated,
   CMsgInviteToLobby,
   CMsgInviteToParty,
+  CMsgJoinableCustomGameModesRequest,
+  CMsgJoinableCustomGameModesResponse,
+  CMsgJoinableCustomLobbiesRequest,
+  CMsgJoinableCustomLobbiesResponse,
   CMsgKickFromParty,
   CMsgLANServerAvailable,
   CMsgLeagueAdminList,
@@ -442,6 +459,8 @@ import {
   CMsgLobbyEventPoints,
   CMsgLobbyFeaturedGamemodeProgress,
   CMsgLobbyInviteResponse,
+  CMsgLobbyList,
+  CMsgLobbyListResponse,
   CMsgLobbyPlaytestDetails,
   CMsgLobbyRoadToTIMatchQuestData,
   CMsgMatchMatchmakingStats,
@@ -455,6 +474,21 @@ import {
   CMsgPartyReadyCheckAcknowledge,
   CMsgPartyReadyCheckRequest,
   CMsgPartyReadyCheckResponse,
+  CMsgPracticeLobbyCloseBroadcastChannel,
+  CMsgPracticeLobbyCreate,
+  CMsgPracticeLobbyJoin,
+  CMsgPracticeLobbyJoinBroadcastChannel,
+  CMsgPracticeLobbyJoinResponse,
+  CMsgPracticeLobbyKick,
+  CMsgPracticeLobbyKickFromTeam,
+  CMsgPracticeLobbyLaunch,
+  CMsgPracticeLobbyLeave,
+  CMsgPracticeLobbyList,
+  CMsgPracticeLobbyListResponse,
+  CMsgPracticeLobbySetCoach,
+  CMsgPracticeLobbySetDetails,
+  CMsgPracticeLobbySetTeamSlot,
+  CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus,
   CMsgPrivateMetadataKeyRequest,
   CMsgPrivateMetadataKeyResponse,
   CMsgProfileRequest,
@@ -465,6 +499,10 @@ import {
   CMsgPurchaseHeroRandomRelicResponse,
   CMsgPurchaseItemWithEventPoints,
   CMsgPurchaseItemWithEventPointsResponse,
+  CMsgQuickJoinCustomLobby,
+  CMsgQuickJoinCustomLobbyResponse,
+  CMsgReadyUp,
+  CMsgReadyUpStatus,
   CMsgSOCacheSubscribed,
   CMsgSOCacheSubscribedUpToDate,
   CMsgSOCacheSubscriptionRefresh,
@@ -476,11 +514,14 @@ import {
   CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse,
   CMsgSpectateFriendGame,
   CMsgSpectateFriendGameResponse,
+  CMsgSpectatorLobbyGameDetails,
+  CMsgStartFindingMatch,
+  CMsgStopFindingMatch,
   CMsgUpgradeLeagueItem,
   CMsgUpgradeLeagueItemResponse,
   CMsgWatchGame,
   CMsgWatchGameResponse
-} from "./chunk-R5MSRNH2.js";
+} from "./chunk-MKNDBIHN.js";
 
 // src/gc/client.ts
 import { EventEmitter as EventEmitter2 } from "events";
@@ -589,8 +630,30 @@ var clientMessages = {
   4525: CMsgGCToServerSteamLearnAccessTokensChanged,
   /** k_EMsgGCToServerSteamLearnUseHTTP */
   4526: CMsgGCToServerSteamLearnUseHTTP,
+  /** k_EMsgGCStartFindingMatch */
+  7033: CMsgStartFindingMatch,
+  /** k_EMsgGCAbandonCurrentGame */
+  7035: CMsgAbandonCurrentGame,
+  /** k_EMsgGCStopFindingMatch */
+  7036: CMsgStopFindingMatch,
+  /** k_EMsgGCPracticeLobbyCreate */
+  7038: CMsgPracticeLobbyCreate,
+  /** k_EMsgGCPracticeLobbyLeave */
+  7040: CMsgPracticeLobbyLeave,
+  /** k_EMsgGCPracticeLobbyLaunch */
+  7041: CMsgPracticeLobbyLaunch,
+  /** k_EMsgGCPracticeLobbyList */
+  7042: CMsgPracticeLobbyList,
+  /** k_EMsgGCPracticeLobbyJoin */
+  7044: CMsgPracticeLobbyJoin,
+  /** k_EMsgGCPracticeLobbySetDetails */
+  7046: CMsgPracticeLobbySetDetails,
+  /** k_EMsgGCPracticeLobbySetTeamSlot */
+  7047: CMsgPracticeLobbySetTeamSlot,
   /** k_EMsgGCBroadcastNotification */
   7056: CMsgDOTABroadcastNotification,
+  /** k_EMsgGCReadyUp */
+  7070: CMsgReadyUp,
   /** k_EMsgGCKickedFromMatchmakingQueue */
   7071: CMsgDOTAKickedFromMatchmakingQueue,
   /** k_EMsgGCSpectateFriendGame */
@@ -599,6 +662,8 @@ var clientMessages = {
   7076: CMsgDOTAReportsRemainingRequest,
   /** k_EMsgGCSubmitPlayerReport */
   7078: CMsgDOTASubmitPlayerReport,
+  /** k_EMsgGCPracticeLobbyKick */
+  7081: CMsgPracticeLobbyKick,
   /** k_EMsgGCSubmitPlayerReportV2 */
   7082: CMsgDOTASubmitPlayerReportV2,
   /** k_EMsgGCSubmitPlayerReportResponseV2 */
@@ -611,10 +676,20 @@ var clientMessages = {
   7097: CMsgCancelWatchGame,
   /** k_EMsgGCPopup */
   7102: CMsgDOTAPopup,
+  /** k_EMsgGCFriendPracticeLobbyListRequest */
+  7111: CMsgFriendPracticeLobbyListRequest,
+  /** k_EMsgGCApplyTeamToPracticeLobby */
+  7142: CMsgApplyTeamToPracticeLobby,
+  /** k_EMsgGCPracticeLobbyJoinBroadcastChannel */
+  7149: CMsgPracticeLobbyJoinBroadcastChannel,
+  /** k_EMsgGCReadyUpStatus */
+  7170: CMsgReadyUpStatus,
   /** k_EMsgGCBalancedShuffleLobby */
   7188: CMsgBalancedShuffleLobby,
   /** k_EMsgGCMatchmakingStatsRequest */
   7197: CMsgDOTAMatchmakingStatsRequest,
+  /** k_EMsgGCBotGameCreate */
+  7199: CMsgBotGameCreate,
   /** k_EMsgGCSetMatchHistoryAccess */
   7200: CMsgDOTASetMatchHistoryAccess,
   /** k_EMsgUpgradeLeagueItem */
@@ -639,6 +714,10 @@ var clientMessages = {
   7327: CMsgDOTASetProfilePrivacy,
   /** k_EMsgGCClientSuspended */
   7342: CMsgClientSuspended,
+  /** k_EMsgGCPartyMemberSetCoach */
+  7343: CMsgDOTAPartyMemberSetCoach,
+  /** k_EMsgGCPracticeLobbySetCoach */
+  7346: CMsgPracticeLobbySetCoach,
   /** k_EMsgGCLobbyUpdateBroadcastChannelInfo */
   7367: CMsgGCLobbyUpdateBroadcastChannelInfo,
   /** k_EMsgDOTAGetEventPoints */
@@ -659,10 +738,18 @@ var clientMessages = {
   7454: CMsgGCRankedPlayerInfoSubmit,
   /** k_EMsgGCPlayerInfoSubmit */
   7456: CMsgGCPlayerInfoSubmit,
+  /** k_EMsgGCJoinableCustomGameModesRequest */
+  7466: CMsgJoinableCustomGameModesRequest,
+  /** k_EMsgGCJoinableCustomLobbiesRequest */
+  7468: CMsgJoinableCustomLobbiesRequest,
+  /** k_EMsgGCQuickJoinCustomLobby */
+  7470: CMsgQuickJoinCustomLobby,
   /** k_EMsgGCHasItemQuery */
   7484: CMsgDOTAHasItemQuery,
   /** k_EMsgClientToGCEmoticonDataRequest */
   7503: CMsgClientToGCEmoticonDataRequest,
+  /** k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus */
+  7505: CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus,
   /** k_EMsgDOTARedeemItem */
   7518: CMsgDOTARedeemItem,
   /** k_EMsgClientToGCGetAllHeroProgress */
@@ -701,6 +788,8 @@ var clientMessages = {
   7676: CMsgClientToGCGetFavoritePlayers,
   /** k_EMsgClientToGCVerifyFavoritePlayers */
   7678: CMsgClientToGCVerifyFavoritePlayers,
+  /** k_EMsgClientToGCMMInfo */
+  7682: CMsgClientToGCMMInfo,
   /** k_EMsgClientToGCPurchaseLabyrinthBlessings */
   7684: CMsgClientToGCPurchaseLabyrinthBlessings,
   /** k_EMsgClientToGCPurchaseFilteredPlayerSlot */
@@ -713,6 +802,8 @@ var clientMessages = {
   8006: CMsgClientToGCPlayerStatsRequest,
   /** k_EMsgClientToGCFindTopSourceTVGames */
   8009: CMsgClientToGCFindTopSourceTVGames,
+  /** k_EMsgGCLobbyList */
+  8011: CMsgLobbyList,
   /** k_EMsgClientToGCSocialFeedPostCommentRequest */
   8016: CMsgClientToGCSocialFeedPostCommentRequest,
   /** k_EMsgClientToGCCustomGamesFriendsPlayedRequest */
@@ -727,12 +818,16 @@ var clientMessages = {
   8036: CMsgClientToGCTopLeagueMatchesRequest,
   /** k_EMsgClientToGCTopFriendMatchesRequest */
   8037: CMsgClientToGCTopFriendMatchesRequest,
+  /** k_EMsgGCPracticeLobbyKickFromTeam */
+  8047: CMsgPracticeLobbyKickFromTeam,
   /** k_EMsgClientToGCSocialFeedPostMessageRequest */
   8050: CMsgClientToGCSocialFeedPostMessageRequest,
   /** k_EMsgCustomGameListenServerStartedLoading */
   8052: CMsgDOTACustomGameListenServerStartedLoading,
   /** k_EMsgCustomGameClientFinishedLoading */
   8053: CMsgDOTACustomGameClientFinishedLoading,
+  /** k_EMsgGCPracticeLobbyCloseBroadcastChannel */
+  8054: CMsgPracticeLobbyCloseBroadcastChannel,
   /** k_EMsgClientToGCMatchesMinimalRequest */
   8063: CMsgClientToGCMatchesMinimalRequest,
   /** k_EMsgClientToGCGetProfileTickets */
@@ -761,6 +856,8 @@ var clientMessages = {
   8140: CMsgClientToGCPublishUserStat,
   /** k_EMsgGCSubmitLobbyMVPVote */
   8144: CMsgDOTASubmitLobbyMVPVote,
+  /** k_EMsgSpectatorLobbyGameDetails */
+  8163: CMsgSpectatorLobbyGameDetails,
   /** k_EMsgClientToGCOpenPlayerCardPack */
   8168: CMsgClientToGCOpenPlayerCardPack,
   /** k_EMsgClientToGCSelectCompendiumInGamePrediction */
@@ -771,6 +868,8 @@ var clientMessages = {
   8176: CMsgClientToGCCreatePlayerCardPack,
   /** k_EMsgGCGetPlayerCardItemInfo */
   8187: CMsgGCGetPlayerCardItemInfo,
+  /** k_EMsgClientToGCRequestSteamDatagramTicket */
+  8189: CMsgClientToGCRequestSteamDatagramTicket,
   /** k_EMsgClientToGCTransferSeasonalMMRRequest */
   8193: CMsgClientToGCTransferSeasonalMMRRequest,
   /** k_EMsgClientToGCJoinPlaytest */
@@ -1097,6 +1196,8 @@ var gcMessages = {
   4520: CMsgGCToClientApplyRemoteConVars,
   /** k_EMsgGCToClientAggregateMetricsBackoff */
   4524: CMsgGCToClientAggregateMetricsBackoff,
+  /** k_EMsgGCPracticeLobbyListResponse */
+  7043: CMsgPracticeLobbyListResponse,
   /** k_EMsgGCInitialQuestionnaireResponse */
   7049: CMsgInitialQuestionnaireResponse,
   /** k_EMsgGCSpectateFriendGameResponse */
@@ -1109,6 +1210,10 @@ var gcMessages = {
   7092: CMsgWatchGameResponse,
   /** k_EMsgGCMatchDetailsResponse */
   7096: CMsgGCMatchDetailsResponse,
+  /** k_EMsgGCFriendPracticeLobbyListResponse */
+  7112: CMsgFriendPracticeLobbyListResponse,
+  /** k_EMsgGCPracticeLobbyJoinResponse */
+  7113: CMsgPracticeLobbyJoinResponse,
   /** k_EMsgGCMatchmakingStatsResponse */
   7198: CMsgDOTAMatchmakingStatsResponse,
   /** k_EMsgGCSetMatchHistoryAccessResponse */
@@ -1137,6 +1242,12 @@ var gcMessages = {
   7455: CMsgGCRankedPlayerInfoSubmitResponse,
   /** k_EMsgGCPlayerInfoSubmitResponse */
   7457: CMsgGCPlayerInfoSubmitResponse,
+  /** k_EMsgGCJoinableCustomGameModesResponse */
+  7467: CMsgJoinableCustomGameModesResponse,
+  /** k_EMsgGCJoinableCustomLobbiesResponse */
+  7469: CMsgJoinableCustomLobbiesResponse,
+  /** k_EMsgGCQuickJoinCustomLobbyResponse */
+  7471: CMsgQuickJoinCustomLobbyResponse,
   /** k_EMsgGCHasItemResponse */
   7485: CMsgDOTAHasItemResponse,
   /** k_EMsgGCToClientTournamentItemDrop */
@@ -1155,10 +1266,16 @@ var gcMessages = {
   7535: CMsgDOTAProfileCard,
   /** k_EMsgGCToClientHeroStatueCreateResult */
   7548: CMsgGCToClientHeroStatueCreateResult,
+  /** k_EMsgGCToClientSteamDatagramTicket */
+  7581: CMsgGCToClientSteamDatagramTicket,
   /** k_EMsgGCRerollPlayerChallengeResponse */
   7586: CMsgGCRerollPlayerChallengeResponse,
   /** k_EMsgClientToGCGetAllHeroOrderResponse */
   7607: CMsgClientToGCGetAllHeroOrderResponse,
+  /** k_EMsgGCToClientRequestLaneSelection */
+  7623: CMsgGCToClientRequestLaneSelection,
+  /** k_EMsgGCToClientRequestLaneSelectionResponse */
+  7624: CMsgGCToClientRequestLaneSelectionResponse,
   /** k_EMsgClientToGCPlayerCardSpecificPurchaseResponse */
   7628: CMsgClientToGCPlayerCardSpecificPurchaseResponse,
   /** k_EMsgGCToClientGetFilteredPlayersResponse */
@@ -1183,6 +1300,8 @@ var gcMessages = {
   7679: CMsgGCToClientVerifyFavoritePlayersResponse,
   /** k_EMsgGCToClientPartySearchInvites */
   7680: CMsgGCToClientPartySearchInvites,
+  /** k_EMsgGCToClientRequestMMInfo */
+  7681: CMsgGCToClientRequestMMInfo,
   /** k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse */
   7685: CMsgClientToGCPurchaseLabyrinthBlessingsResponse,
   /** k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse */
@@ -1193,6 +1312,8 @@ var gcMessages = {
   8007: CMsgGCToClientPlayerStatsResponse,
   /** k_EMsgGCToClientFindTopSourceTVGamesResponse */
   8010: CMsgGCToClientFindTopSourceTVGamesResponse,
+  /** k_EMsgGCLobbyListResponse */
+  8012: CMsgLobbyListResponse,
   /** k_EMsgGCToClientSocialFeedPostCommentResponse */
   8017: CMsgGCToClientSocialFeedPostCommentResponse,
   /** k_EMsgGCToClientCustomGamesFriendsPlayedResponse */
@@ -1247,6 +1368,8 @@ var gcMessages = {
   8177: CMsgClientToGCCreatePlayerCardPackResponse,
   /** k_EMsgGCGetPlayerCardItemInfoResponse */
   8188: CMsgGCGetPlayerCardItemInfoResponse,
+  /** k_EMsgClientToGCRequestSteamDatagramTicketResponse */
+  8190: CMsgClientToGCRequestSteamDatagramTicketResponse,
   /** k_EMsgGCToClientBattlePassRollupRequest */
   8191: CMsgGCToClientBattlePassRollupRequest,
   /** k_EMsgGCToClientBattlePassRollupResponse */
@@ -1530,6 +1653,8 @@ var gcMessages = {
 };
 var allMessages = { ...clientMessages, ...gcMessages };
 var jobResponses = {
+  7042: 7043,
+  7044: 7113,
   7073: 7074,
   7078: 7079,
   7091: 7092,
@@ -1543,11 +1668,13 @@ var jobResponses = {
   7408: 7409,
   7454: 7455,
   7456: 7457,
+  7470: 7471,
   7518: 7519,
   7521: 7522,
   7527: 7528,
   7534: 7535,
   7606: 7607,
+  7623: 7624,
   7662: 7663,
   7664: 7665,
   7670: 7671,
@@ -1559,6 +1686,7 @@ var jobResponses = {
   7686: 7687,
   7688: 7689,
   8009: 8010,
+  8011: 8012,
   8078: 8079,
   8082: 8083,
   8111: 8112,
@@ -1572,6 +1700,7 @@ var jobResponses = {
   8174: 8175,
   8176: 8177,
   8187: 8188,
+  8189: 8190,
   8201: 8202,
   8209: 8210,
   8211: 8212,
@@ -1708,8 +1837,20 @@ var messageNames = {
   4524: "k_EMsgGCToClientAggregateMetricsBackoff",
   4525: "k_EMsgGCToServerSteamLearnAccessTokensChanged",
   4526: "k_EMsgGCToServerSteamLearnUseHTTP",
+  7033: "k_EMsgGCStartFindingMatch",
+  7035: "k_EMsgGCAbandonCurrentGame",
+  7036: "k_EMsgGCStopFindingMatch",
+  7038: "k_EMsgGCPracticeLobbyCreate",
+  7040: "k_EMsgGCPracticeLobbyLeave",
+  7041: "k_EMsgGCPracticeLobbyLaunch",
+  7042: "k_EMsgGCPracticeLobbyList",
+  7043: "k_EMsgGCPracticeLobbyListResponse",
+  7044: "k_EMsgGCPracticeLobbyJoin",
+  7046: "k_EMsgGCPracticeLobbySetDetails",
+  7047: "k_EMsgGCPracticeLobbySetTeamSlot",
   7049: "k_EMsgGCInitialQuestionnaireResponse",
   7056: "k_EMsgGCBroadcastNotification",
+  7070: "k_EMsgGCReadyUp",
   7071: "k_EMsgGCKickedFromMatchmakingQueue",
   7073: "k_EMsgGCSpectateFriendGame",
   7074: "k_EMsgGCSpectateFriendGameResponse",
@@ -1717,6 +1858,7 @@ var messageNames = {
   7077: "k_EMsgGCReportsRemainingResponse",
   7078: "k_EMsgGCSubmitPlayerReport",
   7079: "k_EMsgGCSubmitPlayerReportResponse",
+  7081: "k_EMsgGCPracticeLobbyKick",
   7082: "k_EMsgGCSubmitPlayerReportV2",
   7083: "k_EMsgGCSubmitPlayerReportResponseV2",
   7091: "k_EMsgGCWatchGame",
@@ -1725,9 +1867,16 @@ var messageNames = {
   7096: "k_EMsgGCMatchDetailsResponse",
   7097: "k_EMsgGCCancelWatchGame",
   7102: "k_EMsgGCPopup",
+  7111: "k_EMsgGCFriendPracticeLobbyListRequest",
+  7112: "k_EMsgGCFriendPracticeLobbyListResponse",
+  7113: "k_EMsgGCPracticeLobbyJoinResponse",
+  7142: "k_EMsgGCApplyTeamToPracticeLobby",
+  7149: "k_EMsgGCPracticeLobbyJoinBroadcastChannel",
+  7170: "k_EMsgGCReadyUpStatus",
   7188: "k_EMsgGCBalancedShuffleLobby",
   7197: "k_EMsgGCMatchmakingStatsRequest",
   7198: "k_EMsgGCMatchmakingStatsResponse",
+  7199: "k_EMsgGCBotGameCreate",
   7200: "k_EMsgGCSetMatchHistoryAccess",
   7201: "k_EMsgGCSetMatchHistoryAccessResponse",
   7203: "k_EMsgUpgradeLeagueItem",
@@ -1747,6 +1896,8 @@ var messageNames = {
   7327: "k_EMsgGCSetProfilePrivacy",
   7328: "k_EMsgGCSetProfilePrivacyResponse",
   7342: "k_EMsgGCClientSuspended",
+  7343: "k_EMsgGCPartyMemberSetCoach",
+  7346: "k_EMsgGCPracticeLobbySetCoach",
   7367: "k_EMsgGCLobbyUpdateBroadcastChannelInfo",
   7387: "k_EMsgDOTAGetEventPoints",
   7388: "k_EMsgDOTAGetEventPointsResponse",
@@ -1763,11 +1914,18 @@ var messageNames = {
   7455: "k_EMsgGCRankedPlayerInfoSubmitResponse",
   7456: "k_EMsgGCPlayerInfoSubmit",
   7457: "k_EMsgGCPlayerInfoSubmitResponse",
+  7466: "k_EMsgGCJoinableCustomGameModesRequest",
+  7467: "k_EMsgGCJoinableCustomGameModesResponse",
+  7468: "k_EMsgGCJoinableCustomLobbiesRequest",
+  7469: "k_EMsgGCJoinableCustomLobbiesResponse",
+  7470: "k_EMsgGCQuickJoinCustomLobby",
+  7471: "k_EMsgGCQuickJoinCustomLobbyResponse",
   7484: "k_EMsgGCHasItemQuery",
   7485: "k_EMsgGCHasItemResponse",
   7495: "k_EMsgGCToClientTournamentItemDrop",
   7503: "k_EMsgClientToGCEmoticonDataRequest",
   7504: "k_EMsgGCToClientEmoticonData",
+  7505: "k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus",
   7518: "k_EMsgDOTARedeemItem",
   7519: "k_EMsgDOTARedeemItemResponse",
   7521: "k_EMsgClientToGCGetAllHeroProgress",
@@ -1781,11 +1939,14 @@ var messageNames = {
   7547: "k_EMsgClientToGCCreateHeroStatue",
   7548: "k_EMsgGCToClientHeroStatueCreateResult",
   7572: "k_EMsgLobbyEventPoints",
+  7581: "k_EMsgGCToClientSteamDatagramTicket",
   7584: "k_EMsgClientToGCRerollPlayerChallenge",
   7586: "k_EMsgGCRerollPlayerChallengeResponse",
   7603: "k_EMsgClientToGCApplyGemCombiner",
   7606: "k_EMsgClientToGCGetAllHeroOrder",
   7607: "k_EMsgClientToGCGetAllHeroOrderResponse",
+  7623: "k_EMsgGCToClientRequestLaneSelection",
+  7624: "k_EMsgGCToClientRequestLaneSelectionResponse",
   7627: "k_EMsgClientToGCPlayerCardSpecificPurchaseRequest",
   7628: "k_EMsgClientToGCPlayerCardSpecificPurchaseResponse",
   7662: "k_EMsgClientToGCGetFilteredPlayers",
@@ -1807,6 +1968,8 @@ var messageNames = {
   7678: "k_EMsgClientToGCVerifyFavoritePlayers",
   7679: "k_EMsgGCToClientVerifyFavoritePlayersResponse",
   7680: "k_EMsgGCToClientPartySearchInvites",
+  7681: "k_EMsgGCToClientRequestMMInfo",
+  7682: "k_EMsgClientToGCMMInfo",
   7684: "k_EMsgClientToGCPurchaseLabyrinthBlessings",
   7685: "k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse",
   7686: "k_EMsgClientToGCPurchaseFilteredPlayerSlot",
@@ -1818,6 +1981,8 @@ var messageNames = {
   8007: "k_EMsgGCToClientPlayerStatsResponse",
   8009: "k_EMsgClientToGCFindTopSourceTVGames",
   8010: "k_EMsgGCToClientFindTopSourceTVGamesResponse",
+  8011: "k_EMsgGCLobbyList",
+  8012: "k_EMsgGCLobbyListResponse",
   8016: "k_EMsgClientToGCSocialFeedPostCommentRequest",
   8017: "k_EMsgGCToClientSocialFeedPostCommentResponse",
   8018: "k_EMsgClientToGCCustomGamesFriendsPlayedRequest",
@@ -1828,10 +1993,12 @@ var messageNames = {
   8034: "k_EMsgClientToGCGetProfileCardStats",
   8036: "k_EMsgClientToGCTopLeagueMatchesRequest",
   8037: "k_EMsgClientToGCTopFriendMatchesRequest",
+  8047: "k_EMsgGCPracticeLobbyKickFromTeam",
   8050: "k_EMsgClientToGCSocialFeedPostMessageRequest",
   8051: "k_EMsgGCToClientSocialFeedPostMessageResponse",
   8052: "k_EMsgCustomGameListenServerStartedLoading",
   8053: "k_EMsgCustomGameClientFinishedLoading",
+  8054: "k_EMsgGCPracticeLobbyCloseBroadcastChannel",
   8061: "k_EMsgGCToClientTopLeagueMatchesResponse",
   8062: "k_EMsgGCToClientTopFriendMatchesResponse",
   8063: "k_EMsgClientToGCMatchesMinimalRequest",
@@ -1864,6 +2031,7 @@ var messageNames = {
   8153: "k_EMsgGCToClientQuestProgressUpdated",
   8154: "k_EMsgGCToClientWageringUpdate",
   8155: "k_EMsgGCToClientArcanaVotesUpdate",
+  8163: "k_EMsgSpectatorLobbyGameDetails",
   8168: "k_EMsgClientToGCOpenPlayerCardPack",
   8169: "k_EMsgClientToGCOpenPlayerCardPackResponse",
   8170: "k_EMsgClientToGCSelectCompendiumInGamePrediction",
@@ -1874,6 +2042,8 @@ var messageNames = {
   8177: "k_EMsgClientToGCCreatePlayerCardPackResponse",
   8187: "k_EMsgGCGetPlayerCardItemInfo",
   8188: "k_EMsgGCGetPlayerCardItemInfoResponse",
+  8189: "k_EMsgClientToGCRequestSteamDatagramTicket",
+  8190: "k_EMsgClientToGCRequestSteamDatagramTicketResponse",
   8191: "k_EMsgGCToClientBattlePassRollupRequest",
   8192: "k_EMsgGCToClientBattlePassRollupResponse",
   8193: "k_EMsgClientToGCTransferSeasonalMMRRequest",
@@ -2588,4 +2758,4 @@ export {
   DOTA2_APPID,
   Dota2GC
 };
-//# sourceMappingURL=chunk-HVBTCCEY.js.map
+//# sourceMappingURL=chunk-YCEBNL5Y.js.map
