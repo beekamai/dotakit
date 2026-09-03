@@ -202,7 +202,14 @@ var Guild = (_class = class {
       });
     });
   }
-  /** Creates a role. @returns the role id the GC assigned. */
+  /**
+   * Creates a role.
+   *
+   * `k_eInvalidFlags` means the flags include a right the bot's own role lacks:
+   * the GC lets a role grant only what the caller has (the guild master has all).
+   *
+   * @returns the role id the GC assigned.
+   */
   async addRole(role) {
     const guildId = this.requireGuildId();
     return this.enqueue(async () => {
@@ -220,6 +227,9 @@ var Guild = (_class = class {
    * The GC replaces a role wholesale, so the current one is read first and patched.
    * Pass `expected` to refuse the write when someone changed the role in the game
    * meanwhile — without it, an edit made in Dota is silently overwritten.
+   *
+   * `k_eInvalidFlags` means `flags` adds a right the bot's own role lacks — the GC
+   * lets a role grant only what the caller has. Removing bits is always allowed.
    *
    * @returns the role as it now stands.
    */
@@ -415,4 +425,4 @@ var Guild = (_class = class {
 
 
 exports.GUILD_ROLE_FLAG = GUILD_ROLE_FLAG; exports.GUILD_ROLE_FLAG_MASK = GUILD_ROLE_FLAG_MASK; exports.GC_RESULT_TIMEOUT = GC_RESULT_TIMEOUT; exports.GC_RESULT_STALE = GC_RESULT_STALE; exports.GCOperationError = GCOperationError; exports.NoGuildError = NoGuildError; exports.Guild = Guild;
-//# sourceMappingURL=chunk-UKGD34RU.cjs.map
+//# sourceMappingURL=chunk-NFWSEQMF.cjs.map

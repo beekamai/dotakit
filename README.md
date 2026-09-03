@@ -174,10 +174,15 @@ Everything below hangs off the bot: `bot.steam`, `bot.gc`, `bot.guild`, `bot.pro
 | `logoff()` | Logs out. |
 | `on("token" \| "guard" \| "disconnected" \| "error", …)` | Events. |
 
-`disconnected` carries `{ eresult, eresultName, critical, message }`. `critical` is the
-only distinction that matters for a reconnect loop: `true` means a person has to fix
-something (wrong password, ban, session replaced, Guard mismatch), `false` means try again.
-Exposed on its own as `isCriticalEResult(eresult)` and `classifyEResult(eresult)`.
+`disconnected` carries `{ eresult, eresultName, critical, message }`. For a reconnect loop
+`classifyEResult(eresult)` gives three answers: `critical` — a person has to fix something
+(wrong password, ban, session replaced, Guard mismatch); `rate_limited` — Steam asked for a
+pause, wait about half an hour before the next login; `retryable` — try again with a growing
+delay. `isCriticalEResult` and `isRateLimitedEResult` are the same checks on their own.
+
+If you run your own reconnect loop, pass `autoRelogin: false` to `login()`. Otherwise
+steam-user relogs on its own *and* your loop logs in on top, two sessions of one account
+kick each other every few seconds, and Steam ends it with `RateLimitExceeded`.
 
 #### `bot.guild` — `Guild`
 
@@ -214,7 +219,9 @@ name, e.g. `k_eNoPermission`). `.result` is `-1` for a timeout and `-2` for the 
 **Role flags.** `GUILD_ROLE_FLAG.INVITE = 1` and `GUILD_ROLE_FLAG.KICK = 2` are the only
 bits confirmed against a live guild. Roles carry bits up to 16; what 4, 8 and 16 grant is
 unverified, so they get no names here — pass them as numbers. The GC decides what a role
-may actually do and answers `NoPermissions` when it disagrees.
+may actually do and answers `NoPermissions` when it disagrees. A role can only be granted
+rights the bot's own role has: adding a bit the bot lacks fails with `k_eInvalidFlags`
+(the guild master is exempt); removing bits always works.
 
 #### `bot.profile` — `Profile`
 
@@ -566,9 +573,14 @@ bunx dotakit doctor      # рантайм, websocket13 в *вашем* node_modu
 | `on("token" \| "guard" \| "disconnected" \| "error", …)` | События. |
 
 `disconnected` несёт `{ eresult, eresultName, critical, message }`. Для реконнект-логики
-важно ровно одно различие: `critical: true` — нужен человек (неверный пароль, бан, сессия
-перехвачена, код Guard не подошёл), `false` — можно пробовать снова. Отдельно доступно как
-`isCriticalEResult(eresult)` и `classifyEResult(eresult)`.
+`classifyEResult(eresult)` даёт три ответа: `critical` — нужен человек (неверный пароль, бан,
+сессия перехвачена, код Guard не подошёл); `rate_limited` — Steam попросил паузу, следующий
+логин не раньше чем через полчаса; `retryable` — пробовать снова с растущей задержкой.
+`isCriticalEResult` и `isRateLimitedEResult` — те же проверки по отдельности.
+
+Если у вас свой реконнект-цикл, передайте в `login()` `autoRelogin: false`. Иначе steam-user
+перелогинится сам *и* ваш цикл залогинится поверх: две сессии одного аккаунта выбивают друг
+друга каждые несколько секунд, пока Steam не ответит `RateLimitExceeded`.
 
 #### `bot.guild` — `Guild`
 
@@ -606,7 +618,9 @@ await bot.guild.modifyRole(officer.roleId, { name: "Captain" }, { flags: officer
 **Флаги ролей.** `GUILD_ROLE_FLAG.INVITE = 1` и `GUILD_ROLE_FLAG.KICK = 2` — единственные
 биты, подтверждённые на живой гильдии. У ролей встречаются биты до 16 включительно; что
 дают 4, 8 и 16 — не подтверждено, поэтому имён им здесь не даём, передавайте числами. Что
-роли реально позволено, решает GC и отвечает `NoPermissions`, если не согласен.
+роли реально позволено, решает GC и отвечает `NoPermissions`, если не согласен. Роли можно
+выдать только те права, которые есть у роли самого бота: добавление чужого бита
+заканчивается `k_eInvalidFlags` (гильдмастер — исключение), снимать биты можно всегда.
 
 #### `bot.profile` — `Profile`
 

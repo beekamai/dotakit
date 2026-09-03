@@ -1,6 +1,6 @@
 {
   "name": "dotakit",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Steam login + Dota 2 Game Coordinator multitool for Bun/Node: guild, profile, live matches, typed GC client, protobuf codegen",
   "type": "module",
   "main": "./dist/index.cjs",

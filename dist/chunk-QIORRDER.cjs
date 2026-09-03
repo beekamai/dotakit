@@ -52,8 +52,6 @@ var CRITICAL_ERESULTS = /* @__PURE__ */ new Set([
   // AccountLogonDenied (Steam Guard email)
   73,
   // AccountLockedDown
-  84,
-  // RateLimitExceeded
   85,
   // AccountLoginDeniedNeedTwoFactor
   88
@@ -79,8 +77,14 @@ var ERESULT_NAMES = {
 function isCriticalEResult(eresult) {
   return CRITICAL_ERESULTS.has(eresult);
 }
+var ERESULT_RATE_LIMIT = 84;
+function isRateLimitedEResult(eresult) {
+  return eresult === ERESULT_RATE_LIMIT;
+}
 function classifyEResult(eresult) {
-  return isCriticalEResult(eresult) ? "critical" : "retryable";
+  if (isCriticalEResult(eresult)) return "critical";
+  if (isRateLimitedEResult(eresult)) return "rate_limited";
+  return "retryable";
 }
 function eresultName(eresult, SteamUser) {
   return _nullishCoalesce(_nullishCoalesce(_optionalChain([SteamUser, 'optionalAccess', _ => _.EResult, 'optionalAccess', _2 => _2[eresult]]), () => ( ERESULT_NAMES[eresult])), () => ( `EResult-${eresult}`));
@@ -199,7 +203,7 @@ async function login(options) {
   if (!accountName) throw new SteamError("login() needs an accountName");
   if (!options.steamUser) _chunkZIVCJ3VAcjs.doctor.call(void 0, { transport: options.transport });
   const SteamUser = await _asyncNullishCoalesce(options.SteamUser, async () => ( (options.steamUser ? void 0 : await loadSteamUser())));
-  const user = _nullishCoalesce(options.steamUser, () => ( new SteamUser()));
+  const user = _nullishCoalesce(options.steamUser, () => ( new SteamUser({ autoRelogin: _nullishCoalesce(options.autoRelogin, () => ( true)) })));
   const session = new SteamSession(user, { accountName, sessionFile, logger });
   _optionalChain([options, 'access', _25 => _25.onSession, 'optionalCall', _26 => _26(session)]);
   const savedToken = sessionFile ? readSessionToken(sessionFile, logger) : null;
@@ -298,5 +302,7 @@ async function login(options) {
 
 
 
-exports.SteamError = SteamError; exports.SteamLoginError = SteamLoginError; exports.GuardRequiredError = GuardRequiredError; exports.isCriticalEResult = isCriticalEResult; exports.classifyEResult = classifyEResult; exports.eresultName = eresultName; exports.SteamSession = SteamSession; exports.login = login;
-//# sourceMappingURL=chunk-UVI6DHOD.cjs.map
+
+
+exports.SteamError = SteamError; exports.SteamLoginError = SteamLoginError; exports.GuardRequiredError = GuardRequiredError; exports.isCriticalEResult = isCriticalEResult; exports.ERESULT_RATE_LIMIT = ERESULT_RATE_LIMIT; exports.isRateLimitedEResult = isRateLimitedEResult; exports.classifyEResult = classifyEResult; exports.eresultName = eresultName; exports.SteamSession = SteamSession; exports.login = login;
+//# sourceMappingURL=chunk-QIORRDER.cjs.map

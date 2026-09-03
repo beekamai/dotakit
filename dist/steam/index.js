@@ -1,4 +1,5 @@
 import {
+  ERESULT_RATE_LIMIT,
   GuardRequiredError,
   SteamError,
   SteamLoginError,
@@ -6,8 +7,9 @@ import {
   classifyEResult,
   eresultName,
   isCriticalEResult,
+  isRateLimitedEResult,
   login
-} from "../chunk-ATG55VSS.js";
+} from "../chunk-DMHNX3IA.js";
 import {
   BunTransportError,
   WEBSOCKET13_OVERRIDE,
@@ -19,6 +21,7 @@ import {
 import "../chunk-PZ5AY32C.js";
 export {
   BunTransportError,
+  ERESULT_RATE_LIMIT,
   GuardRequiredError,
   SteamError,
   SteamLoginError,
@@ -31,6 +34,7 @@ export {
   inspect,
   installedWebsocket13Version,
   isCriticalEResult,
+  isRateLimitedEResult,
   login
 };
 //# sourceMappingURL=index.js.map

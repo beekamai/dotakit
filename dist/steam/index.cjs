@@ -7,7 +7,9 @@
 
 
 
-var _chunkUVI6DHODcjs = require('../chunk-UVI6DHOD.cjs');
+
+
+var _chunkQIORRDERcjs = require('../chunk-QIORRDER.cjs');
 
 
 
@@ -32,5 +34,7 @@ require('../chunk-LKAAZKBP.cjs');
 
 
 
-exports.BunTransportError = _chunkZIVCJ3VAcjs.BunTransportError; exports.GuardRequiredError = _chunkUVI6DHODcjs.GuardRequiredError; exports.SteamError = _chunkUVI6DHODcjs.SteamError; exports.SteamLoginError = _chunkUVI6DHODcjs.SteamLoginError; exports.SteamSession = _chunkUVI6DHODcjs.SteamSession; exports.WEBSOCKET13_OVERRIDE = _chunkZIVCJ3VAcjs.WEBSOCKET13_OVERRIDE; exports.classifyEResult = _chunkUVI6DHODcjs.classifyEResult; exports.connectionProtocol = _chunkZIVCJ3VAcjs.connectionProtocol; exports.doctor = _chunkZIVCJ3VAcjs.doctor; exports.eresultName = _chunkUVI6DHODcjs.eresultName; exports.inspect = _chunkZIVCJ3VAcjs.inspect; exports.installedWebsocket13Version = _chunkZIVCJ3VAcjs.installedWebsocket13Version; exports.isCriticalEResult = _chunkUVI6DHODcjs.isCriticalEResult; exports.login = _chunkUVI6DHODcjs.login;
+
+
+exports.BunTransportError = _chunkZIVCJ3VAcjs.BunTransportError; exports.ERESULT_RATE_LIMIT = _chunkQIORRDERcjs.ERESULT_RATE_LIMIT; exports.GuardRequiredError = _chunkQIORRDERcjs.GuardRequiredError; exports.SteamError = _chunkQIORRDERcjs.SteamError; exports.SteamLoginError = _chunkQIORRDERcjs.SteamLoginError; exports.SteamSession = _chunkQIORRDERcjs.SteamSession; exports.WEBSOCKET13_OVERRIDE = _chunkZIVCJ3VAcjs.WEBSOCKET13_OVERRIDE; exports.classifyEResult = _chunkQIORRDERcjs.classifyEResult; exports.connectionProtocol = _chunkZIVCJ3VAcjs.connectionProtocol; exports.doctor = _chunkZIVCJ3VAcjs.doctor; exports.eresultName = _chunkQIORRDERcjs.eresultName; exports.inspect = _chunkZIVCJ3VAcjs.inspect; exports.installedWebsocket13Version = _chunkZIVCJ3VAcjs.installedWebsocket13Version; exports.isCriticalEResult = _chunkQIORRDERcjs.isCriticalEResult; exports.isRateLimitedEResult = _chunkQIORRDERcjs.isRateLimitedEResult; exports.login = _chunkQIORRDERcjs.login;
 //# sourceMappingURL=index.cjs.map

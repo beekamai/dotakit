@@ -12,7 +12,7 @@ export { MAX_BACKOFF_MS, MAX_MISSES, POLL_INTERVAL_MS, SpectateOutcome, TopGames
 import { ProfileOptions, Profile } from './profile/index.js';
 export { DEFAULT_RANK_GAP_MS, RANK_TIERS, Rank, RankTierName, decodeRankTier } from './profile/index.js';
 import { LoginOptions, SteamSession, GuardPrompt } from './steam/index.js';
-export { BunTransportError, DisconnectInfo, DoctorReport, EResultClass, GuardRequiredError, SteamError, SteamLoginError, SteamUserLike, TransportMode, WEBSOCKET13_OVERRIDE, classifyEResult, doctor, eresultName, isCriticalEResult, login as steamLogin } from './steam/index.js';
+export { BunTransportError, DisconnectInfo, DoctorReport, ERESULT_RATE_LIMIT, EResultClass, GuardRequiredError, SteamError, SteamLoginError, SteamUserLike, TransportMode, WEBSOCKET13_OVERRIDE, classifyEResult, doctor, eresultName, isCriticalEResult, isRateLimitedEResult, login as steamLogin } from './steam/index.js';
 export { G as GCLike, a as GCRouterLike, b as GC_TIMEOUT_MS } from './shared-D_5F0rCl.js';
 import './dota_gcmessages_common-D8GmtIqO.js';
 import '@bufbuild/protobuf/wire';

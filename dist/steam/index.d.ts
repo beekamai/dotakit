@@ -75,7 +75,14 @@ declare class GuardRequiredError extends SteamError {
 }
 /** `true` when reconnecting cannot fix it and a person has to intervene. */
 declare function isCriticalEResult(eresult: number): boolean;
-type EResultClass = "critical" | "retryable";
+declare const ERESULT_RATE_LIMIT = 84;
+/**
+ * RateLimitExceeded is neither fatal nor an invitation to retry now: Steam wants a
+ * pause of roughly half an hour. Treating it as critical switched bots off for good
+ * after a single reconnect storm; retrying at once only extends the ban.
+ */
+declare function isRateLimitedEResult(eresult: number): boolean;
+type EResultClass = "critical" | "rate_limited" | "retryable";
 declare function classifyEResult(eresult: number): EResultClass;
 /** Best-effort name for an EResult; uses steam-user's enum when one is handed in. */
 declare function eresultName(eresult: number, SteamUser?: any): string;
@@ -126,6 +133,13 @@ interface LoginOptions {
     /** Called with the session the moment it exists — before login finishes, so events can be wired. */
     onSession?: (session: SteamSession) => void;
     logger?: Logger;
+    /**
+     * steam-user's own relogin after a drop. Defaults to `true` like steam-user.
+     * Set `false` when you run your own reconnect loop: two logins of one account
+     * (steam-user's and yours) kick each other every few seconds until Steam answers
+     * RateLimitExceeded.
+     */
+    autoRelogin?: boolean;
     /** A ready-made `steam-user` instance (or a test double). Skips the transport check. */
     steamUser?: SteamUserLike;
     /** The `SteamUser` class itself. Defaults to a lazy `import("steam-user")`. */
@@ -175,4 +189,4 @@ declare class SteamSession extends EventEmitter {
  */
 declare function login(options: LoginOptions): Promise<SteamSession>;
 
-export { BunTransportError, type DisconnectInfo, type DoctorOptions, type DoctorReport, type EResultClass, type GuardPrompt, GuardRequiredError, type LoginOptions, SteamError, SteamLoginError, SteamSession, type SteamUserLike, type TransportMode, WEBSOCKET13_OVERRIDE, classifyEResult, connectionProtocol, doctor, eresultName, inspect, installedWebsocket13Version, isCriticalEResult, login };
+export { BunTransportError, type DisconnectInfo, type DoctorOptions, type DoctorReport, ERESULT_RATE_LIMIT, type EResultClass, type GuardPrompt, GuardRequiredError, type LoginOptions, SteamError, SteamLoginError, SteamSession, type SteamUserLike, type TransportMode, WEBSOCKET13_OVERRIDE, classifyEResult, connectionProtocol, doctor, eresultName, inspect, installedWebsocket13Version, isCriticalEResult, isRateLimitedEResult, login };

@@ -16,6 +16,7 @@ import {
   messageNames
 } from "./chunk-HVBTCCEY.js";
 import {
+  ERESULT_RATE_LIMIT,
   GuardRequiredError,
   SteamError,
   SteamLoginError,
@@ -23,8 +24,9 @@ import {
   classifyEResult,
   eresultName,
   isCriticalEResult,
+  isRateLimitedEResult,
   login
-} from "./chunk-ATG55VSS.js";
+} from "./chunk-DMHNX3IA.js";
 import {
   GCOperationError,
   GC_RESULT_STALE,
@@ -33,7 +35,7 @@ import {
   GUILD_ROLE_FLAG_MASK,
   Guild,
   NoGuildError
-} from "./chunk-GGLSED7E.js";
+} from "./chunk-SC37SVHY.js";
 import {
   DEFAULT_RANK_GAP_MS,
   Profile,
@@ -134,6 +136,7 @@ export {
   EDOTAGCMsg,
   EGCBaseClientMsg,
   EGCBaseMsg,
+  ERESULT_RATE_LIMIT,
   ESOMsg,
   GCConnectionStatus,
   GCOperationError,
@@ -170,6 +173,7 @@ export {
   eresultName,
   gcMessages,
   isCriticalEResult,
+  isRateLimitedEResult,
   jobResponses,
   login2 as login,
   messageNames,

@@ -52,8 +52,6 @@ var CRITICAL_ERESULTS = /* @__PURE__ */ new Set([
   // AccountLogonDenied (Steam Guard email)
   73,
   // AccountLockedDown
-  84,
-  // RateLimitExceeded
   85,
   // AccountLoginDeniedNeedTwoFactor
   88
@@ -79,8 +77,14 @@ var ERESULT_NAMES = {
 function isCriticalEResult(eresult) {
   return CRITICAL_ERESULTS.has(eresult);
 }
+var ERESULT_RATE_LIMIT = 84;
+function isRateLimitedEResult(eresult) {
+  return eresult === ERESULT_RATE_LIMIT;
+}
 function classifyEResult(eresult) {
-  return isCriticalEResult(eresult) ? "critical" : "retryable";
+  if (isCriticalEResult(eresult)) return "critical";
+  if (isRateLimitedEResult(eresult)) return "rate_limited";
+  return "retryable";
 }
 function eresultName(eresult, SteamUser) {
   return SteamUser?.EResult?.[eresult] ?? ERESULT_NAMES[eresult] ?? `EResult-${eresult}`;
@@ -199,7 +203,7 @@ async function login(options) {
   if (!accountName) throw new SteamError("login() needs an accountName");
   if (!options.steamUser) doctor({ transport: options.transport });
   const SteamUser = options.SteamUser ?? (options.steamUser ? void 0 : await loadSteamUser());
-  const user = options.steamUser ?? new SteamUser();
+  const user = options.steamUser ?? new SteamUser({ autoRelogin: options.autoRelogin ?? true });
   const session = new SteamSession(user, { accountName, sessionFile, logger });
   options.onSession?.(session);
   const savedToken = sessionFile ? readSessionToken(sessionFile, logger) : null;
@@ -294,9 +298,11 @@ export {
   SteamLoginError,
   GuardRequiredError,
   isCriticalEResult,
+  ERESULT_RATE_LIMIT,
+  isRateLimitedEResult,
   classifyEResult,
   eresultName,
   SteamSession,
   login
 };
-//# sourceMappingURL=chunk-ATG55VSS.js.map
+//# sourceMappingURL=chunk-DMHNX3IA.js.map

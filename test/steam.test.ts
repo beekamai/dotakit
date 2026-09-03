@@ -3,7 +3,7 @@ import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-import { GuardRequiredError, SteamLoginError, isCriticalEResult, login } from "../src/steam/index";
+import { GuardRequiredError, SteamLoginError, classifyEResult, isCriticalEResult, login } from "../src/steam/index";
 import { BunTransportError, WEBSOCKET13_OVERRIDE, connectionProtocol, doctor, inspect } from "../src/steam/transport";
 import { FakeSteamUser } from "./helpers";
 
@@ -266,6 +266,11 @@ describe("EResult classification", () => {
         expect(isCriticalEResult(5)).toBe(true); // InvalidPassword
         expect(isCriticalEResult(17)).toBe(true); // Banned
         expect(isCriticalEResult(88)).toBe(true); // TwoFactorCodeMismatch
+        /* 84 is a pause, not a death sentence: a reconnect storm once switched a bot off for good. */
+        expect(isCriticalEResult(84)).toBe(false);
+        expect(classifyEResult(84)).toBe("rate_limited");
+        expect(classifyEResult(3)).toBe("retryable");
+        expect(classifyEResult(5)).toBe("critical");
     });
 
     test("reports disconnects with the classification attached", async () => {

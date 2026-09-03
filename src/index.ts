@@ -180,6 +180,8 @@ export {
     SteamSession,
     WEBSOCKET13_OVERRIDE,
     classifyEResult,
+    ERESULT_RATE_LIMIT,
+    isRateLimitedEResult,
     doctor,
     eresultName,
     isCriticalEResult,

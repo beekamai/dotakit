@@ -45,7 +45,6 @@ const CRITICAL_ERESULTS = new Set([
     43, // AccountDisabled
     63, // AccountLogonDenied (Steam Guard email)
     73, // AccountLockedDown
-    84, // RateLimitExceeded
     85, // AccountLoginDeniedNeedTwoFactor
     88, // TwoFactorCodeMismatch
 ]);
@@ -74,10 +73,23 @@ export function isCriticalEResult(eresult: number): boolean {
     return CRITICAL_ERESULTS.has(eresult);
 }
 
-export type EResultClass = "critical" | "retryable";
+export const ERESULT_RATE_LIMIT = 84;
+
+/**
+ * RateLimitExceeded is neither fatal nor an invitation to retry now: Steam wants a
+ * pause of roughly half an hour. Treating it as critical switched bots off for good
+ * after a single reconnect storm; retrying at once only extends the ban.
+ */
+export function isRateLimitedEResult(eresult: number): boolean {
+    return eresult === ERESULT_RATE_LIMIT;
+}
+
+export type EResultClass = "critical" | "rate_limited" | "retryable";
 
 export function classifyEResult(eresult: number): EResultClass {
-    return isCriticalEResult(eresult) ? "critical" : "retryable";
+    if (isCriticalEResult(eresult)) return "critical";
+    if (isRateLimitedEResult(eresult)) return "rate_limited";
+    return "retryable";
 }
 
 /** Best-effort name for an EResult; uses steam-user's enum when one is handed in. */

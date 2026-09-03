@@ -25,6 +25,8 @@ export {
     SteamError,
     SteamLoginError,
     classifyEResult,
+    ERESULT_RATE_LIMIT,
+    isRateLimitedEResult,
     eresultName,
     isCriticalEResult,
     type EResultClass,
@@ -79,6 +81,13 @@ export interface LoginOptions {
     /** Called with the session the moment it exists — before login finishes, so events can be wired. */
     onSession?: (session: SteamSession) => void;
     logger?: Logger;
+    /**
+     * steam-user's own relogin after a drop. Defaults to `true` like steam-user.
+     * Set `false` when you run your own reconnect loop: two logins of one account
+     * (steam-user's and yours) kick each other every few seconds until Steam answers
+     * RateLimitExceeded.
+     */
+    autoRelogin?: boolean;
     /** A ready-made `steam-user` instance (or a test double). Skips the transport check. */
     steamUser?: SteamUserLike;
     /** The `SteamUser` class itself. Defaults to a lazy `import("steam-user")`. */
@@ -244,7 +253,7 @@ export async function login(options: LoginOptions): Promise<SteamSession> {
     if (!options.steamUser) doctor({ transport: options.transport });
 
     const SteamUser = options.SteamUser ?? (options.steamUser ? undefined : await loadSteamUser());
-    const user: SteamUserLike = options.steamUser ?? new SteamUser();
+    const user: SteamUserLike = options.steamUser ?? new SteamUser({ autoRelogin: options.autoRelogin ?? true });
 
     const session = new SteamSession(user, { accountName, sessionFile, logger });
     options.onSession?.(session);
